@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
-import { getShop, getProduct, productDetail, categoryImage } from "@/lib/data/shop";
+import { getShop, getProduct, productDetail } from "@/lib/data/shop";
+import { categoryImage } from "@/lib/data/category-image";
 import { ProductGrid } from "@/components/shop/ProductGrid";
 import { AddToCartForm } from "@/components/shop/AddToCartForm";
 import { formatMoney } from "@/lib/money";
@@ -12,8 +13,8 @@ export default async function ProductDetail({
   params: Promise<{ brand: string; slug: string }>;
 }) {
   const { brand: brandSlug, slug } = await params;
-  const shop = getShop(brandSlug);
-  const product = shop && getProduct(brandSlug, slug);
+  const shop = await getShop(brandSlug);
+  const product = shop && (await getProduct(brandSlug, slug));
   if (!shop || !product) notFound();
 
   const t = await getTranslations("product");
@@ -60,7 +61,7 @@ export default async function ProductDetail({
           </h1>
           <span className="mt-3.5 text-lg">{formatMoney(product.price, locale)}</span>
 
-          <AddToCartForm brand={shop.slug} productId={product.id} sizes={productDetail.sizes} />
+          <AddToCartForm brand={shop.slug} product={product} sizes={productDetail.sizes} />
 
           <p className="mt-7 max-w-[52ch] text-sm leading-relaxed text-neutral-600">
             {productDetail.description}

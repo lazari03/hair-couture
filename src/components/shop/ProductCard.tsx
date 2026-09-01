@@ -3,7 +3,8 @@ import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { formatMoney } from "@/lib/money";
 import type { BrandSlug } from "@/lib/brands";
-import { categoryImage, type Product } from "@/lib/data/shop";
+import type { Product } from "@/lib/data/shop";
+import { categoryImage } from "@/lib/data/category-image";
 
 export function ProductCard({ brand, product }: { brand: BrandSlug; product: Product }) {
   const locale = useLocale();

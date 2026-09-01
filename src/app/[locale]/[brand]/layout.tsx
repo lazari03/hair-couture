@@ -18,7 +18,7 @@ export default async function BrandLayout({
 }) {
   const { brand: brandSlug } = await params;
   const brand = getBrand(brandSlug);
-  const shop = getShop(brandSlug);
+  const shop = await getShop(brandSlug);
   if (!brand || !shop) notFound();
 
   const t = await getTranslations();
@@ -44,9 +44,12 @@ export default async function BrandLayout({
           <Link href="/" className="text-[13px] whitespace-nowrap text-neutral-500 hover:underline">
             &larr; {t("nav.backToBrands")}
           </Link>
-          <span className="text-[15px] font-semibold tracking-tight whitespace-nowrap">
-            {t(`brands.${brand.slug as BrandSlug}.name`)}
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element -- static local SVG, no next/image benefit */}
+          <img
+            src={brand.logo}
+            alt={t(`brands.${brand.slug as BrandSlug}.name`)}
+            className="h-6 w-auto sm:h-7"
+          />
           <nav className="flex items-center gap-5 text-[13px]">
             <Link href={`/${brand.slug}/search`}>{t("nav.search")}</Link>
             <Link href={`/${brand.slug}/account`}>{t("nav.account")}</Link>

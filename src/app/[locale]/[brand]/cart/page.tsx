@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useCart } from "@/lib/cart/cart-context";
-import { getProduct, categoryImage } from "@/lib/data/shop";
+import { categoryImage } from "@/lib/data/category-image";
 import { formatMoney } from "@/lib/money";
 
 export default function CartPage() {
@@ -12,14 +12,10 @@ export default function CartPage() {
   const locale = useLocale();
   const { lines, incLine, decLine, removeLine } = useCart();
 
-  const rows = lines
-    .map((line) => ({ line, product: getProduct(line.brand, line.productId) }))
-    .filter((r): r is { line: typeof lines[number]; product: NonNullable<typeof r.product> } =>
-      Boolean(r.product),
-    );
-
-  const subtotal = rows.reduce((sum, r) => sum + r.product.price * r.line.qty, 0);
-  const totalQty = rows.reduce((sum, r) => sum + r.line.qty, 0);
+  // Product name/category/price are already on the line (snapshotted at
+  // add-time, see cart-context.tsx) — no DB lookup needed here.
+  const subtotal = lines.reduce((sum, l) => sum + l.price * l.qty, 0);
+  const totalQty = lines.reduce((sum, l) => sum + l.qty, 0);
 
   return (
     <main className="px-6 pb-24 sm:px-11">
@@ -30,15 +26,15 @@ export default function CartPage() {
 
       <div className="grid grid-cols-1 items-start gap-8 sm:gap-14 md:grid-cols-[1fr_360px]">
         <div className="border-t border-neutral-200">
-          {rows.map(({ line, product }) => (
+          {lines.map((line) => (
             <div
               key={line.id}
               className="grid grid-cols-[96px_1fr_auto] items-start gap-5 border-b border-neutral-200 py-6"
             >
               <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100">
                 <Image
-                  src={categoryImage(product.category)}
-                  alt={product.name}
+                  src={categoryImage(line.category)}
+                  alt={line.name}
                   fill
                   sizes="96px"
                   className="object-cover"
@@ -46,9 +42,9 @@ export default function CartPage() {
               </div>
               <div className="flex flex-col gap-1.5">
                 <span className="text-[10px] tracking-widest text-neutral-500 uppercase">
-                  {product.category}
+                  {line.category}
                 </span>
-                <span className="text-[15px] font-medium tracking-tight">{product.name}</span>
+                <span className="text-[15px] font-medium tracking-tight">{line.name}</span>
                 <span className="text-[13px] text-neutral-500">{line.variant}</span>
                 <div className="mt-2.5 flex items-center gap-4">
                   <div className="flex items-center border border-neutral-300">
@@ -77,12 +73,12 @@ export default function CartPage() {
                 </div>
               </div>
               <span className="text-[15px] whitespace-nowrap">
-                {formatMoney(product.price * line.qty, locale)}
+                {formatMoney(line.price * line.qty, locale)}
               </span>
             </div>
           ))}
 
-          {rows.length === 0 && (
+          {lines.length === 0 && (
             <div className="py-16 text-center">
               <h2 className="m-0 text-xl font-light">{t("emptyTitle")}</h2>
               <p className="mt-3 mb-6 text-sm text-neutral-500">{t("emptyBody")}</p>

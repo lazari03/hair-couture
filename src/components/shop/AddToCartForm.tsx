@@ -4,14 +4,15 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useCart } from "@/lib/cart/cart-context";
 import type { BrandSlug } from "@/lib/brands";
+import type { Product } from "@/lib/data/shop";
 
 export function AddToCartForm({
   brand,
-  productId,
+  product,
   sizes,
 }: {
   brand: BrandSlug;
-  productId: string;
+  product: Product;
   sizes: string[];
 }) {
   const t = useTranslations("product");
@@ -43,7 +44,15 @@ export function AddToCartForm({
       <button
         type="button"
         onClick={() => {
-          addLine({ brand, productId, variant: sizes[sizeIndex], qty: 1 });
+          addLine({
+            brand,
+            productId: product.id,
+            variant: sizes[sizeIndex],
+            qty: 1,
+            name: product.name,
+            category: product.category,
+            price: product.price,
+          });
           setAdded(true);
         }}
         className="mt-7 min-h-[52px] bg-[var(--brand-accent)] px-8 font-inherit text-xs tracking-widest text-white uppercase hover:opacity-90"

@@ -21,6 +21,15 @@ export interface CartLine {
   productId: string;
   variant: string;
   qty: number;
+  // ponytail: product name/category/price are snapshotted here at add-time
+  // instead of looked up from the DB on render — products now live behind
+  // Prisma (async), and the cart is a "use client" component that renders
+  // synchronously. Real checkout should re-validate price server-side before
+  // charging; this snapshot is fine for display and for surviving a product
+  // being renamed/repriced/deleted after it was added to a cart.
+  name: string;
+  category: string;
+  price: number;
 }
 
 interface CartContextValue {

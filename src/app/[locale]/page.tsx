@@ -12,11 +12,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function LandingPage() {
   const t = await getTranslations();
+  const shops = await Promise.all(brands.map((b) => getShop(b.slug)));
 
   return (
     <main className="flex flex-1 flex-col lg:flex-row">
-      {brands.map((brand) => {
-        const shop = getShop(brand.slug);
+      {brands.map((brand, i) => {
+        const shop = shops[i];
         return (
           <Link
             key={brand.slug}
@@ -61,9 +62,13 @@ export default async function LandingPage() {
             <div className="absolute inset-0 bg-[var(--brand-accent)]/55 transition-colors duration-300 group-hover:bg-[var(--brand-accent)]/40" />
 
             <div className="relative flex flex-col items-center gap-3 px-6 text-center">
-              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                {t(`brands.${brand.slug}.name`)}
-              </h2>
+              <h2 className="sr-only">{t(`brands.${brand.slug}.name`)}</h2>
+              {/* eslint-disable-next-line @next/next/no-img-element -- static local SVG, no next/image benefit */}
+              <img
+                src={brand.logo}
+                alt=""
+                className="h-8 w-auto brightness-0 invert sm:h-10"
+              />
               <p className="text-sm opacity-80 sm:text-base">
                 {t(`brands.${brand.slug}.tagline`)}
               </p>

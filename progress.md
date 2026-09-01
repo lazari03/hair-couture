@@ -76,6 +76,50 @@
   - Added `public/assets/products/hair-accessories.jpg`, removed the now-unused
     `extensions.jpg`.
 
+## Done (cont. 7)
+- [x] Eloure's nav/categories now mirror maisoneloure.com's real menu (fetched
+      live 2026-09-01): New, Bestsellers, Care Collection, Styling Collection,
+      Shop by Hairtype, Treatments & Sets — same pattern as Balmain: New/
+      Bestsellers/Shop by Hairtype are curated (no `?category=` filter, link
+      to unfiltered shop), Care Collection/Styling Collection/Treatments & Sets
+      are the real filterable categories, all still data-driven via
+      `lib/data/shop.ts`, nothing hardcoded in a component.
+  - Reassigned Eloure's mock products off Rituals/Refills/Shop All onto the
+    3 real categories. Added `care-collection.jpg`, `styling-collection.jpg`,
+    `treatments-sets.jpg`; removed the now-unused `rituals.jpg`/`refills.jpg`
+    (`shop-all.jpg` stays — it's `categoryImage()`'s fallback for any
+    unmapped category).
+
+## Done (cont. 8)
+- [x] Eau de 1974's nav/categories now mirror eaude1974.com's real menu
+      (fetched live 2026-09-01): EAU de Capri/Hamptons/Santorini (curated
+      fragrance collections, unfiltered shop link) + Sensorial Hair Care/
+      Beauty/Lifestyle (the real filterable categories). Remapped its 8 mock
+      products onto the new categories, added a 9th (`f9`, Sensorial Hair
+      Care) so that category isn't empty. Added `sensorial-hair-care.jpg`,
+      `sensorial-beauty.jpg`, `sensorial-lifestyle.jpg`; removed the unused
+      `fragrance.jpg`/`discovery.jpg`/`home.jpg`.
+- [x] Fetched each brand's real logo SVG from its live site and saved to
+      `public/assets/logos/{balmain,eloure,eau-de-1974}.svg` (source: each
+      site's own header `<img>`/CDN — official marks, not stock art). Added
+      `Brand.logo` to `lib/brands.ts` and wired it into the brand-page header
+      (replaces the plain text name) and the landing page's 3-panel divider
+      (replaces the h2, kept as `sr-only` text for a11y/SEO; forced white via
+      `brightness-0 invert` so every brand's logo reads on the tinted photo
+      regardless of its own source color).
+  - Note: these are the brands' actual trademarks, pulled from their public
+    sites — fine for an authorized build of these exact brands, worth
+    double-checking rights/licensing before this goes anywhere public.
+
+## Done (cont. 9)
+- [x] Eloure and Eau de 1974 accent colors now match their real sites' brand
+      colors (pulled from each site's own CSS, fetched 2026-09-01): Eloure
+      `#000ea7` (its `--color-btn-primary-bg`, matches its logo mark too),
+      Eau de 1974 `#f15a25` (its dominant brand hex). One-line change each in
+      `lib/brands.ts` — every hover/link/badge/button already reads
+      `var(--brand-accent)`, nothing hardcoded elsewhere, so the new colors
+      propagated everywhere automatically (verified live on both brand pages).
+
 ## Next up
 - [ ] Auth.js wired with cookie session, sign-in page — unblocks real account data
 - [ ] api-client (`lib/api-client.ts`) + Zod schemas once a real backend is picked

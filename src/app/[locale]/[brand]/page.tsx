@@ -11,7 +11,7 @@ export default async function BrandShopHome({
   params: Promise<{ brand: string }>;
 }) {
   const { brand: brandSlug } = await params;
-  const shop = getShop(brandSlug);
+  const shop = await getShop(brandSlug);
   if (!shop) notFound();
 
   const t = await getTranslations();

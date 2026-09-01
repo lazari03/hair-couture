@@ -13,7 +13,7 @@ export default async function ShopListing({
 }) {
   const { brand: brandSlug } = await params;
   const { category, sort } = await searchParams;
-  const shop = getShop(brandSlug);
+  const shop = await getShop(brandSlug);
   if (!shop) notFound();
 
   const t = await getTranslations();

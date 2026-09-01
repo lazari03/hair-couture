@@ -1,21 +1,22 @@
-// Mock shop content — swap for a real backend/CMS behind these same functions
-// (skills/networking.md: Server Components fetch data directly; this module
-// is that data-fetching boundary). Nothing that reads from here should need
-// to change when a real source lands, only the function bodies below.
+// Shop content — brand meta (menu/hero copy) is still static config below;
+// products are now real rows in SQLite via Prisma (skills/networking.md:
+// this module is the data-fetching boundary — pages call these functions,
+// never Prisma directly, so the source can change again without touching UI).
 //
 // Split from lib/brands.ts on purpose: brands.ts is structural theme data
-// (rarely changes), this is shop content (products, hero copy, account/cart/
-// search copy) — content a real backend/CMS would own and already localize,
-// unlike the static UI chrome in messages/<locale>.json (skills/i18n.md).
+// (rarely changes), this is shop content — content a real backend/CMS would
+// own and already localize, unlike the static UI chrome in
+// messages/<locale>.json (skills/i18n.md).
 
 import type { BrandSlug } from "@/lib/brands";
+import { prisma } from "@/lib/prisma";
 
 export interface Product {
   id: string;
   name: string;
   category: string;
   price: number; // EUR, minor-unit-free — format with Intl at render time
-  badge?: string;
+  badge?: string | null;
 }
 
 export interface HeroContent {
@@ -30,21 +31,25 @@ export interface HeroContent {
 
 export type HeroVariant = "full" | "split" | "video";
 
-export interface ShopContent {
+interface ShopMeta {
   slug: BrandSlug;
   menu: string[];
   hero: HeroContent;
   heroVariant: HeroVariant;
+}
+
+export interface ShopContent extends ShopMeta {
   products: Product[];
 }
 
-const shops: Record<BrandSlug, ShopContent> = {
+const shopMeta: Record<BrandSlug, ShopMeta> = {
   balmain: {
     slug: "balmain",
     // Mirrors balmainhair.com's real nav (fetched 2026-09-01): Bestsellers/New/
     // Gifts/Outlet are curated cross-category views (no dedicated product
     // category of their own, same as the live site) — Hair Care/Hair
-    // Accessories/Styling Tools are the actual filterable categories below.
+    // Accessories/Styling Tools are the actual filterable categories, driven
+    // entirely by whatever category values exist on Product rows in the DB.
     menu: ["Bestsellers", "New", "Hair Care", "Hair Accessories", "Styling Tools", "Gifts", "Outlet"],
     heroVariant: "full",
     hero: {
@@ -55,20 +60,14 @@ const shops: Record<BrandSlug, ShopContent> = {
       secondary: "View lookbook",
       image: "/assets/hero/balmain.jpg",
     },
-    products: [
-      { id: "b1", name: "Double Hair Set 40cm", category: "Hair Accessories", price: 295, badge: "New" },
-      { id: "b2", name: "Elegance Clip-In Weft", category: "Hair Accessories", price: 340 },
-      { id: "b3", name: "Backstage Volume Spray", category: "Hair Care", price: 38 },
-      { id: "b4", name: "Silk Perfume Shampoo", category: "Hair Care", price: 42 },
-      { id: "b5", name: "Golden Styling Brush", category: "Styling Tools", price: 89, badge: "Limited" },
-      { id: "b6", name: "Couture Curling Wand", category: "Styling Tools", price: 210 },
-      { id: "b7", name: "Fill-In Extensions 55cm", category: "Hair Accessories", price: 420 },
-      { id: "b8", name: "Leave-In Conditioning Mist", category: "Hair Care", price: 34 },
-    ],
   },
   eloure: {
     slug: "eloure",
-    menu: ["Shop All", "Rituals", "Refills", "About"],
+    // Mirrors maisoneloure.com's real nav (fetched 2026-09-01): New/
+    // Bestsellers/Shop by Hairtype are curated cross-category views on the
+    // live site (no dedicated product bucket) — Care Collection/Styling
+    // Collection/Treatments & Sets are the actual filterable categories.
+    menu: ["New", "Bestsellers", "Care Collection", "Styling Collection", "Shop by Hairtype", "Treatments & Sets"],
     heroVariant: "split",
     hero: {
       eyebrow: "The daily ritual",
@@ -78,20 +77,15 @@ const shops: Record<BrandSlug, ShopContent> = {
       secondary: "Find your ritual",
       image: "/assets/hero/eloure.jpg",
     },
-    products: [
-      { id: "e1", name: "Everyday Cream Shampoo", category: "Rituals", price: 24 },
-      { id: "e2", name: "Slip Conditioner 300ml", category: "Rituals", price: 26 },
-      { id: "e3", name: "Refill Pouch — Shampoo", category: "Refills", price: 16, badge: "Refill" },
-      { id: "e4", name: "Scalp Serum Nº2", category: "Rituals", price: 32, badge: "New" },
-      { id: "e5", name: "Soft Hold Cream", category: "Shop All", price: 21 },
-      { id: "e6", name: "Weekly Repair Mask", category: "Rituals", price: 29 },
-      { id: "e7", name: "Refill Pouch — Conditioner", category: "Refills", price: 18, badge: "Refill" },
-      { id: "e8", name: "Wide Tooth Comb", category: "Shop All", price: 14 },
-    ],
   },
   "eau-de-1974": {
     slug: "eau-de-1974",
-    menu: ["Fragrance", "Discovery", "Home", "The Archive"],
+    // Mirrors eaude1974.com's real nav (fetched 2026-09-01): EAU de Capri/
+    // Hamptons/Santorini are curated fragrance-collection views (no dedicated
+    // product category of their own, same as the live site's "Explore the
+    // scents" menu) — Sensorial Hair Care/Beauty/Lifestyle are the real
+    // filterable categories ("Explore the products").
+    menu: ["EAU de Capri", "EAU de Hamptons", "EAU de Santorini", "Sensorial Hair Care", "Sensorial Beauty", "Sensorial Lifestyle"],
     heroVariant: "video",
     hero: {
       eyebrow: "Since 1974",
@@ -102,46 +96,30 @@ const shops: Record<BrandSlug, ShopContent> = {
       image: "/assets/hero/eau-de-1974.jpg",
       video: "/assets/hero/eau-de-1974.mp4",
     },
-    products: [
-      { id: "f1", name: "Nº1974 Eau de Parfum 50ml", category: "Fragrance", price: 145 },
-      { id: "f2", name: "Vetiver Blanc 50ml", category: "Fragrance", price: 145, badge: "New" },
-      { id: "f3", name: "Discovery Set — Six Vials", category: "Discovery", price: 45 },
-      { id: "f4", name: "Ambre Papier 100ml", category: "Fragrance", price: 195 },
-      { id: "f5", name: "Archive Candle 220g", category: "Home", price: 68 },
-      { id: "f6", name: "Room Spray — Fig Leaf", category: "Home", price: 54 },
-      { id: "f7", name: "Néroli 74 100ml", category: "Fragrance", price: 195, badge: "Limited" },
-      { id: "f8", name: "Travel Refill 10ml", category: "Discovery", price: 38 },
-    ],
   },
 };
 
-export function getShop(slug: string): ShopContent | undefined {
-  return shops[slug as BrandSlug];
+function isBrandSlug(slug: string): slug is BrandSlug {
+  return slug in shopMeta;
 }
 
-// One placeholder stock photo per category (public/assets/products/*.jpg) —
-// swap for real per-product photography once it exists; every product in a
-// category shares one image until then, same as the design's placeholder blocks.
-const categoryImageSlugs: Record<string, string> = {
-  "Hair Care": "hair-care",
-  "Hair Accessories": "hair-accessories",
-  "Styling Tools": "styling-tools",
-  Rituals: "rituals",
-  Refills: "refills",
-  "Shop All": "shop-all",
-  Fragrance: "fragrance",
-  Discovery: "discovery",
-  Home: "home",
-};
-
-export function categoryImage(category: string): string {
-  const slug = categoryImageSlugs[category] ?? "shop-all";
-  return `/assets/products/${slug}.jpg`;
+export async function getShop(slug: string): Promise<ShopContent | undefined> {
+  if (!isBrandSlug(slug)) return undefined;
+  const products = await prisma.product.findMany({
+    where: { brand: slug },
+    orderBy: { createdAt: "asc" },
+  });
+  return { ...shopMeta[slug], products };
 }
 
-export function getProduct(slug: string, productId: string): Product | undefined {
-  return getShop(slug)?.products.find((p) => p.id === productId);
+export async function getProduct(slug: string, productId: string): Promise<Product | null> {
+  if (!isBrandSlug(slug)) return null;
+  return prisma.product.findFirst({ where: { brand: slug, id: productId } });
 }
+
+// categoryImage() moved to ./category-image.ts — it's a pure static mapping
+// with no Prisma import, so client components (cart, ProductCard) can import
+// it without pulling this module's DB dependency into the browser bundle.
 
 // Generic product detail copy (gallery/specs) — same shape for every brand
 // until per-product detail content exists behind a real data source.

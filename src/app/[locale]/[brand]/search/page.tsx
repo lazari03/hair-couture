@@ -8,7 +8,7 @@ export default async function SearchPage({
   params: Promise<{ brand: string }>;
 }) {
   const { brand: brandSlug } = await params;
-  const shop = getShop(brandSlug);
+  const shop = await getShop(brandSlug);
   if (!shop) notFound();
 
   return <SearchClient brand={shop.slug} products={shop.products} />;
