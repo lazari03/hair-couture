@@ -1,15 +1,22 @@
+import Image from "next/image";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { formatMoney } from "@/lib/money";
 import type { BrandSlug } from "@/lib/brands";
-import type { Product } from "@/lib/data/shop";
+import { categoryImage, type Product } from "@/lib/data/shop";
 
 export function ProductCard({ brand, product }: { brand: BrandSlug; product: Product }) {
   const locale = useLocale();
   return (
     <Link href={`/${brand}/product/${product.id}`} className="group flex flex-col gap-3.5">
-      <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-neutral-100 px-2 text-center text-[10px] tracking-widest text-neutral-400 uppercase">
-        {product.name}
+      <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100">
+        <Image
+          src={categoryImage(product.category)}
+          alt={product.name}
+          fill
+          sizes="(min-width: 900px) 25vw, 50vw"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+        />
         {product.badge && (
           <span className="absolute top-2.5 left-2.5 bg-white px-2 py-1 text-[9px] tracking-widest text-neutral-900 uppercase">
             {product.badge}

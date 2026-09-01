@@ -1,6 +1,7 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
-import { getShop, getProduct, productDetail } from "@/lib/data/shop";
+import { getShop, getProduct, productDetail, categoryImage } from "@/lib/data/shop";
 import { ProductGrid } from "@/components/shop/ProductGrid";
 import { AddToCartForm } from "@/components/shop/AddToCartForm";
 import { formatMoney } from "@/lib/money";
@@ -26,16 +27,26 @@ export default async function ProductDetail({
       </div>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
         <div className="flex flex-col gap-3">
-          <div className="flex aspect-[4/5] items-center justify-center bg-neutral-100 text-xs tracking-widest text-neutral-400 uppercase">
-            {productDetail.gallery[0]}
+          <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
+            <Image
+              src={categoryImage(product.category)}
+              alt={`${product.name} — ${productDetail.gallery[0]}`}
+              fill
+              priority
+              sizes="(min-width: 900px) 50vw, 100vw"
+              className="object-cover"
+            />
           </div>
           <div className="grid grid-cols-3 gap-3">
             {productDetail.gallery.slice(1).map((label) => (
-              <div
-                key={label}
-                className="flex aspect-square items-center justify-center bg-neutral-50 text-[9px] tracking-wide text-neutral-400 uppercase"
-              >
-                {label}
+              <div key={label} className="relative aspect-square overflow-hidden bg-neutral-50">
+                <Image
+                  src={categoryImage(product.category)}
+                  alt={`${product.name} — ${label}`}
+                  fill
+                  sizes="20vw"
+                  className="object-cover"
+                />
               </div>
             ))}
           </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import type { BrandSlug } from "@/lib/brands";
 import type { HeroContent, HeroVariant } from "@/lib/data/shop";
@@ -17,8 +18,8 @@ export function Hero({
   if (variant === "split") {
     return (
       <section className="grid grid-cols-1 items-stretch md:grid-cols-2">
-        <div className="flex min-h-[420px] items-center justify-center bg-[repeating-linear-gradient(135deg,#e7e4e0_0_22px,#e2dfda_22px_44px)] text-xs tracking-widest text-neutral-400 uppercase">
-          {content.media}
+        <div className="relative min-h-[420px]">
+          <Image src={content.image} alt="" fill priority sizes="50vw" className="object-cover" />
         </div>
         <div className="flex flex-col justify-center bg-[#faf9f7] px-6 py-16 sm:px-11 sm:py-20">
           <span className="text-[11px] tracking-[0.22em] text-[var(--brand-accent)] uppercase">
@@ -52,7 +53,31 @@ export function Hero({
   if (variant === "video") {
     return (
       <section className="relative h-[min(80vh,700px)] overflow-hidden bg-neutral-900">
-        <div className="motion-safe:animate-[pan_22s_ease-in-out_infinite] absolute -inset-[6%] flex items-start justify-start bg-[repeating-linear-gradient(120deg,#3a3936_0_30px,#333230_30px_60px)] p-11 text-xs tracking-widest text-neutral-500 uppercase" />
+        {content.video ? (
+          <>
+            {/* motion-reduce users get the poster frame, not an autoplaying video */}
+            <video
+              className="absolute inset-0 hidden h-full w-full object-cover motion-safe:block"
+              src={content.video}
+              poster={content.image}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+            <Image
+              src={content.image}
+              alt=""
+              fill
+              sizes="100vw"
+              className="absolute inset-0 hidden object-cover motion-reduce:block"
+            />
+          </>
+        ) : (
+          <div className="motion-safe:animate-[pan_22s_ease-in-out_infinite] absolute -inset-[6%]">
+            <Image src={content.image} alt="" fill priority sizes="100vw" className="object-cover" />
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-black/70" />
         <div className="relative flex h-full max-w-3xl flex-col items-start justify-center px-6 text-white sm:px-16">
           <span className="text-[11px] tracking-[0.22em] opacity-80 uppercase">{content.eyebrow}</span>
@@ -74,9 +99,7 @@ export function Hero({
   // full
   return (
     <section className="relative h-[min(78vh,680px)] overflow-hidden bg-neutral-200">
-      <div className="absolute inset-0 flex items-start justify-start bg-[repeating-linear-gradient(135deg,#e7e4e0_0_22px,#e2dfda_22px_44px)] p-6 text-xs tracking-widest text-neutral-400 uppercase">
-        {content.media}
-      </div>
+      <Image src={content.image} alt="" fill priority sizes="100vw" className="object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-black/5 to-black/55" />
       <div className="relative flex h-full flex-col items-center justify-end px-6 pb-16 text-center text-white">
         <span className="text-[11px] tracking-[0.22em] opacity-85 uppercase">{content.eyebrow}</span>

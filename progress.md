@@ -40,6 +40,28 @@
 - [x] `messages/en.json` — shop/product/cart/account/search/footer namespaces
 - [x] `npm run build` and `npm run lint` both pass; all 9 routes smoke-tested 200
 
+## Done (cont. 3)
+- [x] Real images wired in: 12 placeholder stock photos downloaded to
+      `public/assets/hero/*.jpg` (3, one per brand) and `public/assets/products/*.jpg`
+      (9, one per category) — via `next/image` in Hero, ProductCard, product detail
+      gallery, and cart line thumbnails. Source: picsum.photos (Unsplash-sourced,
+      free license), seeded for determinism. Swap for licensed brand/product
+      photography later — `lib/data/shop.ts`'s `image`/`categoryImage()` are the
+      only places that need to change.
+
+## Done (cont. 4)
+- [x] Eau de 1974's hero is a real `<video>` now (`public/assets/hero/eau-de-1974.mp4`,
+      autoplay/loop/muted/playsInline, poster = the jpg), not the pan-animated still
+      image — `HeroContent.video` is optional so only that brand's "video" variant
+      uses it. `motion-reduce` users get the static poster image instead of the video.
+
+## Done (cont. 5)
+- [x] Landing page's 3-panel divider now shows each brand's real hero imagery
+      too (was a flat accent-color block) — Balmain/Eloure use their hero jpg,
+      Eau de 1974 plays its hero video, all with a brand-accent tint overlay
+      so the panel text stays legible. Same `motion-reduce` fallback as the
+      brand hero itself.
+
 ## Next up
 - [ ] Auth.js wired with cookie session, sign-in page — unblocks real account data
 - [ ] api-client (`lib/api-client.ts`) + Zod schemas once a real backend is picked

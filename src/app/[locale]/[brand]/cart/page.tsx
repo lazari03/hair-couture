@@ -1,9 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useCart } from "@/lib/cart/cart-context";
-import { getProduct } from "@/lib/data/shop";
+import { getProduct, categoryImage } from "@/lib/data/shop";
 import { formatMoney } from "@/lib/money";
 
 export default function CartPage() {
@@ -34,8 +35,14 @@ export default function CartPage() {
               key={line.id}
               className="grid grid-cols-[96px_1fr_auto] items-start gap-5 border-b border-neutral-200 py-6"
             >
-              <div className="flex aspect-[3/4] items-center justify-center bg-neutral-100 p-1.5 text-center text-[9px] tracking-wide text-neutral-400 uppercase">
-                {product.name}
+              <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100">
+                <Image
+                  src={categoryImage(product.category)}
+                  alt={product.name}
+                  fill
+                  sizes="96px"
+                  className="object-cover"
+                />
               </div>
               <div className="flex flex-col gap-1.5">
                 <span className="text-[10px] tracking-widest text-neutral-500 uppercase">

@@ -24,7 +24,8 @@ export interface HeroContent {
   body: string;
   cta: string;
   secondary: string;
-  media: string; // placeholder label until real imagery is wired
+  image: string; // /public path — poster frame for the video variant, the shown image otherwise
+  video?: string; // /public path to an .mp4 — only the "video" heroVariant renders it
 }
 
 export type HeroVariant = "full" | "split" | "video";
@@ -48,7 +49,7 @@ const shops: Record<BrandSlug, ShopContent> = {
       body: "Hand-tied extensions and finishing tools developed with the atelier.",
       cta: "Shop the collection",
       secondary: "View lookbook",
-      media: "Campaign image — 2400×1600",
+      image: "/assets/hero/balmain.jpg",
     },
     products: [
       { id: "b1", name: "Double Hair Set 40cm", category: "Extensions", price: 295, badge: "New" },
@@ -71,7 +72,7 @@ const shops: Record<BrandSlug, ShopContent> = {
       body: "Refillable formulas for hair you wash, wear and live in every day.",
       cta: "Shop everyday care",
       secondary: "Find your ritual",
-      media: "Still life — 2400×1600",
+      image: "/assets/hero/eloure.jpg",
     },
     products: [
       { id: "e1", name: "Everyday Cream Shampoo", category: "Rituals", price: 24 },
@@ -94,7 +95,8 @@ const shops: Record<BrandSlug, ShopContent> = {
       body: "Six compositions drawn from the house archive, blended in small batches.",
       cta: "Shop fragrance",
       secondary: "Read the archive",
-      media: "Campaign film — 16:9 loop",
+      image: "/assets/hero/eau-de-1974.jpg",
+      video: "/assets/hero/eau-de-1974.mp4",
     },
     products: [
       { id: "f1", name: "Nº1974 Eau de Parfum 50ml", category: "Fragrance", price: 145 },
@@ -111,6 +113,26 @@ const shops: Record<BrandSlug, ShopContent> = {
 
 export function getShop(slug: string): ShopContent | undefined {
   return shops[slug as BrandSlug];
+}
+
+// One placeholder stock photo per category (public/assets/products/*.jpg) —
+// swap for real per-product photography once it exists; every product in a
+// category shares one image until then, same as the design's placeholder blocks.
+const categoryImageSlugs: Record<string, string> = {
+  Extensions: "extensions",
+  "Hair Care": "hair-care",
+  "Styling Tools": "styling-tools",
+  Rituals: "rituals",
+  Refills: "refills",
+  "Shop All": "shop-all",
+  Fragrance: "fragrance",
+  Discovery: "discovery",
+  Home: "home",
+};
+
+export function categoryImage(category: string): string {
+  const slug = categoryImageSlugs[category] ?? "shop-all";
+  return `/assets/products/${slug}.jpg`;
 }
 
 export function getProduct(slug: string, productId: string): Product | undefined {
