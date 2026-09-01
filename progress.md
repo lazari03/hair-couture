@@ -6,9 +6,11 @@
 - [x] skills/ folder: i18n.md, auth.md, networking.md, branding.md
 
 ## Open decisions (flag before assuming)
-- [x] Backend/data source: **not decided** — build frontend against mock/local
-      data behind `lib/data/*` + the typed api-client now, swap in a real
-      backend (headless commerce or custom API) later without touching UI code.
+- [x] Backend/data source: **decided (2026-09-01)** — SQLite + Prisma for
+      products, behind the same `lib/data/shop.ts` functions the storefront
+      already called. Swap to hosted Postgres later (one-line datasource
+      change) if this ever runs on serverless hosting — SQLite is a local
+      file, not viable on Vercel-style deploys.
 - [ ] Payment provider (Stripe assumed default unless told otherwise).
 - [ ] Which locales ship at launch (assuming `en` only until told otherwise).
 - [ ] Default locale URL behavior — prefix `/en` always, or bare `/` for default?
@@ -120,8 +122,59 @@
       `var(--brand-accent)`, nothing hardcoded elsewhere, so the new colors
       propagated everywhere automatically (verified live on both brand pages).
 
+## Done (cont. 10) — Admin panel
+- [x] **Prisma + SQLite** wired in: `prisma/schema.prisma` (`Product` model —
+      category is free text, not an enum, so typing a new one in the admin
+      form makes it filterable immediately, no schema change), `src/lib/prisma.ts`
+      (singleton client, `@prisma/adapter-better-sqlite3` driver adapter —
+      Prisma 7 requires an explicit adapter), `prisma/seed.ts` (migrated the
+      25 old mock products into real rows). `npm run db:migrate` / `db:seed` /
+      `db:studio` scripts added.
+- [x] `lib/data/shop.ts` products now come from Prisma (`getShop`/`getProduct`
+      are async) — brand menu/hero copy stays static config, same file, same
+      function names. All 7 call sites updated to `await`.
+- [x] Split `categoryImage()` into `lib/data/category-image.ts` (no Prisma
+      import) — the cart page and ProductCard are client components; importing
+      anything from `shop.ts` there was pulling `better-sqlite3` into the
+      browser bundle and breaking the build.
+- [x] Cart line items now snapshot `name`/`category`/`price` at add-time
+      (`cart-context.tsx`) instead of looking the product up — the cart is
+      "use client" and can't call the async DB-backed `getProduct` on render.
+- [x] **Auth.js**: single admin via `Credentials` provider checked against
+      `ADMIN_EMAIL` + `ADMIN_PASSWORD_HASH_B64` env vars (bcrypt), JWT session
+      in an httpOnly cookie, no user table (`src/lib/auth.ts`). `/admin/*`
+      gated in `src/proxy.ts` (redirects to `/admin/login` server-side, not
+      client-side) — the i18n middleware still handles every other route.
+  - **Gotcha worth remembering**: bcrypt hashes are full of `$`-sequences,
+    and Next.js's env loader (`dotenv-expand`) tries to interpolate `$VAR`
+    references in `.env` values — even single-quoted — silently corrupting
+    the hash. Fixed by base64-encoding it (`ADMIN_PASSWORD_HASH_B64`,
+    decoded in `auth.ts`). Cost real debugging time; don't put a raw bcrypt
+    hash in `.env` again.
+- [x] `/admin/products` — list, brand filter tabs, edit/delete
+- [x] `/admin/products/new`, `/admin/products/[id]/edit` — `ProductForm`
+      (client, `useActionState`) + Server Actions in `lib/actions/products.ts`
+      (Zod-validated, `requireAdmin()` session check, `revalidatePath` on the
+      affected storefront routes so edits show up immediately)
+- [x] Removed Prisma's auto-scaffolded `.claude/skills/` etc. (unrequested,
+      unrelated to our own `skills/`) and disabled Next 16's `agentRules`
+      auto-generated `AGENTS.md`/`CLAUDE.md` (we already have ARCHITECTURE.md)
+- [x] Verified end-to-end: unauthenticated `/admin/*` → 307 to login; correct
+      login → session cookie → protected page renders; storefront pages read
+      real DB products (`/en/balmain/product/<cuid>` works). Create/update/
+      delete verified directly against Prisma (identical logic to the Server
+      Actions minus the auth/validation wrapper, which is separately
+      verified) — the actual browser `<form>` submission is worth one manual
+      click-through, Next's Server Action wire protocol isn't practical to
+      fake over raw HTTP for automated testing.
+- [x] `npm run build` and `npm run lint` both pass clean.
+
+**Admin login** (change the password before this goes anywhere near
+production): `admin@hair-couture.local` / see `.env`'s `ADMIN_EMAIL` — the
+seeded password is in this session's chat history only, not committed
+anywhere; rotate it via the `node -e "..."` one-liner in `.env`'s comments.
+
 ## Next up
-- [ ] Auth.js wired with cookie session, sign-in page — unblocks real account data
 - [ ] api-client (`lib/api-client.ts`) + Zod schemas once a real backend is picked
       (`lib/data/shop.ts` is the seam to swap)
 - [ ] Checkout flow (cart "Proceed to checkout" is a no-op button today)
