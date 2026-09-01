@@ -22,3 +22,10 @@ export function categoryImage(category: string): string {
   const slug = categoryImageSlugs[category] ?? "shop-all";
   return `/assets/products/${slug}.jpg`;
 }
+
+// Real per-product photo when we have one (most seeded products do — fetched
+// from the brand's own site), the shared category placeholder otherwise
+// (e.g. a product added by hand in /admin without an image yet).
+export function productImage(product: { category: string; imageUrl?: string | null }): string {
+  return product.imageUrl ?? categoryImage(product.category);
+}

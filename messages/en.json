@@ -53,7 +53,30 @@
     "note": "Shipping and taxes calculated at checkout.",
     "emptyTitle": "Your cart is empty",
     "emptyBody": "Nothing here yet — browse the collection to get started.",
-    "remove": "Remove"
+    "remove": "Remove",
+    "couponPlaceholder": "Coupon code",
+    "couponApply": "Apply",
+    "couponApplied": "Code {code} applied",
+    "discount": "Discount"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "contactTitle": "Contact",
+    "shippingTitle": "Shipping address",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone number",
+    "address": "Address",
+    "city": "City",
+    "postalCode": "Postal code",
+    "country": "Country",
+    "placeOrder": "Place order",
+    "placingOrder": "Placing order…",
+    "summaryTitle": "Order summary",
+    "successTitle": "Thank you for your order",
+    "successBody": "Your order {orderId} has been placed. We'll reach out to {email} with confirmation details.",
+    "backToShop": "Back to shop"
   },
   "account": {
     "greeting": "Account",
@@ -82,6 +105,33 @@
     "resultsTitle": "Results ({count})",
     "emptyTitle": "No results",
     "emptyBody": "Try a shorter term or browse the menu above."
+  },
+  "balmainHome": {
+    "popularTitle": "Popular right now",
+    "trendingTitle": "New in",
+    "collectionsTitle": "Explore the collections",
+    "editorialEyebrow": "The house",
+    "editorialTitle": "The world of Balmain Hair",
+    "editorialBody": "From Parisian ateliers to backstage at fashion week — the craft, the codes, and the couture behind every piece.",
+    "editorialCta": "Discover the heritage",
+    "collections": {
+      "hairCare": { "body": "Nourishing formulas trusted backstage and at home." },
+      "hairAccessories": { "body": "Iconic pieces, handcrafted for everyday luxury." },
+      "stylingTools": { "body": "Professional-grade tools for a couture finish." }
+    }
+  },
+  "balmainFooter": {
+    "shopTitle": "Shop",
+    "shopLinks": { "hairCare": "Hair Care", "styling": "Styling", "giftsets": "Giftsets", "accessories": "Accessories", "archives": "Archives" },
+    "serviceTitle": "Service",
+    "serviceLinks": { "contact": "Contact", "faq": "FAQ", "shipping": "Shipping", "refunds": "Refund Policy", "privacy": "Privacy Policy", "terms": "Terms of Service" },
+    "brandTitle": "Balmain Hair",
+    "brandLinks": { "faq": "FAQ", "heritage": "Heritage", "stockist": "Stockist" },
+    "newsletterTitle": "Join the list",
+    "newsletterBody": "Sign up for early access to new collections and exclusive offers.",
+    "newsletterPlaceholder": "Email address",
+    "newsletterCta": "Subscribe",
+    "copyright": "© {year} Hair Couture"
   },
   "footer": {
     "shipping": "Shipping",

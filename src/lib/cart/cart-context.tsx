@@ -30,22 +30,34 @@ export interface CartLine {
   name: string;
   category: string;
   price: number;
+  imageUrl?: string | null;
+}
+
+export interface AppliedCoupon {
+  code: string;
+  type: "percent" | "fixed";
+  value: number;
 }
 
 interface CartContextValue {
   lines: CartLine[];
   totalQty: number;
+  coupon: AppliedCoupon | null;
   addLine: (line: Omit<CartLine, "id">) => void;
   incLine: (id: string) => void;
   decLine: (id: string) => void;
   removeLine: (id: string) => void;
+  setCoupon: (coupon: AppliedCoupon | null) => void;
+  clearCart: () => void;
 }
 
 const CartContext = createContext<CartContextValue | null>(null);
 const STORAGE_KEY = "hc-cart";
+const COUPON_STORAGE_KEY = "hc-cart-coupon";
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [lines, setLines] = useState<CartLine[]>([]);
+  const [coupon, setCouponState] = useState<AppliedCoupon | null>(null);
   const [hydrated, setHydrated] = useState(false);
 
   // ponytail: localStorage is per-viewer convenience state, not the source
@@ -59,6 +71,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const raw = localStorage.getItem(STORAGE_KEY);
       // eslint-disable-next-line react-hooks/set-state-in-effect
       if (raw) setLines(JSON.parse(raw));
+      const rawCoupon = localStorage.getItem(COUPON_STORAGE_KEY);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      if (rawCoupon) setCouponState(JSON.parse(rawCoupon));
     } catch {
       // storage unavailable — start with an empty cart
     }
@@ -69,15 +84,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
     if (!hydrated) return;
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(lines));
+      if (coupon) localStorage.setItem(COUPON_STORAGE_KEY, JSON.stringify(coupon));
+      else localStorage.removeItem(COUPON_STORAGE_KEY);
     } catch {
       // storage unavailable — cart just won't persist across reloads
     }
-  }, [lines, hydrated]);
+  }, [lines, coupon, hydrated]);
 
   const value = useMemo<CartContextValue>(
     () => ({
       lines,
       totalQty: lines.reduce((sum, l) => sum + l.qty, 0),
+      coupon,
       addLine: (line) =>
         setLines((prev) => [
           ...prev,
@@ -90,8 +108,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
           prev.map((l) => (l.id === id ? { ...l, qty: Math.max(1, l.qty - 1) } : l)),
         ),
       removeLine: (id) => setLines((prev) => prev.filter((l) => l.id !== id)),
+      setCoupon: setCouponState,
+      clearCart: () => {
+        setLines([]);
+        setCouponState(null);
+      },
     }),
-    [lines],
+    [lines, coupon],
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

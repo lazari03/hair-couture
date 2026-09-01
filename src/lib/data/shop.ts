@@ -17,6 +17,8 @@ export interface Product {
   category: string;
   price: number; // EUR, minor-unit-free — format with Intl at render time
   badge?: string | null;
+  description?: string | null;
+  imageUrl?: string | null; // falls back to categoryImage() when unset
 }
 
 export interface HeroContent {
@@ -121,10 +123,10 @@ export async function getProduct(slug: string, productId: string): Promise<Produ
 // with no Prisma import, so client components (cart, ProductCard) can import
 // it without pulling this module's DB dependency into the browser bundle.
 
-// Generic product detail copy (gallery/specs) — same shape for every brand
-// until per-product detail content exists behind a real data source.
+// Generic product detail copy — still shared across every product (size
+// options, shipping/returns specs, fallback description for any product
+// without its own). Real per-product copy now comes from Product.description.
 export const productDetail = {
-  gallery: ["Product — front", "Detail", "In use", "Packaging"],
   sizes: ["Small", "Medium", "Large"],
   description:
     "Placeholder description copy — swap for real per-product copy once a data source is wired.",

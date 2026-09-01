@@ -17,14 +17,68 @@ datasource db {
 // "customizable, not hardcoded" applies here too). Brand identity/theme
 // still lives in lib/brands.ts; this only owns product data.
 model Product {
-  id        String   @id @default(cuid())
-  brand     String
-  name      String
-  category  String
-  price     Float
-  badge     String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          String   @id @default(cuid())
+  brand       String
+  name        String
+  category    String
+  price       Float
+  badge       String?
+  description String? // plain text; real per-product copy where we have it
+  imageUrl    String? // /assets/products/<brand>/<slug>.* — falls back to
+  // the per-category placeholder (lib/data/category-image.ts) when unset
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
   @@index([brand])
+}
+
+// A cart is client-only state (lib/cart/cart-context.tsx) — an Order is the
+// one point where it becomes a real, admin-visible record. Line items are
+// snapshotted (name/variant/price) at order time, same reasoning as the
+// cart itself: survives a product being renamed/repriced/deleted later.
+model Order {
+  id         String      @id @default(cuid())
+  brand      String
+  firstName  String
+  lastName   String
+  email      String
+  phone      String
+  address    String
+  city       String
+  postalCode String
+  country    String
+  couponCode String?
+  subtotal   Float
+  discount   Float       @default(0)
+  total      Float
+  status     String      @default("pending")
+  items      OrderItem[]
+  createdAt  DateTime    @default(now())
+
+  @@index([brand])
+}
+
+model OrderItem {
+  id        String @id @default(cuid())
+  orderId   String
+  order     Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId String
+  name      String
+  variant   String
+  price     Float
+  qty       Int
+
+  @@index([orderId])
+}
+
+// Free-standing codes, not tied to a brand — admin can add more via Prisma
+// Studio (`npm run db:studio`) until there's a dedicated admin CRUD for
+// these, same as products.
+model Coupon {
+  id        String   @id @default(cuid())
+  code      String   @unique
+  type      String // "percent" | "fixed"
+  value     Float
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
 }

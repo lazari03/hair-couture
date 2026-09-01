@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { getShop } from "@/lib/data/shop";
 import { Hero } from "@/components/shop/Hero";
 import { ProductGrid } from "@/components/shop/ProductGrid";
+import { BalmainHome } from "@/components/shop/BalmainHome";
 
 export default async function BrandShopHome({
   params,
@@ -13,6 +14,12 @@ export default async function BrandShopHome({
   const { brand: brandSlug } = await params;
   const shop = await getShop(brandSlug);
   if (!shop) notFound();
+
+  // Balmain gets its real homepage layout (skills/branding.md: brand
+  // identity can differ per brand, this is a layout choice not a hardcoded
+  // exception — Eloure/Eau de 1974 can get the same treatment the same way
+  // once there's a reference layout for them).
+  if (shop.slug === "balmain") return <BalmainHome shop={shop} />;
 
   const t = await getTranslations();
 

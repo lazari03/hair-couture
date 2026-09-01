@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { brands, getBrand, type BrandSlug } from "@/lib/brands";
 import { getShop } from "@/lib/data/shop";
 import { CartCountBadge } from "@/components/shop/CartCountBadge";
+import { BalmainFooter } from "@/components/shop/BalmainFooter";
 
 export function generateStaticParams() {
   return brands.map((b) => ({ brand: b.slug }));
@@ -76,16 +77,20 @@ export default async function BrandLayout({
         </nav>
       </header>
       <main className="flex flex-1 flex-col">{children}</main>
-      <footer className="flex flex-wrap justify-between gap-6 border-t border-neutral-200 px-6 py-10 text-xs text-neutral-500 sm:px-11">
-        <span>{t(`brands.${brand.slug as BrandSlug}.name`)}</span>
-        <div className="flex flex-wrap gap-6">
-          <a href="#">{t("footer.shipping")}</a>
-          <a href="#">{t("footer.returns")}</a>
-          <a href="#">{t("footer.contact")}</a>
-          <a href="#">{t("footer.privacy")}</a>
-        </div>
-        <span>{t("footer.localeCurrency")}</span>
-      </footer>
+      {brand.slug === "balmain" ? (
+        <BalmainFooter brandSlug={brand.slug} />
+      ) : (
+        <footer className="flex flex-wrap justify-between gap-6 border-t border-neutral-200 px-6 py-10 text-xs text-neutral-500 sm:px-11">
+          <span>{t(`brands.${brand.slug as BrandSlug}.name`)}</span>
+          <div className="flex flex-wrap gap-6">
+            <a href="#">{t("footer.shipping")}</a>
+            <a href="#">{t("footer.returns")}</a>
+            <a href="#">{t("footer.contact")}</a>
+            <a href="#">{t("footer.privacy")}</a>
+          </div>
+          <span>{t("footer.localeCurrency")}</span>
+        </footer>
+      )}
     </div>
   );
 }

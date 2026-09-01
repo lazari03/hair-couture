@@ -174,7 +174,159 @@ production): `admin@hair-couture.local` / see `.env`'s `ADMIN_EMAIL` — the
 seeded password is in this session's chat history only, not committed
 anywhere; rotate it via the `node -e "..."` one-liner in `.env`'s comments.
 
+## Done (cont. 11) — Real product data from the 3 live sites
+- [x] Fetched real products from each brand's own site (2026-09-01) and
+      replaced all mock catalog data:
+  - **Balmain**: 15 products via balmainhair.com's public Shopify
+    `/products.json` — real names, prices, HTML descriptions (stripped to
+    plain text), images. Categorized using the site's own "Shop all Hair
+    Care"/"Shop all Hair Accessories"/"Shop all Styling Tools" tags.
+  - **Eloure**: 11 products via maisoneloure.com's `/products.json`, same
+    approach, categorized via its `collection-care`/`collection-styling`/
+    `set`/`routines` tags.
+  - **Eau de 1974**: 15 products scraped from its 48-URL products sitemap
+    (no storefront API — it's WordPress, not Shopify/WooCommerce) via each
+    page's Open Graph meta (title/description/image). **No real prices** —
+    eaude1974.com doesn't publish D2C pricing (nav has "Resellers", it's a
+    distributor model) — prices are estimated per category (€38 hair care /
+    €145 fragrance / €55 lifestyle) and this is flagged here and in
+    `prisma/seed.ts`'s comments, not silently presented as scraped fact.
+      Correct via `/admin/products` once real pricing is known.
+- [x] Downloaded all 41 real product photos to
+      `public/assets/products/<brand>/<slug>.{jpg,png,webp}` (from each
+      site's own CDN — Shopify's or eaude1974.com's WP uploads).
+- [x] `Product` schema gained `description` and `imageUrl` (both optional —
+      migration `20260901212258_add_description_and_image`). `prisma/seed.ts`
+      now seeds from `prisma/seed-data.json` (the scraped dataset) instead of
+      the old hand-written mock array — `npm run db:seed` is reproducible.
+- [x] `lib/data/category-image.ts` gained `productImage()` — real photo when
+      `imageUrl` is set, the old per-category placeholder otherwise (so a
+      product added by hand in `/admin` without a photo still renders
+      something). Wired into `ProductCard`, product detail (single real image,
+      dropped the old fake 4-shot gallery now that products are real and
+      distinct), cart line thumbnails (cart snapshot gained `imageUrl` too),
+      and the admin products table.
+  - Product images render `object-contain` on a light background now, not
+    `object-cover` — these are real catalog product shots (centered item,
+    white/transparent background), cropping them like lifestyle photography
+    looked wrong.
+  - Product detail page shows `product.description` when present, falling
+    back to the old generic placeholder only for a product without one.
+- [x] Admin form (`ProductForm`) gained **Description** (textarea) and
+      **Image URL** fields — both optional, same fallback behavior.
+- [x] `npm run build`/`lint` pass clean; verified live that all 3 brand shop
+      pages render their real scraped products with real images.
+
+## Done (cont. 12) — Official Eloure catalog
+- [x] Replaced the earlier scraped Eloure catalog (11 products, heuristic
+      categorization) with the brand's own official WooCommerce export CSV
+      (42 products — real SKUs/EANs, real RRPs, real ml sizes) supplied
+      2026-09-02, cross-checked against the printed price sheet.
+- [x] Images: matched each CSV product to maisoneloure.com's live Shopify
+      catalog by name (handling "Colour"/"Color" spelling and travel-size
+      naming) and downloaded 39/42 real photos. The 3 unmatched (Experience
+      Set, The Radiant Care Collection, The Volume & Glow Collection) aren't
+      on the live storefront yet — they fall back to the category
+      placeholder photo, same graceful behavior as any admin-added product
+      without an image.
+- [x] Categorized against the existing taxonomy: Shampoo/Conditioner/Mask/
+      Hair Perfume → Care Collection, Styling-type items → Styling Collection,
+      Treatment/Sets & Kits → Treatments & Sets, Accessories (Signature
+      Brush) → Styling Collection. The 3 CSV rows marked "Is featured" got a
+      "Featured" badge.
+- [x] `prisma/seed-data.json` updated (Balmain/Eau de 1974 untouched, Eloure
+      fully replaced) — `npm run db:seed` reproduces this exactly. Cleaned up
+      the 9 now-orphaned images from the old Eloure scrape.
+- [x] `npm run build`/`lint` pass clean; verified live — Eloure shop and a
+      product detail page both render the new catalog with real images.
+
+## Done (cont. 13)
+- [x] `ProductGrid` switched from CSS grid (`auto-fill`) to flex-wrap +
+      `justify-center` with fixed (non-growing) card widths per breakpoint —
+      a ragged last row (e.g. 4 featured items at 3 columns wide) now centers
+      itself instead of trailing off to one side. One shared component used
+      by every brand's home "Featured" section, the shop listing, search
+      results, and product-detail "related" — fixing it once fixed it
+      everywhere, all 3 brands.
+
+## Done (cont. 14) — Balmain's real homepage layout
+- [x] Fetched balmainhair.com's actual homepage structure (2026-09-02) and
+      built it as `src/components/shop/BalmainHome.tsx`, wired in for
+      `[locale]/[brand]/page.tsx` only when `shop.slug === "balmain"`
+      (Eloure/Eau de 1974 keep the simple hero+featured layout — same
+      pattern could give them their own reference layout later the same way).
+  Section order matches the live site: Hero → "Popular right now" (4
+  products) → 3-tile category grid (Hair Care/Hair Accessories/Styling
+  Tools, linking to the real filtered shop) → "New in" (next 4 products) →
+  3 collection highlight blocks (Heritage 1974 / Illuminating Colour Masks /
+  Homme — editorial-only, we have no dedicated collection pages for these
+  yet so they link to the general shop rather than a fake filtered view) →
+  editorial "The world of Balmain Hair" brand-story block.
+  - All copy lives in `messages/en.json`'s new `balmainHome` namespace
+    (skills/i18n.md) — nothing hardcoded in the component.
+  - Reuses real Balmain product/category data throughout (product grids,
+    category tile photos) — only the 3 collection blocks and the editorial
+    block are decorative/placeholder since we don't have Balmain's real
+    campaign photography or collection pages behind them.
+- [x] `npm run build`/`lint` pass clean; verified live — Balmain's homepage
+      renders all 6 sections (confirmed structurally, not just via message
+      strings — next-intl ships the *entire* messages payload to every
+      locale page for client hydration, so a raw text search across HTML
+      isn't a reliable way to check what's actually rendered; used section
+      count / category-link patterns instead). Eloure/Eau de 1974 unaffected,
+      still 2 sections.
+
+## Done (cont. 15)
+- [x] Removed BalmainHome's "Shop by category" 3-tile grid section — "Explore
+      the collections" (already existed further down the page) now covers
+      that ground alone. `BalmainHome.tsx` is down to 5 sections: Hero →
+      Popular right now → New in → Explore the collections → editorial.
+- [x] Balmain gets a real black footer (`BalmainFooter.tsx`), matching
+      balmainhair.com's actual footer (fetched 2026-09-02): `bg-neutral-950`,
+      3 link columns (Shop / Service / Balmain Hair) + newsletter signup +
+      copyright, wired in conditionally in `[brand]/layout.tsx` same as
+      BalmainHome — Eloure/Eau de 1974 keep the existing light footer.
+      Column links are mostly editorial (FAQ/Heritage/Stockist/legal pages)
+      with no real destination page yet, so they point at the shop rather
+      than a 404. Newsletter form is presentational only — no backend wired
+      up, no fake "subscribed" state.
+- [x] `npm run build`/`lint` pass clean; verified live — Balmain now renders
+      5 sections (was 6) and a `bg-neutral-950` footer; Eloure's footer
+      confirmed still light/unaffected.
+
+## Done (cont. 16)
+- [x] "Explore the collections" now IS the real category browser (the old
+      "Shop by category" section's job, folded in rather than kept separate):
+      3 tiles for the actual filterable categories (Hair Care/Hair
+      Accessories/Styling Tools), each using the same `categoryImage()` photo
+      the shop listing sidebar uses, each linking to the real
+      `/balmain/shop?category=...` filtered view. Titles are the real
+      category strings now (data-driven, not a translation key — same
+      pattern as the shop listing page), only the one-line tagline per
+      category is still copy (`messages/en.json`'s `balmainHome.collections`).
+- [x] `npm run build`/`lint` pass clean; verified live — all 3 tiles render
+      the correct category image, title, and working filter link.
+
+## Done (cont. 17)
+- [x] "Explore the collections" tiles now use real Balmain photography
+      instead of the generic category placeholder: checked
+      balmainhair.com's `/collections/hair-care`, `/collections/hair-
+      accessories`, `/collections/styling-tools` pages first (2026-09-02) —
+      they all reuse one identical generic banner image, not distinct
+      category art — so used each category's real flagship product photo
+      from their own Shopify catalog instead (Sculpting Wax for Hair Care,
+      Gold Plated Hair Slide for Hair Accessories, Ceramic Round Brush for
+      Styling Tools). Downloaded to
+      `public/assets/products/balmain/collection-{hair-care,hair-
+      accessories,styling-tools}.jpg`.
+- [x] `npm run build`/`lint` pass clean; verified live — all 3 tiles now
+      serve the new real images.
+
 ## Next up
+- [ ] Same real-homepage/footer treatment for Eloure (maisoneloure.com) and
+      Eau de 1974 (eaude1974.com) if wanted — `BalmainHome.tsx`/
+      `BalmainFooter.tsx` are the templates to follow, same per-brand-
+      conditional pattern in `[brand]/page.tsx` and `[brand]/layout.tsx`.
 - [ ] api-client (`lib/api-client.ts`) + Zod schemas once a real backend is picked
       (`lib/data/shop.ts` is the seam to swap)
 - [ ] Checkout flow (cart "Proceed to checkout" is a no-op button today)

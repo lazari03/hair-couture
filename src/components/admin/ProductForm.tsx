@@ -83,6 +83,30 @@ export function ProductForm({
         />
       </label>
 
+      <label className="flex flex-col gap-1.5 text-sm">
+        Description (optional)
+        <textarea
+          name="description"
+          rows={4}
+          defaultValue={defaultValues?.description ?? ""}
+          placeholder="Shown on the product page — falls back to a generic placeholder if left blank"
+          className="border border-neutral-300 px-3 py-2 text-sm outline-none focus:border-neutral-900"
+        />
+      </label>
+
+      <label className="flex flex-col gap-1.5 text-sm">
+        Image URL (optional)
+        <input
+          name="imageUrl"
+          defaultValue={defaultValues?.imageUrl ?? ""}
+          placeholder="/assets/products/… or a full https:// URL"
+          className="min-h-11 border border-neutral-300 px-3 text-sm outline-none focus:border-neutral-900"
+        />
+        <span className="text-xs text-neutral-500">
+          Falls back to a shared placeholder photo for the category if left blank.
+        </span>
+      </label>
+
       {state?.error && <p className="text-sm text-red-600">{state.error}</p>}
 
       <button

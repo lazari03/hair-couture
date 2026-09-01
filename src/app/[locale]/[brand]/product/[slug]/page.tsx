@@ -2,7 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 import { getShop, getProduct, productDetail } from "@/lib/data/shop";
-import { categoryImage } from "@/lib/data/category-image";
+import { productImage } from "@/lib/data/category-image";
 import { ProductGrid } from "@/components/shop/ProductGrid";
 import { AddToCartForm } from "@/components/shop/AddToCartForm";
 import { formatMoney } from "@/lib/money";
@@ -27,30 +27,15 @@ export default async function ProductDetail({
         {shop.slug} / {product.category} / {product.name}
       </div>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
-        <div className="flex flex-col gap-3">
-          <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
-            <Image
-              src={categoryImage(product.category)}
-              alt={`${product.name} — ${productDetail.gallery[0]}`}
-              fill
-              priority
-              sizes="(min-width: 900px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="grid grid-cols-3 gap-3">
-            {productDetail.gallery.slice(1).map((label) => (
-              <div key={label} className="relative aspect-square overflow-hidden bg-neutral-50">
-                <Image
-                  src={categoryImage(product.category)}
-                  alt={`${product.name} — ${label}`}
-                  fill
-                  sizes="20vw"
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
+        <div className="relative aspect-[4/5] overflow-hidden bg-neutral-50">
+          <Image
+            src={productImage(product)}
+            alt={product.name}
+            fill
+            priority
+            sizes="(min-width: 900px) 50vw, 100vw"
+            className="object-contain p-10"
+          />
         </div>
         <div className="flex flex-col pt-2">
           <span className="text-[10px] tracking-[0.2em] text-[var(--brand-accent)] uppercase">
@@ -64,7 +49,7 @@ export default async function ProductDetail({
           <AddToCartForm brand={shop.slug} product={product} sizes={productDetail.sizes} />
 
           <p className="mt-7 max-w-[52ch] text-sm leading-relaxed text-neutral-600">
-            {productDetail.description}
+            {product.description || productDetail.description}
           </p>
           <div className="mt-8 border-t border-neutral-200">
             {productDetail.specs.map(([k, v]) => (

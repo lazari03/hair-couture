@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { brands } from "@/lib/brands";
 import { deleteProduct } from "@/lib/actions/products";
+import { productImage } from "@/lib/data/category-image";
 
 export default async function AdminProductsPage({
   searchParams,
@@ -48,6 +50,7 @@ export default async function AdminProductsPage({
         <table className="w-full min-w-[640px] text-sm">
           <thead>
             <tr className="border-b border-neutral-200 bg-neutral-50 text-left text-xs tracking-wide text-neutral-500 uppercase">
+              <th className="px-4 py-3 font-medium"></th>
               <th className="px-4 py-3 font-medium">Brand</th>
               <th className="px-4 py-3 font-medium">Name</th>
               <th className="px-4 py-3 font-medium">Category</th>
@@ -59,6 +62,11 @@ export default async function AdminProductsPage({
           <tbody>
             {products.map((p) => (
               <tr key={p.id} className="border-b border-neutral-100 last:border-0">
+                <td className="px-4 py-3">
+                  <div className="relative h-10 w-10 overflow-hidden bg-neutral-50">
+                    <Image src={productImage(p)} alt="" fill sizes="40px" className="object-contain p-1" />
+                  </div>
+                </td>
                 <td className="px-4 py-3 text-neutral-500">{p.brand}</td>
                 <td className="px-4 py-3 font-medium">{p.name}</td>
                 <td className="px-4 py-3">{p.category}</td>
@@ -81,7 +89,7 @@ export default async function AdminProductsPage({
             ))}
             {products.length === 0 && (
               <tr>
-                <td colSpan={6} className="px-4 py-10 text-center text-neutral-500">
+                <td colSpan={7} className="px-4 py-10 text-center text-neutral-500">
                   No products yet.
                 </td>
               </tr>

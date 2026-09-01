@@ -4,19 +4,19 @@ import { Link } from "@/i18n/navigation";
 import { formatMoney } from "@/lib/money";
 import type { BrandSlug } from "@/lib/brands";
 import type { Product } from "@/lib/data/shop";
-import { categoryImage } from "@/lib/data/category-image";
+import { productImage } from "@/lib/data/category-image";
 
 export function ProductCard({ brand, product }: { brand: BrandSlug; product: Product }) {
   const locale = useLocale();
   return (
     <Link href={`/${brand}/product/${product.id}`} className="group flex flex-col gap-3.5">
-      <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100">
+      <div className="relative aspect-[3/4] overflow-hidden bg-neutral-50">
         <Image
-          src={categoryImage(product.category)}
+          src={productImage(product)}
           alt={product.name}
           fill
           sizes="(min-width: 900px) 25vw, 50vw"
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
         />
         {product.badge && (
           <span className="absolute top-2.5 left-2.5 bg-white px-2 py-1 text-[9px] tracking-widest text-neutral-900 uppercase">

@@ -15,6 +15,8 @@ const productSchema = z.object({
   category: z.string().trim().min(1, "Category is required"),
   price: z.coerce.number().positive("Price must be greater than 0"),
   badge: z.string().trim().optional(),
+  description: z.string().trim().optional(),
+  imageUrl: z.string().trim().optional(),
 });
 
 async function requireAdmin() {
@@ -38,8 +40,10 @@ export async function createProduct(_prevState: unknown, formData: FormData) {
   const parsed = productSchema.safeParse(Object.fromEntries(formData));
   if (!parsed.success) return { error: parsed.error.issues[0].message };
 
-  const { badge, ...rest } = parsed.data;
-  await prisma.product.create({ data: { ...rest, badge: badge || null } });
+  const { badge, description, imageUrl, ...rest } = parsed.data;
+  await prisma.product.create({
+    data: { ...rest, badge: badge || null, description: description || null, imageUrl: imageUrl || null },
+  });
   revalidateStorefront(parsed.data.brand);
   redirect("/admin/products");
 }
@@ -49,8 +53,11 @@ export async function updateProduct(id: string, _prevState: unknown, formData: F
   const parsed = productSchema.safeParse(Object.fromEntries(formData));
   if (!parsed.success) return { error: parsed.error.issues[0].message };
 
-  const { badge, ...rest } = parsed.data;
-  await prisma.product.update({ where: { id }, data: { ...rest, badge: badge || null } });
+  const { badge, description, imageUrl, ...rest } = parsed.data;
+  await prisma.product.update({
+    where: { id },
+    data: { ...rest, badge: badge || null, description: description || null, imageUrl: imageUrl || null },
+  });
   revalidateStorefront(parsed.data.brand);
   redirect("/admin/products");
 }

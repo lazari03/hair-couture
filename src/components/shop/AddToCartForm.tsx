@@ -52,6 +52,7 @@ export function AddToCartForm({
             name: product.name,
             category: product.category,
             price: product.price,
+            imageUrl: product.imageUrl,
           });
           setAdded(true);
         }}
