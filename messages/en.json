@@ -1,0 +1,27 @@
+{
+  "landing": {
+    "metaTitle": "Hair Couture",
+    "metaDescription": "Balmain Hair Couture, Eloure, and Eau de 1974 — three brands, one house.",
+    "enter": "Enter shop"
+  },
+  "nav": {
+    "shop": "Shop",
+    "cart": "Cart",
+    "account": "Account",
+    "backToBrands": "All brands"
+  },
+  "brands": {
+    "balmain": {
+      "name": "Balmain Hair Couture",
+      "tagline": "Luxury hair extensions & styling tools"
+    },
+    "eloure": {
+      "name": "Eloure",
+      "tagline": "Everyday hair, elevated"
+    },
+    "eau-de-1974": {
+      "name": "Eau de 1974",
+      "tagline": "Fragrance with a story"
+    }
+  }
+}
