@@ -24,17 +24,34 @@
       404s on unknown slug, `generateStaticParams` pre-renders all 3 brands
 - [x] `[brand]/page.tsx` — placeholder shop home
 
+## Done (cont. 2)
+- [x] Implemented `Shop.dc.html` design (claude.ai/design project
+      `8fd5601e-1281-4301-85c9-078470d52c82`) into real routes:
+  - `[brand]/page.tsx` — hero (3 variants, one per brand) + featured grid
+  - `[brand]/shop/page.tsx` — listing, category filter + sort via searchParams
+  - `[brand]/product/[slug]/page.tsx` — detail, gallery, size + add-to-cart
+  - `[brand]/cart/page.tsx` — client cart (qty, remove), shared across brands
+  - `[brand]/account/page.tsx` — static mock account (needs Auth.js)
+  - `[brand]/search/page.tsx` — client-side filter over the brand's products
+- [x] `lib/data/shop.ts` — mock shop content (hero/products/account), typed,
+      swappable for a real backend without touching the pages above
+- [x] `lib/cart/cart-context.tsx` — client cart, localStorage-persisted
+- [x] `lib/money.ts` — Intl currency formatting (EUR fixed, locale-aware)
+- [x] `messages/en.json` — shop/product/cart/account/search/footer namespaces
+- [x] `npm run build` and `npm run lint` both pass; all 9 routes smoke-tested 200
+
 ## Next up
-- [ ] Shared shop components: product card, cart, checkout skeletons
-- [ ] `messages/en.json`: product, checkout, account namespaces
-- [ ] Auth.js wired with cookie session, sign-in page
-- [ ] api-client (`lib/api-client.ts`) + first Zod schema + TanStack Query hook
-      (product list) as the pattern to copy — currently blocked on backend decision
-- [ ] cart/checkout/product routes under `[brand]/`
+- [ ] Auth.js wired with cookie session, sign-in page — unblocks real account data
+- [ ] api-client (`lib/api-client.ts`) + Zod schemas once a real backend is picked
+      (`lib/data/shop.ts` is the seam to swap)
+- [ ] Checkout flow (cart "Proceed to checkout" is a no-op button today)
 - [ ] Visual pass: real brand colors/logos/fonts (placeholders in lib/brands.ts now)
+- [ ] Product imagery (design uses labeled placeholder blocks throughout)
 
 ## Log
 - 2026-09-01: Planning docs created (ARCHITECTURE.md, skills/). Scaffolded Next.js
   app, wired i18n/routing/theming/providers, built landing 3-panel + brand shell.
-  `npm run build` passes. Backend/data source still undecided — shop pages are
-  placeholders until that's picked.
+  Imported and implemented the `Shop.dc.html` Claude Design project — full shop
+  (home/listing/detail/cart/account/search) for all 3 brands, on mock data.
+  `npm run build`/`lint` pass, routes smoke-tested. Backend/data source and
+  checkout/payment still undecided.

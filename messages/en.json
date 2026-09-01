@@ -8,6 +8,7 @@
     "shop": "Shop",
     "cart": "Cart",
     "account": "Account",
+    "search": "Search",
     "backToBrands": "All brands"
   },
   "brands": {
@@ -23,5 +24,70 @@
       "name": "Eau de 1974",
       "tagline": "Fragrance with a story"
     }
+  },
+  "shop": {
+    "featured": "Featured",
+    "viewAll": "View all",
+    "category": "Category",
+    "sortBy": "Sort by",
+    "sortNewest": "Newest",
+    "sortPriceAsc": "Price, low to high",
+    "sortPriceDesc": "Price, high to low",
+    "resultCount": "{count, plural, one {# product} other {# products}}"
+  },
+  "product": {
+    "size": "Size",
+    "addToCart": "Add to cart",
+    "addedToCart": "Added to cart",
+    "relatedTitle": "You may also like"
+  },
+  "cart": {
+    "title": "Cart",
+    "itemCount": "{count, plural, one {# item} other {# items}}",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingFree": "Free",
+    "total": "Total",
+    "checkout": "Proceed to checkout",
+    "continueShopping": "Continue shopping",
+    "note": "Shipping and taxes calculated at checkout.",
+    "emptyTitle": "Your cart is empty",
+    "emptyBody": "Nothing here yet — browse the collection to get started.",
+    "remove": "Remove"
+  },
+  "account": {
+    "greeting": "Account",
+    "nav": {
+      "orders": "Orders",
+      "details": "Details",
+      "addresses": "Addresses",
+      "wishlist": "Wishlist",
+      "signOut": "Sign out"
+    },
+    "ordersTitle": "Recent orders",
+    "orderColumns": {
+      "order": "Order",
+      "date": "Date",
+      "status": "Status",
+      "total": "Total"
+    },
+    "detailsTitle": "Details",
+    "addressTitle": "Default address",
+    "edit": "Edit"
+  },
+  "search": {
+    "placeholder": "Search products, categories, collections",
+    "recentTitle": "Recent searches",
+    "suggestedTitle": "Popular right now",
+    "resultsTitle": "Results ({count})",
+    "emptyTitle": "No results",
+    "emptyBody": "Try a shorter term or browse the menu above."
+  },
+  "footer": {
+    "shipping": "Shipping",
+    "returns": "Returns",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "localeCurrency": "EN · € EUR"
   }
 }
