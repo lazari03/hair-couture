@@ -22,6 +22,11 @@ export default async function BrandLayout({
   if (!brand || !shop) notFound();
 
   const t = await getTranslations();
+  // Nav items that match a real product category get the filter link; the
+  // rest (Bestsellers, New, Gifts, ...) are curated views with no dedicated
+  // category yet, so they just go to the unfiltered shop — same as the live
+  // site's mega-menu mixing curated and category links.
+  const filterableCategories = new Set(shop.products.map((p) => p.category));
 
   return (
     <div
@@ -55,7 +60,11 @@ export default async function BrandLayout({
           {shop.menu.map((item) => (
             <Link
               key={item}
-              href={`/${brand.slug}/shop?category=${encodeURIComponent(item)}`}
+              href={
+                filterableCategories.has(item)
+                  ? `/${brand.slug}/shop?category=${encodeURIComponent(item)}`
+                  : `/${brand.slug}/shop`
+              }
               className="border-b border-transparent pb-1 hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
             >
               {item}

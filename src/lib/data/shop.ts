@@ -41,7 +41,11 @@ export interface ShopContent {
 const shops: Record<BrandSlug, ShopContent> = {
   balmain: {
     slug: "balmain",
-    menu: ["Extensions", "Hair Care", "Styling Tools", "Lookbook"],
+    // Mirrors balmainhair.com's real nav (fetched 2026-09-01): Bestsellers/New/
+    // Gifts/Outlet are curated cross-category views (no dedicated product
+    // category of their own, same as the live site) — Hair Care/Hair
+    // Accessories/Styling Tools are the actual filterable categories below.
+    menu: ["Bestsellers", "New", "Hair Care", "Hair Accessories", "Styling Tools", "Gifts", "Outlet"],
     heroVariant: "full",
     hero: {
       eyebrow: "Autumn / Winter 26",
@@ -52,13 +56,13 @@ const shops: Record<BrandSlug, ShopContent> = {
       image: "/assets/hero/balmain.jpg",
     },
     products: [
-      { id: "b1", name: "Double Hair Set 40cm", category: "Extensions", price: 295, badge: "New" },
-      { id: "b2", name: "Elegance Clip-In Weft", category: "Extensions", price: 340 },
+      { id: "b1", name: "Double Hair Set 40cm", category: "Hair Accessories", price: 295, badge: "New" },
+      { id: "b2", name: "Elegance Clip-In Weft", category: "Hair Accessories", price: 340 },
       { id: "b3", name: "Backstage Volume Spray", category: "Hair Care", price: 38 },
       { id: "b4", name: "Silk Perfume Shampoo", category: "Hair Care", price: 42 },
       { id: "b5", name: "Golden Styling Brush", category: "Styling Tools", price: 89, badge: "Limited" },
       { id: "b6", name: "Couture Curling Wand", category: "Styling Tools", price: 210 },
-      { id: "b7", name: "Fill-In Extensions 55cm", category: "Extensions", price: 420 },
+      { id: "b7", name: "Fill-In Extensions 55cm", category: "Hair Accessories", price: 420 },
       { id: "b8", name: "Leave-In Conditioning Mist", category: "Hair Care", price: 34 },
     ],
   },
@@ -119,8 +123,8 @@ export function getShop(slug: string): ShopContent | undefined {
 // swap for real per-product photography once it exists; every product in a
 // category shares one image until then, same as the design's placeholder blocks.
 const categoryImageSlugs: Record<string, string> = {
-  Extensions: "extensions",
   "Hair Care": "hair-care",
+  "Hair Accessories": "hair-accessories",
   "Styling Tools": "styling-tools",
   Rituals: "rituals",
   Refills: "refills",

@@ -62,6 +62,20 @@
       so the panel text stays legible. Same `motion-reduce` fallback as the
       brand hero itself.
 
+## Done (cont. 6)
+- [x] Balmain's nav/categories now mirror balmainhair.com's real menu
+      (fetched live 2026-09-01): Bestsellers, New, Hair Care, Hair Accessories,
+      Styling Tools, Gifts, Outlet — matches, unchanged: entirely data-driven
+      via `lib/data/shop.ts`'s `menu`/`products[].category`, nothing hardcoded
+      in a component. Bestsellers/New/Gifts/Outlet are curated views with no
+      dedicated category (same as the live site) — `[brand]/layout.tsx` now
+      only appends `?category=` when the nav item matches an actual product
+      category, otherwise links to the unfiltered shop.
+  - Reassigned Balmain's mock products from "Extensions" to "Hair Care" /
+    "Hair Accessories" / "Styling Tools" to fit the real category set.
+  - Added `public/assets/products/hair-accessories.jpg`, removed the now-unused
+    `extensions.jpg`.
+
 ## Next up
 - [ ] Auth.js wired with cookie session, sign-in page — unblocks real account data
 - [ ] api-client (`lib/api-client.ts`) + Zod schemas once a real backend is picked
