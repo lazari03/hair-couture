@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { formatMoney } from "@/lib/money";
 import type { BrandSlug } from "@/lib/brands";
@@ -8,6 +8,9 @@ import { productImage } from "@/lib/data/category-image";
 
 export function ProductCard({ brand, product }: { brand: BrandSlug; product: Product }) {
   const locale = useLocale();
+  const t = useTranslations("product");
+  const outOfStock = product.stock <= 0;
+
   return (
     <Link href={`/${brand}/product/${product.id}`} className="group flex flex-col gap-3.5">
       <div className="relative aspect-[3/4] overflow-hidden bg-neutral-50">
@@ -16,11 +19,16 @@ export function ProductCard({ brand, product }: { brand: BrandSlug; product: Pro
           alt={product.name}
           fill
           sizes="(min-width: 900px) 25vw, 50vw"
-          className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+          className={`object-contain p-4 transition-transform duration-300 group-hover:scale-105 ${outOfStock ? "opacity-50 grayscale" : ""}`}
         />
-        {product.badge && (
+        {product.badge && !outOfStock && (
           <span className="absolute top-2.5 left-2.5 bg-white px-2 py-1 text-[9px] tracking-widest text-neutral-900 uppercase">
             {product.badge}
+          </span>
+        )}
+        {outOfStock && (
+          <span className="absolute top-2.5 left-2.5 bg-neutral-900 px-2 py-1 text-[9px] tracking-widest text-white uppercase">
+            {t("outOfStock")}
           </span>
         )}
       </div>

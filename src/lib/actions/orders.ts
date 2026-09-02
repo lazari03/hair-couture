@@ -90,6 +90,35 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
     },
   });
 
+  // Decrement stock for each ordered product, clamped at 0. Reads then
+  // writes rather than a single atomic decrement so it never goes negative.
+  // ponytail ceiling: no row locking, so two checkouts racing on the last
+  // unit of something can both succeed — fine at this scale; a real
+  // high-traffic store would want a DB-level constraint/transaction here.
+  for (const line of data.lines) {
+    const product = await prisma.product.findUnique({ where: { id: line.productId } });
+    if (!product) continue;
+    await prisma.product.update({
+      where: { id: line.productId },
+      data: { stock: Math.max(0, product.stock - line.qty) },
+    });
+  }
+
   revalidatePath("/admin/orders");
+  revalidatePath("/admin/products");
+  revalidatePath("/[locale]/[brand]/product/[slug]", "page");
+  revalidatePath("/[locale]/[brand]/shop", "page");
   return { ok: true, orderId: order.id };
+}
+
+const ORDER_STATUSES = ["pending", "in_progress", "fulfilled"] as const;
+export type OrderStatus = (typeof ORDER_STATUSES)[number];
+
+export async function updateOrderStatus(orderId: string, status: string) {
+  if (!ORDER_STATUSES.includes(status as OrderStatus)) {
+    return { ok: false as const, error: "Invalid status" };
+  }
+  await prisma.order.update({ where: { id: orderId }, data: { status } });
+  revalidatePath("/admin/orders");
+  return { ok: true as const };
 }

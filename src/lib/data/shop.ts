@@ -19,6 +19,7 @@ export interface Product {
   badge?: string | null;
   description?: string | null;
   imageUrl?: string | null; // falls back to categoryImage() when unset
+  stock: number; // 0 = out of stock, storefront disables add-to-cart
 }
 
 export interface HeroContent {

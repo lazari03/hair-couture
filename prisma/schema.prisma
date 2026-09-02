@@ -26,6 +26,7 @@ model Product {
   description String? // plain text; real per-product copy where we have it
   imageUrl    String? // /assets/products/<brand>/<slug>.* — falls back to
   // the per-category placeholder (lib/data/category-image.ts) when unset
+  stock       Int      @default(0) // decremented on order creation, admin-editable
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
@@ -51,7 +52,7 @@ model Order {
   subtotal   Float
   discount   Float       @default(0)
   total      Float
-  status     String      @default("pending")
+  status     String      @default("pending") // "pending" | "in_progress" | "fulfilled"
   items      OrderItem[]
   createdAt  DateTime    @default(now())
 
@@ -69,6 +70,27 @@ model OrderItem {
   qty       Int
 
   @@index([orderId])
+}
+
+// A soft stock hold, created when something is added to a cart and released
+// on checkout or expiry — stops two shoppers from both "successfully" adding
+// the last unit of something to their cart. SQLite has no per-row lock like
+// Postgres's SELECT ... FOR UPDATE; correctness instead comes from wrapping
+// the check-then-write in a Prisma interactive transaction
+// (lib/actions/stock.ts), which SQLite serializes at the database level —
+// coarser than a row lock, but sufficient at this scale.
+// 15-minute hold: long enough to fill in a real checkout form, short enough
+// not to tie up inventory from an abandoned tab — the industry-common range.
+model StockReservation {
+  id        String   @id @default(cuid())
+  cartId    String
+  productId String
+  qty       Int
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([productId])
+  @@index([cartId])
 }
 
 // Free-standing codes, not tied to a brand — admin can add more via Prisma

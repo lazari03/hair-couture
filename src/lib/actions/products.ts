@@ -14,6 +14,7 @@ const productSchema = z.object({
   name: z.string().trim().min(1, "Name is required"),
   category: z.string().trim().min(1, "Category is required"),
   price: z.coerce.number().positive("Price must be greater than 0"),
+  stock: z.coerce.number().int("Stock must be a whole number").nonnegative("Stock can't be negative"),
   badge: z.string().trim().optional(),
   description: z.string().trim().optional(),
   imageUrl: z.string().trim().optional(),

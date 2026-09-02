@@ -19,6 +19,9 @@ export function AddToCartForm({
   const { addLine } = useCart();
   const [sizeIndex, setSizeIndex] = useState(0);
   const [added, setAdded] = useState(false);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const outOfStock = product.stock <= 0;
 
   return (
     <>
@@ -43,8 +46,11 @@ export function AddToCartForm({
       </div>
       <button
         type="button"
-        onClick={() => {
-          addLine({
+        disabled={outOfStock || pending}
+        onClick={async () => {
+          setPending(true);
+          setError(null);
+          const result = await addLine({
             brand,
             productId: product.id,
             variant: sizes[sizeIndex],
@@ -54,12 +60,18 @@ export function AddToCartForm({
             price: product.price,
             imageUrl: product.imageUrl,
           });
+          setPending(false);
+          if (!result.ok) {
+            setError(result.error);
+            return;
+          }
           setAdded(true);
         }}
-        className="mt-7 min-h-[52px] bg-[var(--brand-accent)] px-8 font-inherit text-xs tracking-widest text-white uppercase hover:opacity-90"
+        className="mt-7 min-h-[52px] bg-[var(--brand-accent)] px-8 font-inherit text-xs tracking-widest text-white uppercase hover:opacity-90 disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:hover:opacity-100"
       >
-        {added ? t("addedToCart") : t("addToCart")}
+        {outOfStock ? t("outOfStock") : pending ? "…" : added ? t("addedToCart") : t("addToCart")}
       </button>
+      {error && <p className="mt-2.5 text-sm text-red-600">{error}</p>}
     </>
   );
 }

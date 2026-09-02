@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { ProductForm } from "@/components/admin/ProductForm";
 import { updateProduct } from "@/lib/actions/products";
+import { getCategoriesByBrand } from "@/lib/admin/categories";
 
 export default async function EditProductPage({
   params,
@@ -9,7 +10,10 @@ export default async function EditProductPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const product = await prisma.product.findUnique({ where: { id } });
+  const [product, categoriesByBrand] = await Promise.all([
+    prisma.product.findUnique({ where: { id } }),
+    getCategoriesByBrand(),
+  ]);
   if (!product) notFound();
 
   return (
@@ -19,6 +23,7 @@ export default async function EditProductPage({
         action={updateProduct.bind(null, id)}
         defaultValues={product}
         defaultBrand={product.brand}
+        categoriesByBrand={categoriesByBrand}
       />
     </div>
   );

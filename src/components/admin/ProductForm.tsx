@@ -1,7 +1,7 @@
 "use client";
 
-import { useActionState } from "react";
-import { brands } from "@/lib/brands";
+import { useActionState, useState } from "react";
+import { brands, getBrand } from "@/lib/brands";
 import type { Product } from "@/lib/data/shop";
 
 type FormState = { error: string } | undefined;
@@ -11,12 +11,29 @@ export function ProductForm({
   action,
   defaultValues,
   defaultBrand,
+  categoriesByBrand,
 }: {
   action: Action;
   defaultValues?: Product;
   defaultBrand?: string;
+  /** Existing categories per brand — select-only, see lib/admin/categories.ts. */
+  categoriesByBrand: Record<string, string[]>;
 }) {
   const [state, formAction, pending] = useActionState<FormState, FormData>(action, undefined);
+  const [brandSlug, setBrandSlug] = useState(defaultBrand ?? brands[0].slug);
+  const accent = getBrand(brandSlug)?.colors.accent ?? "#171717";
+  const categoryOptions = categoriesByBrand[brandSlug] ?? [];
+  const [category, setCategory] = useState(
+    defaultValues?.category && categoryOptions.includes(defaultValues.category)
+      ? defaultValues.category
+      : (categoryOptions[0] ?? ""),
+  );
+
+  function handleBrandChange(next: string) {
+    setBrandSlug(next);
+    const options = categoriesByBrand[next] ?? [];
+    if (!options.includes(category)) setCategory(options[0] ?? "");
+  }
 
   return (
     <form action={formAction} className="flex max-w-md flex-col gap-4">
@@ -25,7 +42,8 @@ export function ProductForm({
         <select
           name="brand"
           required
-          defaultValue={defaultBrand ?? brands[0].slug}
+          value={brandSlug}
+          onChange={(e) => handleBrandChange(e.target.value)}
           className="min-h-11 border border-neutral-300 px-3 text-sm"
         >
           {brands.map((b) => (
@@ -48,15 +66,24 @@ export function ProductForm({
 
       <label className="flex flex-col gap-1.5 text-sm">
         Category
-        <input
+        <select
           name="category"
           required
-          defaultValue={defaultValues?.category}
-          placeholder="e.g. Hair Care — type a new one to create it"
-          className="min-h-11 border border-neutral-300 px-3 text-sm outline-none focus:border-neutral-900"
-        />
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          disabled={categoryOptions.length === 0}
+          className="min-h-11 border border-neutral-300 px-3 text-sm disabled:opacity-50"
+        >
+          {categoryOptions.length === 0 && <option value="">No categories for this brand yet</option>}
+          {categoryOptions.map((c) => (
+            <option key={c} value={c}>
+              {c}
+            </option>
+          ))}
+        </select>
         <span className="text-xs text-neutral-500">
-          Free text — any value you type becomes a filterable category on the storefront.
+          Only {getBrand(brandSlug)?.slug}&apos;s existing categories — picked from the list, not typed, so a typo
+          never creates an accidental duplicate.
         </span>
       </label>
 
@@ -71,6 +98,23 @@ export function ProductForm({
           defaultValue={defaultValues?.price}
           className="min-h-11 border border-neutral-300 px-3 text-sm outline-none focus:border-neutral-900"
         />
+      </label>
+
+      <label className="flex flex-col gap-1.5 text-sm">
+        Stock
+        <input
+          name="stock"
+          type="number"
+          step="1"
+          min="0"
+          required
+          defaultValue={defaultValues?.stock ?? 0}
+          className="min-h-11 border border-neutral-300 px-3 text-sm outline-none focus:border-neutral-900"
+        />
+        <span className="text-xs text-neutral-500">
+          Units in stock. Decrements automatically as real orders come in; hits 0 → shows as sold out on the
+          storefront.
+        </span>
       </label>
 
       <label className="flex flex-col gap-1.5 text-sm">
@@ -112,7 +156,8 @@ export function ProductForm({
       <button
         type="submit"
         disabled={pending}
-        className="mt-2 min-h-11 cursor-pointer bg-neutral-900 text-sm font-medium text-white hover:opacity-90 disabled:opacity-50"
+        style={{ backgroundColor: accent }}
+        className="mt-2 min-h-11 cursor-pointer text-sm font-medium text-white hover:opacity-90 disabled:opacity-50"
       >
         {pending ? "Saving…" : "Save"}
       </button>

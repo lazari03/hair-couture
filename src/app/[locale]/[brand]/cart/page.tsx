@@ -18,6 +18,13 @@ export default function CartPage() {
   const [couponInput, setCouponInput] = useState("");
   const [couponError, setCouponError] = useState<string | null>(null);
   const [applying, setApplying] = useState(false);
+  const [lineErrors, setLineErrors] = useState<Record<string, string>>({});
+
+  async function handleInc(id: string) {
+    setLineErrors((prev) => ({ ...prev, [id]: "" }));
+    const result = await incLine(id);
+    if (!result.ok) setLineErrors((prev) => ({ ...prev, [id]: result.error }));
+  }
 
   // Product name/category/price are already on the line (snapshotted at
   // add-time, see cart-context.tsx) — no DB lookup needed here.
@@ -83,7 +90,7 @@ export default function CartPage() {
                     </button>
                     <span className="min-w-7 text-center text-[13px]">{line.qty}</span>
                     <button
-                      onClick={() => incLine(line.id)}
+                      onClick={() => handleInc(line.id)}
                       className="h-9 w-9 border-none bg-none font-inherit text-[15px]"
                       aria-label="Increase quantity"
                     >
@@ -97,6 +104,9 @@ export default function CartPage() {
                     {t("remove")}
                   </button>
                 </div>
+                {lineErrors[line.id] && (
+                  <p className="text-xs text-red-600">{lineErrors[line.id]}</p>
+                )}
               </div>
               <span className="text-[15px] whitespace-nowrap">
                 {formatMoney(line.price * line.qty, locale)}

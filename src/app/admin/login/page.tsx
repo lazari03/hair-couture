@@ -18,7 +18,10 @@ export default async function AdminLoginPage({
         redirectTo: "/admin/products",
       });
     } catch (e) {
-      if (e instanceof AuthError) redirect("/admin/login?error=1");
+      if (e instanceof AuthError) {
+        const code = "type" in e && e.type === "CredentialsSignin" && "code" in e ? e.code : null;
+        redirect(`/admin/login?error=${code === "too_many_attempts" ? "rate_limited" : "1"}`);
+      }
       throw e;
     }
   }
@@ -48,7 +51,14 @@ export default async function AdminLoginPage({
             className="min-h-11 border border-neutral-300 px-3 text-sm outline-none focus:border-neutral-900"
           />
         </label>
-        {error && <p className="text-sm text-red-600">Invalid email or password.</p>}
+        {error === "rate_limited" && (
+          <p className="text-sm text-red-600">
+            Too many failed attempts. Try again in 15 minutes.
+          </p>
+        )}
+        {error && error !== "rate_limited" && (
+          <p className="text-sm text-red-600">Invalid email or password.</p>
+        )}
         <button
           type="submit"
           className="mt-2 min-h-11 cursor-pointer bg-neutral-900 text-sm font-medium text-white hover:opacity-90"

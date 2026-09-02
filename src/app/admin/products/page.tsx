@@ -1,102 +1,82 @@
-import Image from "next/image";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { brands } from "@/lib/brands";
-import { deleteProduct } from "@/lib/actions/products";
-import { productImage } from "@/lib/data/category-image";
+import { brands, getBrand } from "@/lib/brands";
+import { ProductsTable } from "@/components/admin/ProductsTable";
 
 export default async function AdminProductsPage({
   searchParams,
 }: {
   searchParams: Promise<{ brand?: string }>;
 }) {
-  const { brand: activeBrand } = await searchParams;
+  const { brand: activeBrandSlug } = await searchParams;
+  const activeBrand = activeBrandSlug ? getBrand(activeBrandSlug) : undefined;
+
   const products = await prisma.product.findMany({
-    where: activeBrand ? { brand: activeBrand } : undefined,
+    where: activeBrandSlug ? { brand: activeBrandSlug } : undefined,
     orderBy: [{ brand: "asc" }, { createdAt: "asc" }],
   });
+
+  const accent = activeBrand?.colors.accent ?? "#171717";
 
   return (
     <div>
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <h1 className="text-xl font-semibold tracking-tight">Products</h1>
         <Link
-          href="/admin/products/new"
-          className="inline-flex min-h-10 items-center bg-neutral-900 px-4 text-sm font-medium text-white hover:opacity-90"
+          href={activeBrandSlug ? `/admin/products/new?brand=${activeBrandSlug}` : "/admin/products/new"}
+          style={{ backgroundColor: accent }}
+          className="inline-flex min-h-10 items-center px-4 text-sm font-medium text-white hover:opacity-90"
         >
           + Add product
         </Link>
       </div>
 
-      <div className="mb-5 flex gap-2 text-sm">
+      <div className="mb-6 flex gap-2 text-sm">
         <Link
           href="/admin/products"
-          className={`px-3 py-1.5 ${!activeBrand ? "bg-neutral-900 text-white" : "border border-neutral-300"}`}
+          className={`rounded px-3 py-1.5 ${!activeBrand ? "bg-neutral-900 text-white" : "border border-neutral-300 text-neutral-600 hover:border-neutral-900"}`}
         >
-          All
+          All brands
         </Link>
         {brands.map((b) => (
           <Link
             key={b.slug}
             href={`/admin/products?brand=${b.slug}`}
-            className={`px-3 py-1.5 ${activeBrand === b.slug ? "bg-neutral-900 text-white" : "border border-neutral-300"}`}
+            style={activeBrand?.slug === b.slug ? { backgroundColor: b.colors.accent, color: b.colors.accentForeground } : undefined}
+            className={`rounded px-3 py-1.5 ${
+              activeBrand?.slug === b.slug ? "" : "border border-neutral-300 text-neutral-600 hover:border-neutral-900"
+            }`}
           >
             {b.slug}
           </Link>
         ))}
       </div>
 
-      <div className="overflow-x-auto border border-neutral-200">
-        <table className="w-full min-w-[640px] text-sm">
-          <thead>
-            <tr className="border-b border-neutral-200 bg-neutral-50 text-left text-xs tracking-wide text-neutral-500 uppercase">
-              <th className="px-4 py-3 font-medium"></th>
-              <th className="px-4 py-3 font-medium">Brand</th>
-              <th className="px-4 py-3 font-medium">Name</th>
-              <th className="px-4 py-3 font-medium">Category</th>
-              <th className="px-4 py-3 font-medium">Price</th>
-              <th className="px-4 py-3 font-medium">Badge</th>
-              <th className="px-4 py-3 font-medium"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.id} className="border-b border-neutral-100 last:border-0">
-                <td className="px-4 py-3">
-                  <div className="relative h-10 w-10 overflow-hidden bg-neutral-50">
-                    <Image src={productImage(p)} alt="" fill sizes="40px" className="object-contain p-1" />
-                  </div>
-                </td>
-                <td className="px-4 py-3 text-neutral-500">{p.brand}</td>
-                <td className="px-4 py-3 font-medium">{p.name}</td>
-                <td className="px-4 py-3">{p.category}</td>
-                <td className="px-4 py-3">€ {p.price.toLocaleString("en-US")}</td>
-                <td className="px-4 py-3 text-neutral-500">{p.badge ?? "—"}</td>
-                <td className="px-4 py-3 text-right whitespace-nowrap">
-                  <Link href={`/admin/products/${p.id}/edit`} className="mr-4 hover:underline">
-                    Edit
-                  </Link>
-                  <form action={deleteProduct.bind(null, p.id)} className="inline">
-                    <button
-                      type="submit"
-                      className="cursor-pointer text-red-600 hover:underline"
-                    >
-                      Delete
-                    </button>
-                  </form>
-                </td>
-              </tr>
-            ))}
-            {products.length === 0 && (
-              <tr>
-                <td colSpan={7} className="px-4 py-10 text-center text-neutral-500">
-                  No products yet.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
+      {/* One brand selected: a single themed table. No brand selected: one
+          section per brand, each with its own colored header bar — "each
+          web has its own color, separate them" instead of one flat mixed
+          table with a brand-name column. */}
+      {activeBrand ? (
+        <ProductsTable products={products} />
+      ) : (
+        <div className="flex flex-col gap-8">
+          {brands.map((b) => {
+            const brandProducts = products.filter((p) => p.brand === b.slug);
+            return (
+              <div key={b.slug}>
+                <div
+                  style={{ backgroundColor: b.colors.accent, color: b.colors.accentForeground }}
+                  className="flex items-center justify-between px-4 py-2.5 text-sm font-medium"
+                >
+                  <span>{b.slug}</span>
+                  <span className="opacity-80">{brandProducts.length} products</span>
+                </div>
+                <ProductsTable products={brandProducts} />
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

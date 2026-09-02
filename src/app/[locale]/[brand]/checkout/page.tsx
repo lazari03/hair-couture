@@ -10,18 +10,15 @@ import { formatMoney } from "@/lib/money";
 import { createOrder } from "@/lib/actions/orders";
 import Image from "next/image";
 
-const fields = [
-  "firstName",
-  "lastName",
-  "email",
-  "phone",
-  "address",
-  "city",
-  "postalCode",
-  "country",
-] as const;
-
-type FieldName = (typeof fields)[number];
+type FieldName =
+  | "firstName"
+  | "lastName"
+  | "email"
+  | "phone"
+  | "address"
+  | "city"
+  | "postalCode"
+  | "country";
 
 export default function CheckoutPage() {
   const t = useTranslations("checkout");

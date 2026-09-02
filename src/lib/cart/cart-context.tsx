@@ -4,6 +4,12 @@
 // fetched data — no TanStack Query needed). Persists to localStorage so a
 // refresh doesn't lose the cart; swap for a server-backed cart behind the
 // same hook shape once checkout needs one.
+//
+// Stock holds: every add/increase goes through reserveStock() (lib/actions/
+// stock.ts) first — a 15-minute soft lock so two shoppers can't both
+// "successfully" add the last unit of something. A failed reservation means
+// the mutation is rejected (caller sees { ok: false, error }); the local
+// cart state never gets ahead of what's actually reserved.
 
 import {
   createContext,
@@ -14,6 +20,7 @@ import {
   type ReactNode,
 } from "react";
 import type { BrandSlug } from "@/lib/brands";
+import { reserveStock, releaseCartReservations } from "@/lib/actions/stock";
 
 export interface CartLine {
   id: string; // line id, stable across qty changes
@@ -39,12 +46,15 @@ export interface AppliedCoupon {
   value: number;
 }
 
+export type CartOpResult = { ok: true } | { ok: false; error: string };
+
 interface CartContextValue {
+  cartId: string;
   lines: CartLine[];
   totalQty: number;
   coupon: AppliedCoupon | null;
-  addLine: (line: Omit<CartLine, "id">) => void;
-  incLine: (id: string) => void;
+  addLine: (line: Omit<CartLine, "id">) => Promise<CartOpResult>;
+  incLine: (id: string) => Promise<CartOpResult>;
   decLine: (id: string) => void;
   removeLine: (id: string) => void;
   setCoupon: (coupon: AppliedCoupon | null) => void;
@@ -54,10 +64,16 @@ interface CartContextValue {
 const CartContext = createContext<CartContextValue | null>(null);
 const STORAGE_KEY = "hc-cart";
 const COUPON_STORAGE_KEY = "hc-cart-coupon";
+const CART_ID_KEY = "hc-cart-id";
+
+function totalQtyForProduct(lines: CartLine[], productId: string) {
+  return lines.reduce((sum, l) => (l.productId === productId ? sum + l.qty : sum), 0);
+}
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [lines, setLines] = useState<CartLine[]>([]);
   const [coupon, setCouponState] = useState<AppliedCoupon | null>(null);
+  const [cartId, setCartId] = useState("");
   const [hydrated, setHydrated] = useState(false);
 
   // ponytail: localStorage is per-viewer convenience state, not the source
@@ -72,10 +88,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       if (raw) setLines(JSON.parse(raw));
       const rawCoupon = localStorage.getItem(COUPON_STORAGE_KEY);
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (rawCoupon) setCouponState(JSON.parse(rawCoupon));
+
+      let id = localStorage.getItem(CART_ID_KEY);
+      if (!id) {
+        id = crypto.randomUUID();
+        localStorage.setItem(CART_ID_KEY, id);
+      }
+      setCartId(id);
     } catch {
-      // storage unavailable — start with an empty cart
+      // storage unavailable — start with an empty cart and a throwaway id
+      // (in-memory only, so no hold survives a reload, but nothing crashes)
+      setCartId(crypto.randomUUID());
     }
     setHydrated(true);
   }, []);
@@ -93,28 +117,66 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo<CartContextValue>(
     () => ({
+      cartId,
       lines,
       totalQty: lines.reduce((sum, l) => sum + l.qty, 0),
       coupon,
-      addLine: (line) =>
+
+      addLine: async (line) => {
+        const newTotal = totalQtyForProduct(lines, line.productId) + line.qty;
+        const result = await reserveStock({ cartId, productId: line.productId, qty: newTotal });
+        if (!result.ok) return { ok: false, error: result.error };
         setLines((prev) => [
           ...prev,
           { ...line, id: `${line.productId}-${line.variant}-${Date.now()}` },
-        ]),
-      incLine: (id) =>
-        setLines((prev) => prev.map((l) => (l.id === id ? { ...l, qty: l.qty + 1 } : l))),
-      decLine: (id) =>
-        setLines((prev) =>
-          prev.map((l) => (l.id === id ? { ...l, qty: Math.max(1, l.qty - 1) } : l)),
-        ),
-      removeLine: (id) => setLines((prev) => prev.filter((l) => l.id !== id)),
+        ]);
+        return { ok: true };
+      },
+
+      incLine: async (id) => {
+        const line = lines.find((l) => l.id === id);
+        if (!line) return { ok: false, error: "Item not found" };
+        const newTotal = totalQtyForProduct(lines, line.productId) + 1;
+        const result = await reserveStock({ cartId, productId: line.productId, qty: newTotal });
+        if (!result.ok) return { ok: false, error: result.error };
+        setLines((prev) => prev.map((l) => (l.id === id ? { ...l, qty: l.qty + 1 } : l)));
+        return { ok: true };
+      },
+
+      decLine: (id) => {
+        setLines((prev) => {
+          const next = prev.map((l) => (l.id === id ? { ...l, qty: Math.max(1, l.qty - 1) } : l));
+          const line = next.find((l) => l.id === id);
+          // best-effort — releasing capacity should never block the UI
+          if (line) void reserveStock({ cartId, productId: line.productId, qty: totalQtyForProduct(next, line.productId) });
+          return next;
+        });
+      },
+
+      removeLine: (id) => {
+        setLines((prev) => {
+          const removed = prev.find((l) => l.id === id);
+          const next = prev.filter((l) => l.id !== id);
+          if (removed) {
+            void reserveStock({
+              cartId,
+              productId: removed.productId,
+              qty: totalQtyForProduct(next, removed.productId),
+            });
+          }
+          return next;
+        });
+      },
+
       setCoupon: setCouponState,
+
       clearCart: () => {
+        void releaseCartReservations(cartId);
         setLines([]);
         setCouponState(null);
       },
     }),
-    [lines, coupon],
+    [lines, coupon, cartId],
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
