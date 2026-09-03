@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useCart } from "@/lib/cart/cart-context";
+import { trackAddToCart } from "@/lib/analytics/events";
 import type { BrandSlug } from "@/lib/brands";
 import type { Product } from "@/lib/data/shop";
 
@@ -65,6 +66,7 @@ export function AddToCartForm({
             setError(result.error);
             return;
           }
+          trackAddToCart({ productId: product.id, name: product.name, category: product.category, price: product.price }, brand);
           setAdded(true);
         }}
         className="mt-7 min-h-[52px] bg-[var(--brand-accent)] px-8 font-inherit text-xs tracking-widest text-white uppercase hover:opacity-90 disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:hover:opacity-100"

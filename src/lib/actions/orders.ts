@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { sendOrderConfirmation } from "@/lib/email";
 
 export type CouponResult =
   | { ok: true; code: string; type: "percent" | "fixed"; value: number }
@@ -103,6 +104,14 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
       data: { stock: Math.max(0, product.stock - line.qty) },
     });
   }
+
+  // Order confirmation email — brand-customized, sent to whatever the guest
+  // typed at checkout. Never throws (see lib/email.ts's own guards), so a
+  // Brevo outage or an unset BREVO_API_KEY can never fail the checkout.
+  await sendOrderConfirmation(
+    { id: order.id, email: order.email, firstName: order.firstName, lastName: order.lastName, total: order.total, items: data.lines },
+    data.brand,
+  );
 
   revalidatePath("/admin/orders");
   revalidatePath("/admin/products");

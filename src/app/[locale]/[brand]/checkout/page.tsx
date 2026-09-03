@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -8,6 +8,8 @@ import { useCart } from "@/lib/cart/cart-context";
 import { productImage } from "@/lib/data/category-image";
 import { formatMoney } from "@/lib/money";
 import { createOrder } from "@/lib/actions/orders";
+import { trackBeginCheckout, trackPurchase } from "@/lib/analytics/events";
+import type { BrandSlug } from "@/lib/brands";
 import Image from "next/image";
 
 type FieldName =
@@ -40,6 +42,18 @@ export default function CheckoutPage() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [orderId, setOrderId] = useState<string | null>(null);
+  const beganCheckoutTracked = useRef(false);
+
+  useEffect(() => {
+    if (lines.length > 0 && !beganCheckoutTracked.current) {
+      beganCheckoutTracked.current = true;
+      trackBeginCheckout(
+        lines.map((l) => ({ productId: l.productId, name: l.name, category: l.category, price: l.price, qty: l.qty })),
+        brand as BrandSlug,
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- fire once per mount with a non-empty cart, not on every line change
+  }, []);
 
   const subtotal = lines.reduce((sum, l) => sum + l.price * l.qty, 0);
   const discount = coupon
@@ -72,6 +86,12 @@ export default function CheckoutPage() {
       setError(result.error);
       return;
     }
+    trackPurchase(
+      result.orderId,
+      lines.map((l) => ({ productId: l.productId, name: l.name, category: l.category, price: l.price, qty: l.qty })),
+      total,
+      brand as BrandSlug,
+    );
     setOrderId(result.orderId);
     clearCart();
   }

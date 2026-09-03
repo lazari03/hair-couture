@@ -104,3 +104,17 @@ model Coupon {
   active    Boolean  @default(true)
   createdAt DateTime @default(now())
 }
+
+// A contact-form submission, persisted independently of email delivery so
+// nothing is lost if BREVO_API_KEY is unset (lib/email.ts no-ops then) —
+// same reasoning as Order being the durable record behind a transient cart.
+model ContactMessage {
+  id        String   @id @default(cuid())
+  brand     String
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+
+  @@index([brand])
+}

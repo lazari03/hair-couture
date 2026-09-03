@@ -121,24 +121,26 @@
       "stylingTools": { "body": "Professional-grade tools for a couture finish." }
     }
   },
-  "balmainFooter": {
-    "shopTitle": "Shop",
-    "shopLinks": { "hairCare": "Hair Care", "styling": "Styling", "giftsets": "Giftsets", "accessories": "Accessories", "archives": "Archives" },
-    "serviceTitle": "Service",
-    "serviceLinks": { "contact": "Contact", "faq": "FAQ", "shipping": "Shipping", "refunds": "Refund Policy", "privacy": "Privacy Policy", "terms": "Terms of Service" },
-    "brandTitle": "Balmain Hair",
-    "brandLinks": { "faq": "FAQ", "heritage": "Heritage", "stockist": "Stockist" },
-    "newsletterTitle": "Join the list",
-    "newsletterBody": "Sign up for early access to new collections and exclusive offers.",
-    "newsletterPlaceholder": "Email address",
-    "newsletterCta": "Subscribe",
-    "copyright": "© {year} Hair Couture"
-  },
   "footer": {
-    "shipping": "Shipping",
-    "returns": "Returns",
-    "contact": "Contact",
-    "privacy": "Privacy",
+    "shopTitle": "Shop",
+    "serviceTitle": "Service",
+    "copyright": "© {year} Hair Couture",
     "localeCurrency": "EN · € EUR"
+  },
+  "legal": {
+    "backToShop": "Back to shop",
+    "lastUpdated": "Last updated {date}"
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Questions about an order, a product, or anything else — we're happy to help.",
+    "emailLabel": "Email us directly",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send message",
+    "sending": "Sending…",
+    "successTitle": "Message sent",
+    "successBody": "Thanks for reaching out — we'll get back to you soon."
   }
 }

@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { ProductGrid } from "./ProductGrid";
+import { trackSearch } from "@/lib/analytics/events";
 import type { BrandSlug } from "@/lib/brands";
 import type { Product } from "@/lib/data/shop";
 
@@ -16,6 +17,13 @@ export function SearchClient({ brand, products }: { brand: BrandSlug; products: 
   const results = q
     ? products.filter((p) => `${p.name} ${p.category}`.toLowerCase().includes(q))
     : [];
+
+  // Debounced — track the settled query, not every keystroke.
+  useEffect(() => {
+    if (!q) return;
+    const timer = setTimeout(() => trackSearch(q, brand), 300);
+    return () => clearTimeout(timer);
+  }, [q, brand]);
 
   return (
     <main className="px-6 pb-24 sm:px-11">
