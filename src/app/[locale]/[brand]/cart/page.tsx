@@ -9,6 +9,8 @@ import { useCart } from "@/lib/cart/cart-context";
 import { productImage } from "@/lib/data/category-image";
 import { formatMoney } from "@/lib/money";
 import { validateCoupon } from "@/lib/actions/orders";
+import { trackCheckoutButtonClick } from "@/lib/analytics/events";
+import type { BrandSlug } from "@/lib/brands";
 
 export default function CartPage() {
   const t = useTranslations("cart");
@@ -188,6 +190,7 @@ export default function CartPage() {
           </div>
           <Link
             href={`/${brand}/checkout`}
+            onClick={() => trackCheckoutButtonClick(brand as BrandSlug)}
             className={`mt-3.5 flex min-h-[52px] items-center justify-center bg-[var(--brand-accent)] font-inherit text-xs tracking-widest text-white uppercase hover:opacity-90 ${
               lines.length === 0 ? "pointer-events-none opacity-40" : ""
             }`}

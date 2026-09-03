@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
 import { brands } from "@/lib/brands";
 import { getShop } from "@/lib/data/shop";
+import { BrandPanelLink } from "@/components/BrandPanelLink";
 import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -19,10 +19,10 @@ export default async function LandingPage() {
       {brands.map((brand, i) => {
         const shop = shops[i];
         return (
-          <Link
+          <BrandPanelLink
             key={brand.slug}
+            brand={brand.slug}
             href={`/${brand.slug}`}
-            data-brand={brand.slug}
             style={
               {
                 "--brand-accent": brand.colors.accent,
@@ -76,7 +76,7 @@ export default async function LandingPage() {
                 {t("landing.enter")}
               </span>
             </div>
-          </Link>
+          </BrandPanelLink>
         );
       })}
     </main>

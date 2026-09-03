@@ -5,6 +5,7 @@ import { getShop, getProduct, productDetail } from "@/lib/data/shop";
 import { productImage } from "@/lib/data/category-image";
 import { ProductGrid } from "@/components/shop/ProductGrid";
 import { AddToCartForm } from "@/components/shop/AddToCartForm";
+import { ProductViewBeacon } from "@/components/shop/ProductViewBeacon";
 import { formatMoney } from "@/lib/money";
 
 export default async function ProductDetail({
@@ -23,6 +24,7 @@ export default async function ProductDetail({
 
   return (
     <main className="px-6 pb-24 sm:px-11">
+      <ProductViewBeacon brand={shop.slug} productId={product.id} name={product.name} category={product.category} price={product.price} />
       <div className="pt-7 pb-6 text-[11px] tracking-[0.12em] text-neutral-500 uppercase">
         {shop.slug} / {product.category} / {product.name}
       </div>
