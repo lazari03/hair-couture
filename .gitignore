@@ -44,6 +44,12 @@ next-env.d.ts
 /src/generated/prisma
 src/generated
 
-# Prisma SQLite
+# Prisma SQLite — DATABASE_URL="file:./dev.db" resolves relative to cwd
+# (project root when run via npm scripts), not relative to prisma/, so the
+# real file lives at the repo root. Regenerate anytime with
+# `npx prisma migrate dev && npm run db:seed` — never commit this, a binary
+# SQLite file can't be 3-way merged and doing so caused a real conflict.
+/dev.db
+/dev.db-journal
 prisma/*.db
 prisma/*.db-journal

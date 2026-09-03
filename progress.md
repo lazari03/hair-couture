@@ -523,6 +523,51 @@ anywhere; rotate it via the `node -e "..."` one-liner in `.env`'s comments.
       old pill markup gone, live order count renders, brand-colored borders
       and the per-order status dropdown both still intact.
 
+## Done (cont. 25) — Real animated loaders
+- [x] Added `loading.tsx` at 3 levels — Next.js shows these automatically via
+      its built-in Suspense boundary per route segment, no manual wiring:
+      `[locale]/[brand]/loading.tsx` (brand-colored — inherits
+      `var(--brand-accent)` from the layout it sits inside, so it's already
+      on-brand for whichever brand you're on), `[locale]/loading.tsx` (the
+      landing page, neutral), `admin/loading.tsx` (neutral, smaller).
+      3-dot staggered bounce (Tailwind's real `animate-bounce` keyframe with
+      offset delays) — an actual animation, not a static placeholder graphic.
+
+## Done (cont. 26) — Real Eau de 1974 catalog, KESH pricing
+- [x] Replaced the earlier estimated-price Eau de 1974 catalog with the
+      brand's real internal price list (photo supplied 2026-09-02 — Albanian
+      distributor sheet, columns Item code / Product / KESH (cash-retail,
+      Albanian Lek) / SHUMICE (wholesale)) cross-referenced against a full
+      re-scrape of eaude1974.com's live catalog:
+  - Re-fetched all 48 products via the site's sitemap (already exhaustive —
+    not paginated, so "other pages" were already covered by the earlier
+    sitemap approach too).
+  - Fuzzy-matched each of the 41 price-list rows to its live product by
+    name-token overlap, then **manually reviewed and corrected every match**
+    rather than trusting the algorithm blind — caught and fixed several
+    wrong auto-matches (e.g. "Define & Shield Spray" → the live site actually
+    calls it "Define & Smooth Spray"; a "Renew Mask" title had a Unicode
+    narrow no-break space silently breaking exact-string lookup).
+  - **Price = KESH ÷ 100**, converting Albanian Lek to EUR at the standard
+    ~100:1 approximation (matches the site's own EUR-priced siblings well —
+    e.g. €55 for a 50ml hair perfume, in line with Balmain/Eloure's real
+    fragrance pricing) — replaces last round's category-estimated placeholder
+    prices with real ones. Flagged here as an approximation, not a live FX
+    rate, in case exact conversion ever matters.
+  - 34/41 products got real photos downloaded from the live site; 7 (Room
+    Spray ×3, Scented Candle, Fiber & Style, Lift & Texture Spray, Lift &
+    Thicken Lotion) are genuinely not on the live site right now — verified
+    by direct search, not just a failed fuzzy match — so they fall back to
+    the category placeholder image, same graceful behavior as any
+    admin-added product without a photo.
+  - Categorized using the price list's own section headers (it already
+    groups into Hair Perfume/Hyaluronic Care, Beauty, its own literal
+    "Sensorial Hair Care" section, Giftsets, Home Care) mapped onto the
+    existing 3-category taxonomy.
+- [x] `npm run build`/`lint` pass clean; verified live — shop listing and a
+      product detail page both show the real KESH-derived prices and real
+      images.
+
 ## Next up
 - [ ] Admin CRUD for coupons (currently seed-only + `npm run db:studio` to
       hand-edit) — same pattern as `/admin/products` would cover it.

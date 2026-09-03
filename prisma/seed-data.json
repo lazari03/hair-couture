@@ -135,141 +135,6 @@
     "imageUrl": "/assets/products/balmain/all-purpose-spa-brush-mini.jpg"
   },
   {
-    "brand": "eau-de-1974",
-    "name": "Volume & Lift Shampoo 250ml - EAU de Hamptons",
-    "category": "Sensorial Hair Care",
-    "price": 38,
-    "badge": null,
-    "description": "Lifts roots, adds airy volume & cleanses without weight",
-    "imageUrl": "/assets/products/eau-de-1974/volume-lift-shampoo-250ml-eau-de-hamptons.png"
-  },
-  {
-    "brand": "eau-de-1974",
-    "name": "Volume & Lift Shampoo 750ml - EAU de Hamptons",
-    "category": "Sensorial Hair Care",
-    "price": 38,
-    "badge": null,
-    "description": "Lifts roots, adds airy volume & cleanses without weight",
-    "imageUrl": "/assets/products/eau-de-1974/volume-lift-shampoo-750ml-eau-de-hamptons.png"
-  },
-  {
-    "brand": "eau-de-1974",
-    "name": "Volume & Lift Conditioner 250ml - EAU de Hamptons",
-    "category": "Sensorial Hair Care",
-    "price": 38,
-    "badge": null,
-    "description": "Detangles, softens & maintains airy lift",
-    "imageUrl": "/assets/products/eau-de-1974/volume-lift-conditioner-250ml-eau-de-hamptons.png"
-  },
-  {
-    "brand": "eau-de-1974",
-    "name": "Volume & Lift Conditioner 750ml - EAU de Hamptons",
-    "category": "Sensorial Hair Care",
-    "price": 38,
-    "badge": null,
-    "description": "Detangles, softens & maintains airy lift",
-    "imageUrl": "/assets/products/eau-de-1974/volume-lift-conditioner-750ml-eau-de-hamptons.png"
-  },
-  {
-    "brand": "eau-de-1974",
-    "name": "EAU de Capri Hydrate & Shield Leave-in Conditioner 125ml",
-    "category": "Sensorial Hair Care",
-    "price": 38,
-    "badge": null,
-    "description": "Keeps hair soft, shiny, and protected.",
-    "imageUrl": "/assets/products/eau-de-1974/eau-de-capri-hydrate-shield-leave-in-conditioner-125ml.png"
-  },
-  {
-    "brand": "eau-de-1974",
-    "name": "Define & Smooth Spray – EAU de Santorini 200ml",
-    "category": "Sensorial Beauty",
-    "price": 145,
-    "badge": null,
-    "description": "smooths, controls frizz & adds weightless shine",
-    "imageUrl": "/assets/products/eau-de-1974/define-smooth-spray-eau-de-santorini-200ml.png"
-  },
-  {
-    "brand": "eau-de-1974",
-    "name": "EAU de Santorini Hair Perfume 50ml",
-    "category": "Sensorial Beauty",
-    "price": 145,
-    "badge": null,
-    "description": "Spicy, powdery and warm scent.",
-    "imageUrl": "/assets/products/eau-de-1974/eau-de-santorini-hair-perfume-50ml.png"
-  },
-  {
-    "brand": "eau-de-1974",
-    "name": "EAU de Santorini Hair Perfume 15ml",
-    "category": "Sensorial Beauty",
-    "price": 145,
-    "badge": null,
-    "description": "Spicy, powdery and warm scent.",
-    "imageUrl": "/assets/products/eau-de-1974/eau-de-santorini-hair-perfume-15ml.png"
-  },
-  {
-    "brand": "eau-de-1974",
-    "name": "EAU de Santorini Hydrate & Shape",
-    "category": "Sensorial Beauty",
-    "price": 145,
-    "badge": null,
-    "description": "A versatile styling essential.",
-    "imageUrl": "/assets/products/eau-de-1974/eau-de-santorini-hydrate-shape.png"
-  },
-  {
-    "brand": "eau-de-1974",
-    "name": "EAU de Santorini Hair Perfume Giftset",
-    "category": "Sensorial Beauty",
-    "price": 145,
-    "badge": null,
-    "description": "Full-size + handy 15ml for on-the-go.",
-    "imageUrl": "/assets/products/eau-de-1974/eau-de-santorini-hair-perfume-giftset.png"
-  },
-  {
-    "brand": "eau-de-1974",
-    "name": "Hydrate & Protect Hand Cream - EAU de Santorini 50ml",
-    "category": "Sensorial Lifestyle",
-    "price": 55,
-    "badge": null,
-    "description": "Hydrates, soothes dryness & absorbs without stickiness",
-    "imageUrl": "/assets/products/eau-de-1974/hydrate-protect-hand-cream-eau-de-santorini-50ml.png"
-  },
-  {
-    "brand": "eau-de-1974",
-    "name": "Hydrate & Protect Hand Cream - EAU de Hamptons 50ml",
-    "category": "Sensorial Lifestyle",
-    "price": 55,
-    "badge": null,
-    "description": "hydrates, soothes dryness & absorbs without stickiness",
-    "imageUrl": "/assets/products/eau-de-1974/hydrate-protect-hand-cream-eau-de-hamptons-50ml.png"
-  },
-  {
-    "brand": "eau-de-1974",
-    "name": "Glow & Shimmer Hair and Body Spray",
-    "category": "Sensorial Lifestyle",
-    "price": 55,
-    "badge": null,
-    "description": "Illuminates, enhances natural glow & adds a soft bronzed shimmer",
-    "imageUrl": "/assets/products/eau-de-1974/glow-shimmer-hair-and-body-spray.png"
-  },
-  {
-    "brand": "eau-de-1974",
-    "name": "Hyaluronic Body wash - EAU de Hamptons 250ml",
-    "category": "Sensorial Lifestyle",
-    "price": 55,
-    "badge": null,
-    "description": "Cleanses gently, locks in moisture & leaves skin softly scented",
-    "imageUrl": "/assets/products/eau-de-1974/hyaluronic-body-wash-eau-de-hamptons-250ml.png"
-  },
-  {
-    "brand": "eau-de-1974",
-    "name": "Hyaluronic Body wash - EAU de Santorini 250ml",
-    "category": "Sensorial Lifestyle",
-    "price": 55,
-    "badge": null,
-    "description": "Cleanses, hydrates with hyaluronic acid & leaves skin luminously soft",
-    "imageUrl": "/assets/products/eau-de-1974/hyaluronic-body-wash-eau-de-santorini-250ml.png"
-  },
-  {
     "brand": "eloure",
     "name": "Colour Protecting Shampoo - 250 ml",
     "category": "Care Collection",
@@ -646,5 +511,374 @@
     "badge": null,
     "description": "Signature Brush",
     "imageUrl": "/assets/products/eloure/signature-brush.jpg"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Capri Hair Perfume 50ml",
+    "category": "Sensorial Beauty",
+    "price": 55,
+    "badge": null,
+    "description": "Fresh, fruity and woody scent.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-capri-hair-perfume-50ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Santorini Hair Perfume 50ml",
+    "category": "Sensorial Beauty",
+    "price": 55,
+    "badge": null,
+    "description": "Spicy, powdery and warm scent.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-santorini-hair-perfume-50ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Hamptons Hair Perfume 50ml",
+    "category": "Sensorial Beauty",
+    "price": 55,
+    "badge": null,
+    "description": "Spicy, warm and woody scent.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-hamptons-hair-perfume-50ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Capri Hair Perfume 15ml",
+    "category": "Sensorial Beauty",
+    "price": 15,
+    "badge": null,
+    "description": "Fresh, fruity and woody scent.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-capri-hair-perfume-15ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Santorini Hair Perfume 15ml",
+    "category": "Sensorial Beauty",
+    "price": 15,
+    "badge": null,
+    "description": "Spicy, powdery and warm scent.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-santorini-hair-perfume-15ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Capri Hyaluronic Plump Hydrating Shampoo 250ml",
+    "category": "Sensorial Hair Care",
+    "price": 30,
+    "badge": null,
+    "description": "Suitable for all hair types, especially dry or dull hair.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-capri-hyaluronic-plump-hydrating-shampoo-250ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Capri Hyaluronic Plump Hydrating Shampoo 750ml",
+    "category": "Sensorial Hair Care",
+    "price": 70,
+    "badge": null,
+    "description": "Suitable for all hair types, especially dry or dull hair.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-capri-hyaluronic-plump-hydrating-shampoo-750ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Capri Hyaluronic Renew Hydrating Mask 200ml",
+    "category": "Sensorial Hair Care",
+    "price": 30,
+    "badge": null,
+    "description": "Perfect for dry, damaged or frizzy hair.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-capri-hyaluronic-renew-hydrating-mask-200ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Capri Hyaluronic Renew Hydrating Mask 750ml",
+    "category": "Sensorial Hair Care",
+    "price": 70,
+    "badge": null,
+    "description": "Perfect for dry, damaged or frizzy hair.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-capri-hyaluronic-renew-hydrating-mask-750ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Define & Bounce Texture and Curl Shampoo 250ml",
+    "category": "Sensorial Hair Care",
+    "price": 30,
+    "badge": null,
+    "description": "hydrates, reduces frizz & enhances curl definition.",
+    "imageUrl": "/assets/products/eau-de-1974/define-bounce-texture-and-curl-shampoo-250ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Define & Bounce Texture and Curl Shampoo 750ml",
+    "category": "Sensorial Hair Care",
+    "price": 70,
+    "badge": null,
+    "description": "hydrates, reduces frizz & enhances curl definition.",
+    "imageUrl": "/assets/products/eau-de-1974/define-bounce-texture-and-curl-shampoo-750ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Define & Renew Texture and Curl Mask  200ml",
+    "category": "Sensorial Hair Care",
+    "price": 30,
+    "badge": null,
+    "description": "Moisture, shine and curl definition.",
+    "imageUrl": "/assets/products/eau-de-1974/define-renew-texture-and-curl-mask-200ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Define & Renew Texture and Curl Mask  750ml",
+    "category": "Sensorial Hair Care",
+    "price": 70,
+    "badge": null,
+    "description": "Moisture, shine and curl definition.",
+    "imageUrl": "/assets/products/eau-de-1974/define-renew-texture-and-curl-mask-750ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Volume & Lift Shampoo 250ml - EAU de Hamptons",
+    "category": "Sensorial Hair Care",
+    "price": 30,
+    "badge": null,
+    "description": "Lifts roots, adds airy volume & cleanses without weight",
+    "imageUrl": "/assets/products/eau-de-1974/volume-lift-shampoo-250ml-eau-de-hamptons.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Volume & Lift Shampoo 750ml - EAU de Hamptons",
+    "category": "Sensorial Hair Care",
+    "price": 70,
+    "badge": null,
+    "description": "Lifts roots, adds airy volume & cleanses without weight",
+    "imageUrl": "/assets/products/eau-de-1974/volume-lift-shampoo-750ml-eau-de-hamptons.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Volume & Lift Conditioner 750ml - EAU de Hamptons",
+    "category": "Sensorial Hair Care",
+    "price": 70,
+    "badge": null,
+    "description": "Detangles, softens & maintains airy lift",
+    "imageUrl": "/assets/products/eau-de-1974/volume-lift-conditioner-750ml-eau-de-hamptons.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Hyaluronic Body wash - EAU de Capri 250ml",
+    "category": "Sensorial Beauty",
+    "price": 25,
+    "badge": null,
+    "description": "Cleanses gently, hydrates with hyaluronic acid & refreshes the senses",
+    "imageUrl": "/assets/products/eau-de-1974/hyaluronic-body-wash-eau-de-capri-250ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Hyaluronic Body wash - EAU de Santorini 250ml",
+    "category": "Sensorial Beauty",
+    "price": 25,
+    "badge": null,
+    "description": "Cleanses, hydrates with hyaluronic acid & leaves skin luminously soft",
+    "imageUrl": "/assets/products/eau-de-1974/hyaluronic-body-wash-eau-de-santorini-250ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Hyaluronic Body wash - EAU de Hamptons 250ml",
+    "category": "Sensorial Beauty",
+    "price": 25,
+    "badge": null,
+    "description": "Cleanses gently, locks in moisture & leaves skin softly scented",
+    "imageUrl": "/assets/products/eau-de-1974/hyaluronic-body-wash-eau-de-hamptons-250ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Hydrate & Protect Hand Cream - EAU de Santorini 50ml",
+    "category": "Sensorial Beauty",
+    "price": 15,
+    "badge": null,
+    "description": "Hydrates, soothes dryness & absorbs without stickiness",
+    "imageUrl": "/assets/products/eau-de-1974/hydrate-protect-hand-cream-eau-de-santorini-50ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Hydrate & Protect Hand Cream - EAU de Hamptons 50ml",
+    "category": "Sensorial Beauty",
+    "price": 15,
+    "badge": null,
+    "description": "hydrates, soothes dryness & absorbs without stickiness",
+    "imageUrl": "/assets/products/eau-de-1974/hydrate-protect-hand-cream-eau-de-hamptons-50ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Capri Hydrate & Protect Hand Cream 50ml",
+    "category": "Sensorial Beauty",
+    "price": 15,
+    "badge": null,
+    "description": "Nourishing care for your hands.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-capri-hydrate-protect-hand-cream-50ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Capri Hyaluronic Glow ​Body Lotion 200ml",
+    "category": "Sensorial Beauty",
+    "price": 29,
+    "badge": null,
+    "description": "Hydrates, boosts elasticity and softens skin.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-capri-hyaluronic-glow-body-lotion-200ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Santorini Hyaluronic Glow Body Lotion 200ml",
+    "category": "Sensorial Beauty",
+    "price": 29,
+    "badge": null,
+    "description": "Hydrates, boosts elasticity and softens skin.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-santorini-hyaluronic-glow-body-lotion-200ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Hamptons Hyaluronic Glow Body Lotion 200ml",
+    "category": "Sensorial Beauty",
+    "price": 29,
+    "badge": null,
+    "description": "Hydrates, boosts elasticity and softens skin.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-hamptons-hyaluronic-glow-body-lotion-200ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Glow & Shimmer Hair and Body Spray",
+    "category": "Sensorial Beauty",
+    "price": 20,
+    "badge": null,
+    "description": "Illuminates, enhances natural glow & adds a soft bronzed shimmer",
+    "imageUrl": "/assets/products/eau-de-1974/glow-shimmer-hair-and-body-spray.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Capri Salt & Grip Volumizing Spray 200ml",
+    "category": "Sensorial Hair Care",
+    "price": 25,
+    "badge": null,
+    "description": "Creates body, grip, and salty dimension.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-capri-salt-grip-volumizing-spray-200ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Capri Hydrate & Shield Leave-in Conditioner 125ml",
+    "category": "Sensorial Hair Care",
+    "price": 25,
+    "badge": null,
+    "description": "Keeps hair soft, shiny, and protected.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-capri-hydrate-shield-leave-in-conditioner-125ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Fiber & Style - EAU de Capri 100ml",
+    "category": "Sensorial Hair Care",
+    "price": 25,
+    "badge": null,
+    "description": null,
+    "imageUrl": null
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Define & Radiate Invisible Oil Extract",
+    "category": "Sensorial Hair Care",
+    "price": 15,
+    "badge": null,
+    "description": "Defines, softens and smooths.",
+    "imageUrl": "/assets/products/eau-de-1974/define-radiate-invisible-oil-extract.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Define & Activate Texture and Curl Gel",
+    "category": "Sensorial Hair Care",
+    "price": 15,
+    "badge": null,
+    "description": "hydrate, strengthen and enhance.",
+    "imageUrl": "/assets/products/eau-de-1974/define-activate-texture-and-curl-gel.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Define & Smooth Spray – EAU de Santorini 200ml",
+    "category": "Sensorial Hair Care",
+    "price": 25,
+    "badge": null,
+    "description": "smooths, controls frizz & adds weightless shine",
+    "imageUrl": "/assets/products/eau-de-1974/define-smooth-spray-eau-de-santorini-200ml.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Lift & Texture Volumizing Spray 200ml - EAU de Hamptons",
+    "category": "Sensorial Hair Care",
+    "price": 25,
+    "badge": null,
+    "description": null,
+    "imageUrl": null
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Lift & Thicken Volumizing Lotion 150ml - EAU de Hamptons",
+    "category": "Sensorial Hair Care",
+    "price": 21,
+    "badge": null,
+    "description": null,
+    "imageUrl": null
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Santorini Hair Perfume Giftset",
+    "category": "Sensorial Beauty",
+    "price": 65,
+    "badge": null,
+    "description": "Full-size + handy 15ml for on-the-go.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-santorini-hair-perfume-giftset.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Capri Scent & Smooth Giftset",
+    "category": "Sensorial Beauty",
+    "price": 60,
+    "badge": null,
+    "description": "Perfumes, hydrates & protects.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-capri-scent-smooth-giftset.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "EAU de Capri Hydrate & Renew Giftset",
+    "category": "Sensorial Beauty",
+    "price": 60,
+    "badge": null,
+    "description": "Hydrates, protects & restores.",
+    "imageUrl": "/assets/products/eau-de-1974/eau-de-capri-hydrate-renew-giftset.png"
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Scented Candle - EAU de Capri 200gr",
+    "category": "Sensorial Lifestyle",
+    "price": 40,
+    "badge": null,
+    "description": null,
+    "imageUrl": null
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Room Spray - EAU de Capri 200ml",
+    "category": "Sensorial Lifestyle",
+    "price": 50,
+    "badge": null,
+    "description": null,
+    "imageUrl": null
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Room Spray - EAU de Santorini 200ml",
+    "category": "Sensorial Lifestyle",
+    "price": 50,
+    "badge": null,
+    "description": null,
+    "imageUrl": null
+  },
+  {
+    "brand": "eau-de-1974",
+    "name": "Room Spray - EAU de Hamptons 200ml",
+    "category": "Sensorial Lifestyle",
+    "price": 50,
+    "badge": null,
+    "description": null,
+    "imageUrl": null
   }
 ]
