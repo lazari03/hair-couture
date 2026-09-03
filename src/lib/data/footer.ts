@@ -49,7 +49,7 @@ function shopLinksFor(slug: BrandSlug, categories: string[]): FooterLink[] {
 function serviceLinksFor(slug: BrandSlug): FooterLink[] {
   return [
     { label: "Contact", href: `/${slug}/contact` },
-    { label: "Shipping & Returns", href: `/${slug}/terms` },
+    { label: "Shipping & Returns", href: `/${slug}/terms#shipping` },
     { label: "Privacy Policy", href: `/${slug}/privacy` },
     { label: "Terms of Service", href: `/${slug}/terms` },
     { label: "Cookies", href: `/${slug}/cookies` },
