@@ -12,6 +12,10 @@ WORKDIR /app
 
 FROM base AS deps
 COPY package.json package-lock.json* ./
+# prisma/schema.prisma is needed here too: `npm ci` runs our postinstall
+# (`prisma generate`), and better-sqlite3's own native build needs install
+# scripts enabled — so we can't just --ignore-scripts around it.
+COPY prisma ./prisma
 RUN npm ci
 
 FROM base AS builder
