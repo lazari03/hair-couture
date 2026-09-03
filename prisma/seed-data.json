@@ -1,138 +1,1074 @@
 [
   {
     "brand": "balmain",
-    "name": "Limited Edition legacy Spa Brush",
+    "name": "Moisturizing Shampoo",
     "category": "Hair Care",
-    "price": 95,
-    "badge": "New",
-    "description": "The Limited Edition Legacy Spa Brush is crafted with 100% boar bristles to enhance the natural shine and condition of the hair. The bristle structure helps distribute the hair’s natural oils evenly from roots to ends, supporting a smooth and polished finish. Designed for daily use, the brush glides effortlessly through the hair while remaining gentle on both hair and scalp. This limited edition,…",
-    "imageUrl": "/assets/products/balmain/limited-edition-legacy-spa-brush.jpg"
+    "price": 45,
+    "badge": null,
+    "description": "Moisturizing Shampoo Pershkrim i shkurter: Një shampo thellësisht ushqyes për të pastruar flokët natyralë dhe të lyer. Ofron hidratim optimal dhe rikthen shkëlqimin dhe elasticitetin natyral pa i rënduar flokët. Rezultati është flokë i butë, me strukturë dhe i shkrifët.",
+    "imageUrl": "/assets/products/balmain/moisturizing-shampoo.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Balmain Homme Sculpting Wax 100ml",
+    "name": "Moisturizing Conditioner",
     "category": "Hair Care",
     "price": 48,
-    "badge": "New",
-    "description": "Balmain Homme Sculpting Wax The Balmain Homme Sculpting Wax is perfect for creating hairlooks with a natural matt finish and a medium hold. The light weight formula helps to sculpt and densify each hair strand to have a voluminous hairlook as a result.",
-    "imageUrl": "/assets/products/balmain/balmain-homme-sculpting-wax-100ml.jpg"
-  },
-  {
-    "brand": "balmain",
-    "name": "Homme Grooming Giftset",
-    "category": "Hair Care",
-    "price": 92.3,
     "badge": null,
-    "description": "Balmain Homme: A New Era in a Modern Gentlemen’s Grooming Routine. A high-end luxury collection of grooming products made exclusively for men. Perfumed with the intense oriental, woody fragrance of Balmain Homme that combines the invigorating citric freshness of Bergamot with the woody aspect of dry Sandalwood.",
-    "imageUrl": "/assets/products/balmain/homme-grooming-giftset.jpg"
+    "description": "Kondicioner ushqyes për flokë natyralë ose të lyer. Qetëson, mbron, shkriftëzon dhe rigjallëron flokët.",
+    "imageUrl": "/assets/products/balmain/moisturizing-conditioner.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Limited Edition Locks of Love Homme Gift Set",
+    "name": "Volume Shampoo",
     "category": "Hair Care",
+    "price": 46,
+    "badge": null,
+    "description": "Shampo e lehtë dhe e butë pastrimi. Ofron volum dhe trup për flokët e hollë dhe të dobët.",
+    "imageUrl": "/assets/products/balmain/volume-shampoo.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Volume Conditioner",
+    "category": "Hair Care",
+    "price": 51,
+    "badge": null,
+    "description": "Kondicioner i përshtatshëm për flokë të hollë dhe fin. I jep flokut texture dhe trup.",
+    "imageUrl": "/assets/products/balmain/volume-conditioner.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Revitalizing Shampoo",
+    "category": "Hair Care",
+    "price": 45,
+    "badge": null,
+    "description": "Revitalizing Shampoo",
+    "imageUrl": "/assets/products/balmain/revitalizing-shampoo.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Revitalizing Conditioner",
+    "category": "Hair Care",
+    "price": 48,
+    "badge": null,
+    "description": "Një kondicioner i lehtë, ushqyes për flokë të thatë dhe të dëmtuar.",
+    "imageUrl": "/assets/products/balmain/revitalizing-conditioner.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Revitalizing Mask",
+    "category": "Hair Care",
+    "price": 57,
+    "badge": null,
+    "description": "Revitalizing Mask",
+    "imageUrl": "/assets/products/balmain/revitalizing-mask.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Couleurs Couture Shampoo",
+    "category": "Hair Care",
+    "price": 50,
+    "badge": null,
+    "description": "Shampo restauruese dhe pastruese për flokë të lyer, të dëmtuar dhe të mbi-përpunuar.",
+    "imageUrl": "/assets/products/balmain/couleurs-couture-shampoo.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Couleurs Couture Conditioner",
+    "category": "Hair Care",
+    "price": 54,
+    "badge": null,
+    "description": "Kondicioner hidratues intensiv për flokët e lyer, të dëmtuar dhe të mbi-përpunuar.",
+    "imageUrl": "/assets/products/balmain/couleurs-couture-conditioner.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Couleurs Couture Mask",
+    "category": "Hair Care",
+    "price": 72,
+    "badge": null,
+    "description": "Trajtim luxury spa për flokët e lyer, të dëmtuar dhe të mbi-përpunuar.",
+    "imageUrl": "/assets/products/balmain/couleurs-couture-mask.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Illuminating Shampoo Silver Pearl",
+    "category": "Hair Care",
+    "price": 46,
+    "badge": null,
+    "description": "Shampo pastruese, ndriçuese për flokë bjonde dhe të argjendta.",
+    "imageUrl": "/assets/products/balmain/illuminating-shampoo-silver-pearl.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Illuminating Shampoo White Pearl",
+    "category": "Hair Care",
+    "price": 46,
+    "badge": null,
+    "description": "Shampo pastruese, ndriçuese për flokë bjonde ose të dekoloruar.",
+    "imageUrl": "/assets/products/balmain/illuminating-shampoo-white-pearl.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Overnight Repair Serum",
+    "category": "Hair Care",
+    "price": 115,
+    "badge": null,
+    "description": "Serumi Riparues i natës i Balmain Hair Couture përmirëson cilësinë e flokut dhe i zbut ato.",
+    "imageUrl": "/assets/products/balmain/overnight-repair-serum.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "5 Weeks Enriching Hair Treatment",
+    "category": "Hair Care",
+    "price": 115,
+    "badge": null,
+    "description": "Ky locion i butë, i lehtë dhe i gjithanshëm ndihmon në rigjallërimin dhe ristrukturimin e flokëve.",
+    "imageUrl": "/assets/products/balmain/5-weeks-enriching-hair-treatment.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Hair Perfume",
+    "category": "Hair Care",
+    "price": 150,
+    "badge": null,
+    "description": "Parfumi i flokëve përmban një aromë të rafinuar dhe luksoze.",
+    "imageUrl": "/assets/products/balmain/hair-perfume.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Homme Hair Parfume",
+    "category": "Hair Care",
+    "price": 150,
+    "badge": null,
+    "description": "Një parfum flokësh me aroma të pasura, intensive, orientale, drunore.",
+    "imageUrl": "/assets/products/balmain/homme-hair-parfume.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Balmain Homme Hair & Body Wash",
+    "category": "Hair Care",
+    "price": 59,
+    "badge": null,
+    "description": "Një formulë hidratuese 2-në-1 që pastron butësisht flokët dhe trupin në një hap.",
+    "imageUrl": "/assets/products/balmain/balmain-homme-hair-body-wash.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Balmain Homme Gift Set",
+    "category": "Gifts",
+    "price": 234,
+    "badge": null,
+    "description": "Një koleksion i produkteve të kujdesit të krijuar ekskluzivisht për meshkuj.",
+    "imageUrl": "/assets/products/balmain/balmain-homme-gift-set.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Argan Moisturizing Elixir",
+    "category": "Hair Care",
+    "price": 54,
+    "badge": null,
+    "description": "Vaji i perqendruar organik i arganit i mbushur me një përzierje unike vajrash dhe mineralesh.",
+    "imageUrl": "/assets/products/balmain/argan-moisturizing-elixir.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Leave-In Conditioner",
+    "category": "Hair Care",
+    "price": 44,
+    "badge": null,
+    "description": "Kondicioner i lehtë dhe i qëndrueshëm. Shkriftëzon, ushqen flokët dhe skalpin e kokës.",
+    "imageUrl": "/assets/products/balmain/leave-in-conditioner.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Thermal Protection Spray",
+    "category": "Hair Care",
+    "price": 43,
+    "badge": null,
+    "description": "Spray i lehtë dhe ultra i imët që krijon një mburojë termike që mbron flokët nga nxehtësia.",
+    "imageUrl": "/assets/products/balmain/thermal-protection-spray.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Sun Protection Spray",
+    "category": "Hair Care",
+    "price": 46,
+    "badge": null,
+    "description": "Formula e pasuruar me filtra mbrojtës UVA dhe UVB ndihmon në ushqimin dhe gjendjen e flokëve.",
+    "imageUrl": "/assets/products/balmain/sun-protection-spray.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Texturizing Salt Spray",
+    "category": "Hair Care",
+    "price": 48,
+    "badge": null,
+    "description": "Spraj stilimi me kripra minerale. Shton definicion, teksturë dhe trup.",
+    "imageUrl": "/assets/products/balmain/texturizing-salt-spray.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Texturizing Volume Spray",
+    "category": "Hair Care",
+    "price": 50,
+    "badge": null,
+    "description": "Një spray i gjithanshëm që i jep flokëve volum në rrënjë.",
+    "imageUrl": "/assets/products/balmain/texturizing-volume-spray.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Curl Cream",
+    "category": "Hair Care",
+    "price": 45,
+    "badge": null,
+    "description": "Formula e lehtë aktivizon, hidraton dhe definon kaçurrelat.",
+    "imageUrl": "/assets/products/balmain/curl-cream.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Volume Mousse Strong",
+    "category": "Hair Care",
+    "price": 48,
+    "badge": null,
+    "description": "Mus stilimi fleksibël dhe afatgjatë. Ofron trup dhe butësi të menjëhershme.",
+    "imageUrl": "/assets/products/balmain/volume-mousse-strong.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Moisturizing Styling Cream",
+    "category": "Hair Care",
+    "price": 44,
+    "badge": null,
+    "description": "Baze perfekte për krehje ose stilime të çdo lloji. Shkriftezon dhe hidraton flokët.",
+    "imageUrl": "/assets/products/balmain/moisturizing-styling-cream.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Styling Powder",
+    "category": "Hair Care",
+    "price": 48,
+    "badge": null,
+    "description": "Puder e lehtë dhe për teksturë, volum dhe definicion përfundimtar.",
+    "imageUrl": "/assets/products/balmain/styling-powder.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Styling Gel Maximum Hold",
+    "category": "Hair Care",
+    "price": 44,
+    "badge": null,
+    "description": "Një xhel stilimi i lehtë dhe i gjithanshëm me mbajtje maksimale dhe afatgjatë.",
+    "imageUrl": "/assets/products/balmain/styling-gel-maximum-hold.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Shine Wax",
+    "category": "Hair Care",
+    "price": 58,
+    "badge": null,
+    "description": "Dylli i ripërpunueshëm që shton definicion dhe shkëlqim.",
+    "imageUrl": "/assets/products/balmain/shine-wax.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Matt Clay Strong",
+    "category": "Hair Care",
+    "price": 48,
+    "badge": null,
+    "description": "Dyll i fortë për një pamje të përcaktuar mat me teksturë maksimale.",
+    "imageUrl": "/assets/products/balmain/matt-clay-strong.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Dry Shampoo",
+    "category": "Hair Care",
+    "price": 46,
+    "badge": null,
+    "description": "Spraj freskues i menjëhershëm për pastrim scalpi.",
+    "imageUrl": "/assets/products/balmain/dry-shampoo.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Session Spray Medium",
+    "category": "Hair Care",
+    "price": 48,
+    "badge": null,
+    "description": "Llak flokësh me mbajtje mesatare, perfekt për të punuar, dhe stiluar.",
+    "imageUrl": "/assets/products/balmain/session-spray-medium.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Session Spray Strong",
+    "category": "Hair Care",
+    "price": 48,
+    "badge": null,
+    "description": "Llak flokësh Stronghold perfekt për kontroll, fiksim dhe mbarimin e stilimit.",
+    "imageUrl": "/assets/products/balmain/session-spray-strong.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Silk Perfume 200ml",
+    "category": "Hair Care",
+    "price": 54,
+    "badge": null,
+    "description": "Spray me shkëlqim përfundimtar i mbushur me proteina mëndafshi dhe vaj të pastër organik Argani.",
+    "imageUrl": "/assets/products/balmain/silk-perfume-200ml.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Matt Paste",
+    "category": "Hair Care",
+    "price": 48,
+    "badge": null,
+    "description": "Pastë përfundimi natyrale mat me mbajtje të ripërpunueshme dhe teksturë të lëmuar.",
+    "imageUrl": "/assets/products/balmain/matt-paste.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "14k Gold Plated Tail Comb",
+    "category": "Styling Tools",
+    "price": 66,
+    "badge": null,
+    "description": "14k Gold Plated Tail Comb",
+    "imageUrl": "/assets/products/balmain/14k-gold-plated-tail-comb.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "14k Gold Plated Cutting Comb",
+    "category": "Styling Tools",
+    "price": 81,
+    "badge": null,
+    "description": "14k Gold Plated Cutting Comb",
+    "imageUrl": "/assets/products/balmain/14k-gold-plated-cutting-comb.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "14k Gold Plated Styling Comb",
+    "category": "Styling Tools",
+    "price": 76,
+    "badge": null,
+    "description": "14k Gold Plated Styling Comb",
+    "imageUrl": "/assets/products/balmain/14k-gold-plated-styling-comb.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Detangling SPA Brush",
+    "category": "Styling Tools",
+    "price": 72,
+    "badge": null,
+    "description": "Detangling SPA Brush",
+    "imageUrl": "/assets/products/balmain/detangling-spa-brush.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Luxury SPA Brush",
+    "category": "Styling Tools",
+    "price": 96,
+    "badge": null,
+    "description": "Luxury SPA Brush",
+    "imageUrl": "/assets/products/balmain/luxury-spa-brush.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "All Purpose SPA Brush",
+    "category": "Styling Tools",
+    "price": 89,
+    "badge": null,
+    "description": "All Purpose SPA Brush",
+    "imageUrl": "/assets/products/balmain/all-purpose-spa-brush.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Profesional Ceramic Round Brush 43mm xl",
+    "category": "Styling Tools",
+    "price": 57,
+    "badge": null,
+    "description": "Profesional Ceramic Round Brush 43mm xl",
+    "imageUrl": "/assets/products/balmain/profesional-ceramic-round-brush-43mm-xl.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Profesional Ceramic Round Brush 53mm",
+    "category": "Styling Tools",
+    "price": 49,
+    "badge": null,
+    "description": "Profesional Ceramic Round Brush 53mm",
+    "imageUrl": "/assets/products/balmain/profesional-ceramic-round-brush-53mm.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Profesional Ceramic Round Brush 43mm",
+    "category": "Styling Tools",
+    "price": 46,
+    "badge": null,
+    "description": "Profesional Ceramic Round Brush 43mm",
+    "imageUrl": "/assets/products/balmain/profesional-ceramic-round-brush-43mm.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Profesional Ceramic Round Brush 33mm",
+    "category": "Styling Tools",
+    "price": 44,
+    "badge": null,
+    "description": "Profesional Ceramic Round Brush 33mm",
+    "imageUrl": "/assets/products/balmain/profesional-ceramic-round-brush-33mm.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Profesional Ceramic Round Brush 25mm",
+    "category": "Styling Tools",
+    "price": 40,
+    "badge": null,
+    "description": "Profesional Ceramic Round Brush 25mm",
+    "imageUrl": "/assets/products/balmain/profesional-ceramic-round-brush-25mm.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Golden Spa Brush",
+    "category": "Styling Tools",
+    "price": 264,
+    "badge": null,
+    "description": "Golden Spa Brush",
+    "imageUrl": "/assets/products/balmain/golden-spa-brush.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Mini Golden Spa Brush",
+    "category": "Styling Tools",
+    "price": 288,
+    "badge": null,
+    "description": "Mini Golden Spa Brush",
+    "imageUrl": "/assets/products/balmain/mini-golden-spa-brush.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Silver Spa Brush",
+    "category": "Styling Tools",
+    "price": 240,
+    "badge": null,
+    "description": "Silver Spa Brush",
+    "imageUrl": "/assets/products/balmain/silver-spa-brush.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Mini Silver Spa Brush",
+    "category": "Styling Tools",
+    "price": 240,
+    "badge": null,
+    "description": "Mini Silver Spa Brush",
+    "imageUrl": "/assets/products/balmain/mini-silver-spa-brush.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Profesional Blowdryer",
+    "category": "Styling Tools",
+    "price": 285,
+    "badge": null,
+    "description": "Profesional Blowdryer",
+    "imageUrl": "/assets/products/balmain/profesional-blowdryer.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Profesional Straightener",
+    "category": "Styling Tools",
+    "price": 258,
+    "badge": null,
+    "description": "Profesional Straightener",
+    "imageUrl": "/assets/products/balmain/profesional-straightener.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Profesional Ceramic Curling Wand 32mm",
+    "category": "Styling Tools",
+    "price": 258,
+    "badge": null,
+    "description": "Profesional Ceramic Curling Wand 32mm",
+    "imageUrl": "/assets/products/balmain/profesional-ceramic-curling-wand-32mm.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Profesional Ceramic Curling Wand 25mm",
+    "category": "Styling Tools",
+    "price": 258,
+    "badge": null,
+    "description": "Profesional Ceramic Curling Wand 25mm",
+    "imageUrl": "/assets/products/balmain/profesional-ceramic-curling-wand-25mm.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Profesional Ceramic Conical Curling Wand",
+    "category": "Styling Tools",
+    "price": 258,
+    "badge": null,
+    "description": "Profesional Ceramic Conical Curling Wand",
+    "imageUrl": "/assets/products/balmain/profesional-ceramic-conical-curling-wand.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux Small White",
+    "category": "Hair Accessories",
+    "price": 90,
+    "badge": "New",
+    "description": "Pince a Cheveux Small White",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-small-white.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux Small Black",
+    "category": "Hair Accessories",
+    "price": 90,
+    "badge": "New",
+    "description": "Pince a Cheveux Small Black",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-small-black.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux Small Tortoiseshell",
+    "category": "Hair Accessories",
+    "price": 90,
+    "badge": "New",
+    "description": "Pince a Cheveux Small Tortoiseshell",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-small-tortoiseshell.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux Medium White",
+    "category": "Hair Accessories",
     "price": 130,
     "badge": "New",
-    "description": "Limited Edition Locks of Love Homme Gift Set This Limited Edition Locks of Love Homme Gift Set, featuring the Balmain Homme Bodyfying Shampoo, Balmain Homme Bodyfying Conditioner and Balmain Homme Activating Scalp Treatment, delivers fuller and stronger hair with a healthy scalp. Use the Balmain Homme Bodyfying Shampoo to lift and densify, Balmain Homme Bodyfying Conditioner and Balmain Homme…",
-    "imageUrl": "/assets/products/balmain/limited-edition-locks-of-love-homme-gift-set.png"
+    "description": "Pince a Cheveux Medium White",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-medium-white.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Travel Texturizing Salt Spray 50ml",
+    "name": "Pince a Cheveux Medium Black",
+    "category": "Hair Accessories",
+    "price": 130,
+    "badge": "New",
+    "description": "Pince a Cheveux Medium Black",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-medium-black.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux Medium Tortoiseshell",
+    "category": "Hair Accessories",
+    "price": 130,
+    "badge": "New",
+    "description": "Pince a Cheveux Medium Tortoiseshell",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-medium-tortoiseshell.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux Large White",
+    "category": "Hair Accessories",
+    "price": 140,
+    "badge": "New",
+    "description": "Pince a Cheveux Large White",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-large-white.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux Large Black",
+    "category": "Hair Accessories",
+    "price": 140,
+    "badge": "New",
+    "description": "Pince a Cheveux Large Black",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-large-black.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux Large Tortoiseshell",
+    "category": "Hair Accessories",
+    "price": 140,
+    "badge": "New",
+    "description": "Pince a Cheveux Large Tortoiseshell",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-large-tortoiseshell.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Elastique Pour Cheveux White",
+    "category": "Hair Accessories",
+    "price": 70,
+    "badge": null,
+    "description": "Elastique Pour Cheveux White",
+    "imageUrl": "/assets/products/balmain/elastique-pour-cheveux-white.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Elastique Pour Cheveux Black",
+    "category": "Hair Accessories",
+    "price": 70,
+    "badge": null,
+    "description": "Elastique Pour Cheveux Black",
+    "imageUrl": "/assets/products/balmain/elastique-pour-cheveux-black.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Elastique Pour Cheveux Tortoiseshell",
+    "category": "Hair Accessories",
+    "price": 70,
+    "badge": null,
+    "description": "Elastique Pour Cheveux Tortoiseshell",
+    "imageUrl": "/assets/products/balmain/elastique-pour-cheveux-tortoiseshell.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Barrette Pour Cheveux Medium White",
+    "category": "Hair Accessories",
+    "price": 75,
+    "badge": null,
+    "description": "Barrette Pour Cheveux Medium White",
+    "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-medium-white.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Barrette Pour Cheveux Medium Black",
+    "category": "Hair Accessories",
+    "price": 75,
+    "badge": null,
+    "description": "Barrette Pour Cheveux Medium Black",
+    "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-medium-black.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Barrette Pour Cheveux Medium Tortoiseshell",
+    "category": "Hair Accessories",
+    "price": 75,
+    "badge": null,
+    "description": "Barrette Pour Cheveux Medium Tortoiseshell",
+    "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-medium-tortoiseshell.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Barrette Pour Cheveux Large White",
+    "category": "Hair Accessories",
+    "price": 85,
+    "badge": null,
+    "description": "Barrette Pour Cheveux Large White",
+    "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-large-white.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Barrette Pour Cheveux Large Black",
+    "category": "Hair Accessories",
+    "price": 85,
+    "badge": null,
+    "description": "Barrette Pour Cheveux Large Black",
+    "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-large-black.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Barrette Pour Cheveux Large Tortoiseshell",
+    "category": "Hair Accessories",
+    "price": 85,
+    "badge": null,
+    "description": "Barrette Pour Cheveux Large Tortoiseshell",
+    "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-large-tortoiseshell.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Balmain Homme Bodyfying Shampoo 250ml",
     "category": "Hair Care",
-    "price": 14,
+    "price": 59,
     "badge": null,
-    "description": "Travel Size Texturizing Salt Spray 50ml Create a fresh summer look with the Balmain Texturizing Salt Spray. The formula is blended with Sea Salt to add body and a matt finish. The Sea Salt results in more definition and creates texture. The Texturizing Salt Spray reduces frizz and is humidity resistant. It gives the hair the moisture balance it needs. Protect damaged, dry and weak hair against…",
-    "imageUrl": "/assets/products/balmain/travel-texturizing-salt-spray-50ml.jpg"
+    "description": "Dedikuar posaçërisht për kujdesin ndaj meshkujve, Bodifying hair shampoo, përmirson teksturën e flokut.",
+    "imageUrl": "/assets/products/balmain/balmain-homme-bodyfying-shampoo-250ml.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Limited Edition Pinces à Cheveux Extra Small Midnight Black",
-    "category": "Hair Accessories",
+    "name": "Balmain Homme Bodyfying Conditioner 250ml",
+    "category": "Hair Care",
+    "price": 66,
+    "badge": null,
+    "description": "Dedikuar posaçërisht për kujdesin ndaj meshkujve, Bodifying hair Conditioner përmirson teksturën e flokut.",
+    "imageUrl": "/assets/products/balmain/balmain-homme-bodyfying-conditioner-250ml.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Illuminating Mask Silver Pearl 200ml",
+    "category": "Hair Care",
     "price": 72,
-    "badge": "New",
-    "description": "The Limited Edition Pinces à Cheveux Extra Small Midnight Black is handcrafted from high- quality cellulose acetate and designed in a deep midnight black shade with a subtle reflective pattern that catches the light from different angles. This layered effect adds depth and dimension to the compact design while maintaining a refined and timeless appearance . Its extra small size makes it ideal for…",
-    "imageUrl": "/assets/products/balmain/limited-edition-pinces-cheveux-extra-small-midnight-black.jpg"
-  },
-  {
-    "brand": "balmain",
-    "name": "Limited Edition Pinces à Cheveux Medium Midnight Black",
-    "category": "Hair Accessories",
-    "price": 111,
-    "badge": "New",
-    "description": "The Limited Edition Pinces à Cheveux Medium Midnight Black is handcrafted from high-quality cellulose acetate and designed in a deep midnight black shade with a subtle reflective pattern that catches the light from different angles. This layered effect adds depth and dimension to the clip while maintaining a refined and timeless appearance The medium size offers versatility, making it suitable…",
-    "imageUrl": "/assets/products/balmain/limited-edition-pinces-cheveux-medium-midnight-black.jpg"
-  },
-  {
-    "brand": "balmain",
-    "name": "Limited Edition Acetate Headband Large FW24",
-    "category": "Hair Accessories",
-    "price": 250,
     "badge": null,
-    "description": "Limited Edition Acetate Headband Large FW24 The Limited Edition Acetate Headband is handcrafted from high-quality acetate, a solid yet flexible material that makes the accessory hypoallergenic and gentle on the hair and scalp. Featuring an anti-slip system to ensure a secure fit while being worn and the black Balmain logo on the side of the headband. This headband not only boasts durability but…",
-    "imageUrl": "/assets/products/balmain/limited-edition-acetate-headband-large-fw24.jpg"
+    "description": "Maska neutralizon tonalitetet e verdha te padeshëshiruara të flokëve biond të dekoloruar.",
+    "imageUrl": "/assets/products/balmain/illuminating-mask-silver-pearl-200ml.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Limited Edition White Leather Puffed Headband",
-    "category": "Hair Accessories",
-    "price": 550,
+    "name": "Illuminating Mask White Pearl 200ml",
+    "category": "Hair Care",
+    "price": 72,
     "badge": null,
-    "description": "Limited Edition White Leather Puffed Headband FW24 This headband is handmade from high-quality Napa leather and embellished with the iconic 18K gold-plated signature element. The interior is lined with soft nubuck leather for an elegant finish and added grip to keep the headband in place throughout the day. The puffed silhouette adds a sophisticated touch to any hairstyle, making it a versatile…",
-    "imageUrl": "/assets/products/balmain/limited-edition-white-leather-puffed-headband.jpg"
+    "description": "Maska neutralizon tonalitetet e verdha te padeshëshiruara të flokëve biond të dekoloruar duke i dhënë një nuancë të ngrohtë, gold.",
+    "imageUrl": "/assets/products/balmain/illuminating-mask-white-pearl-200ml.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Gold Plated Hair Slide Logo",
-    "category": "Hair Accessories",
-    "price": 223,
+    "name": "Acvitating Scalp Treatment",
+    "category": "Hair Care",
+    "price": 90,
     "badge": null,
-    "description": "Inspired by the house’s rich couture heritage and relying on nothing but the finest materials, craftsmen and design, Balmain Hair Couture created a luxury hair accessory line. Every single hair jewel within the collection is entirely handcrafted by using traditional techniques and features the signature golden detailing.",
-    "imageUrl": "/assets/products/balmain/gold-plated-hair-slide-logo.jpg"
+    "description": "Acvitating Scalp Treatment",
+    "imageUrl": "/assets/products/balmain/acvitating-scalp-treatment.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Limited Edition Cordless Straightener",
-    "category": "Styling Tools",
-    "price": 159.85,
+    "name": "Bodyfying Homme Set",
+    "category": "Gifts",
+    "price": 234,
     "badge": null,
-    "description": "Limited Edition Cordless Straightener In celebration of Balmain Hair’s 50th anniversary, the renowned Balmain Hair Cordless Straightener has returned with a fresh aesthetic for the Limited Edition set. This combination provides a convenient and effective solution for achieving salon-quality styles while maintaining hair health. The Limited Edition Cordless Straightener is inspired by our…",
-    "imageUrl": "/assets/products/balmain/limited-edition-cordless-straightener.jpg"
+    "description": "Bodyfying Homme Set",
+    "imageUrl": "/assets/products/balmain/bodyfying-homme-set.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Professional Ceramic Round Brush 43mm",
-    "category": "Styling Tools",
-    "price": 48,
+    "name": "Moisturizing Repair Mask",
+    "category": "Hair Care",
+    "price": 57,
     "badge": null,
-    "description": "The Balmain Hair Couture Ceramic Round Brush gives of negative ions which seals the hair, closes cuticles and leaves the hair smooth. The ceramic coating barrel is designed to spread the heat evenly to create more shine, volume and dry the hair fast due to its negative ion technology. The bristles help to smoothen the flyaways for a long lasting silky finish. With ergonomic, seamless handle and…",
-    "imageUrl": "/assets/products/balmain/professional-ceramic-round-brush-43mm.jpg"
+    "description": "Një trajtim intensiv për flokë natyralë ose të lyer. Ushqen thellësisht, hidraton dhe siguron flokë tepër të lëmuar.",
+    "imageUrl": "/assets/products/balmain/moisturizing-repair-mask.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Professional Ceramic Round Brush 33mm",
+    "name": "Extension Brush",
     "category": "Styling Tools",
     "price": 45,
     "badge": null,
-    "description": "The Balmain Hair Couture Ceramic Round Brush 33mm is the perfect tool for creating more volume or for creating a silky finish to the hair. The ceramic barrel gives of negative ions which seal the hair, close off damaged cuticles and smooth out the split ends. The small openings in the barrel supports a perfect circulation of the airflow which results in hair with a high-gloss finish. Spreads the…",
-    "imageUrl": "/assets/products/balmain/professional-ceramic-round-brush-33mm.jpg"
+    "description": "Extension Brush",
+    "imageUrl": "/assets/products/balmain/extension-brush.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Universal Foldable Diffuser",
+    "name": "Mini All Purpose Brush",
     "category": "Styling Tools",
-    "price": 34,
-    "badge": "New",
-    "description": "The Universal Foldable Diffuser is suitable for any Balmain Hair blow dryer. This attachment increases air flow, helps to diffuse the heat and air evenly, and therefore protects the hair from damage of concentrated heat. While leaving the hair with beautifully defined curls and waves, the diffuser will maximize volume and minimize frizz.",
-    "imageUrl": "/assets/products/balmain/universal-foldable-diffuser.jpg"
-  },
-  {
-    "brand": "balmain",
-    "name": "All Purpose Spa Brush Mini",
-    "category": "Styling Tools",
-    "price": 43,
+    "price": 48,
     "badge": null,
-    "description": "All Purpose Spa Brush Mini For the past decade, boar hair brushes have been used to create healthy and shiny hair without styling products. The natural properties of the boar bristles help condition the hair by spreading the oils from roots to ends. Natural oils act as an anti-frizz serum that repair dry hair and add shine. The boar bristles and nylon bristles stimulate the scalp and help…",
-    "imageUrl": "/assets/products/balmain/all-purpose-spa-brush-mini.jpg"
+    "description": "Mini All Purpose Brush",
+    "imageUrl": "/assets/products/balmain/mini-all-purpose-brush.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince à Cheveux Extra Small Black/White",
+    "category": "Hair Accessories",
+    "price": 90,
+    "badge": "New",
+    "description": "Pince à Cheveux Extra Small Black/White",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-extra-small-black-white.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince à Cheveux Medium Black/White",
+    "category": "Hair Accessories",
+    "price": 130,
+    "badge": "New",
+    "description": "Pince à Cheveux Medium Black/White",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-medium-black-white.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince à Cheveux Large Black/White",
+    "category": "Hair Accessories",
+    "price": 140,
+    "badge": "New",
+    "description": "Pince à Cheveux Large Black/White",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-large-black-white.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition Riviera Headband Gold Small",
+    "category": "Hair Accessories",
+    "price": 200,
+    "badge": "Limited",
+    "description": "Limited Edition Riviera Headband Gold Small",
+    "imageUrl": "/assets/products/balmain/limited-edition-riviera-headband-gold-small.png"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition Backstage Clip Pour Cheveux FW23",
+    "category": "Hair Accessories",
+    "price": 90,
+    "badge": "Limited",
+    "description": "Limited Edition Backstage Clip Pour Cheveux FW23",
+    "imageUrl": "/assets/products/balmain/limited-edition-backstage-clip-pour-cheveux-fw23.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Hair Parfume Ginger 15ml",
+    "category": "Hair Care",
+    "price": 32,
+    "badge": "New",
+    "description": "Parfumi i flokëve Ginger 1974 është një aromë magjepsëse për flokë.",
+    "imageUrl": "/assets/products/balmain/hair-parfume-ginger-15ml.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Hair Parfume Cardamon 15ml",
+    "category": "Hair Care",
+    "price": 32,
+    "badge": "New",
+    "description": "Parfumi i flokëve Cardamom 1974 është një mjegull delikate aromatike.",
+    "imageUrl": "/assets/products/balmain/hair-parfume-cardamon-15ml.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Hair Parfume Vetiver 15ml",
+    "category": "Hair Care",
+    "price": 32,
+    "badge": "New",
+    "description": "Parfumi i flokëve Vetiver 1974 është një mjegull aromatike energjike.",
+    "imageUrl": "/assets/products/balmain/hair-parfume-vetiver-15ml.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Revitalizing Care Set",
+    "category": "Hair Care",
+    "price": 150,
+    "badge": "New",
+    "description": "Revitalizing Care Set",
+    "imageUrl": "/assets/products/balmain/revitalizing-care-set.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Muse de Printemps Styling Set",
+    "category": "Hair Care",
+    "price": 100,
+    "badge": "New",
+    "description": "Muse de Printemps Styling Set",
+    "imageUrl": "/assets/products/balmain/muse-de-printemps-styling-set.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Printems Leaf Barrette",
+    "category": "Hair Accessories",
+    "price": 240,
+    "badge": "Limited",
+    "description": "Printems Leaf Barrette",
+    "imageUrl": "/assets/products/balmain/printems-leaf-barrette.webp"
+  },
+  {
+    "brand": "balmain",
+    "name": "Toiletry Bag Black Gold",
+    "category": "Hair Care",
+    "price": 220,
+    "badge": "New",
+    "description": "Toiletry Bag Black Gold",
+    "imageUrl": "/assets/products/balmain/toiletry-bag-black-gold.avif"
+  },
+  {
+    "brand": "balmain",
+    "name": "Sculpting Wax 100 ml",
+    "category": "Hair Care",
+    "price": 50,
+    "badge": "New",
+    "description": "Sculpting Wax 100 ml",
+    "imageUrl": "/assets/products/balmain/sculpting-wax-100-ml.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Rafia Cosmetic Bag",
+    "category": "Hair Care",
+    "price": 110,
+    "badge": "New",
+    "description": "Rafia Cosmetic Bag",
+    "imageUrl": "/assets/products/balmain/rafia-cosmetic-bag.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Boar Hair Backcomb Brush",
+    "category": "Styling Tools",
+    "price": 33,
+    "badge": "New",
+    "description": "Boar Hair Backcomb Brush",
+    "imageUrl": "/assets/products/balmain/boar-hair-backcomb-brush.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Volume Set Versailles FW24",
+    "category": "Hair Care",
+    "price": 120,
+    "badge": "New",
+    "description": "Volume Set Versailles FW24",
+    "imageUrl": "/assets/products/balmain/volume-set-versailles-fw24.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Hair Parfume Cardamon 100ml",
+    "category": "Hair Care",
+    "price": 150,
+    "badge": "New",
+    "description": "Hair Parfume Cardamon 100ml",
+    "imageUrl": "/assets/products/balmain/hair-parfume-cardamon-100ml.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Ash Toner",
+    "category": "Hair Care",
+    "price": 54,
+    "badge": null,
+    "description": "Ash Toner",
+    "imageUrl": "/assets/products/balmain/ash-toner.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux XS Tortoise",
+    "category": "Hair Accessories",
+    "price": 90,
+    "badge": "New",
+    "description": "Pince a Cheveux XS Tortoise",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-xs-tortoise.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux XS Nude",
+    "category": "Hair Accessories",
+    "price": 90,
+    "badge": "New",
+    "description": "Pince a Cheveux XS Nude",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-xs-nude.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux XS Pearl",
+    "category": "Hair Accessories",
+    "price": 90,
+    "badge": "New",
+    "description": "Pince a Cheveux XS Pearl",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-xs-pearl.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux Medium Pearl",
+    "category": "Hair Accessories",
+    "price": 130,
+    "badge": "New",
+    "description": "Pince a Cheveux Medium Pearl",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-medium-pearl.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux Medium White Black",
+    "category": "Hair Accessories",
+    "price": 130,
+    "badge": "New",
+    "description": "Pince a Cheveux Medium White Black",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-medium-white-black.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux Large White Black",
+    "category": "Hair Accessories",
+    "price": 140,
+    "badge": "New",
+    "description": "Pince a Cheveux Large White Black",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-large-white-black.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux Imperiale White/Black",
+    "category": "Hair Accessories",
+    "price": 180,
+    "badge": "New",
+    "description": "Pince a Cheveux Imperiale White/Black",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-imperiale-white-black.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux Imperiale Black/White",
+    "category": "Hair Accessories",
+    "price": 180,
+    "badge": "New",
+    "description": "Pince a Cheveux Imperiale Black/White",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-imperiale-black-white.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux Imperiale Tortoise",
+    "category": "Hair Accessories",
+    "price": 180,
+    "badge": "New",
+    "description": "Pince a Cheveux Imperiale Tortoise",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-imperiale-tortoise.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "White Puffed Leather Headband FW24",
+    "category": "Hair Accessories",
+    "price": 550,
+    "badge": "New",
+    "description": "White Puffed Leather Headband FW24",
+    "imageUrl": "/assets/products/balmain/white-puffed-leather-headband-fw24.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Acetate Headband Black/White",
+    "category": "Hair Accessories",
+    "price": 200,
+    "badge": "Limited",
+    "description": "Acetate Headband Black/White",
+    "imageUrl": "/assets/products/balmain/acetate-headband-black-white.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Acetate Headband White/Black",
+    "category": "Hair Accessories",
+    "price": 200,
+    "badge": "Limited",
+    "description": "Acetate Headband White/Black",
+    "imageUrl": "/assets/products/balmain/acetate-headband-white-black.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Acetate Headband Tortoise",
+    "category": "Hair Accessories",
+    "price": 200,
+    "badge": "Limited",
+    "description": "Acetate Headband Tortoise",
+    "imageUrl": "/assets/products/balmain/acetate-headband-tortoise.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Hair Parfume Cardamon 100 ml",
+    "category": "Hair Care",
+    "price": 150,
+    "badge": "New",
+    "description": "Parfumi i flokëve Cardamom 1974 është një mjegull delikate aromatike me një përzierje perfekte.",
+    "imageUrl": "/assets/products/balmain/hair-parfume-cardamon-100-ml.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Pince a Cheveux XS Cosmic Sapphire",
+    "category": "Hair Accessories",
+    "price": 90,
+    "badge": "New",
+    "description": "Pince a Cheveux XS Cosmic Sapphire",
+    "imageUrl": "/assets/products/balmain/pince-a-cheveux-xs-cosmic-sapphire.webp"
+  },
+  {
+    "brand": "balmain",
+    "name": "Barrette Pour Cheveux Medium Cosmic Sapphire",
+    "category": "Hair Accessories",
+    "price": 75,
+    "badge": "New",
+    "description": "Barrette Pour Cheveux Medium Cosmic Sapphire",
+    "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-medium-cosmic-sapphire.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Moisturizing Care Set",
+    "category": "Hair Care",
+    "price": 150,
+    "badge": "New",
+    "description": "Moisturizing Care Set",
+    "imageUrl": "/assets/products/balmain/moisturizing-care-set.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Cosmetic Bag Cosmic Sapphire",
+    "category": "Gifts",
+    "price": 170,
+    "badge": "Limited",
+    "description": "Cosmetic Bag Cosmic Sapphire",
+    "imageUrl": "/assets/products/balmain/cosmetic-bag-cosmic-sapphire.webp"
   },
   {
     "brand": "eloure",

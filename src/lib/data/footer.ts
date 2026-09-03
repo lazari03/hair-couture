@@ -60,7 +60,7 @@ const footerMeta: Record<BrandSlug, FooterContent> = {
   balmain: {
     slug: "balmain",
     contactEmail: CONTACT_EMAIL,
-    shopLinks: shopLinksFor("balmain", ["Hair Care", "Hair Accessories", "Styling Tools"]),
+    shopLinks: shopLinksFor("balmain", ["Hair Care", "Hair Accessories", "Styling Tools", "Gifts"]),
     serviceLinks: serviceLinksFor("balmain"),
     newsletter: {
       title: "Join the list",

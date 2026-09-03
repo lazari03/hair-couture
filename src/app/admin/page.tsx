@@ -3,14 +3,22 @@ import { prisma } from "@/lib/prisma";
 import { brands } from "@/lib/brands";
 
 export default async function AdminDashboard() {
-  const [productCounts, orderStats] = await Promise.all([
+  const [productCounts, categoryCounts, orderStats] = await Promise.all([
     prisma.product.groupBy({ by: ["brand"], _count: { _all: true } }),
+    prisma.product.groupBy({ by: ["brand", "category"], _count: { _all: true } }),
     prisma.order.groupBy({ by: ["brand"], _count: { _all: true }, _sum: { total: true } }),
   ]);
 
   const productsByBrand = Object.fromEntries(productCounts.map((p) => [p.brand, p._count._all]));
   const ordersByBrand = Object.fromEntries(orderStats.map((o) => [o.brand, o._count._all]));
   const revenueByBrand = Object.fromEntries(orderStats.map((o) => [o.brand, o._sum.total ?? 0]));
+  const categoriesByBrand: Record<string, { category: string; count: number }[]> = {};
+  for (const c of categoryCounts) {
+    (categoriesByBrand[c.brand] ??= []).push({ category: c.category, count: c._count._all });
+  }
+  for (const list of Object.values(categoriesByBrand)) {
+    list.sort((a, b) => b.count - a.count);
+  }
 
   const totalProducts = productCounts.reduce((sum, p) => sum + p._count._all, 0);
   const totalOrders = orderStats.reduce((sum, o) => sum + o._count._all, 0);
@@ -67,6 +75,14 @@ export default async function AdminDashboard() {
                   <div className="text-xs text-neutral-500">Revenue</div>
                 </div>
               </div>
+              <ul className="mt-5 space-y-1.5 border-t border-neutral-100 pt-4 text-xs">
+                {(categoriesByBrand[b.slug] ?? []).map((c) => (
+                  <li key={c.category} className="flex items-center justify-between gap-2 text-neutral-600">
+                    <span className="truncate">{c.category}</span>
+                    <span className="tabular-nums text-neutral-900">{c.count}</span>
+                  </li>
+                ))}
+              </ul>
               <div className="mt-5 flex gap-2 text-xs">
                 <Link
                   href={`/admin/products?brand=${b.slug}`}

@@ -49,10 +49,11 @@ const shopMeta: Record<BrandSlug, ShopMeta> = {
   balmain: {
     slug: "balmain",
     // Mirrors balmainhair.com's real nav (fetched 2026-09-01): Bestsellers/New/
-    // Gifts/Outlet are curated cross-category views (no dedicated product
-    // category of their own, same as the live site) — Hair Care/Hair
-    // Accessories/Styling Tools are the actual filterable categories, driven
-    // entirely by whatever category values exist on Product rows in the DB.
+    // Outlet are curated cross-category views (no dedicated product category
+    // of their own, same as the live site) — Hair Care/Hair Accessories/
+    // Styling Tools/Gifts are the actual filterable categories (from the real
+    // balmainhair.al WooCommerce export), driven entirely by whatever
+    // category values exist on Product rows in the DB.
     menu: ["Bestsellers", "New", "Hair Care", "Hair Accessories", "Styling Tools", "Gifts", "Outlet"],
     heroVariant: "full",
     hero: {

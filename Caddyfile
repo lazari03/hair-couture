@@ -1,0 +1,3 @@
+haircouture.al, www.haircouture.al {
+	reverse_proxy app:3000
+}
