@@ -33,6 +33,13 @@ COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/src/generated ./src/generated
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/next.config.ts ./next.config.ts
+# prisma.config.ts is where DATABASE_URL actually gets wired to the
+# datasource for CLI commands (`prisma migrate deploy` at container
+# startup) — this schema has no `url = env(...)` in its datasource block
+# since the app connects via the better-sqlite3 driver adapter instead.
+# Missing this file is why migrate deploy failed with "datasource.url
+# property is required" even though DATABASE_URL was set correctly.
+COPY --from=builder /app/prisma.config.ts ./prisma.config.ts
 COPY docker-entrypoint.sh ./
 RUN chmod +x docker-entrypoint.sh
 
