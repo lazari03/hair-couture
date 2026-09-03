@@ -22,16 +22,16 @@ SSH into the fresh Ubuntu server, then:
 ```bash
 git clone <your-repo-url> hair-couture
 cd hair-couture
-bash deploy/setup-server.sh
+make setup
 ```
 
-This installs Docker + the Compose plugin and opens ports 22/80/443 in
-ufw.
+This installs Docker + the Compose plugin and opens ports 22/80/443/3000
+in ufw.
 
 ## 3. Configure secrets
 
 ```bash
-cp .env.production.example .env.production
+make env
 ```
 
 Fill in `.env.production`:
@@ -46,7 +46,7 @@ redeploys.
 ## 4. Deploy
 
 ```bash
-docker compose up -d --build
+make deploy
 ```
 
 First boot runs migrations and seeds the database automatically (only on
@@ -57,27 +57,41 @@ first request.
 Check it's up:
 
 ```bash
-docker compose ps
-docker compose logs -f app
+make ps
+make logs
 curl -I https://haircouture.al
 ```
 
 ## Redeploying after a code change
 
 ```bash
-git pull
-docker compose up -d --build
+make deploy
 ```
 
-The SQLite data volume is untouched by this — only the app image rebuilds.
+(`git pull` + `docker compose up -d --build`, in one step — every code
+change, not just the first deploy, goes through this same command.) The
+SQLite data volume is untouched by this — only the app image rebuilds.
 
 ## Changing the domain
 
-Edit `Caddyfile` (and re-run `docker compose up -d` — no rebuild needed,
-Caddy config reloads on restart).
+Edit `Caddyfile` (and `make up` — no rebuild needed, Caddy config reloads
+on restart).
 
 ## Backing up the database
 
 ```bash
-docker compose exec app sh -c 'cat /data/dev.db' > backup-$(date +%F).db
+make backup
 ```
+
+## All Makefile targets
+
+| Command | What it does |
+| --- | --- |
+| `make setup` | Install Docker + open the firewall (fresh server, once) |
+| `make env` | Create `.env.production` from the template |
+| `make deploy` | `git pull` + rebuild + restart — the everyday command |
+| `make up` / `make down` / `make restart` | Start / stop / restart without rebuilding |
+| `make logs` | Tail the app's logs |
+| `make ps` | Container status |
+| `make shell` | Shell into the running app container |
+| `make backup` | Dump the SQLite DB to a local `backup-<date>.db` file |
