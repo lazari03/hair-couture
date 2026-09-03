@@ -22,6 +22,17 @@ import {
 import type { BrandSlug } from "@/lib/brands";
 import { reserveStock, releaseCartReservations } from "@/lib/actions/stock";
 
+// crypto.randomUUID() only exists in a "secure context" (HTTPS, or
+// localhost) — plain HTTP on an IP/domain throws. These ids are just
+// local cart/line keys, not security-sensitive, so a non-spec fallback is
+// fine.
+function randomId(): string {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
+}
+
 export interface CartLine {
   id: string; // line id, stable across qty changes
   brand: BrandSlug;
@@ -92,14 +103,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
       let id = localStorage.getItem(CART_ID_KEY);
       if (!id) {
-        id = crypto.randomUUID();
+        id = randomId();
         localStorage.setItem(CART_ID_KEY, id);
       }
       setCartId(id);
     } catch {
       // storage unavailable — start with an empty cart and a throwaway id
       // (in-memory only, so no hold survives a reload, but nothing crashes)
-      setCartId(crypto.randomUUID());
+      setCartId(randomId());
     }
     setHydrated(true);
   }, []);
