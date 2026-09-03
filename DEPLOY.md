@@ -8,7 +8,12 @@ small-to-medium traffic site on one VPS — no separate DB server needed.
 
 Point an A record (and AAAA if the server has IPv6) for `haircouture.al`
 and `www.haircouture.al` at the server's IP. Caddy won't be able to get a
-certificate until this resolves.
+certificate until this resolves — but you don't need to wait for DNS to
+deploy and look at the site: `docker compose up` also publishes the app
+directly on port 3000, so `http://<server-ip>:3000` works immediately
+(Caddy just keeps retrying the certificate in the background until DNS
+resolves). Once the domain is live behind Caddy, close the port with
+`ufw delete allow 3000/tcp`.
 
 ## 2. Server setup (once)
 

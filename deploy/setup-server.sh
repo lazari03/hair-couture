@@ -16,6 +16,9 @@ if command -v ufw >/dev/null 2>&1; then
   ufw allow OpenSSH
   ufw allow 80/tcp
   ufw allow 443/tcp
+  # Temporary: lets you view the site at http://<ip>:3000 before DNS/Caddy
+  # are set up. Close it later with `ufw delete allow 3000/tcp`.
+  ufw allow 3000/tcp
   ufw --force enable
 fi
 

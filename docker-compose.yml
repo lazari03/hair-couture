@@ -5,8 +5,12 @@ services:
     env_file: .env.production
     volumes:
       - sqlite-data:/data
-    expose:
-      - "3000"
+    # Published on the host so the site is viewable at http://<server-ip>:3000
+    # before DNS/Caddy are set up. Once your domain is live behind Caddy you
+    # can close this off (ufw delete allow 3000/tcp) — Caddy talks to the
+    # app over the internal Docker network regardless of this mapping.
+    ports:
+      - "3000:3000"
 
   caddy:
     image: caddy:2-alpine
