@@ -87,7 +87,11 @@ export async function sendOrderConfirmation(order: OrderForEmail, brandSlug: Bra
 }
 
 export async function sendOrderNotificationToAdmin(order: OrderForEmail, brandSlug: BrandSlug): Promise<void> {
-  const configured = process.env.BREVO_ORDER_ALERT_TO || process.env.ADMIN_EMAIL || "";
+  const configured =
+    process.env.BREVO_ORDER_ALERT_TO ||
+    process.env.BREVO_SENDER_EMAIL ||
+    process.env.ADMIN_EMAIL ||
+    "";
   const recipients = configured
     .split(",")
     .map((entry) => entry.trim())
@@ -104,7 +108,7 @@ export async function sendOrderNotificationToAdmin(order: OrderForEmail, brandSl
 
   await sendTransactionalEmail({
     to: recipients,
-    subject: `New ${brandName} order ${order.id}`,
+    subject: "New order",
     htmlContent: `
       <div style="font-family:sans-serif;max-width:560px;margin:0 auto">
         <h1 style="font-weight:600;margin-bottom:8px">New order received</h1>

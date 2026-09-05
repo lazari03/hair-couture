@@ -19,22 +19,23 @@ type FieldName =
   | "phone"
   | "address"
   | "city"
-  | "postalCode"
-  | "country";
+  | "postalCode";
 
 function Field({
   label,
   children,
   fullWidth = false,
+  required = true,
 }: {
   label: string;
   children: React.ReactNode;
   fullWidth?: boolean;
+  required?: boolean;
 }) {
   return (
     <label className={fullWidth ? "col-span-2 flex flex-col gap-1.5" : "flex flex-col gap-1.5"}>
       <span className="text-[11px] tracking-[0.16em] text-neutral-500 uppercase">
-        {label} <span className="text-[var(--brand-accent)]">*</span>
+        {label} {required && <span className="text-[var(--brand-accent)]">*</span>}
       </span>
       {children}
     </label>
@@ -56,7 +57,6 @@ export default function CheckoutPage() {
     address: "",
     city: "",
     postalCode: "",
-    country: "",
   });
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -242,23 +242,12 @@ export default function CheckoutPage() {
                       className="min-h-11 border border-neutral-300 bg-white px-3 text-sm outline-none transition-colors placeholder:text-neutral-400 focus:border-neutral-900"
                     />
                   </Field>
-                  <Field label={t("postalCode")}>
+                  <Field label={t("postalCode")} required={false}>
                     <input
-                      required
                       autoComplete="postal-code"
                       placeholder={t("postalCode")}
                       value={form.postalCode}
                       onChange={(e) => setForm({ ...form, postalCode: e.target.value })}
-                      className="min-h-11 border border-neutral-300 bg-white px-3 text-sm outline-none transition-colors placeholder:text-neutral-400 focus:border-neutral-900"
-                    />
-                  </Field>
-                  <Field label={t("country")} fullWidth>
-                    <input
-                      required
-                      autoComplete="country-name"
-                      placeholder={t("country")}
-                      value={form.country}
-                      onChange={(e) => setForm({ ...form, country: e.target.value })}
                       className="min-h-11 border border-neutral-300 bg-white px-3 text-sm outline-none transition-colors placeholder:text-neutral-400 focus:border-neutral-900"
                     />
                   </Field>
