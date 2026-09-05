@@ -23,7 +23,7 @@ export function NewsletterForm({
     e.preventDefault();
     setPending(true);
     setError(null);
-    const result = await subscribeToNewsletter(email);
+    const result = await subscribeToNewsletter(email, brand);
     setPending(false);
     if (!result.ok) {
       setError(result.error);

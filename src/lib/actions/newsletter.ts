@@ -1,6 +1,7 @@
 "use server";
 
 import { z } from "zod";
+import { getBrand } from "@/lib/brands";
 import { subscribeNewsletter } from "@/lib/email";
 
 // Kept separate from contact.ts — different form/entity, one concern per
@@ -9,10 +10,13 @@ const emailSchema = z.string().trim().email("Enter a valid email");
 
 export type NewsletterResult = { ok: true } | { ok: false; error: string };
 
-export async function subscribeToNewsletter(email: string): Promise<NewsletterResult> {
+export async function subscribeToNewsletter(email: string, brand: string): Promise<NewsletterResult> {
   const parsed = emailSchema.safeParse(email);
   if (!parsed.success) return { ok: false, error: parsed.error.issues[0].message };
 
-  await subscribeNewsletter(parsed.data);
+  const resolvedBrand = getBrand(brand);
+  if (!resolvedBrand) return { ok: false, error: "Invalid brand" };
+
+  await subscribeNewsletter(parsed.data, resolvedBrand.slug);
   return { ok: true };
 }

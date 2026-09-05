@@ -38,7 +38,13 @@ Fill in `.env.production`:
 - `AUTH_SECRET` — `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`
 - `ADMIN_EMAIL` / `ADMIN_PASSWORD_HASH_B64` — see the comments in the file
 - Brevo + GA4 keys, if you have them (safe to leave blank — those features
-  just no-op until set)
+  just no-op until set). For Brevo specifically:
+  - `BREVO_API_KEY`, `BREVO_SENDER_EMAIL`, `BREVO_SENDER_NAME`
+  - Newsletter list routing: either set one `BREVO_NEWSLETTER_LIST_ID` for all brands,
+    or set brand-specific IDs (`BREVO_NEWSLETTER_LIST_ID_BALMAIN`,
+    `BREVO_NEWSLETTER_LIST_ID_ELOURE`, `BREVO_NEWSLETTER_LIST_ID_EAU_DE_1974`)
+  - Order alerts to your team: set `BREVO_ORDER_ALERT_TO` (comma-separated)
+    or leave it empty to use `ADMIN_EMAIL`
 
 Leave `DATABASE_URL` as-is; it points at the Docker volume that survives
 redeploys.

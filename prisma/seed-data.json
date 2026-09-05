@@ -1071,6 +1071,168 @@
     "imageUrl": "/assets/products/balmain/cosmetic-bag-cosmic-sapphire.webp"
   },
   {
+    "brand": "balmain",
+    "name": "Limited Edition Pinces à Cheveux Extra Small Midnight Black",
+    "category": "Hair Accessories",
+    "price": 72,
+    "badge": "Limited",
+    "description": "Limited Edition Pinces à Cheveux Extra Small Midnight Black",
+    "imageUrl": "/assets/products/balmain/limited-edition-pinces-a-cheveux-extra-small-midnight-black.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition Pinces à Cheveux Medium Midnight Black",
+    "category": "Hair Accessories",
+    "price": 111,
+    "badge": "Limited",
+    "description": "Limited Edition Pinces à Cheveux Medium Midnight Black",
+    "imageUrl": "/assets/products/balmain/limited-edition-pinces-a-cheveux-medium-midnight-black-c4-26.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition legacy Spa Brush",
+    "category": "Styling Tools",
+    "price": 95,
+    "badge": "Limited",
+    "description": "Limited Edition legacy Spa Brush",
+    "imageUrl": "/assets/products/balmain/limited-edition-legacy-spa-brush-c4-26.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition Midnight Black Barrette",
+    "category": "Hair Accessories",
+    "price": 440,
+    "badge": "Limited",
+    "description": "Limited Edition Midnight Black Barrette",
+    "imageUrl": "/assets/products/balmain/limited-edition-midnight-black-barrette-c4-26.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition Midnight Black Clip",
+    "category": "Hair Accessories",
+    "price": 290,
+    "badge": "Limited",
+    "description": "Limited Edition Midnight Black Clip",
+    "imageUrl": "/assets/products/balmain/limited-edition-midnight-black-clip-c4-26.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition Midnight Black Headband",
+    "category": "Hair Accessories",
+    "price": 650,
+    "badge": "Limited",
+    "description": "Limited Edition Midnight Black Headband",
+    "imageUrl": "/assets/products/balmain/limited-edition-midnight-black-headband-c4-26.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition Midnight Black Slides Pins",
+    "category": "Hair Accessories",
+    "price": 260,
+    "badge": "Limited",
+    "description": "Limited Edition Midnight Black Slides Pins",
+    "imageUrl": "/assets/products/balmain/limited-edition-midnight-black-slides-c4-26.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition Acetate Headband Large FW24",
+    "category": "Hair Accessories",
+    "price": 250,
+    "badge": "Limited",
+    "description": "Limited Edition Acetate Headband Large FW24",
+    "imageUrl": "/assets/products/balmain/limited-edition-acetate-headband-large-fw24.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition White Leather Puffed Headband",
+    "category": "Hair Accessories",
+    "price": 550,
+    "badge": "Limited",
+    "description": "Limited Edition White Leather Puffed Headband",
+    "imageUrl": "/assets/products/balmain/limited-edition-white-leather-puffed-headband-fw24.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Gold Plated Hair Slide Logo",
+    "category": "Hair Accessories",
+    "price": 223,
+    "badge": null,
+    "description": "Gold Plated Hair Slide Logo",
+    "imageUrl": "/assets/products/balmain/gold-plated-hair-slide-logo.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition Pont des Arts Hair Clip Large FW22",
+    "category": "Hair Accessories",
+    "price": 280,
+    "badge": "Limited",
+    "description": "Limited Edition Pont des Arts Hair Clip Large FW22",
+    "imageUrl": "/assets/products/balmain/limited-edition-pont-des-arts-hair-clip-large-fw22.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition Headband FW22",
+    "category": "Hair Accessories",
+    "price": 250,
+    "badge": "Limited",
+    "description": "Limited Edition Headband FW22",
+    "imageUrl": "/assets/products/balmain/limited-edition-headband-fw22.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Riviera Headband Cognac Large",
+    "category": "Hair Accessories",
+    "price": 199,
+    "badge": null,
+    "description": "Riviera Headband Cognac Large",
+    "imageUrl": "/assets/products/balmain/riviera-headband-cognac-large.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Leather Headband Large Silver",
+    "category": "Hair Accessories",
+    "price": 252,
+    "badge": null,
+    "description": "Leather Headband Large Silver",
+    "imageUrl": "/assets/products/balmain/leather-headband-large-silver.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Barrette Pour Cheveux Medium Silver/Gold",
+    "category": "Hair Accessories",
+    "price": 113.75,
+    "badge": null,
+    "description": "Barrette Pour Cheveux Medium Silver/Gold",
+    "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-medium-silvergold.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition Cordless Straightener",
+    "category": "Styling Tools",
+    "price": 159.85,
+    "badge": "Limited",
+    "description": "Limited Edition Cordless Straightener",
+    "imageUrl": "/assets/products/balmain/limited-edition-cordless-straightener.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition Pearl Hair Clip Large FW24",
+    "category": "Hair Accessories",
+    "price": 275,
+    "badge": "Limited",
+    "description": "Limited Edition Pearl Hair Clip Large FW24",
+    "imageUrl": "/assets/products/balmain/limited-edition-pearl-hair-clip-large-fw24.jpg"
+  },
+  {
+    "brand": "balmain",
+    "name": "Limited Edition Printemps Leaf Slide",
+    "category": "Hair Accessories",
+    "price": 95.24,
+    "badge": "Limited",
+    "description": "Limited Edition Printemps Leaf Slide",
+    "imageUrl": "/assets/products/balmain/limited-edition-printemps-leaf-slide.jpg"
+  },
+  {
     "brand": "eloure",
     "name": "Colour Protecting Shampoo - 250 ml",
     "category": "Care Collection",
