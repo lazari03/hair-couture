@@ -15,7 +15,7 @@ export function SearchClient({ brand, products }: { brand: BrandSlug; products: 
 
   const q = query.trim().toLowerCase();
   const results = q
-    ? products.filter((p) => `${p.name} ${p.category}`.toLowerCase().includes(q))
+    ? products.filter((p) => `${p.name} ${p.categories.join(" ")}`.toLowerCase().includes(q))
     : [];
 
   // Debounced — track the settled query, not every keystroke.

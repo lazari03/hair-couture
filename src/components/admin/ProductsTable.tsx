@@ -3,6 +3,7 @@ import Link from "next/link";
 import { deleteProduct } from "@/lib/actions/products";
 import { productImage } from "@/lib/data/category-image";
 import type { ProductModel } from "@/generated/prisma/models";
+import { parseProductCategories } from "@/lib/product-categories";
 
 export function ProductsTable({ products }: { products: ProductModel[] }) {
   return (
@@ -28,7 +29,15 @@ export function ProductsTable({ products }: { products: ProductModel[] }) {
                 </div>
               </td>
               <td className="px-4 py-3 font-medium">{p.name}</td>
-              <td className="px-4 py-3">{p.category}</td>
+              <td className="px-4 py-3">
+                <div className="flex flex-wrap gap-1.5">
+                  {parseProductCategories(p.category).map((category) => (
+                    <span key={category} className="rounded bg-neutral-100 px-2 py-0.5 text-xs text-neutral-700">
+                      {category}
+                    </span>
+                  ))}
+                </div>
+              </td>
               <td className="px-4 py-3">€ {p.price.toLocaleString("en-US")}</td>
               <td className="px-4 py-3">
                 <span className={p.stock <= 0 ? "font-medium text-red-600" : p.stock <= 10 ? "font-medium text-amber-600" : ""}>

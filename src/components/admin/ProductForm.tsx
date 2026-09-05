@@ -2,7 +2,8 @@
 
 import { useActionState, useState } from "react";
 import { brands, getBrand } from "@/lib/brands";
-import type { Product } from "@/lib/data/shop";
+import type { ProductModel } from "@/generated/prisma/models";
+import { parseProductCategories } from "@/lib/product-categories";
 
 type FormState = { error: string } | undefined;
 type Action = (prevState: FormState, formData: FormData) => Promise<FormState>;
@@ -14,7 +15,7 @@ export function ProductForm({
   categoriesByBrand,
 }: {
   action: Action;
-  defaultValues?: Product;
+  defaultValues?: ProductModel;
   defaultBrand?: string;
   /** Existing categories per brand — select-only, see lib/admin/categories.ts. */
   categoriesByBrand: Record<string, string[]>;
@@ -23,20 +24,30 @@ export function ProductForm({
   const [brandSlug, setBrandSlug] = useState(defaultBrand ?? brands[0].slug);
   const accent = getBrand(brandSlug)?.colors.accent ?? "#171717";
   const categoryOptions = categoriesByBrand[brandSlug] ?? [];
-  const [category, setCategory] = useState(
-    defaultValues?.category && categoryOptions.includes(defaultValues.category)
-      ? defaultValues.category
-      : (categoryOptions[0] ?? ""),
-  );
+  const [selectedCategories, setSelectedCategories] = useState(() => {
+    const existing = parseProductCategories(defaultValues?.category ?? "").filter((c) => categoryOptions.includes(c));
+    return existing.length > 0 ? existing : (categoryOptions[0] ? [categoryOptions[0]] : []);
+  });
 
   function handleBrandChange(next: string) {
     setBrandSlug(next);
     const options = categoriesByBrand[next] ?? [];
-    if (!options.includes(category)) setCategory(options[0] ?? "");
+    setSelectedCategories((prev) => {
+      const nextSelected = prev.filter((c) => options.includes(c));
+      return nextSelected.length > 0 ? nextSelected : (options[0] ? [options[0]] : []);
+    });
+  }
+
+  function toggleCategory(category: string, checked: boolean) {
+    setSelectedCategories((prev) => {
+      if (checked) return Array.from(new Set([...prev, category]));
+      const next = prev.filter((c) => c !== category);
+      return next;
+    });
   }
 
   return (
-    <form action={formAction} className="flex max-w-md flex-col gap-4">
+    <form action={formAction} className="flex w-full max-w-2xl flex-col gap-4">
       <label className="flex flex-col gap-1.5 text-sm">
         Brand
         <select
@@ -65,25 +76,40 @@ export function ProductForm({
       </label>
 
       <label className="flex flex-col gap-1.5 text-sm">
-        Category
-        <select
-          name="category"
-          required
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          disabled={categoryOptions.length === 0}
-          className="min-h-11 border border-neutral-300 px-3 text-sm disabled:opacity-50"
-        >
-          {categoryOptions.length === 0 && <option value="">No categories for this brand yet</option>}
-          {categoryOptions.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
-        </select>
+        Categories
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+          {categoryOptions.map((c) => {
+            const checked = selectedCategories.includes(c);
+            return (
+              <label
+                key={c}
+                className={`flex min-h-11 cursor-pointer items-center gap-2 rounded border px-3 text-sm ${
+                  checked ? "border-neutral-900 bg-neutral-50" : "border-neutral-300"
+                }`}
+              >
+                <input
+                  type="checkbox"
+                  name="categories"
+                  value={c}
+                  checked={checked}
+                  onChange={(e) => toggleCategory(c, e.target.checked)}
+                  className="h-4 w-4 accent-neutral-900"
+                />
+                <span>{c}</span>
+              </label>
+            );
+          })}
+          {categoryOptions.length === 0 && (
+            <div className="min-h-11 rounded border border-neutral-200 px-3 py-2 text-sm text-neutral-500">
+              No categories for this brand yet
+            </div>
+          )}
+        </div>
         <span className="text-xs text-neutral-500">
-          Only {getBrand(brandSlug)?.slug}&apos;s existing categories — picked from the list, not typed, so a typo
-          never creates an accidental duplicate.
+          Select one or more categories. &quot;Sale&quot; is available for every brand.
+        </span>
+        <span className="text-xs text-red-600" aria-live="polite">
+          {selectedCategories.length === 0 ? "Pick at least one category" : ""}
         </span>
       </label>
 

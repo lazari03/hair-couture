@@ -19,12 +19,14 @@ export default async function ShopListing({
   const t = await getTranslations();
 
   const counts = shop.products.reduce<Record<string, number>>((acc, p) => {
-    acc[p.category] = (acc[p.category] ?? 0) + 1;
+    for (const cat of p.categories) {
+      acc[cat] = (acc[cat] ?? 0) + 1;
+    }
     return acc;
   }, {});
 
   let products = category
-    ? shop.products.filter((p) => p.category === category)
+    ? shop.products.filter((p) => p.categories.includes(category))
     : shop.products;
 
   if (sort === "price-asc") products = [...products].sort((a, b) => a.price - b.price);

@@ -10,11 +10,13 @@
 
 import type { BrandSlug } from "@/lib/brands";
 import { prisma } from "@/lib/prisma";
+import { parseProductCategories, primaryCategory } from "@/lib/product-categories";
 
 export interface Product {
   id: string;
   name: string;
   category: string;
+  categories: string[];
   price: number; // EUR, minor-unit-free — format with Intl at render time
   badge?: string | null;
   description?: string | null;
@@ -54,7 +56,7 @@ const shopMeta: Record<BrandSlug, ShopMeta> = {
     // Styling Tools/Gifts are the actual filterable categories (from the real
     // balmainhair.al WooCommerce export), driven entirely by whatever
     // category values exist on Product rows in the DB.
-    menu: ["Bestsellers", "New", "Hair Care", "Hair Accessories", "Styling Tools", "Gifts", "Outlet"],
+    menu: ["Bestsellers", "New", "Hair Care", "Hair Accessories", "Styling Tools", "Gifts", "Sale", "Outlet"],
     heroVariant: "full",
     hero: {
       eyebrow: "Autumn / Winter 26",
@@ -71,7 +73,7 @@ const shopMeta: Record<BrandSlug, ShopMeta> = {
     // Bestsellers/Shop by Hairtype are curated cross-category views on the
     // live site (no dedicated product bucket) — Care Collection/Styling
     // Collection/Treatments & Sets are the actual filterable categories.
-    menu: ["New", "Bestsellers", "Care Collection", "Styling Collection", "Shop by Hairtype", "Treatments & Sets"],
+    menu: ["New", "Bestsellers", "Care Collection", "Styling Collection", "Shop by Hairtype", "Treatments & Sets", "Sale"],
     heroVariant: "split",
     hero: {
       eyebrow: "The daily ritual",
@@ -89,7 +91,7 @@ const shopMeta: Record<BrandSlug, ShopMeta> = {
     // product category of their own, same as the live site's "Explore the
     // scents" menu) — Sensorial Hair Care/Beauty/Lifestyle are the real
     // filterable categories ("Explore the products").
-    menu: ["EAU de Capri", "EAU de Hamptons", "EAU de Santorini", "Sensorial Hair Care", "Sensorial Beauty", "Sensorial Lifestyle"],
+    menu: ["EAU de Capri", "EAU de Hamptons", "EAU de Santorini", "Sensorial Hair Care", "Sensorial Beauty", "Sensorial Lifestyle", "Sale"],
     heroVariant: "video",
     hero: {
       eyebrow: "Since 1974",
@@ -107,18 +109,37 @@ function isBrandSlug(slug: string): slug is BrandSlug {
   return slug in shopMeta;
 }
 
+function toShopProduct(product: {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  badge: string | null;
+  description: string | null;
+  imageUrl: string | null;
+  stock: number;
+}): Product {
+  const categories = parseProductCategories(product.category);
+  return {
+    ...product,
+    category: primaryCategory(product.category),
+    categories,
+  };
+}
+
 export async function getShop(slug: string): Promise<ShopContent | undefined> {
   if (!isBrandSlug(slug)) return undefined;
   const products = await prisma.product.findMany({
     where: { brand: slug },
     orderBy: { createdAt: "asc" },
   });
-  return { ...shopMeta[slug], products };
+  return { ...shopMeta[slug], products: products.map(toShopProduct) };
 }
 
 export async function getProduct(slug: string, productId: string): Promise<Product | null> {
   if (!isBrandSlug(slug)) return null;
-  return prisma.product.findFirst({ where: { brand: slug, id: productId } });
+  const product = await prisma.product.findFirst({ where: { brand: slug, id: productId } });
+  return product ? toShopProduct(product) : null;
 }
 
 // categoryImage() moved to ./category-image.ts — it's a pure static mapping
