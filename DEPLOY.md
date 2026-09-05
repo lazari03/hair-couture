@@ -78,6 +78,26 @@ make deploy
 change, not just the first deploy, goes through this same command.) The
 SQLite data volume is untouched by this — only the app image rebuilds.
 
+## Manual GitHub Actions deploy
+
+Use the `Manual Deploy` workflow in GitHub Actions when you want the
+pipeline to run from GitHub instead of SSHing in manually.
+
+It does two stages:
+- validates the code with `npm run lint` and `npm run build`
+- deploys to the Hetzner server over SSH with the same `git pull` +
+  `docker compose up -d --build` flow
+
+Required GitHub secrets:
+- `DEPLOY_HOST`
+- `DEPLOY_USER`
+- `DEPLOY_SSH_KEY`
+- `DEPLOY_PATH`
+- `DEPLOY_PORT` if you use a non-standard SSH port, otherwise leave it empty
+
+Trigger it from the Actions tab and choose the branch/ref you want to
+deploy.
+
 ## Changing the domain
 
 Edit `Caddyfile` (and `make up` — no rebuild needed, Caddy config reloads
