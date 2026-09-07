@@ -111,7 +111,30 @@ export default async function ShopListing({
             </div>
           </div>
         </aside>
-        <ProductGrid brand={shop.slug} products={products} />
+        {products.length > 0 ? (
+          <ProductGrid brand={shop.slug} products={products} />
+        ) : (
+          <div className="flex flex-col items-center gap-10 py-12 text-center">
+            <div className="flex flex-col items-center gap-3">
+              <p className="text-lg font-medium tracking-tight">{t("shop.emptyTitle")}</p>
+              <p className="max-w-sm text-sm text-neutral-500">{t("shop.emptyBody")}</p>
+              <Link
+                href={`/${shop.slug}/shop`}
+                className="mt-2 border border-neutral-900 px-5 py-2.5 text-xs tracking-widest text-neutral-900 uppercase hover:bg-neutral-900 hover:text-white"
+              >
+                {t("shop.emptyCta")}
+              </Link>
+            </div>
+            {shop.products.length > 0 && (
+              <div className="w-full">
+                <h3 className="mb-5 text-[11px] tracking-[0.18em] text-neutral-500 uppercase">
+                  {t("shop.suggestionsTitle")}
+                </h3>
+                <ProductGrid brand={shop.slug} products={shop.products.slice(0, 4)} />
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </main>
   );

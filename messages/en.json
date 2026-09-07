@@ -34,7 +34,11 @@
     "sortNewest": "Newest",
     "sortPriceAsc": "Price, low to high",
     "sortPriceDesc": "Price, high to low",
-    "resultCount": "{count, plural, one {# product} other {# products}}"
+    "resultCount": "{count, plural, one {# product} other {# products}}",
+    "emptyTitle": "Nothing here right now",
+    "emptyBody": "This selection is empty at the moment. Check back soon, or take a look at these instead.",
+    "emptyCta": "Shop all",
+    "suggestionsTitle": "You may also like"
   },
   "product": {
     "size": "Size",
