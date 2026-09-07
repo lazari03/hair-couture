@@ -7,6 +7,7 @@ interface ShopFiltersProps {
   counts: Record<string, number>;
   category?: string;
   sort?: string;
+  saleColor: string;
   labels: {
     category: string;
     allCategories: string;
@@ -19,7 +20,7 @@ interface ShopFiltersProps {
 
 // Two selects in one row instead of the full stacked link lists — the
 // desktop sidebar lists stay as-is (md:hidden here), this is mobile-only.
-export function ShopFilters({ brandSlug, counts, category, sort, labels }: ShopFiltersProps) {
+export function ShopFilters({ brandSlug, counts, category, sort, saleColor, labels }: ShopFiltersProps) {
   const router = useRouter();
 
   function navigate(nextCategory: string, nextSort: string) {
@@ -40,7 +41,7 @@ export function ShopFilters({ brandSlug, counts, category, sort, labels }: ShopF
       >
         <option value="">{labels.allCategories}</option>
         {Object.entries(counts).map(([name, count]) => (
-          <option key={name} value={name}>
+          <option key={name} value={name} style={name === "Sale" ? { color: saleColor, fontWeight: 600 } : undefined}>
             {name} ({count})
           </option>
         ))}

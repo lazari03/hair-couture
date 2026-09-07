@@ -97,6 +97,7 @@ export default async function BrandLayout({
         {
           "--brand-accent": activeBrand.colors.accent,
           "--brand-accent-foreground": activeBrand.colors.accentForeground,
+          "--brand-sale": activeBrand.colors.sale,
         } as React.CSSProperties
       }
       className="flex flex-1 flex-col"
@@ -122,6 +123,8 @@ export default async function BrandLayout({
               searchHref={`/${activeBrand.slug}/search`}
               searchLabel={t("nav.search")}
               menuLinks={mobileMenuLinks}
+              accentColor={activeBrand.colors.accent}
+              saleColor={activeBrand.colors.sale}
             />
           </div>
         </div>
@@ -149,7 +152,11 @@ export default async function BrandLayout({
             <Link
               key={item}
               href={menuHref(item)}
-              className="border-b border-transparent pb-1 hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
+              className={
+                item === "Sale"
+                  ? "border-b border-transparent pb-1 font-medium text-[var(--brand-sale)]"
+                  : "border-b border-transparent pb-1 hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
+              }
             >
               {item}
             </Link>

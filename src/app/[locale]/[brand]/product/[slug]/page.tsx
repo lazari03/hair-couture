@@ -26,7 +26,11 @@ export default async function ProductDetail({
     <main className="px-6 pb-24 sm:px-11">
       <ProductViewBeacon brand={shop.slug} productId={product.id} name={product.name} category={product.category} price={product.price} />
       <div className="pt-7 pb-6 text-[11px] tracking-[0.12em] text-neutral-500 uppercase">
-        {shop.slug} / {product.category} / {product.name}
+        {shop.slug} /{" "}
+        <span className={product.category === "Sale" ? "font-medium text-[var(--brand-sale)]" : undefined}>
+          {product.category}
+        </span>{" "}
+        / {product.name}
       </div>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
         <div className="relative aspect-[4/5] overflow-hidden bg-neutral-50">

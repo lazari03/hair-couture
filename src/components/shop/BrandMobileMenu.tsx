@@ -56,12 +56,16 @@ export function BrandMobileMenu({
   searchHref,
   searchLabel,
   menuLinks,
+  accentColor,
+  saleColor,
 }: {
   cartHref: string;
   cartLabel: string;
   searchHref: string;
   searchLabel: string;
   menuLinks: MenuLink[];
+  accentColor: string;
+  saleColor: string;
 }) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -112,6 +116,7 @@ export function BrandMobileMenu({
             <div
               className={`fixed inset-0 z-50 lg:hidden ${open ? "pointer-events-auto" : "pointer-events-none"}`}
               aria-hidden={!open}
+              style={{ "--brand-accent": accentColor, "--brand-sale": saleColor } as React.CSSProperties}
             >
               <button
                 type="button"
@@ -162,7 +167,11 @@ export function BrandMobileMenu({
                         key={item.label}
                         href={item.href}
                         onClick={() => setOpen(false)}
-                        className="flex items-center justify-between py-4 text-[15px] text-neutral-800 transition-colors hover:text-[var(--brand-accent)]"
+                        className={
+                          item.label === "Sale"
+                            ? "flex items-center justify-between py-4 text-[15px] font-medium text-[var(--brand-sale)] transition-colors"
+                            : "flex items-center justify-between py-4 text-[15px] text-neutral-800 transition-colors hover:text-[var(--brand-accent)]"
+                        }
                       >
                         <span>{item.label}</span>
                         <span className="text-xs tracking-[0.16em] text-neutral-400 uppercase">View</span>

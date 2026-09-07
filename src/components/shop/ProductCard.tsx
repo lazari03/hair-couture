@@ -33,7 +33,11 @@ export function ProductCard({ brand, product }: { brand: BrandSlug; product: Pro
         )}
       </div>
       <div className="flex flex-col gap-1">
-        <span className="text-[10px] tracking-widest text-neutral-500 uppercase">
+        <span
+          className={`text-[10px] tracking-widest uppercase ${
+            product.category === "Sale" ? "font-medium text-[var(--brand-sale)]" : "text-neutral-500"
+          }`}
+        >
           {product.category}
         </span>
         <span className="text-sm font-medium tracking-tight">{product.name}</span>

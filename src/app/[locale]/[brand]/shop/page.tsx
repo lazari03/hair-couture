@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { getBrand } from "@/lib/brands";
 import { getShop } from "@/lib/data/shop";
 import { ProductGrid } from "@/components/shop/ProductGrid";
 import { ShopFilters } from "@/components/shop/ShopFilters";
@@ -15,7 +16,8 @@ export default async function ShopListing({
   const { brand: brandSlug } = await params;
   const { category, sort } = await searchParams;
   const shop = await getShop(brandSlug);
-  if (!shop) notFound();
+  const brand = getBrand(brandSlug);
+  if (!shop || !brand) notFound();
 
   const t = await getTranslations();
 
@@ -52,6 +54,7 @@ export default async function ShopListing({
         counts={counts}
         category={category}
         sort={sort}
+        saleColor={brand.colors.sale}
         labels={{
           category: t("shop.category"),
           allCategories: t("shop.allCategories"),
@@ -74,7 +77,11 @@ export default async function ShopListing({
                   key={name}
                   href={`/${shop.slug}/shop?category=${encodeURIComponent(name)}`}
                   className={`flex min-h-8 items-center gap-2.5 text-[13px] ${
-                    category === name ? "font-medium text-[var(--brand-accent)]" : "text-neutral-700"
+                    name === "Sale"
+                      ? "font-medium text-[var(--brand-sale)]"
+                      : category === name
+                        ? "font-medium text-[var(--brand-accent)]"
+                        : "text-neutral-700"
                   }`}
                 >
                   {name}
