@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
@@ -54,20 +54,35 @@ jobs:
         env:
           DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
-          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+          RAW_DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
         run: |
+          DEPLOY_PORT_CLEAN="$(printf '%s' "$RAW_DEPLOY_PORT" | tr -d '[:space:]')"
+          if [[ "$DEPLOY_PORT_CLEAN" =~ ^[0-9]+$ ]]; then
+            DEPLOY_PORT_SAFE="$DEPLOY_PORT_CLEAN"
+          else
+            DEPLOY_PORT_SAFE="22"
+          fi
+          echo "DEPLOY_PORT_SAFE=$DEPLOY_PORT_SAFE" >> "$GITHUB_ENV"
+
           mkdir -p ~/.ssh
-          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          # Normalize CRLF and avoid adding an extra newline that can corrupt key parsing.
+          printf '%s' "$DEPLOY_SSH_KEY" | tr -d '\r' > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p "${DEPLOY_PORT:-22}" -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts
+
+          if ! ssh-keygen -y -f ~/.ssh/deploy_key >/dev/null 2>&1; then
+            echo "DEPLOY_SSH_KEY is not a valid private key."
+            echo "Paste the full private key (BEGIN/END lines included) into the GitHub secret."
+            exit 1
+          fi
+
+          ssh-keyscan -p "$DEPLOY_PORT_SAFE" -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts
 
       - name: Deploy over SSH
         env:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
-          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
           DEPLOY_REF: ${{ inputs.ref }}
         run: |
-          ssh -i ~/.ssh/deploy_key -p "${DEPLOY_PORT:-22}" "$DEPLOY_USER@$DEPLOY_HOST" \
-            "cd '$DEPLOY_PATH' && git fetch origin && git checkout '$DEPLOY_REF' && git pull origin '$DEPLOY_REF' && docker compose up -d --build"
+          ssh -i ~/.ssh/deploy_key -p "$DEPLOY_PORT_SAFE" "$DEPLOY_USER@$DEPLOY_HOST" \
+            "cd '$DEPLOY_PATH' && git fetch origin && git checkout '$DEPLOY_REF' && git reset --hard \"origin/$DEPLOY_REF\" && docker compose up -d --build"
