@@ -6,6 +6,7 @@ import { getShop } from "@/lib/data/shop";
 import { CartCountBadge } from "@/components/shop/CartCountBadge";
 import { BrandMobileMenu } from "@/components/shop/BrandMobileMenu";
 import { MenuLinkTracker } from "@/components/shop/MenuLinkTracker";
+import { LanguageSwitcher } from "@/components/shop/LanguageSwitcher";
 import { Footer } from "@/components/shop/Footer";
 
 function SearchIcon() {
@@ -132,6 +133,7 @@ export default async function BrandLayout({
             className="absolute left-1/2 h-6 w-auto -translate-x-1/2 sm:h-7"
           />
           <div className="flex items-center gap-1.5">
+            <LanguageSwitcher />
             <IconActionLink href={`/${activeBrand.slug}/cart`} label={t("nav.cart")} badge={<CartCountBadge />}>
               <CartIcon />
             </IconActionLink>
@@ -157,7 +159,8 @@ export default async function BrandLayout({
             alt={t(`brands.${activeBrand.slug as BrandSlug}.name`)}
             className="h-7 w-auto"
           />
-          <nav className="flex items-center gap-5 text-[13px]">
+          <nav className="flex items-center gap-3.5 text-[13px]">
+            <LanguageSwitcher />
             <IconActionLink href={`/${activeBrand.slug}/search`} label={t("nav.search")}>
               <SearchIcon />
             </IconActionLink>

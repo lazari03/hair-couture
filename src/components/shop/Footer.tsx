@@ -5,7 +5,6 @@ import { getFooter } from "@/lib/data/footer";
 import { NewsletterForm } from "./NewsletterForm";
 import { ContactLinkTracker } from "./ContactLinkTracker";
 import { CategoryLinkTracker } from "./CategoryLinkTracker";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 
 // One reusable footer for all 3 brands (skills/branding.md: don't fork
 // components per brand). Structure/columns are identical across brands;
@@ -79,9 +78,7 @@ export async function Footer({ brand }: { brand: Brand }) {
       </div>
       <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-neutral-800 pt-7 text-xs text-neutral-500">
         <span>{t("copyright", { year: new Date().getFullYear() })}</span>
-        <span className="flex items-center gap-1.5">
-          <LanguageSwitcher /> · {t("currency")}
-        </span>
+        <span>{t("currency")}</span>
       </div>
     </footer>
   );
