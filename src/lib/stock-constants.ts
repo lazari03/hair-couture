@@ -7,4 +7,6 @@
 // retail/ticketing checkouts (some go as low as 10 for high-demand items).
 export const RESERVATION_MINUTES = 15;
 
-export type ReserveResult = { ok: true; available: number } | { ok: false; error: string };
+export type ReserveResult =
+  | { ok: true; available: number }
+  | { ok: false; error: string; count?: number };

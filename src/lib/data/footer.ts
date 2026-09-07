@@ -8,9 +8,10 @@
 // colocated with everything else under src/lib/data/ instead of living
 // outside the app's type system.
 //
-// UI chrome (column titles, "Back to shop", etc.) stays in
-// messages/<locale>.json under the "footer" namespace per skills/i18n.md —
-// only real hrefs/labels/copy that's genuinely per-brand content lives here.
+// UI chrome (column titles, "Back to shop", service link labels, newsletter
+// copy, etc.) lives in messages/<locale>.json under the "footer" namespace
+// per skills/i18n.md — this file only holds hrefs and the per-brand category
+// names that come from real Product.category values (shopLinks' labels).
 
 import type { BrandSlug } from "@/lib/brands";
 
@@ -19,17 +20,19 @@ export interface FooterLink {
   href: string;
 }
 
+export type ServiceLinkKey = "contact" | "shippingReturns" | "privacy" | "terms" | "cookies";
+
+export interface FooterServiceLink {
+  key: ServiceLinkKey;
+  href: string;
+}
+
 export interface FooterContent {
   slug: BrandSlug;
   contactEmail: string;
-  shopLinks: FooterLink[];
-  serviceLinks: FooterLink[];
-  newsletter: {
-    title: string;
-    body: string;
-    placeholder: string;
-    cta: string;
-  };
+  shopLinks: FooterLink[]; // category names — real Product.category values, not UI chrome
+  shopAllHref: string; // trailing "Shop all" link; label is footer.links.shopAll
+  serviceLinks: FooterServiceLink[];
 }
 
 // Shared across all 3 brands today — a single owner inbox. Placeholder:
@@ -37,22 +40,19 @@ export interface FooterContent {
 export const CONTACT_EMAIL = "info@haircouture.al";
 
 function shopLinksFor(slug: BrandSlug, categories: string[]): FooterLink[] {
-  return [
-    ...categories.map((category) => ({
-      label: category,
-      href: `/${slug}/shop?category=${encodeURIComponent(category)}`,
-    })),
-    { label: "Shop all", href: `/${slug}/shop` },
-  ];
+  return categories.map((category) => ({
+    label: category,
+    href: `/${slug}/shop?category=${encodeURIComponent(category)}`,
+  }));
 }
 
-function serviceLinksFor(slug: BrandSlug): FooterLink[] {
+function serviceLinksFor(slug: BrandSlug): FooterServiceLink[] {
   return [
-    { label: "Contact", href: `/${slug}/contact` },
-    { label: "Shipping & Returns", href: `/${slug}/terms#shipping` },
-    { label: "Privacy Policy", href: `/${slug}/privacy` },
-    { label: "Terms of Service", href: `/${slug}/terms` },
-    { label: "Cookies", href: `/${slug}/cookies` },
+    { key: "contact", href: `/${slug}/contact` },
+    { key: "shippingReturns", href: `/${slug}/terms#shipping` },
+    { key: "privacy", href: `/${slug}/privacy` },
+    { key: "terms", href: `/${slug}/terms` },
+    { key: "cookies", href: `/${slug}/cookies` },
   ];
 }
 
@@ -61,37 +61,22 @@ const footerMeta: Record<BrandSlug, FooterContent> = {
     slug: "balmain",
     contactEmail: CONTACT_EMAIL,
     shopLinks: shopLinksFor("balmain", ["Hair Care", "Hair Accessories", "Styling Tools", "Gifts"]),
+    shopAllHref: "/balmain/shop",
     serviceLinks: serviceLinksFor("balmain"),
-    newsletter: {
-      title: "Join the list",
-      body: "Sign up for early access to new collections and exclusive offers.",
-      placeholder: "Email address",
-      cta: "Subscribe",
-    },
   },
   eloure: {
     slug: "eloure",
     contactEmail: CONTACT_EMAIL,
     shopLinks: shopLinksFor("eloure", ["Care Collection", "Styling Collection", "Treatments & Sets"]),
+    shopAllHref: "/eloure/shop",
     serviceLinks: serviceLinksFor("eloure"),
-    newsletter: {
-      title: "Stay in the loop",
-      body: "New arrivals, refill reminders, and offers — straight to your inbox.",
-      placeholder: "Email address",
-      cta: "Subscribe",
-    },
   },
   "eau-de-1974": {
     slug: "eau-de-1974",
     contactEmail: CONTACT_EMAIL,
     shopLinks: shopLinksFor("eau-de-1974", ["Sensorial Hair Care", "Sensorial Beauty", "Sensorial Lifestyle"]),
+    shopAllHref: "/eau-de-1974/shop",
     serviceLinks: serviceLinksFor("eau-de-1974"),
-    newsletter: {
-      title: "From the archive",
-      body: "New compositions and stories from the house, a few times a year.",
-      placeholder: "Email address",
-      cta: "Subscribe",
-    },
   },
 };
 

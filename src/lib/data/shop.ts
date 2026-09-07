@@ -8,6 +8,7 @@
 // own and already localize, unlike the static UI chrome in
 // messages/<locale>.json (skills/i18n.md).
 
+import { getTranslations } from "next-intl/server";
 import type { BrandSlug } from "@/lib/brands";
 import { prisma } from "@/lib/prisma";
 import { parseProductCategories, primaryCategory } from "@/lib/product-categories";
@@ -34,16 +35,25 @@ export interface HeroContent {
   video?: string; // /public path to an .mp4 — only the "video" heroVariant renders it
 }
 
+// Just the non-text hero assets — the copy (eyebrow/title/body/cta/secondary)
+// lives in messages/<locale>.json under "shopMeta.<brand>.hero" so it
+// translates; getShop() below stitches the two together.
+interface HeroAssets {
+  image: string;
+  video?: string;
+}
+
 export type HeroVariant = "full" | "split" | "video";
 
 interface ShopMeta {
   slug: BrandSlug;
   menu: string[];
-  hero: HeroContent;
+  hero: HeroAssets;
   heroVariant: HeroVariant;
 }
 
-export interface ShopContent extends ShopMeta {
+export interface ShopContent extends Omit<ShopMeta, "hero"> {
+  hero: HeroContent;
   products: Product[];
 }
 
@@ -58,14 +68,7 @@ const shopMeta: Record<BrandSlug, ShopMeta> = {
     // category values exist on Product rows in the DB.
     menu: ["Bestsellers", "New", "Hair Care", "Hair Accessories", "Styling Tools", "Gifts", "Sale", "Outlet"],
     heroVariant: "full",
-    hero: {
-      eyebrow: "Autumn / Winter 26",
-      title: "Couture for hair",
-      body: "Hand-tied extensions and finishing tools developed with the atelier.",
-      cta: "Shop the collection",
-      secondary: "View lookbook",
-      image: "/assets/hero/balmain.jpg",
-    },
+    hero: { image: "/assets/hero/balmain.jpg" },
   },
   eloure: {
     slug: "eloure",
@@ -75,14 +78,7 @@ const shopMeta: Record<BrandSlug, ShopMeta> = {
     // Collection/Treatments & Sets are the actual filterable categories.
     menu: ["New", "Bestsellers", "Care Collection", "Styling Collection", "Shop by Hairtype", "Treatments & Sets", "Sale"],
     heroVariant: "split",
-    hero: {
-      eyebrow: "The daily ritual",
-      title: "Care that keeps up",
-      body: "Refillable formulas for hair you wash, wear and live in every day.",
-      cta: "Shop everyday care",
-      secondary: "Find your ritual",
-      image: "/assets/hero/eloure.jpg",
-    },
+    hero: { image: "/assets/hero/eloure.jpg" },
   },
   "eau-de-1974": {
     slug: "eau-de-1974",
@@ -93,15 +89,7 @@ const shopMeta: Record<BrandSlug, ShopMeta> = {
     // filterable categories ("Explore the products").
     menu: ["EAU de Capri", "EAU de Hamptons", "EAU de Santorini", "Sensorial Hair Care", "Sensorial Beauty", "Sensorial Lifestyle", "Sale"],
     heroVariant: "video",
-    hero: {
-      eyebrow: "Since 1974",
-      title: "A year, bottled",
-      body: "Six compositions drawn from the house archive, blended in small batches.",
-      cta: "Shop fragrance",
-      secondary: "Read the archive",
-      image: "/assets/hero/eau-de-1974.jpg",
-      video: "/assets/hero/eau-de-1974.mp4",
-    },
+    hero: { image: "/assets/hero/eau-de-1974.jpg", video: "/assets/hero/eau-de-1974.mp4" },
   },
 };
 
@@ -129,11 +117,23 @@ function toShopProduct(product: {
 
 export async function getShop(slug: string): Promise<ShopContent | undefined> {
   if (!isBrandSlug(slug)) return undefined;
-  const products = await prisma.product.findMany({
-    where: { brand: slug },
-    orderBy: { createdAt: "asc" },
-  });
-  return { ...shopMeta[slug], products: products.map(toShopProduct) };
+  const [products, t] = await Promise.all([
+    prisma.product.findMany({ where: { brand: slug }, orderBy: { createdAt: "asc" } }),
+    getTranslations(`shopMeta.${slug}.hero`),
+  ]);
+  const meta = shopMeta[slug];
+  return {
+    ...meta,
+    hero: {
+      eyebrow: t("eyebrow"),
+      title: t("title"),
+      body: t("body"),
+      cta: t("cta"),
+      secondary: t("secondary"),
+      ...meta.hero,
+    },
+    products: products.map(toShopProduct),
+  };
 }
 
 export async function getProduct(slug: string, productId: string): Promise<Product | null> {
@@ -149,31 +149,17 @@ export async function getProduct(slug: string, productId: string): Promise<Produ
 // Generic product detail copy — still shared across every product (size
 // options, shipping/returns specs, fallback description for any product
 // without its own). Real per-product copy now comes from Product.description.
-export const productDetail = {
-  sizes: ["Small", "Medium", "Large"],
-  description:
-    "Placeholder description copy — swap for real per-product copy once a data source is wired.",
-  specs: [
-    ["Shipping", "Free over € 75"],
-    ["Returns", "30 days"],
-    ["Origin", "Made in Europe"],
-  ] as [string, string][],
-};
-
-// Account is not brand-scoped data in a real system (skills/auth.md: one
-// session across all 3 brands) — this mock stands in until Auth.js + real
-// orders are wired.
-export const mockAccount = {
-  user: { name: "Alexandra Meier", email: "a.meier@example.com", since: "Member since 2024" },
-  orders: [
-    { id: "#HC-10482", date: "12 Aug 2026", status: "Delivered", total: 337 },
-    { id: "#HC-10391", date: "28 Jun 2026", status: "Delivered", total: 145 },
-    { id: "#HC-10233", date: "03 Apr 2026", status: "Refunded", total: 42 },
-  ],
-  fields: [
-    ["Name", "Alexandra Meier"],
-    ["Email", "a.meier@example.com"],
-    ["Phone", "+41 79 000 00 00"],
-  ] as [string, string][],
-  address: ["Alexandra Meier", "Bahnhofstrasse 21", "8001 Zürich", "Switzerland"],
-};
+// Labels/copy come from messages/<locale>.json ("product" namespace) so they
+// translate; only the size options and spec ordering are structural here.
+export async function getProductDetail() {
+  const t = await getTranslations("product");
+  return {
+    sizes: t.raw("sizes") as string[],
+    description: t("placeholderDescription"),
+    specs: [
+      [t("specs.shipping.label"), t("specs.shipping.value")],
+      [t("specs.returns.label"), t("specs.returns.value")],
+      [t("specs.origin.label"), t("specs.origin.value")],
+    ] as [string, string][],
+  };
+}

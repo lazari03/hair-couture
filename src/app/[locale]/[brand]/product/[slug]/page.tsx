@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
-import { getShop, getProduct, productDetail } from "@/lib/data/shop";
+import { getShop, getProduct, getProductDetail } from "@/lib/data/shop";
 import { productImage } from "@/lib/data/category-image";
 import { ProductGrid } from "@/components/shop/ProductGrid";
 import { AddToCartForm } from "@/components/shop/AddToCartForm";
@@ -20,6 +20,7 @@ export default async function ProductDetail({
 
   const t = await getTranslations("product");
   const locale = await getLocale();
+  const productDetail = await getProductDetail();
   const related = shop.products.filter((p) => p.id !== product.id).slice(0, 4);
 
   return (

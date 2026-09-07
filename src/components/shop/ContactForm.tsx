@@ -7,6 +7,7 @@ import type { BrandSlug } from "@/lib/brands";
 
 export function ContactForm({ brand }: { brand: BrandSlug }) {
   const t = useTranslations("contact");
+  const tErrors = useTranslations("errors");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -19,7 +20,7 @@ export function ContactForm({ brand }: { brand: BrandSlug }) {
     const result = await submitContact({ brand, ...form });
     setPending(false);
     if (!result.ok) {
-      setError(result.error);
+      setError(tErrors(result.error));
       return;
     }
     setDone(true);

@@ -14,6 +14,7 @@ import type { BrandSlug } from "@/lib/brands";
 
 export default function CartPage() {
   const t = useTranslations("cart");
+  const tErrors = useTranslations("errors");
   const locale = useLocale();
   const { brand } = useParams<{ brand: string }>();
   const { lines, incLine, decLine, removeLine, coupon, setCoupon } = useCart();
@@ -25,7 +26,9 @@ export default function CartPage() {
   async function handleInc(id: string) {
     setLineErrors((prev) => ({ ...prev, [id]: "" }));
     const result = await incLine(id);
-    if (!result.ok) setLineErrors((prev) => ({ ...prev, [id]: result.error }));
+    if (!result.ok) {
+      setLineErrors((prev) => ({ ...prev, [id]: tErrors(result.error, { count: result.count ?? 0 }) }));
+    }
   }
 
   // Product name/category/price are already on the line (snapshotted at
@@ -45,7 +48,7 @@ export default function CartPage() {
     const result = await validateCoupon(couponInput);
     setApplying(false);
     if (!result.ok) {
-      setCouponError(result.error);
+      setCouponError(tErrors(result.error));
       return;
     }
     setCoupon({ code: result.code, type: result.type, value: result.value });
@@ -86,7 +89,7 @@ export default function CartPage() {
                     <button
                       onClick={() => decLine(line.id)}
                       className="h-9 w-9 border-none bg-none font-inherit text-[15px]"
-                      aria-label="Decrease quantity"
+                      aria-label={t("decreaseQty")}
                     >
                       &minus;
                     </button>
@@ -94,7 +97,7 @@ export default function CartPage() {
                     <button
                       onClick={() => handleInc(line.id)}
                       className="h-9 w-9 border-none bg-none font-inherit text-[15px]"
-                      aria-label="Increase quantity"
+                      aria-label={t("increaseQty")}
                     >
                       +
                     </button>

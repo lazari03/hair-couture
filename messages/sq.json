@@ -1,0 +1,273 @@
+{
+  "landing": {
+    "metaTitle": "Hair Couture",
+    "metaDescription": "Balmain Hair Couture, Eloure dhe Eau de 1974 — tre marka, një shtëpi.",
+    "enter": "Hyr në dyqan"
+  },
+  "nav": {
+    "shop": "Dyqani",
+    "cart": "Shporta",
+    "account": "Llogaria",
+    "search": "Kërko",
+    "backToBrands": "Të gjitha markat",
+    "menuTitle": "Menyja",
+    "browseShop": "Shfleto dyqanin",
+    "categoriesTitle": "Kategoritë",
+    "view": "Shiko",
+    "openMenu": "Hap menynë",
+    "closeMenu": "Mbyll menynë",
+    "closeMenuOverlay": "Mbyll mbulesën e menysë"
+  },
+  "brands": {
+    "balmain": {
+      "name": "Balmain Hair Couture",
+      "tagline": "Zgjatime flokësh luksoze dhe vegla stilizimi"
+    },
+    "eloure": {
+      "name": "Eloure",
+      "tagline": "Flokë të përditshëm, të ngritur"
+    },
+    "eau-de-1974": {
+      "name": "Eau de 1974",
+      "tagline": "Parfum me histori"
+    }
+  },
+  "shop": {
+    "featured": "Të veçuara",
+    "viewAll": "Shiko të gjitha",
+    "category": "Kategoria",
+    "allCategories": "Të gjitha kategoritë",
+    "sortBy": "Rendit sipas",
+    "sortNewest": "Më të rejat",
+    "sortPriceAsc": "Çmimi, nga më i ulëti",
+    "sortPriceDesc": "Çmimi, nga më i larti",
+    "resultCount": "{count, plural, one {# produkt} other {# produkte}}",
+    "emptyTitle": "Nuk ka asgjë këtu momentalisht",
+    "emptyBody": "Ky seksion është bosh për momentin. Kontrollo përsëri së shpejti, ose shiko këto në vend të tij.",
+    "emptyCta": "Shiko të gjitha",
+    "suggestionsTitle": "Mund t'ju pëlqejnë gjithashtu"
+  },
+  "product": {
+    "size": "Madhësia",
+    "addToCart": "Shto në shportë",
+    "addedToCart": "Shtuar në shportë",
+    "outOfStock": "I shitur",
+    "relatedTitle": "Mund t'ju pëlqejnë gjithashtu",
+    "sizes": ["E vogël", "Mesatare", "E madhe"],
+    "placeholderDescription": "Përshkrim vendmbajtës — do të zëvendësohet me përshkrim real për çdo produkt kur të lidhet burimi i të dhënave.",
+    "specs": {
+      "shipping": { "label": "Dërgesa", "value": "Falas mbi € 75" },
+      "returns": { "label": "Kthimet", "value": "30 ditë" },
+      "origin": { "label": "Origjina", "value": "Prodhuar në Evropë" }
+    }
+  },
+  "cart": {
+    "title": "Shporta",
+    "itemCount": "{count, plural, one {# artikull} other {# artikuj}}",
+    "subtotal": "Nëntotali",
+    "shipping": "Dërgesa",
+    "shippingFree": "Falas",
+    "total": "Totali",
+    "checkout": "Vazhdo te pagesa",
+    "continueShopping": "Vazhdo blerjet",
+    "note": "Dërgesa dhe taksat llogariten në pagesë.",
+    "emptyTitle": "Shporta juaj është bosh",
+    "emptyBody": "Asgjë këtu ende — shfletoni koleksionin për të filluar.",
+    "remove": "Hiq",
+    "couponPlaceholder": "Kodi i kuponit",
+    "couponApply": "Apliko",
+    "couponApplied": "Kodi {code} u aplikua",
+    "discount": "Zbritje",
+    "decreaseQty": "Zvogëlo sasinë",
+    "increaseQty": "Rrit sasinë"
+  },
+  "checkout": {
+    "title": "Pagesa",
+    "contactTitle": "Kontakti",
+    "shippingTitle": "Adresa e dërgesës",
+    "firstName": "Emri",
+    "lastName": "Mbiemri",
+    "email": "Email",
+    "phone": "Numri i telefonit",
+    "address": "Adresa",
+    "city": "Qyteti",
+    "postalCode": "Kodi postar",
+    "country": "Shteti",
+    "shippingMethod": "Mënyra e dërgesës",
+    "shippingFee": "Dërgesa (paguhet në dorëzim)",
+    "placeOrder": "Bëj porosinë",
+    "placingOrder": "Duke bërë porosinë…",
+    "summaryTitle": "Përmbledhja e porosisë",
+    "successTitle": "Faleminderit për porosinë",
+    "successBody": "Porosia juaj {orderId} u vendos. Do t'ju kontaktojmë në {email} me detajet e konfirmimit.",
+    "backToShop": "Kthehu te dyqani"
+  },
+  "account": {
+    "greeting": "Llogaria",
+    "ordersTitle": "Porositë tuaja",
+    "lookupHint": "Nuk kërkohet llogari — vendos emailin me të cilin bëre porosinë për të parë porositë e tua.",
+    "emailPlaceholder": "Adresa email",
+    "lookup": "Gjej porositë e mia",
+    "noOrders": "Nuk u gjetën porosi për këtë email.",
+    "orderColumns": {
+      "order": "Porosia",
+      "date": "Data",
+      "status": "Statusi",
+      "total": "Totali"
+    },
+    "orderStatus": {
+      "pending": "Në pritje",
+      "inProgress": "Në përpunim",
+      "fulfilled": "Përfunduar"
+    }
+  },
+  "search": {
+    "placeholder": "Kërko produkte, kategori, koleksione",
+    "recentTitle": "Kërkime të fundit",
+    "suggestedTitle": "Popullore tani",
+    "resultsTitle": "Rezultate ({count})",
+    "emptyTitle": "Asnjë rezultat",
+    "emptyBody": "Provo një term më të shkurtër ose shfleto menynë më sipër.",
+    "recentPlaceholder": ["Zgjatime 55cm", "Rimbushje", "Set zbulimi"]
+  },
+  "balmainHome": {
+    "popularTitle": "Popullore tani",
+    "trendingTitle": "Të reja",
+    "collectionsTitle": "Eksploro koleksionet",
+    "editorialEyebrow": "Shtëpia",
+    "editorialTitle": "Bota e Balmain Hair",
+    "editorialBody": "Nga atelietë pariziene deri pas skenës në javën e modës — zanati, kodet dhe kurtura pas çdo pjese.",
+    "editorialCta": "Zbulo trashëgiminë",
+    "collections": {
+      "hairCare": { "body": "Formula ushqyese të besuara pas skene dhe në shtëpi." },
+      "hairAccessories": { "body": "Copa ikonike, të bëra me dorë për luks të përditshëm." },
+      "stylingTools": { "body": "Vegla të nivelit profesional për një finish couture." }
+    }
+  },
+  "footer": {
+    "shopTitle": "Dyqani",
+    "serviceTitle": "Shërbimi",
+    "copyright": "© {year} Hair Couture",
+    "currency": "€ EUR",
+    "newsletterSuccess": "Faleminderit — jeni në listë.",
+    "links": {
+      "contact": "Kontakti",
+      "shippingReturns": "Dërgesa & Kthimet",
+      "privacy": "Politika e Privatësisë",
+      "terms": "Kushtet e Shërbimit",
+      "cookies": "Cookie-t",
+      "shopAll": "Shiko të gjitha"
+    },
+    "newsletter": {
+      "balmain": {
+        "title": "Bashkohu me listën",
+        "body": "Regjistrohu për qasje të hershme në koleksionet e reja dhe oferta ekskluzive.",
+        "placeholder": "Adresa email",
+        "cta": "Abonohu"
+      },
+      "eloure": {
+        "title": "Qëndro i informuar",
+        "body": "Mbërritje të reja, kujtesa rimbushjeje dhe oferta — direkt në inbox-in tuaj.",
+        "placeholder": "Adresa email",
+        "cta": "Abonohu"
+      },
+      "eau-de-1974": {
+        "title": "Nga arkivi",
+        "body": "Kompozime dhe histori të reja nga shtëpia, disa herë në vit.",
+        "placeholder": "Adresa email",
+        "cta": "Abonohu"
+      }
+    }
+  },
+  "legal": {
+    "backToShop": "Kthehu te dyqani",
+    "lastUpdated": "Përditësuar për herë të fundit më {date}"
+  },
+  "cookieConsent": {
+    "body": "Ne përdorim cookies për të kuptuar si e përdorni sitin tonë dhe për të përmirësuar përvojën tuaj.",
+    "learnMore": "Mëso më shumë",
+    "accept": "Prano",
+    "decline": "Refuzo"
+  },
+  "contact": {
+    "title": "Kontakti",
+    "intro": "Pyetje rreth një porosie, një produkti, apo çdo gjë tjetër — jemi të lumtur t'ju ndihmojmë.",
+    "emailLabel": "Na shkruani direkt",
+    "name": "Emri",
+    "email": "Email",
+    "message": "Mesazhi",
+    "send": "Dërgo mesazhin",
+    "sending": "Duke dërguar…",
+    "successTitle": "Mesazhi u dërgua",
+    "successBody": "Faleminderit që na kontaktuat — do t'ju përgjigjemi së shpejti."
+  },
+  "errors": {
+    "couponRequired": "Vendos një kod kuponi",
+    "couponInvalid": "Kupon i pavlefshëm ose i skaduar",
+    "firstNameRequired": "Emri kërkohet",
+    "lastNameRequired": "Mbiemri kërkohet",
+    "emailInvalid": "Vendos një email të vlefshëm",
+    "phoneRequired": "Numri i telefonit kërkohet",
+    "addressRequired": "Adresa kërkohet",
+    "cityRequired": "Qyteti kërkohet",
+    "shippingMethodRequired": "Zgjidh një mënyrë dërgese",
+    "shippingMethodInvalid": "Zgjidh një mënyrë dërgese të vlefshme",
+    "cartEmpty": "Shporta juaj është bosh",
+    "brandInvalid": "Markë e pavlefshme",
+    "nameRequired": "Emri kërkohet",
+    "messageRequired": "Mesazhi kërkohet",
+    "productNotFound": "Produkti nuk u gjet",
+    "soldOut": "I shitur",
+    "onlyLeftInStock": "Vetëm {count} të mbetura në stok",
+    "itemNotFound": "Artikulli nuk u gjet"
+  },
+  "shopMeta": {
+    "balmain": {
+      "hero": {
+        "eyebrow": "Vjeshtë / Dimër 26",
+        "title": "Kurturë për flokët",
+        "body": "Zgjatime të lidhura me dorë dhe vegla finalizuese të zhvilluara me atelienë.",
+        "cta": "Bli koleksionin",
+        "secondary": "Shiko lookbook-un"
+      }
+    },
+    "eloure": {
+      "hero": {
+        "eyebrow": "Rutina e përditshme",
+        "title": "Kujdes që të ndjek",
+        "body": "Formula të rimbushshme për flokët që lani, mbani dhe jetoni çdo ditë.",
+        "cta": "Bli kujdesin e përditshëm",
+        "secondary": "Gjej ritualin tënd"
+      }
+    },
+    "eau-de-1974": {
+      "hero": {
+        "eyebrow": "Që nga 1974",
+        "title": "Një vit, i shishuar",
+        "body": "Gjashtë kompozime të nxjerra nga arkivi i shtëpisë, të përziera në sasi të vogla.",
+        "cta": "Bli parfum",
+        "secondary": "Lexo arkivin"
+      }
+    }
+  },
+  "categories": {
+    "Bestsellers": "Më të shiturat",
+    "New": "Të reja",
+    "Hair Care": "Kujdesi për flokët",
+    "Hair Accessories": "Aksesorë flokësh",
+    "Styling Tools": "Vegla stilizimi",
+    "Gifts": "Dhurata",
+    "Sale": "Zbritje",
+    "Outlet": "Outlet",
+    "Care Collection": "Koleksioni i kujdesit",
+    "Styling Collection": "Koleksioni i stilizimit",
+    "Shop by Hairtype": "Bli sipas llojit të flokut",
+    "Treatments & Sets": "Trajtime & Sete",
+    "EAU de Capri": "EAU de Capri",
+    "EAU de Hamptons": "EAU de Hamptons",
+    "EAU de Santorini": "EAU de Santorini",
+    "Sensorial Hair Care": "Kujdes shqisor për flokët",
+    "Sensorial Beauty": "Bukuri shqisore",
+    "Sensorial Lifestyle": "Stil jetese shqisor"
+  }
+}

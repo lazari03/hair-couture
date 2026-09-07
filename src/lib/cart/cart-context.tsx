@@ -57,7 +57,8 @@ export interface AppliedCoupon {
   value: number;
 }
 
-export type CartOpResult = { ok: true } | { ok: false; error: string };
+// error is a message key (messages/<locale>.json "errors" namespace) — see lib/actions/orders.ts.
+export type CartOpResult = { ok: true } | { ok: false; error: string; count?: number };
 
 interface CartContextValue {
   cartId: string;
@@ -136,7 +137,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       addLine: async (line) => {
         const newTotal = totalQtyForProduct(lines, line.productId) + line.qty;
         const result = await reserveStock({ cartId, productId: line.productId, qty: newTotal });
-        if (!result.ok) return { ok: false, error: result.error };
+        if (!result.ok) return { ok: false, error: result.error, count: result.count };
         setLines((prev) => [
           ...prev,
           { ...line, id: `${line.productId}-${line.variant}-${Date.now()}` },
@@ -146,10 +147,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
       incLine: async (id) => {
         const line = lines.find((l) => l.id === id);
-        if (!line) return { ok: false, error: "Item not found" };
+        if (!line) return { ok: false, error: "itemNotFound" };
         const newTotal = totalQtyForProduct(lines, line.productId) + 1;
         const result = await reserveStock({ cartId, productId: line.productId, qty: newTotal });
-        if (!result.ok) return { ok: false, error: result.error };
+        if (!result.ok) return { ok: false, error: result.error, count: result.count };
         setLines((prev) => prev.map((l) => (l.id === id ? { ...l, qty: l.qty + 1 } : l)));
         return { ok: true };
       },

@@ -1,0 +1,273 @@
+{
+  "landing": {
+    "metaTitle": "Hair Couture",
+    "metaDescription": "Balmain Hair Couture, Eloure e Eau de 1974 — tre marchi, una casa.",
+    "enter": "Entra nel negozio"
+  },
+  "nav": {
+    "shop": "Negozio",
+    "cart": "Carrello",
+    "account": "Account",
+    "search": "Cerca",
+    "backToBrands": "Tutti i marchi",
+    "menuTitle": "Menu",
+    "browseShop": "Sfoglia il negozio",
+    "categoriesTitle": "Categorie",
+    "view": "Vedi",
+    "openMenu": "Apri il menu",
+    "closeMenu": "Chiudi il menu",
+    "closeMenuOverlay": "Chiudi la sovrapposizione del menu"
+  },
+  "brands": {
+    "balmain": {
+      "name": "Balmain Hair Couture",
+      "tagline": "Extension per capelli di lusso e strumenti per lo styling"
+    },
+    "eloure": {
+      "name": "Eloure",
+      "tagline": "Capelli di tutti i giorni, elevati"
+    },
+    "eau-de-1974": {
+      "name": "Eau de 1974",
+      "tagline": "Profumo con una storia"
+    }
+  },
+  "shop": {
+    "featured": "In evidenza",
+    "viewAll": "Vedi tutto",
+    "category": "Categoria",
+    "allCategories": "Tutte le categorie",
+    "sortBy": "Ordina per",
+    "sortNewest": "Più recenti",
+    "sortPriceAsc": "Prezzo, dal più basso",
+    "sortPriceDesc": "Prezzo, dal più alto",
+    "resultCount": "{count, plural, one {# prodotto} other {# prodotti}}",
+    "emptyTitle": "Non c'è niente qui al momento",
+    "emptyBody": "Questa selezione è vuota al momento. Torna a controllare presto, oppure dai un'occhiata a questi.",
+    "emptyCta": "Vedi tutto",
+    "suggestionsTitle": "Potrebbe piacerti anche"
+  },
+  "product": {
+    "size": "Taglia",
+    "addToCart": "Aggiungi al carrello",
+    "addedToCart": "Aggiunto al carrello",
+    "outOfStock": "Esaurito",
+    "relatedTitle": "Potrebbe piacerti anche",
+    "sizes": ["Piccola", "Media", "Grande"],
+    "placeholderDescription": "Testo descrittivo segnaposto — da sostituire con il testo reale del prodotto una volta collegata la fonte dati.",
+    "specs": {
+      "shipping": { "label": "Spedizione", "value": "Gratuita oltre € 75" },
+      "returns": { "label": "Resi", "value": "30 giorni" },
+      "origin": { "label": "Origine", "value": "Prodotto in Europa" }
+    }
+  },
+  "cart": {
+    "title": "Carrello",
+    "itemCount": "{count, plural, one {# articolo} other {# articoli}}",
+    "subtotal": "Subtotale",
+    "shipping": "Spedizione",
+    "shippingFree": "Gratuita",
+    "total": "Totale",
+    "checkout": "Procedi al pagamento",
+    "continueShopping": "Continua lo shopping",
+    "note": "Spedizione e tasse calcolate al checkout.",
+    "emptyTitle": "Il tuo carrello è vuoto",
+    "emptyBody": "Ancora niente qui — sfoglia la collezione per iniziare.",
+    "remove": "Rimuovi",
+    "couponPlaceholder": "Codice sconto",
+    "couponApply": "Applica",
+    "couponApplied": "Codice {code} applicato",
+    "discount": "Sconto",
+    "decreaseQty": "Diminuisci quantità",
+    "increaseQty": "Aumenta quantità"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "contactTitle": "Contatto",
+    "shippingTitle": "Indirizzo di spedizione",
+    "firstName": "Nome",
+    "lastName": "Cognome",
+    "email": "Email",
+    "phone": "Numero di telefono",
+    "address": "Indirizzo",
+    "city": "Città",
+    "postalCode": "Codice postale",
+    "country": "Paese",
+    "shippingMethod": "Metodo di spedizione",
+    "shippingFee": "Spedizione (pagata alla consegna)",
+    "placeOrder": "Effettua l'ordine",
+    "placingOrder": "Ordine in corso…",
+    "summaryTitle": "Riepilogo ordine",
+    "successTitle": "Grazie per il tuo ordine",
+    "successBody": "Il tuo ordine {orderId} è stato effettuato. Ti contatteremo a {email} con i dettagli di conferma.",
+    "backToShop": "Torna al negozio"
+  },
+  "account": {
+    "greeting": "Account",
+    "ordersTitle": "I tuoi ordini",
+    "lookupHint": "Non serve un account — inserisci l'email usata al checkout per vedere i tuoi ordini.",
+    "emailPlaceholder": "Indirizzo email",
+    "lookup": "Trova i miei ordini",
+    "noOrders": "Nessun ordine trovato per questa email.",
+    "orderColumns": {
+      "order": "Ordine",
+      "date": "Data",
+      "status": "Stato",
+      "total": "Totale"
+    },
+    "orderStatus": {
+      "pending": "In attesa",
+      "inProgress": "In lavorazione",
+      "fulfilled": "Evaso"
+    }
+  },
+  "search": {
+    "placeholder": "Cerca prodotti, categorie, collezioni",
+    "recentTitle": "Ricerche recenti",
+    "suggestedTitle": "Di tendenza ora",
+    "resultsTitle": "Risultati ({count})",
+    "emptyTitle": "Nessun risultato",
+    "emptyBody": "Prova un termine più breve o sfoglia il menu sopra.",
+    "recentPlaceholder": ["Extension 55cm", "Ricarica", "Set scoperta"]
+  },
+  "balmainHome": {
+    "popularTitle": "Di tendenza ora",
+    "trendingTitle": "Novità",
+    "collectionsTitle": "Esplora le collezioni",
+    "editorialEyebrow": "La maison",
+    "editorialTitle": "Il mondo di Balmain Hair",
+    "editorialBody": "Dagli atelier parigini al backstage della fashion week — l'artigianato, i codici e la couture dietro ogni pezzo.",
+    "editorialCta": "Scopri l'eredità",
+    "collections": {
+      "hairCare": { "body": "Formule nutrienti di fiducia backstage e a casa." },
+      "hairAccessories": { "body": "Pezzi iconici, realizzati a mano per un lusso quotidiano." },
+      "stylingTools": { "body": "Strumenti di livello professionale per una finitura couture." }
+    }
+  },
+  "footer": {
+    "shopTitle": "Negozio",
+    "serviceTitle": "Servizio",
+    "copyright": "© {year} Hair Couture",
+    "currency": "€ EUR",
+    "newsletterSuccess": "Grazie — sei nella lista.",
+    "links": {
+      "contact": "Contatto",
+      "shippingReturns": "Spedizioni & Resi",
+      "privacy": "Informativa sulla privacy",
+      "terms": "Termini di servizio",
+      "cookies": "Cookie",
+      "shopAll": "Vedi tutto"
+    },
+    "newsletter": {
+      "balmain": {
+        "title": "Iscriviti alla lista",
+        "body": "Iscriviti per l'accesso anticipato alle nuove collezioni e offerte esclusive.",
+        "placeholder": "Indirizzo email",
+        "cta": "Iscriviti"
+      },
+      "eloure": {
+        "title": "Resta aggiornato",
+        "body": "Nuovi arrivi, promemoria ricariche e offerte — direttamente nella tua casella di posta.",
+        "placeholder": "Indirizzo email",
+        "cta": "Iscriviti"
+      },
+      "eau-de-1974": {
+        "title": "Dall'archivio",
+        "body": "Nuove composizioni e storie dalla maison, alcune volte all'anno.",
+        "placeholder": "Indirizzo email",
+        "cta": "Iscriviti"
+      }
+    }
+  },
+  "legal": {
+    "backToShop": "Torna al negozio",
+    "lastUpdated": "Ultimo aggiornamento {date}"
+  },
+  "cookieConsent": {
+    "body": "Utilizziamo i cookie per capire come usi il nostro sito e migliorare la tua esperienza.",
+    "learnMore": "Scopri di più",
+    "accept": "Accetta",
+    "decline": "Rifiuta"
+  },
+  "contact": {
+    "title": "Contatto",
+    "intro": "Domande su un ordine, un prodotto o altro — siamo felici di aiutarti.",
+    "emailLabel": "Scrivici direttamente",
+    "name": "Nome",
+    "email": "Email",
+    "message": "Messaggio",
+    "send": "Invia messaggio",
+    "sending": "Invio in corso…",
+    "successTitle": "Messaggio inviato",
+    "successBody": "Grazie per averci contattato — ti risponderemo presto."
+  },
+  "errors": {
+    "couponRequired": "Inserisci un codice sconto",
+    "couponInvalid": "Codice sconto non valido o scaduto",
+    "firstNameRequired": "Il nome è obbligatorio",
+    "lastNameRequired": "Il cognome è obbligatorio",
+    "emailInvalid": "Inserisci un'email valida",
+    "phoneRequired": "Il numero di telefono è obbligatorio",
+    "addressRequired": "L'indirizzo è obbligatorio",
+    "cityRequired": "La città è obbligatoria",
+    "shippingMethodRequired": "Seleziona un metodo di spedizione",
+    "shippingMethodInvalid": "Seleziona un metodo di spedizione valido",
+    "cartEmpty": "Il tuo carrello è vuoto",
+    "brandInvalid": "Marchio non valido",
+    "nameRequired": "Il nome è obbligatorio",
+    "messageRequired": "Il messaggio è obbligatorio",
+    "productNotFound": "Prodotto non trovato",
+    "soldOut": "Esaurito",
+    "onlyLeftInStock": "Ne restano solo {count} in magazzino",
+    "itemNotFound": "Articolo non trovato"
+  },
+  "shopMeta": {
+    "balmain": {
+      "hero": {
+        "eyebrow": "Autunno / Inverno 26",
+        "title": "Couture per i capelli",
+        "body": "Extension annodate a mano e strumenti di finitura sviluppati con l'atelier.",
+        "cta": "Scopri la collezione",
+        "secondary": "Vedi il lookbook"
+      }
+    },
+    "eloure": {
+      "hero": {
+        "eyebrow": "Il rituale quotidiano",
+        "title": "Cura che ti segue",
+        "body": "Formule ricaricabili per capelli che lavi, indossi e vivi ogni giorno.",
+        "cta": "Scopri la cura quotidiana",
+        "secondary": "Trova il tuo rituale"
+      }
+    },
+    "eau-de-1974": {
+      "hero": {
+        "eyebrow": "Dal 1974",
+        "title": "Un anno, in bottiglia",
+        "body": "Sei composizioni tratte dall'archivio della maison, miscelate in piccoli lotti.",
+        "cta": "Scopri il profumo",
+        "secondary": "Leggi l'archivio"
+      }
+    }
+  },
+  "categories": {
+    "Bestsellers": "Più venduti",
+    "New": "Novità",
+    "Hair Care": "Cura dei capelli",
+    "Hair Accessories": "Accessori per capelli",
+    "Styling Tools": "Strumenti per lo styling",
+    "Gifts": "Regali",
+    "Sale": "Saldi",
+    "Outlet": "Outlet",
+    "Care Collection": "Collezione cura",
+    "Styling Collection": "Collezione styling",
+    "Shop by Hairtype": "Acquista per tipo di capello",
+    "Treatments & Sets": "Trattamenti & Set",
+    "EAU de Capri": "EAU de Capri",
+    "EAU de Hamptons": "EAU de Hamptons",
+    "EAU de Santorini": "EAU de Santorini",
+    "Sensorial Hair Care": "Cura sensoriale dei capelli",
+    "Sensorial Beauty": "Bellezza sensoriale",
+    "Sensorial Lifestyle": "Stile di vita sensoriale"
+  }
+}

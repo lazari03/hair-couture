@@ -17,6 +17,7 @@ export function AddToCartForm({
   sizes: string[];
 }) {
   const t = useTranslations("product");
+  const tErrors = useTranslations("errors");
   const { addLine } = useCart();
   const [sizeIndex, setSizeIndex] = useState(0);
   const [added, setAdded] = useState(false);
@@ -63,7 +64,7 @@ export function AddToCartForm({
           });
           setPending(false);
           if (!result.ok) {
-            setError(result.error);
+            setError(tErrors(result.error, { count: result.count ?? 0 }));
             return;
           }
           trackAddToCart({ productId: product.id, name: product.name, category: product.category, price: product.price }, brand);

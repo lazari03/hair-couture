@@ -6,7 +6,8 @@ import { subscribeNewsletter } from "@/lib/email";
 
 // Kept separate from contact.ts — different form/entity, one concern per
 // file, matching the rest of src/lib/actions/*.
-const emailSchema = z.string().trim().email("Enter a valid email");
+// Error values are message keys (messages/<locale>.json "errors" namespace) — see orders.ts.
+const emailSchema = z.string().trim().email("emailInvalid");
 
 export type NewsletterResult = { ok: true } | { ok: false; error: string };
 
@@ -15,7 +16,7 @@ export async function subscribeToNewsletter(email: string, brand: string): Promi
   if (!parsed.success) return { ok: false, error: parsed.error.issues[0].message };
 
   const resolvedBrand = getBrand(brand);
-  if (!resolvedBrand) return { ok: false, error: "Invalid brand" };
+  if (!resolvedBrand) return { ok: false, error: "brandInvalid" };
 
   await subscribeNewsletter(parsed.data, resolvedBrand.slug);
   return { ok: true };

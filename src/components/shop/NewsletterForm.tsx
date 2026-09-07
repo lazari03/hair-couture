@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { subscribeToNewsletter } from "@/lib/actions/newsletter";
 import { trackNewsletterSignup } from "@/lib/analytics/events";
 import type { BrandSlug } from "@/lib/brands";
@@ -14,6 +15,8 @@ export function NewsletterForm({
   placeholder: string;
   cta: string;
 }) {
+  const t = useTranslations("footer");
+  const tErrors = useTranslations("errors");
   const [email, setEmail] = useState("");
   const [pending, setPending] = useState(false);
   const [done, setDone] = useState(false);
@@ -26,7 +29,7 @@ export function NewsletterForm({
     const result = await subscribeToNewsletter(email, brand);
     setPending(false);
     if (!result.ok) {
-      setError(result.error);
+      setError(tErrors(result.error));
       return;
     }
     trackNewsletterSignup(brand);
@@ -35,7 +38,7 @@ export function NewsletterForm({
   }
 
   if (done) {
-    return <p className="text-sm text-neutral-400">Thanks — you&apos;re on the list.</p>;
+    return <p className="text-sm text-neutral-400">{t("newsletterSuccess")}</p>;
   }
 
   return (

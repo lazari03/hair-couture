@@ -10,19 +10,21 @@ import { trackMenuLinkClick } from "@/lib/analytics/events";
 export function MenuLinkTracker({
   href,
   label,
+  displayLabel,
   brand,
   source,
   className,
 }: {
   href: string;
-  label: string;
+  label: string; // canonical category value — sent to analytics
+  displayLabel?: string; // translated text to render; defaults to label
   brand: BrandSlug;
   source: "desktop" | "mobile";
   className?: string;
 }) {
   return (
     <Link href={href} className={className} onClick={() => trackMenuLinkClick(label, brand, source)}>
-      {label}
+      {displayLabel ?? label}
     </Link>
   );
 }

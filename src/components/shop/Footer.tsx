@@ -5,6 +5,7 @@ import { getFooter } from "@/lib/data/footer";
 import { NewsletterForm } from "./NewsletterForm";
 import { ContactLinkTracker } from "./ContactLinkTracker";
 import { CategoryLinkTracker } from "./CategoryLinkTracker";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 // One reusable footer for all 3 brands (skills/branding.md: don't fork
 // components per brand). Structure/columns are identical across brands;
@@ -37,20 +38,25 @@ export async function Footer({ brand }: { brand: Brand }) {
                 </CategoryLinkTracker>
               </li>
             ))}
+            <li>
+              <Link href={content.shopAllHref} className="hover:text-white">
+                {t("links.shopAll")}
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
           <h3 className="mb-4 text-xs tracking-widest text-white uppercase">{t("serviceTitle")}</h3>
           <ul className="flex flex-col gap-2.5 text-sm">
             {content.serviceLinks.map((link) =>
-              link.label === "Contact" ? (
+              link.key === "contact" ? (
                 <li key={link.href}>
-                  <ContactLinkTracker brand={brand.slug} href={link.href} label={link.label} />
+                  <ContactLinkTracker brand={brand.slug} href={link.href} label={t(`links.${link.key}`)} />
                 </li>
               ) : (
                 <li key={link.href}>
                   <Link href={link.href} className="hover:text-white">
-                    {link.label}
+                    {t(`links.${link.key}`)}
                   </Link>
                 </li>
               ),
@@ -62,14 +68,20 @@ export async function Footer({ brand }: { brand: Brand }) {
           <p className="text-sm text-neutral-400">{tBrands(`${brand.slug}.tagline`)}</p>
         </div>
         <div className="col-span-2 sm:col-span-1">
-          <h3 className="mb-4 text-xs tracking-widest text-white uppercase">{content.newsletter.title}</h3>
-          <p className="mb-4 text-sm text-neutral-400">{content.newsletter.body}</p>
-          <NewsletterForm brand={brand.slug} placeholder={content.newsletter.placeholder} cta={content.newsletter.cta} />
+          <h3 className="mb-4 text-xs tracking-widest text-white uppercase">{t(`newsletter.${brand.slug}.title`)}</h3>
+          <p className="mb-4 text-sm text-neutral-400">{t(`newsletter.${brand.slug}.body`)}</p>
+          <NewsletterForm
+            brand={brand.slug}
+            placeholder={t(`newsletter.${brand.slug}.placeholder`)}
+            cta={t(`newsletter.${brand.slug}.cta`)}
+          />
         </div>
       </div>
       <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-neutral-800 pt-7 text-xs text-neutral-500">
         <span>{t("copyright", { year: new Date().getFullYear() })}</span>
-        <span>{t("localeCurrency")}</span>
+        <span className="flex items-center gap-1.5">
+          <LanguageSwitcher /> · {t("currency")}
+        </span>
       </div>
     </footer>
   );

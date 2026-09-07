@@ -76,6 +76,19 @@ export default async function BrandLayout({
   const activeShop = shop;
 
   const t = await getTranslations();
+  const tCategories = await getTranslations("categories");
+  // Category display names are translated for the menu; the underlying
+  // value (used for hrefs, filtering and analytics) stays the canonical
+  // English string stored on Product.category — falls back to the raw
+  // value if a category has no translation yet.
+  function categoryLabel(raw: string): string {
+    try {
+      return tCategories(raw);
+    } catch {
+      return raw;
+    }
+  }
+
   // Nav items that match a real product category get the filter link; the
   // rest (Bestsellers, New, Gifts, ...) are curated views with no dedicated
   // category yet, so they just go to the unfiltered shop — same as the live
@@ -89,7 +102,11 @@ export default async function BrandLayout({
       : `/${activeBrand.slug}/shop`;
   }
 
-  const mobileMenuLinks = activeShop.menu.map((item) => ({ label: item, href: menuHref(item) }));
+  const mobileMenuLinks = activeShop.menu.map((item) => ({
+    value: item,
+    label: categoryLabel(item),
+    href: menuHref(item),
+  }));
 
   return (
     <div
@@ -155,6 +172,7 @@ export default async function BrandLayout({
               key={item}
               href={menuHref(item)}
               label={item}
+              displayLabel={categoryLabel(item)}
               brand={activeBrand.slug}
               source="desktop"
               className={

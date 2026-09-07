@@ -8,11 +8,12 @@ import { sendContactNotification } from "@/lib/email";
 // Persisted to Prisma independently of email delivery so nothing is lost
 // while BREVO_API_KEY is unset (see prisma/schema.prisma's ContactMessage
 // model comment).
+// Error values are message keys (messages/<locale>.json "errors" namespace) — see orders.ts.
 const contactSchema = z.object({
   brand: z.string().min(1),
-  name: z.string().trim().min(1, "Name is required"),
-  email: z.string().trim().email("Enter a valid email"),
-  message: z.string().trim().min(1, "Message is required"),
+  name: z.string().trim().min(1, "nameRequired"),
+  email: z.string().trim().email("emailInvalid"),
+  message: z.string().trim().min(1, "messageRequired"),
 });
 
 export type ContactInput = z.infer<typeof contactSchema>;

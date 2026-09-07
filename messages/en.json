@@ -9,7 +9,14 @@
     "cart": "Cart",
     "account": "Account",
     "search": "Search",
-    "backToBrands": "All brands"
+    "backToBrands": "All brands",
+    "menuTitle": "Menu",
+    "browseShop": "Browse the shop",
+    "categoriesTitle": "Categories",
+    "view": "View",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "closeMenuOverlay": "Close menu overlay"
   },
   "brands": {
     "balmain": {
@@ -45,7 +52,14 @@
     "addToCart": "Add to cart",
     "addedToCart": "Added to cart",
     "outOfStock": "Sold out",
-    "relatedTitle": "You may also like"
+    "relatedTitle": "You may also like",
+    "sizes": ["Small", "Medium", "Large"],
+    "placeholderDescription": "Placeholder description copy — swap for real per-product copy once a data source is wired.",
+    "specs": {
+      "shipping": { "label": "Shipping", "value": "Free over € 75" },
+      "returns": { "label": "Returns", "value": "30 days" },
+      "origin": { "label": "Origin", "value": "Made in Europe" }
+    }
   },
   "cart": {
     "title": "Cart",
@@ -63,7 +77,9 @@
     "couponPlaceholder": "Coupon code",
     "couponApply": "Apply",
     "couponApplied": "Code {code} applied",
-    "discount": "Discount"
+    "discount": "Discount",
+    "decreaseQty": "Decrease quantity",
+    "increaseQty": "Increase quantity"
   },
   "checkout": {
     "title": "Checkout",
@@ -88,23 +104,22 @@
   },
   "account": {
     "greeting": "Account",
-    "nav": {
-      "orders": "Orders",
-      "details": "Details",
-      "addresses": "Addresses",
-      "wishlist": "Wishlist",
-      "signOut": "Sign out"
-    },
-    "ordersTitle": "Recent orders",
+    "ordersTitle": "Your orders",
+    "lookupHint": "No account needed — enter the email you checked out with to see your orders.",
+    "emailPlaceholder": "Email address",
+    "lookup": "Find my orders",
+    "noOrders": "No orders found for that email.",
     "orderColumns": {
       "order": "Order",
       "date": "Date",
       "status": "Status",
       "total": "Total"
     },
-    "detailsTitle": "Details",
-    "addressTitle": "Default address",
-    "edit": "Edit"
+    "orderStatus": {
+      "pending": "Pending",
+      "inProgress": "In progress",
+      "fulfilled": "Fulfilled"
+    }
   },
   "search": {
     "placeholder": "Search products, categories, collections",
@@ -112,7 +127,8 @@
     "suggestedTitle": "Popular right now",
     "resultsTitle": "Results ({count})",
     "emptyTitle": "No results",
-    "emptyBody": "Try a shorter term or browse the menu above."
+    "emptyBody": "Try a shorter term or browse the menu above.",
+    "recentPlaceholder": ["Extensions 55cm", "Refill", "Discovery set"]
   },
   "balmainHome": {
     "popularTitle": "Popular right now",
@@ -132,7 +148,36 @@
     "shopTitle": "Shop",
     "serviceTitle": "Service",
     "copyright": "© {year} Hair Couture",
-    "localeCurrency": "EN · € EUR"
+    "currency": "€ EUR",
+    "newsletterSuccess": "Thanks — you're on the list.",
+    "links": {
+      "contact": "Contact",
+      "shippingReturns": "Shipping & Returns",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookies",
+      "shopAll": "Shop all"
+    },
+    "newsletter": {
+      "balmain": {
+        "title": "Join the list",
+        "body": "Sign up for early access to new collections and exclusive offers.",
+        "placeholder": "Email address",
+        "cta": "Subscribe"
+      },
+      "eloure": {
+        "title": "Stay in the loop",
+        "body": "New arrivals, refill reminders, and offers — straight to your inbox.",
+        "placeholder": "Email address",
+        "cta": "Subscribe"
+      },
+      "eau-de-1974": {
+        "title": "From the archive",
+        "body": "New compositions and stories from the house, a few times a year.",
+        "placeholder": "Email address",
+        "cta": "Subscribe"
+      }
+    }
   },
   "legal": {
     "backToShop": "Back to shop",
@@ -155,5 +200,74 @@
     "sending": "Sending…",
     "successTitle": "Message sent",
     "successBody": "Thanks for reaching out — we'll get back to you soon."
+  },
+  "errors": {
+    "couponRequired": "Enter a coupon code",
+    "couponInvalid": "Invalid or expired coupon",
+    "firstNameRequired": "First name is required",
+    "lastNameRequired": "Last name is required",
+    "emailInvalid": "Enter a valid email",
+    "phoneRequired": "Phone number is required",
+    "addressRequired": "Address is required",
+    "cityRequired": "City is required",
+    "shippingMethodRequired": "Select a shipping method",
+    "shippingMethodInvalid": "Select a valid shipping method",
+    "cartEmpty": "Your cart is empty",
+    "brandInvalid": "Invalid brand",
+    "nameRequired": "Name is required",
+    "messageRequired": "Message is required",
+    "productNotFound": "Product not found",
+    "soldOut": "Sold out",
+    "onlyLeftInStock": "Only {count} left in stock",
+    "itemNotFound": "Item not found"
+  },
+  "shopMeta": {
+    "balmain": {
+      "hero": {
+        "eyebrow": "Autumn / Winter 26",
+        "title": "Couture for hair",
+        "body": "Hand-tied extensions and finishing tools developed with the atelier.",
+        "cta": "Shop the collection",
+        "secondary": "View lookbook"
+      }
+    },
+    "eloure": {
+      "hero": {
+        "eyebrow": "The daily ritual",
+        "title": "Care that keeps up",
+        "body": "Refillable formulas for hair you wash, wear and live in every day.",
+        "cta": "Shop everyday care",
+        "secondary": "Find your ritual"
+      }
+    },
+    "eau-de-1974": {
+      "hero": {
+        "eyebrow": "Since 1974",
+        "title": "A year, bottled",
+        "body": "Six compositions drawn from the house archive, blended in small batches.",
+        "cta": "Shop fragrance",
+        "secondary": "Read the archive"
+      }
+    }
+  },
+  "categories": {
+    "Bestsellers": "Bestsellers",
+    "New": "New",
+    "Hair Care": "Hair Care",
+    "Hair Accessories": "Hair Accessories",
+    "Styling Tools": "Styling Tools",
+    "Gifts": "Gifts",
+    "Sale": "Sale",
+    "Outlet": "Outlet",
+    "Care Collection": "Care Collection",
+    "Styling Collection": "Styling Collection",
+    "Shop by Hairtype": "Shop by Hairtype",
+    "Treatments & Sets": "Treatments & Sets",
+    "EAU de Capri": "EAU de Capri",
+    "EAU de Hamptons": "EAU de Hamptons",
+    "EAU de Santorini": "EAU de Santorini",
+    "Sensorial Hair Care": "Sensorial Hair Care",
+    "Sensorial Beauty": "Sensorial Beauty",
+    "Sensorial Lifestyle": "Sensorial Lifestyle"
   }
 }

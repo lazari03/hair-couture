@@ -48,6 +48,7 @@ function Field({
 export default function CheckoutPage() {
   const t = useTranslations("checkout");
   const tCart = useTranslations("cart");
+  const tErrors = useTranslations("errors");
   const locale = useLocale();
   const { brand } = useParams<{ brand: string }>();
   const { lines, coupon, clearCart } = useCart();
@@ -116,7 +117,7 @@ export default function CheckoutPage() {
 
     setSubmitting(false);
     if (!result.ok) {
-      setError(result.error);
+      setError(tErrors(result.error));
       return;
     }
     trackPurchase(

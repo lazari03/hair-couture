@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { CartCountBadge } from "@/components/shop/CartCountBadge";
 import type { BrandSlug } from "@/lib/brands";
@@ -48,7 +49,8 @@ function CloseIcon() {
 }
 
 interface MenuLink {
-  label: string;
+  value: string; // canonical category value — drives the Sale styling + analytics
+  label: string; // translated display text
   href: string;
 }
 
@@ -71,6 +73,7 @@ export function BrandMobileMenu({
   accentColor: string;
   saleColor: string;
 }) {
+  const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -102,7 +105,7 @@ export function BrandMobileMenu({
       <div className="flex items-center justify-end lg:hidden">
         <button
           type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? t("closeMenu") : t("openMenu")}
           aria-expanded={open}
           onClick={() => setOpen((prev) => !prev)}
           className="flex min-h-11 w-11 items-center justify-center border border-neutral-300 bg-white shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-transform duration-200 active:scale-95"
@@ -124,7 +127,7 @@ export function BrandMobileMenu({
             >
               <button
                 type="button"
-                aria-label="Close menu overlay"
+                aria-label={t("closeMenuOverlay")}
                 onClick={() => setOpen(false)}
                 className={`absolute inset-0 bg-black/30 backdrop-blur-[3px] transition-opacity duration-300 ${
                   open ? "opacity-100" : "opacity-0"
@@ -138,14 +141,14 @@ export function BrandMobileMenu({
               >
                 <div className="sticky top-0 z-10 flex shrink-0 items-center justify-between border-b border-neutral-100 bg-white px-5 py-4 sm:px-6">
                   <div>
-                    <p className="text-[10px] tracking-[0.2em] text-neutral-500 uppercase">Menu</p>
-                    <p className="mt-1 text-sm text-neutral-900">Browse the shop</p>
+                    <p className="text-[10px] tracking-[0.2em] text-neutral-500 uppercase">{t("menuTitle")}</p>
+                    <p className="mt-1 text-sm text-neutral-900">{t("browseShop")}</p>
                   </div>
                   <button
                     type="button"
                     onClick={() => setOpen(false)}
                     className="flex h-10 w-10 items-center justify-center border border-neutral-300 bg-white text-neutral-900 shadow-sm"
-                    aria-label="Close menu"
+                    aria-label={t("closeMenu")}
                   >
                     <CloseIcon />
                   </button>
@@ -164,24 +167,24 @@ export function BrandMobileMenu({
                 </div>
 
                 <div className="flex-1 overflow-y-auto px-5 py-5 sm:px-6">
-                  <p className="mb-3 text-[10px] tracking-[0.2em] text-neutral-500 uppercase">Categories</p>
+                  <p className="mb-3 text-[10px] tracking-[0.2em] text-neutral-500 uppercase">{t("categoriesTitle")}</p>
                   <nav className="divide-y divide-neutral-100 border-y border-neutral-100">
                     {menuLinks.map((item) => (
                       <Link
-                        key={item.label}
+                        key={item.value}
                         href={item.href}
                         onClick={() => {
-                          trackMenuLinkClick(item.label, brand, "mobile");
+                          trackMenuLinkClick(item.value, brand, "mobile");
                           setOpen(false);
                         }}
                         className={
-                          item.label === "Sale"
+                          item.value === "Sale"
                             ? "flex items-center justify-between py-4 text-[15px] font-medium text-[var(--brand-sale)] transition-colors"
                             : "flex items-center justify-between py-4 text-[15px] text-neutral-800 transition-colors hover:text-[var(--brand-accent)]"
                         }
                       >
                         <span>{item.label}</span>
-                        <span className="text-xs tracking-[0.16em] text-neutral-400 uppercase">View</span>
+                        <span className="text-xs tracking-[0.16em] text-neutral-400 uppercase">{t("view")}</span>
                       </Link>
                     ))}
                   </nav>

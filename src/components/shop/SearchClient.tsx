@@ -7,10 +7,9 @@ import { trackSearch } from "@/lib/analytics/events";
 import type { BrandSlug } from "@/lib/brands";
 import type { Product } from "@/lib/data/shop";
 
-const RECENT_PLACEHOLDER = ["Extensions 55cm", "Refill", "Discovery set"];
-
 export function SearchClient({ brand, products }: { brand: BrandSlug; products: Product[] }) {
   const t = useTranslations("search");
+  const recentPlaceholder = t.raw("recentPlaceholder") as string[];
   const [query, setQuery] = useState("");
 
   const q = query.trim().toLowerCase();
@@ -43,7 +42,7 @@ export function SearchClient({ brand, products }: { brand: BrandSlug; products: 
               {t("recentTitle")}
             </h2>
             <div className="flex flex-wrap gap-2.5">
-              {RECENT_PLACEHOLDER.map((r) => (
+              {recentPlaceholder.map((r) => (
                 <button
                   key={r}
                   onClick={() => setQuery(r)}

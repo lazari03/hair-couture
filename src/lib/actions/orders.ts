@@ -10,14 +10,31 @@ export type CouponResult =
   | { ok: true; code: string; type: "percent" | "fixed"; value: number }
   | { ok: false; error: string };
 
+// Error values are message keys (messages/<locale>.json "errors" namespace),
+// not display text — callers translate with t("errors.<code>") before showing them.
 export async function validateCoupon(code: string): Promise<CouponResult> {
   const trimmed = code.trim().toUpperCase();
-  if (!trimmed) return { ok: false, error: "Enter a coupon code" };
+  if (!trimmed) return { ok: false, error: "couponRequired" };
 
   const coupon = await prisma.coupon.findUnique({ where: { code: trimmed } });
-  if (!coupon || !coupon.active) return { ok: false, error: "Invalid or expired coupon" };
+  if (!coupon || !coupon.active) return { ok: false, error: "couponInvalid" };
 
   return { ok: true, code: coupon.code, type: coupon.type as "percent" | "fixed", value: coupon.value };
+}
+
+// Guest order lookup for the storefront "Account" page (no customer login —
+// see skills/auth.md: single-admin auth only). Scoped to email + brand so
+// one guest can't see another's orders and Balmain orders don't leak into
+// Eloure's lookup; email isn't a secret, so this is a lookup, not auth — fine
+// for "see my own order status", not for anything sensitive.
+export async function getOrdersByEmail(email: string, brand: string) {
+  const trimmed = email.trim().toLowerCase();
+  if (!trimmed) return [];
+  return prisma.order.findMany({
+    where: { email: trimmed, brand },
+    orderBy: { createdAt: "desc" },
+    include: { items: true },
+  });
 }
 
 const orderLineSchema = z.object({
@@ -30,17 +47,17 @@ const orderLineSchema = z.object({
 
 const orderSchema = z.object({
   brand: z.string().min(1),
-  firstName: z.string().trim().min(1, "First name is required"),
-  lastName: z.string().trim().min(1, "Last name is required"),
-  email: z.string().trim().email("Enter a valid email"),
-  phone: z.string().trim().min(1, "Phone number is required"),
-  address: z.string().trim().min(1, "Address is required"),
-  city: z.string().trim().min(1, "City is required"),
+  firstName: z.string().trim().min(1, "firstNameRequired"),
+  lastName: z.string().trim().min(1, "lastNameRequired"),
+  email: z.string().trim().email("emailInvalid"),
+  phone: z.string().trim().min(1, "phoneRequired"),
+  address: z.string().trim().min(1, "addressRequired"),
+  city: z.string().trim().min(1, "cityRequired"),
   postalCode: z.string().trim().optional(),
   country: z.string().trim().optional(),
   couponCode: z.string().optional(),
-  shippingClassId: z.string().trim().min(1, "Select a shipping method"),
-  lines: z.array(orderLineSchema).min(1, "Your cart is empty"),
+  shippingClassId: z.string().trim().min(1, "shippingMethodRequired"),
+  lines: z.array(orderLineSchema).min(1, "cartEmpty"),
 });
 
 export type OrderInput = z.infer<typeof orderSchema>;
@@ -51,10 +68,10 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
   if (!parsed.success) return { ok: false, error: parsed.error.issues[0].message };
   const data = parsed.data;
   const resolvedBrand = getBrand(data.brand);
-  if (!resolvedBrand) return { ok: false, error: "Invalid brand" };
+  if (!resolvedBrand) return { ok: false, error: "brandInvalid" };
 
   const shippingClass = await prisma.shippingClass.findUnique({ where: { id: data.shippingClassId } });
-  if (!shippingClass || !shippingClass.active) return { ok: false, error: "Select a valid shipping method" };
+  if (!shippingClass || !shippingClass.active) return { ok: false, error: "shippingMethodInvalid" };
 
   const subtotal = data.lines.reduce((sum, l) => sum + l.price * l.qty, 0);
 
@@ -76,7 +93,9 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
       brand: data.brand,
       firstName: data.firstName,
       lastName: data.lastName,
-      email: data.email,
+      // Lowercased so the account page's order lookup (case-insensitive by
+      // construction, not by a SQLite-unsupported query flag) can match it.
+      email: data.email.toLowerCase(),
       phone: data.phone,
       address: data.address,
       city: data.city,

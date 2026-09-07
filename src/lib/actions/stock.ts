@@ -27,8 +27,9 @@ export async function reserveStock(input: {
       where: { productId, expiresAt: { lt: new Date() } },
     });
 
+    // Error values are message keys (messages/<locale>.json "errors" namespace) — see orders.ts.
     const product = await tx.product.findUnique({ where: { id: productId } });
-    if (!product) return { ok: false, error: "Product not found" };
+    if (!product) return { ok: false, error: "productNotFound" };
 
     const reservedByOthers = await tx.stockReservation.aggregate({
       where: { productId, cartId: { not: cartId }, expiresAt: { gte: new Date() } },
@@ -37,10 +38,9 @@ export async function reserveStock(input: {
     const available = product.stock - (reservedByOthers._sum.qty ?? 0);
 
     if (qty > 0 && qty > available) {
-      return {
-        ok: false,
-        error: available <= 0 ? "Sold out" : `Only ${available} left in stock`,
-      };
+      return available <= 0
+        ? { ok: false, error: "soldOut" }
+        : { ok: false, error: "onlyLeftInStock", count: available };
     }
 
     const existing = await tx.stockReservation.findFirst({ where: { cartId, productId } });
