@@ -5,12 +5,9 @@ services:
     env_file: .env.production
     volumes:
       - sqlite-data:/data
-    # Published on the host so the site is viewable at http://<server-ip>:3000
-    # before DNS/Caddy are set up. Once your domain is live behind Caddy you
-    # can close this off (ufw delete allow 3000/tcp) — Caddy talks to the
-    # app over the internal Docker network regardless of this mapping.
-    ports:
-      - "3000:3000"
+    # No host port mapping — Caddy reaches the app over the internal Docker
+    # network (reverse_proxy app:3000 in the Caddyfile) regardless. Publishing
+    # 3000 on the host would let anyone bypass Caddy's TLS entirely.
 
   caddy:
     image: caddy:2-alpine

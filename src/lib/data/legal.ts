@@ -104,11 +104,11 @@ function buildCookies(brandName: string): LegalDoc {
       },
       {
         heading: "Analytics cookies",
-        body: "When enabled, Google Analytics (GA4) sets cookies such as _ga, _ga_<container-id>, and _gid to measure site traffic and behavior — which pages are visited, which of our brands is browsed most, and how visitors move through the shop. _ga and _ga_* typically last around 2 years; _gid lasts about 24 hours. Analytics only load once a Measurement ID is configured on the site — if none is configured, no analytics cookies are set.",
+        body: "With your consent, Google Analytics (GA4) sets cookies such as _ga, _ga_<container-id>, and _gid to measure site traffic and behavior — which pages are visited, which of our brands is browsed most, and how visitors move through the shop. _ga and _ga_* typically last around 2 years; _gid lasts about 24 hours. These cookies are only set after you accept the cookie banner shown on your first visit — declining, or not responding, means no analytics cookies are set.",
       },
       {
         heading: "Managing cookies",
-        body: "You can block or delete cookies through your browser settings at any time. A dedicated cookie-consent banner for EU/Albanian visitors is planned but not yet implemented — until then, disabling cookies in your browser is the way to opt out.",
+        body: "A cookie-consent banner is shown on your first visit — Accept enables analytics cookies, Decline keeps them off. You can change your mind at any time by clearing this site's data in your browser settings, which brings the banner back on your next visit.",
       },
     ],
   };

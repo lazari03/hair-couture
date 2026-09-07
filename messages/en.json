@@ -136,6 +136,12 @@
     "backToShop": "Back to shop",
     "lastUpdated": "Last updated {date}"
   },
+  "cookieConsent": {
+    "body": "We use cookies to understand how you use our site and improve your experience.",
+    "learnMore": "Learn more",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
   "contact": {
     "title": "Contact",
     "intro": "Questions about an order, a product, or anything else — we're happy to help.",
