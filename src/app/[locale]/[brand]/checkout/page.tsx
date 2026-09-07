@@ -8,9 +8,12 @@ import { useCart } from "@/lib/cart/cart-context";
 import { productImage } from "@/lib/data/category-image";
 import { formatMoney } from "@/lib/money";
 import { createOrder } from "@/lib/actions/orders";
+import { getActiveShippingClasses } from "@/lib/actions/shipping";
 import { trackBeginCheckout, trackPurchase } from "@/lib/analytics/events";
 import type { BrandSlug } from "@/lib/brands";
 import Image from "next/image";
+
+type ShippingClass = { id: string; name: string; fee: number };
 
 type FieldName =
   | "firstName"
@@ -61,7 +64,16 @@ export default function CheckoutPage() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [orderId, setOrderId] = useState<string | null>(null);
+  const [shippingClasses, setShippingClasses] = useState<ShippingClass[]>([]);
+  const [shippingClassId, setShippingClassId] = useState("");
   const beganCheckoutTracked = useRef(false);
+
+  useEffect(() => {
+    getActiveShippingClasses().then((classes) => {
+      setShippingClasses(classes);
+      setShippingClassId((current) => current || classes[0]?.id || "");
+    });
+  }, []);
 
   useEffect(() => {
     if (lines.length > 0 && !beganCheckoutTracked.current) {
@@ -81,6 +93,7 @@ export default function CheckoutPage() {
       : Math.min(coupon.value, subtotal)
     : 0;
   const total = Math.max(0, subtotal - discount);
+  const shippingFeeAll = shippingClasses.find((sc) => sc.id === shippingClassId)?.fee ?? 0;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -91,6 +104,7 @@ export default function CheckoutPage() {
       brand,
       ...form,
       couponCode: coupon?.code,
+      shippingClassId,
       lines: lines.map((l) => ({
         productId: l.productId,
         name: l.name,
@@ -254,6 +268,34 @@ export default function CheckoutPage() {
                 </div>
               </section>
 
+              {shippingClasses.length > 0 && (
+                <section className="grid gap-4">
+                  <h2 className="text-[11px] tracking-[0.18em] text-neutral-500 uppercase">
+                    {t("shippingMethod")}
+                  </h2>
+                  <div className="grid gap-2">
+                    {shippingClasses.map((sc) => (
+                      <label
+                        key={sc.id}
+                        className="flex min-h-11 items-center justify-between gap-3 border border-neutral-300 px-3 text-sm has-[:checked]:border-neutral-900"
+                      >
+                        <span className="flex items-center gap-2">
+                          <input
+                            type="radio"
+                            name="shippingClassId"
+                            value={sc.id}
+                            checked={shippingClassId === sc.id}
+                            onChange={() => setShippingClassId(sc.id)}
+                          />
+                          {sc.name}
+                        </span>
+                        <span className="text-neutral-500">{sc.fee.toLocaleString("en-US")} ALL</span>
+                      </label>
+                    ))}
+                  </div>
+                </section>
+              )}
+
               {error && <p className="text-sm text-red-600">{error}</p>}
 
               <button
@@ -300,6 +342,12 @@ export default function CheckoutPage() {
               <span>{tCart("total")}</span>
               <span>{formatMoney(total, locale)}</span>
             </div>
+            {shippingFeeAll > 0 && (
+              <div className="flex justify-between text-sm text-neutral-500">
+                <span>{t("shippingFee")}</span>
+                <span>{shippingFeeAll.toLocaleString("en-US")} ALL</span>
+              </div>
+            )}
           </aside>
         </div>
       </div>

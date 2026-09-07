@@ -77,6 +77,8 @@
     "city": "City",
     "postalCode": "Postal code",
     "country": "Country",
+    "shippingMethod": "Shipping method",
+    "shippingFee": "Shipping (paid on delivery)",
     "placeOrder": "Place order",
     "placingOrder": "Placing order…",
     "summaryTitle": "Order summary",

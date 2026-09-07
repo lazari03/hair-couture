@@ -39,6 +39,7 @@ const orderSchema = z.object({
   postalCode: z.string().trim().optional(),
   country: z.string().trim().optional(),
   couponCode: z.string().optional(),
+  shippingClassId: z.string().trim().min(1, "Select a shipping method"),
   lines: z.array(orderLineSchema).min(1, "Your cart is empty"),
 });
 
@@ -51,6 +52,9 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
   const data = parsed.data;
   const resolvedBrand = getBrand(data.brand);
   if (!resolvedBrand) return { ok: false, error: "Invalid brand" };
+
+  const shippingClass = await prisma.shippingClass.findUnique({ where: { id: data.shippingClassId } });
+  if (!shippingClass || !shippingClass.active) return { ok: false, error: "Select a valid shipping method" };
 
   const subtotal = data.lines.reduce((sum, l) => sum + l.price * l.qty, 0);
 
@@ -82,6 +86,10 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
       subtotal,
       discount,
       total: Math.max(0, subtotal - discount),
+      // ALL, a separate currency from `total` (EUR) — recorded, never summed.
+      shippingClassId: shippingClass.id,
+      shippingClassName: shippingClass.name,
+      shippingFee: shippingClass.fee,
       items: {
         create: data.lines.map((l) => ({
           productId: l.productId,
@@ -119,6 +127,8 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
         firstName: order.firstName,
         lastName: order.lastName,
         total: order.total,
+        shippingClassName: order.shippingClassName,
+        shippingFee: order.shippingFee,
         items: data.lines,
       },
       resolvedBrand.slug,
@@ -130,6 +140,8 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
         firstName: order.firstName,
         lastName: order.lastName,
         total: order.total,
+        shippingClassName: order.shippingClassName,
+        shippingFee: order.shippingFee,
         items: data.lines,
       },
       resolvedBrand.slug,

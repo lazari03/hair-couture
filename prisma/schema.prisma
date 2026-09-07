@@ -52,11 +52,35 @@ model Order {
   subtotal   Float
   discount   Float       @default(0)
   total      Float
-  status     String      @default("pending") // "pending" | "in_progress" | "fulfilled"
-  items      OrderItem[]
-  createdAt  DateTime    @default(now())
+  // Shipping is billed in ALL (Albanian Lek), a different currency than
+  // `total` (EUR) — deliberately never summed together, just recorded
+  // alongside so the storefront/admin/email can show it as a separate
+  // cash-on-delivery line. Name/fee are snapshotted from ShippingClass at
+  // order time (same reasoning as OrderItem), so a later rename/re-price/
+  // delete of the shipping class doesn't change past orders.
+  shippingClassId   String?
+  shippingClassName String        @default("")
+  shippingFee       Float         @default(0) // ALL
+  status            String        @default("pending") // "pending" | "in_progress" | "fulfilled"
+  items             OrderItem[]
+  createdAt         DateTime      @default(now())
 
   @@index([brand])
+}
+
+// Admin-managed delivery pricing tiers, e.g. "Tirana" / "Other Cities in
+// Albania" — fee is in ALL (Albanian Lek), a separate currency from
+// Product.price (EUR), never converted/combined with it. `active` lets an
+// old option be retired from checkout without breaking historic orders that
+// already snapshotted its name/fee onto them.
+model ShippingClass {
+  id        String   @id @default(cuid())
+  name      String
+  fee       Float // ALL
+  active    Boolean  @default(true)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model OrderItem {

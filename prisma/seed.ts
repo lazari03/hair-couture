@@ -27,6 +27,14 @@ const coupons = [
   { code: "SAVE20", type: "percent", value: 20 },
 ];
 
+// Default delivery pricing tiers — ALL (Albanian Lek), not EUR. Editable
+// via /admin/shipping once seeded; re-running this script resets them back
+// to these two, same as coupons/products above.
+const shippingClasses = [
+  { id: "shipclass-tirana", name: "Tirana", fee: 250, sortOrder: 0 },
+  { id: "shipclass-other-al", name: "Other Cities in Albania", fee: 350, sortOrder: 1 },
+];
+
 // Demo orders — fictional customers (same placeholder-data convention as
 // lib/data/shop.ts's mockAccount), 2 per brand, built from that brand's
 // actual seeded products so the line items are real. Exists so /admin/orders
@@ -101,6 +109,10 @@ async function main() {
   await prisma.coupon.deleteMany();
   await prisma.coupon.createMany({ data: coupons });
   console.log(`Seeded ${coupons.length} coupons: ${coupons.map((c) => c.code).join(", ")}.`);
+
+  await prisma.shippingClass.deleteMany();
+  await prisma.shippingClass.createMany({ data: shippingClasses });
+  console.log(`Seeded ${shippingClasses.length} shipping classes: ${shippingClasses.map((s) => s.name).join(", ")}.`);
 
   await seedOrders();
 }

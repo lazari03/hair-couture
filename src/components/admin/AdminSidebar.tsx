@@ -35,6 +35,17 @@ function OrdersIcon() {
   );
 }
 
+function ShippingIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M1.5 4.5h7v7h-7z" strokeLinejoin="round" />
+      <path d="M8.5 6.5h3l2.5 2.5v2.5h-5.5z" strokeLinejoin="round" />
+      <circle cx="4" cy="12.5" r="1.3" />
+      <circle cx="11.5" cy="12.5" r="1.3" />
+    </svg>
+  );
+}
+
 function HamburgerIcon({ open }: { open: boolean }) {
   return (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
@@ -47,6 +58,7 @@ const links = [
   { href: "/admin", label: "Dashboard", exact: true, Icon: DashboardIcon },
   { href: "/admin/products", label: "Products", Icon: ProductsIcon },
   { href: "/admin/orders", label: "Orders", Icon: OrdersIcon },
+  { href: "/admin/shipping", label: "Shipping", Icon: ShippingIcon },
 ];
 
 export function AdminSidebar({ signOutForm }: { signOutForm: React.ReactNode }) {

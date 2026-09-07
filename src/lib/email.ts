@@ -51,6 +51,8 @@ interface OrderForEmail {
   firstName: string;
   lastName: string;
   total: number;
+  shippingClassName: string;
+  shippingFee: number; // ALL — a separate currency from `total` (EUR), rendered as its own line
   items: { name: string; variant: string; price: number; qty: number }[];
 }
 
@@ -80,6 +82,7 @@ export async function sendOrderConfirmation(order: OrderForEmail, brandSlug: Bra
         <p>Hi ${order.firstName}, thank you for your order <strong>${order.id}</strong>.</p>
         <table style="width:100%;border-collapse:collapse">${itemsHtml}</table>
         <p style="text-align:right;font-weight:bold">Total: €${order.total.toFixed(2)}</p>
+        <p style="text-align:right;color:#444">Shipping (${order.shippingClassName}): ${order.shippingFee.toLocaleString("en-US")} ALL — paid separately on delivery</p>
         <p style="color:#666;font-size:13px">Questions? Contact us at ${footer?.contactEmail ?? "info@haircouture.al"}.</p>
       </div>
     `,
@@ -117,6 +120,7 @@ export async function sendOrderNotificationToAdmin(order: OrderForEmail, brandSl
         <p><strong>Customer:</strong> ${order.firstName} ${order.lastName} (${order.email})</p>
         <table style="width:100%;border-collapse:collapse">${itemsHtml}</table>
         <p style="text-align:right;font-weight:bold">Total: €${order.total.toFixed(2)}</p>
+        <p style="text-align:right;color:#444">Shipping (${order.shippingClassName}): ${order.shippingFee.toLocaleString("en-US")} ALL</p>
       </div>
     `,
   });
