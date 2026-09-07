@@ -4,6 +4,7 @@ import type { Brand } from "@/lib/brands";
 import { getFooter } from "@/lib/data/footer";
 import { NewsletterForm } from "./NewsletterForm";
 import { ContactLinkTracker } from "./ContactLinkTracker";
+import { CategoryLinkTracker } from "./CategoryLinkTracker";
 
 // One reusable footer for all 3 brands (skills/branding.md: don't fork
 // components per brand). Structure/columns are identical across brands;
@@ -25,9 +26,15 @@ export async function Footer({ brand }: { brand: Brand }) {
           <ul className="flex flex-col gap-2.5 text-sm">
             {content.shopLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="hover:text-white">
+                <CategoryLinkTracker
+                  href={link.href}
+                  category={link.label}
+                  brand={brand.slug}
+                  source="footer"
+                  className="hover:text-white"
+                >
                   {link.label}
-                </Link>
+                </CategoryLinkTracker>
               </li>
             ))}
           </ul>

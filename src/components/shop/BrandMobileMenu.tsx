@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "@/i18n/navigation";
 import { CartCountBadge } from "@/components/shop/CartCountBadge";
+import type { BrandSlug } from "@/lib/brands";
+import { trackMenuLinkClick } from "@/lib/analytics/events";
 
 function SearchIcon() {
   return (
@@ -51,6 +53,7 @@ interface MenuLink {
 }
 
 export function BrandMobileMenu({
+  brand,
   cartHref,
   cartLabel,
   searchHref,
@@ -59,6 +62,7 @@ export function BrandMobileMenu({
   accentColor,
   saleColor,
 }: {
+  brand: BrandSlug;
   cartHref: string;
   cartLabel: string;
   searchHref: string;
@@ -166,7 +170,10 @@ export function BrandMobileMenu({
                       <Link
                         key={item.label}
                         href={item.href}
-                        onClick={() => setOpen(false)}
+                        onClick={() => {
+                          trackMenuLinkClick(item.label, brand, "mobile");
+                          setOpen(false);
+                        }}
                         className={
                           item.label === "Sale"
                             ? "flex items-center justify-between py-4 text-[15px] font-medium text-[var(--brand-sale)] transition-colors"

@@ -5,6 +5,7 @@ import { brands, getBrand, type BrandSlug } from "@/lib/brands";
 import { getShop } from "@/lib/data/shop";
 import { CartCountBadge } from "@/components/shop/CartCountBadge";
 import { BrandMobileMenu } from "@/components/shop/BrandMobileMenu";
+import { MenuLinkTracker } from "@/components/shop/MenuLinkTracker";
 import { Footer } from "@/components/shop/Footer";
 
 function SearchIcon() {
@@ -118,6 +119,7 @@ export default async function BrandLayout({
               <CartIcon />
             </IconActionLink>
             <BrandMobileMenu
+              brand={activeBrand.slug}
               cartHref={`/${activeBrand.slug}/cart`}
               cartLabel={t("nav.cart")}
               searchHref={`/${activeBrand.slug}/search`}
@@ -149,17 +151,18 @@ export default async function BrandLayout({
         </div>
         <nav className="hidden flex-wrap justify-center gap-6 px-6 pb-3.5 text-xs tracking-[0.14em] text-neutral-600 uppercase lg:flex lg:gap-8">
           {activeShop.menu.map((item) => (
-            <Link
+            <MenuLinkTracker
               key={item}
               href={menuHref(item)}
+              label={item}
+              brand={activeBrand.slug}
+              source="desktop"
               className={
                 item === "Sale"
                   ? "border-b border-transparent pb-1 font-medium text-[var(--brand-sale)]"
                   : "border-b border-transparent pb-1 hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
               }
-            >
-              {item}
-            </Link>
+            />
           ))}
         </nav>
       </header>

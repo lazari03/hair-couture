@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Link } from "@/i18n/navigation";
 import type { BrandSlug } from "@/lib/brands";
 import type { HeroContent, HeroVariant } from "@/lib/data/shop";
+import { BannerLinkTracker } from "./BannerLinkTracker";
 
 // Three treatments from the design (full-bleed / split / video-style pan).
 // Each brand picks one via ShopContent.heroVariant (lib/data/shop.ts) —
@@ -32,18 +32,24 @@ export function Hero({
             {content.body}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
+            <BannerLinkTracker
               href={`/${brand}/shop`}
+              bannerId="hero_split"
+              label={content.cta}
+              brand={brand}
               className="inline-flex min-h-11 items-center bg-[var(--brand-accent)] px-7 text-xs tracking-widest text-white uppercase hover:opacity-90"
             >
               {content.cta}
-            </Link>
-            <Link
+            </BannerLinkTracker>
+            <BannerLinkTracker
               href={`/${brand}/shop`}
+              bannerId="hero_split"
+              label={content.secondary}
+              brand={brand}
               className="inline-flex min-h-11 items-center border-b border-neutral-900 px-1 text-xs tracking-widest uppercase hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
             >
               {content.secondary}
-            </Link>
+            </BannerLinkTracker>
           </div>
         </div>
       </section>
@@ -85,12 +91,15 @@ export function Hero({
             {content.title}
           </h1>
           <p className="mt-4 max-w-[42ch] text-[15px] leading-relaxed opacity-85">{content.body}</p>
-          <Link
+          <BannerLinkTracker
             href={`/${brand}/shop`}
+            bannerId="hero_video"
+            label={content.cta}
+            brand={brand}
             className="mt-8 inline-flex min-h-11 items-center bg-white px-7 text-xs tracking-widest text-neutral-900 uppercase hover:bg-[var(--brand-accent)] hover:text-white"
           >
             {content.cta}
-          </Link>
+          </BannerLinkTracker>
         </div>
       </section>
     );
@@ -108,18 +117,24 @@ export function Hero({
         </h1>
         <p className="mt-4 max-w-[46ch] text-[15px] leading-relaxed opacity-90">{content.body}</p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
-          <Link
+          <BannerLinkTracker
             href={`/${brand}/shop`}
+            bannerId="hero_full"
+            label={content.cta}
+            brand={brand}
             className="inline-flex min-h-11 items-center bg-white px-7 text-xs tracking-widest text-neutral-900 uppercase hover:bg-[var(--brand-accent)] hover:text-white"
           >
             {content.cta}
-          </Link>
-          <Link
+          </BannerLinkTracker>
+          <BannerLinkTracker
             href={`/${brand}/shop`}
+            bannerId="hero_full"
+            label={content.secondary}
+            brand={brand}
             className="inline-flex min-h-11 items-center border border-white/60 px-7 text-xs tracking-widest text-white uppercase hover:bg-white/15"
           >
             {content.secondary}
-          </Link>
+          </BannerLinkTracker>
         </div>
       </div>
     </section>

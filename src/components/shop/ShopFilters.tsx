@@ -1,6 +1,8 @@
 "use client";
 
 import { useRouter } from "@/i18n/navigation";
+import type { BrandSlug } from "@/lib/brands";
+import { trackCategoryClick } from "@/lib/analytics/events";
 
 interface ShopFiltersProps {
   brandSlug: string;
@@ -31,12 +33,17 @@ export function ShopFilters({ brandSlug, counts, category, sort, saleColor, labe
     router.push(`/${brandSlug}/shop${query ? `?${query}` : ""}`);
   }
 
+  function onCategoryChange(nextCategory: string) {
+    if (nextCategory) trackCategoryClick(nextCategory, brandSlug as BrandSlug, "shop_select");
+    navigate(nextCategory, sort ?? "");
+  }
+
   return (
     <div className="grid grid-cols-2 gap-2.5 md:hidden">
       <select
         aria-label={labels.category}
         value={category ?? ""}
-        onChange={(e) => navigate(e.target.value, sort ?? "")}
+        onChange={(e) => onCategoryChange(e.target.value)}
         className="min-h-10 rounded border border-neutral-300 bg-white px-2.5 text-[13px] text-neutral-700 outline-none focus:border-neutral-900"
       >
         <option value="">{labels.allCategories}</option>

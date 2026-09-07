@@ -69,3 +69,36 @@ export function trackContactClick(brand: BrandSlug) {
 export function trackScrollDepth(percent: number, brand?: BrandSlug) {
   track("scroll", { percent_scrolled: percent, brand });
 }
+
+// "Sale" gets its own event name (in addition to whatever generic click/view
+// event triggered it) so it's a one-click GA4 report, not a filter someone
+// has to remember to apply on category="Sale".
+export function trackSaleClick(brand: BrandSlug, source: string) {
+  track("sale_click", { brand, source });
+}
+
+export function trackMenuLinkClick(label: string, brand: BrandSlug, source: "desktop" | "mobile") {
+  track("menu_link_click", { label, brand, source });
+  if (label === "Sale") trackSaleClick(brand, `menu_${source}`);
+}
+
+// Fired by every place a category filter link/select can be activated —
+// shop sidebar, mobile select, footer, homepage category tiles — same
+// event name regardless of source, `source` param tells them apart in GA4.
+export function trackCategoryClick(category: string, brand: BrandSlug, source: string) {
+  track("category_click", { category, brand, source });
+  if (category === "Sale") trackSaleClick(brand, source);
+}
+
+// Fired once per shop-listing render (any entry path: click, direct link,
+// back/forward, bookmark) so "most visited category" isn't just "most
+// clicked link" — a page_view with a query param wouldn't roll up cleanly
+// in GA4's reports the way a dedicated event with a `category` param does.
+export function trackViewCategory(category: string | undefined, brand: BrandSlug, resultCount: number) {
+  track("view_category", { category: category ?? "all", brand, result_count: resultCount });
+  if (category === "Sale") track("sale_view", { brand, result_count: resultCount });
+}
+
+export function trackBannerClick(bannerId: string, brand: BrandSlug, label: string) {
+  track("banner_click", { banner_id: bannerId, brand, label });
+}

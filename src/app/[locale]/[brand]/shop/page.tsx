@@ -5,6 +5,8 @@ import { getBrand } from "@/lib/brands";
 import { getShop } from "@/lib/data/shop";
 import { ProductGrid } from "@/components/shop/ProductGrid";
 import { ShopFilters } from "@/components/shop/ShopFilters";
+import { CategoryLinkTracker } from "@/components/shop/CategoryLinkTracker";
+import { CategoryViewBeacon } from "@/components/shop/CategoryViewBeacon";
 
 export default async function ShopListing({
   params,
@@ -39,6 +41,7 @@ export default async function ShopListing({
 
   return (
     <main className="px-6 pb-24 sm:px-11">
+      <CategoryViewBeacon brand={shop.slug} category={category} resultCount={products.length} />
       <div className="pt-7 pb-2 text-[11px] tracking-[0.12em] text-neutral-500 uppercase">
         {t(`brands.${shop.slug}.name`)} / {listTitle}
       </div>
@@ -73,9 +76,12 @@ export default async function ShopListing({
             </h3>
             <div className="flex flex-col gap-2.5">
               {Object.entries(counts).map(([name, count]) => (
-                <Link
+                <CategoryLinkTracker
                   key={name}
                   href={`/${shop.slug}/shop?category=${encodeURIComponent(name)}`}
+                  category={name}
+                  brand={shop.slug}
+                  source="shop_sidebar"
                   className={`flex min-h-8 items-center gap-2.5 text-[13px] ${
                     name === "Sale"
                       ? "font-medium text-[var(--brand-sale)]"
@@ -86,7 +92,7 @@ export default async function ShopListing({
                 >
                   {name}
                   <span className="ml-auto text-xs text-neutral-400">{count}</span>
-                </Link>
+                </CategoryLinkTracker>
               ))}
             </div>
           </div>
