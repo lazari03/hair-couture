@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getShop } from "@/lib/data/shop";
 import { ProductGrid } from "@/components/shop/ProductGrid";
+import { ShopFilters } from "@/components/shop/ShopFilters";
 
 export default async function ShopListing({
   params,
@@ -46,8 +47,23 @@ export default async function ShopListing({
         </span>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 pt-9 sm:gap-10 md:grid-cols-[220px_1fr]">
-        <aside className="flex flex-col gap-8">
+      <ShopFilters
+        brandSlug={shop.slug}
+        counts={counts}
+        category={category}
+        sort={sort}
+        labels={{
+          category: t("shop.category"),
+          allCategories: t("shop.allCategories"),
+          sortBy: t("shop.sortBy"),
+          sortNewest: t("shop.sortNewest"),
+          sortPriceAsc: t("shop.sortPriceAsc"),
+          sortPriceDesc: t("shop.sortPriceDesc"),
+        }}
+      />
+
+      <div className="grid grid-cols-1 gap-6 pt-6 sm:gap-10 md:pt-9 md:grid-cols-[220px_1fr]">
+        <aside className="hidden flex-col gap-8 md:flex">
           <div>
             <h3 className="mb-3.5 text-[11px] tracking-[0.18em] text-neutral-500 uppercase">
               {t("shop.category")}
