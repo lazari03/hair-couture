@@ -3,18 +3,98 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display-serif), "Times New Roman", serif;
 }
 
-/* Shop chrome is a fixed light palette per the brand design (white ground,
-   near-black text, brand accent from --brand-accent) — not theme-switched. */
+/* Shop chrome is a fixed light palette per the brand design (warm ivory
+   ground, near-black text, brand accent from --brand-accent) — not
+   theme-switched. */
+:root {
+  --surface: #ffffff;
+  --surface-muted: #f7f5f2;
+  --ink: #141414;
+  --hairline: rgba(20, 20, 20, 0.08);
+  --shadow-soft: 0 1px 2px rgba(20, 20, 20, 0.04), 0 12px 32px -12px rgba(20, 20, 20, 0.12);
+  --shadow-lift: 0 2px 4px rgba(20, 20, 20, 0.04), 0 24px 48px -16px rgba(20, 20, 20, 0.2);
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 body {
-  background: #ffffff;
-  color: #171717;
+  background: var(--surface);
+  color: var(--ink);
   font-family: var(--font-sans), system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--brand-accent, #141414);
+  color: var(--brand-accent-foreground, #ffffff);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-accent, #141414);
+  outline-offset: 3px;
 }
 
 @keyframes pan {
   0% { transform: scale(1.08) translate3d(-1.5%, 0, 0); }
   50% { transform: scale(1.14) translate3d(1.5%, -1%, 0); }
   100% { transform: scale(1.08) translate3d(-1.5%, 0, 0); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@utility animate-rise {
+  animation: rise 0.9s var(--ease-out-soft) both;
+}
+
+@utility animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+
+/* Pill button primitives shared across hero, cart, checkout. */
+@utility btn-pill {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border-radius: 9999px;
+  padding-inline: 1.75rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background-color 0.35s var(--ease-out-soft), color 0.35s var(--ease-out-soft),
+    border-color 0.35s var(--ease-out-soft), transform 0.35s var(--ease-out-soft), box-shadow 0.35s var(--ease-out-soft);
+}
+
+@utility field-input {
+  min-height: 3rem;
+  width: 100%;
+  border-radius: 0.875rem;
+  border: 1px solid rgba(20, 20, 20, 0.14);
+  background: #ffffff;
+  padding-inline: 1rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  &::placeholder { color: #a3a3a3; }
+  &:focus {
+    border-color: var(--ink);
+    box-shadow: 0 0 0 4px rgba(20, 20, 20, 0.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise, .animate-marquee { animation: none; }
 }

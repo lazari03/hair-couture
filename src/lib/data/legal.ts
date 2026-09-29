@@ -75,7 +75,7 @@ function buildTerms(brandName: string): LegalDoc {
       },
       {
         heading: "Shipping and returns",
-        body: "Shipping is free on orders over €75. Returns are accepted within 30 days of delivery for unused items in original packaging, in line with Albanian consumer protection law (Law No. 9902, dated 17 April 2008, \"On Consumer Protection\", as amended). To start a return, contact us using the details on our Contact page.",
+        body: "Shipping is free on every order, with no minimum spend. Returns are accepted within 30 days of delivery for unused items in original packaging, in line with Albanian consumer protection law (Law No. 9902, dated 17 April 2008, \"On Consumer Protection\", as amended). To start a return, contact us using the details on our Contact page.",
       },
       {
         heading: "Governing law",

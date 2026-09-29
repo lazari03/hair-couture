@@ -21,7 +21,7 @@
   "brands": {
     "balmain": {
       "name": "Balmain Hair Couture",
-      "tagline": "Zgjatime flokësh luksoze dhe vegla stilizimi"
+      "tagline": "Kujdes couture për flokët, aksesorë dhe vegla stilizimi"
     },
     "eloure": {
       "name": "Eloure",
@@ -53,13 +53,27 @@
     "addedToCart": "Shtuar në shportë",
     "outOfStock": "I shitur",
     "relatedTitle": "Mund t'ju pëlqejnë gjithashtu",
-    "sizes": ["E vogël", "Mesatare", "E madhe"],
-    "placeholderDescription": "Përshkrim vendmbajtës — do të zëvendësohet me përshkrim real për çdo produkt kur të lidhet burimi i të dhënave.",
+    "sizes": [
+      "E vogël",
+      "Mesatare",
+      "E madhe"
+    ],
+    "placeholderDescription": "I krijuar me kujdes dhe i përzgjedhur nga ekipi ynë për rezultate që i shihni dhe i ndieni. Na kontaktoni në çdo kohë nëse keni nevojë për ndihmë në zgjedhje.",
     "specs": {
-      "shipping": { "label": "Dërgesa", "value": "Falas mbi € 75" },
-      "returns": { "label": "Kthimet", "value": "30 ditë" },
-      "origin": { "label": "Origjina", "value": "Prodhuar në Evropë" }
-    }
+      "shipping": {
+        "label": "Dërgesa",
+        "value": "Falas, për çdo porosi"
+      },
+      "returns": {
+        "label": "Kthimet",
+        "value": "30 ditë"
+      },
+      "origin": {
+        "label": "Origjina",
+        "value": "Prodhuar në Evropë"
+      }
+    },
+    "viewProduct": "Shiko produktin"
   },
   "cart": {
     "title": "Shporta",
@@ -70,7 +84,7 @@
     "total": "Totali",
     "checkout": "Vazhdo te pagesa",
     "continueShopping": "Vazhdo blerjet",
-    "note": "Dërgesa dhe taksat llogariten në pagesë.",
+    "note": "Dërgesa falas për çdo porosi. Të gjitha çmimet përfshijnë TVSH-në.",
     "emptyTitle": "Shporta juaj është bosh",
     "emptyBody": "Asgjë këtu ende — shfletoni koleksionin për të filluar.",
     "remove": "Hiq",
@@ -79,7 +93,8 @@
     "couponApplied": "Kodi {code} u aplikua",
     "discount": "Zbritje",
     "decreaseQty": "Zvogëlo sasinë",
-    "increaseQty": "Rrit sasinë"
+    "increaseQty": "Rrit sasinë",
+    "summaryTitle": "Përmbledhja e porosisë"
   },
   "checkout": {
     "title": "Pagesa",
@@ -94,13 +109,14 @@
     "postalCode": "Kodi postar",
     "country": "Shteti",
     "shippingMethod": "Mënyra e dërgesës",
-    "shippingFee": "Dërgesa (paguhet në dorëzim)",
+    "shippingFee": "Dërgesa",
     "placeOrder": "Bëj porosinë",
     "placingOrder": "Duke bërë porosinë…",
     "summaryTitle": "Përmbledhja e porosisë",
     "successTitle": "Faleminderit për porosinë",
-    "successBody": "Porosia juaj {orderId} u vendos. Do t'ju kontaktojmë në {email} me detajet e konfirmimit.",
-    "backToShop": "Kthehu te dyqani"
+    "successBody": "Porosia juaj {orderId} u konfirmua. Konfirmimi po vjen në {email} dhe do t'ju kontaktojmë së shpejti për dorëzimin.",
+    "backToShop": "Kthehu te dyqani",
+    "secureNote": "Pagesë e sigurt · Dërgesa falas"
   },
   "account": {
     "greeting": "Llogaria",
@@ -128,7 +144,11 @@
     "resultsTitle": "Rezultate ({count})",
     "emptyTitle": "Asnjë rezultat",
     "emptyBody": "Provo një term më të shkurtër ose shfleto menynë më sipër.",
-    "recentPlaceholder": ["Zgjatime 55cm", "Rimbushje", "Set zbulimi"]
+    "recentPlaceholder": [
+      "Parfum flokësh",
+      "Maskë flokësh",
+      "Set dhuratë"
+    ]
   },
   "balmainHome": {
     "popularTitle": "Popullore tani",
@@ -139,9 +159,15 @@
     "editorialBody": "Nga atelietë pariziene deri pas skenës në javën e modës — zanati, kodet dhe kurtura pas çdo pjese.",
     "editorialCta": "Zbulo trashëgiminë",
     "collections": {
-      "hairCare": { "body": "Formula ushqyese të besuara pas skene dhe në shtëpi." },
-      "hairAccessories": { "body": "Copa ikonike, të bëra me dorë për luks të përditshëm." },
-      "stylingTools": { "body": "Vegla të nivelit profesional për një finish couture." }
+      "hairCare": {
+        "body": "Formula ushqyese të besuara pas skene dhe në shtëpi."
+      },
+      "hairAccessories": {
+        "body": "Copa ikonike, të bëra me dorë për luks të përditshëm."
+      },
+      "stylingTools": {
+        "body": "Vegla të nivelit profesional për një finish couture."
+      }
     }
   },
   "footer": {
@@ -210,8 +236,8 @@
     "phoneRequired": "Numri i telefonit kërkohet",
     "addressRequired": "Adresa kërkohet",
     "cityRequired": "Qyteti kërkohet",
-    "shippingMethodRequired": "Zgjidh një mënyrë dërgese",
-    "shippingMethodInvalid": "Zgjidh një mënyrë dërgese të vlefshme",
+    "shippingMethodRequired": "Diçka shkoi keq me detajet e dërgesës. Ju lutemi provoni përsëri.",
+    "shippingMethodInvalid": "Diçka shkoi keq me detajet e dërgesës. Ju lutemi provoni përsëri.",
     "cartEmpty": "Shporta juaj është bosh",
     "brandInvalid": "Markë e pavlefshme",
     "nameRequired": "Emri kërkohet",
@@ -226,7 +252,7 @@
       "hero": {
         "eyebrow": "Vjeshtë / Dimër 26",
         "title": "Kurturë për flokët",
-        "body": "Zgjatime të lidhura me dorë dhe vegla finalizuese të zhvilluara me atelienë.",
+        "body": "Kujdes i nivelit të sallonit, aksesorë ikonikë dhe vegla përfundimi, të krijuara me atelienë e Parisit.",
         "cta": "Bli koleksionin",
         "secondary": "Shiko lookbook-un"
       }
@@ -269,5 +295,27 @@
     "Sensorial Hair Care": "Kujdes shqisor për flokët",
     "Sensorial Beauty": "Bukuri shqisore",
     "Sensorial Lifestyle": "Stil jetese shqisor"
+  },
+  "promise": {
+    "announcement": "Dërgesa falas për çdo porosi",
+    "title": "Premtimi i Hair Couture",
+    "items": {
+      "shipping": {
+        "title": "Dërgesa falas",
+        "body": "Për çdo porosi, pa minimum"
+      },
+      "returns": {
+        "title": "Kthim brenda 30 ditëve",
+        "body": "Ndryshuat mendje? Kthim i lehtë"
+      },
+      "authentic": {
+        "title": "100% origjinale",
+        "body": "Direkt nga markat"
+      },
+      "cod": {
+        "title": "Paguani në dorëzim",
+        "body": "Paguani kur mbërrin porosia"
+      }
+    }
   }
 }

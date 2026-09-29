@@ -78,10 +78,10 @@ make deploy
 change, not just the first deploy, goes through this same command.) The
 SQLite data volume is untouched by this — only the app image rebuilds.
 
-## Manual GitHub Actions deploy
+## GitHub Actions deploy
 
-Use the `Manual Deploy` workflow in GitHub Actions when you want the
-pipeline to run from GitHub instead of SSHing in manually.
+The `Deploy` workflow (`.github/workflows/deploy.yml`) runs automatically
+on every push to `main`, and can also be run by hand from the Actions tab.
 
 It does two stages:
 - validates the code with `npm run lint` and `npm run build`
@@ -95,8 +95,8 @@ Required GitHub secrets:
 - `DEPLOY_PATH`
 - `DEPLOY_PORT` if you use a non-standard SSH port, otherwise leave it empty
 
-Trigger it from the Actions tab and choose the branch/ref you want to
-deploy.
+Pushes to `main` deploy `main`. To deploy another branch/ref, run it
+manually from the Actions tab and pick the ref.
 
 ## Changing the domain
 

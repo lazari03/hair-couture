@@ -56,9 +56,10 @@ const orderSchema = z.object({
   postalCode: z.string().trim().optional(),
   country: z.string().trim().optional(),
   couponCode: z.string().optional(),
-  shippingClassId: z.string().trim().min(1, "shippingMethodRequired"),
   lines: z.array(orderLineSchema).min(1, "cartEmpty"),
 });
+
+const FREE_SHIPPING_LABEL = "Free shipping";
 
 export type OrderInput = z.infer<typeof orderSchema>;
 export type OrderResult = { ok: true; orderId: string } | { ok: false; error: string };
@@ -69,9 +70,6 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
   const data = parsed.data;
   const resolvedBrand = getBrand(data.brand);
   if (!resolvedBrand) return { ok: false, error: "brandInvalid" };
-
-  const shippingClass = await prisma.shippingClass.findUnique({ where: { id: data.shippingClassId } });
-  if (!shippingClass || !shippingClass.active) return { ok: false, error: "shippingMethodInvalid" };
 
   const subtotal = data.lines.reduce((sum, l) => sum + l.price * l.qty, 0);
 
@@ -105,10 +103,10 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
       subtotal,
       discount,
       total: Math.max(0, subtotal - discount),
-      // ALL, a separate currency from `total` (EUR) — recorded, never summed.
-      shippingClassId: shippingClass.id,
-      shippingClassName: shippingClass.name,
-      shippingFee: shippingClass.fee,
+      // Shipping is free on every order — no class selection, no fee.
+      shippingClassId: null,
+      shippingClassName: FREE_SHIPPING_LABEL,
+      shippingFee: 0,
       items: {
         create: data.lines.map((l) => ({
           productId: l.productId,

@@ -1,6 +1,8 @@
-name: Manual Deploy
+name: Deploy
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
     inputs:
       ref:
@@ -23,7 +25,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.ref }}
+          ref: ${{ inputs.ref || github.ref_name }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -48,7 +50,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.ref }}
+          ref: ${{ inputs.ref || github.ref_name }}
 
       - name: Configure SSH
         env:
@@ -82,7 +84,7 @@ jobs:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
-          DEPLOY_REF: ${{ inputs.ref }}
+          DEPLOY_REF: ${{ inputs.ref || github.ref_name }}
         run: |
           ssh -i ~/.ssh/deploy_key -p "$DEPLOY_PORT_SAFE" "$DEPLOY_USER@$DEPLOY_HOST" \
             "cd '$DEPLOY_PATH' && git fetch origin && git checkout '$DEPLOY_REF' && git reset --hard \"origin/$DEPLOY_REF\" && docker compose up -d --build"

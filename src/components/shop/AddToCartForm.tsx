@@ -35,7 +35,7 @@ export function AddToCartForm({
               key={size}
               type="button"
               onClick={() => setSizeIndex(i)}
-              className={`min-h-11 border px-5 font-inherit text-xs tracking-wide ${
+              className={`min-h-11 cursor-pointer rounded-full border px-5 font-inherit text-xs tracking-wide transition-colors duration-300 ${
                 i === sizeIndex
                   ? "border-neutral-900 bg-neutral-900 text-white"
                   : "border-neutral-300 bg-white text-neutral-900"
@@ -70,7 +70,7 @@ export function AddToCartForm({
           trackAddToCart({ productId: product.id, name: product.name, category: product.category, price: product.price }, brand);
           setAdded(true);
         }}
-        className="mt-7 min-h-[52px] bg-[var(--brand-accent)] px-8 font-inherit text-xs tracking-widest text-white uppercase hover:opacity-90 disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:hover:opacity-100"
+        className="btn-pill mt-7 min-h-14 w-full cursor-pointer bg-[var(--brand-accent)] text-[var(--brand-accent-foreground)] shadow-[var(--shadow-soft)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:shadow-none disabled:hover:translate-y-0 sm:w-auto sm:px-12"
       >
         {outOfStock ? t("outOfStock") : pending ? "…" : added ? t("addedToCart") : t("addToCart")}
       </button>

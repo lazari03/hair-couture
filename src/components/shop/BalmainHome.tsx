@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import type { ShopContent } from "@/lib/data/shop";
 import { Hero } from "./Hero";
 import { ProductGrid } from "./ProductGrid";
+import { PromiseStrip } from "./PromiseStrip";
 
 // Mirrors balmainhair.com's homepage structure (fetched 2026-09-01, updated
 // 2026-09-02): hero → "Popular right now" carousel → "New in" → "Explore the
@@ -27,10 +28,11 @@ export async function BalmainHome({ shop }: { shop: ShopContent }) {
   return (
     <>
       <Hero brand={shop.slug} variant={shop.heroVariant} content={shop.hero} />
+      <PromiseStrip />
 
       <section className="px-6 py-14 sm:px-11 sm:py-24">
         <div className="mb-9 flex flex-wrap items-end justify-between gap-6">
-          <h2 className="text-2xl font-light tracking-tight sm:text-3xl">{bh("popularTitle")}</h2>
+          <h2 className="font-display text-3xl font-light tracking-tight sm:text-5xl">{bh("popularTitle")}</h2>
           <Link
             href={`/${shop.slug}/shop`}
             className="border-b border-neutral-300 pb-1 text-xs tracking-widest whitespace-nowrap uppercase hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
@@ -44,7 +46,7 @@ export async function BalmainHome({ shop }: { shop: ShopContent }) {
       {shop.products.length > 4 && (
         <section className="px-6 py-14 sm:px-11 sm:py-24">
           <div className="mb-9 flex flex-wrap items-end justify-between gap-6">
-            <h2 className="text-2xl font-light tracking-tight sm:text-3xl">{bh("trendingTitle")}</h2>
+            <h2 className="font-display text-3xl font-light tracking-tight sm:text-5xl">{bh("trendingTitle")}</h2>
             <Link
               href={`/${shop.slug}/shop`}
               className="border-b border-neutral-300 pb-1 text-xs tracking-widest whitespace-nowrap uppercase hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
@@ -57,7 +59,7 @@ export async function BalmainHome({ shop }: { shop: ShopContent }) {
       )}
 
       <section className="px-6 py-14 sm:px-11 sm:py-24">
-        <h2 className="mb-9 text-center text-2xl font-light tracking-tight sm:text-3xl">
+        <h2 className="mb-10 text-center font-display text-3xl font-light tracking-tight sm:text-5xl">
           {bh("collectionsTitle")}
         </h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
@@ -93,17 +95,17 @@ export async function BalmainHome({ shop }: { shop: ShopContent }) {
             className="object-cover"
           />
         </div>
-        <div className="flex flex-col justify-center bg-[#faf9f7] px-6 py-14 sm:px-11 sm:py-20">
+        <div className="flex flex-col justify-center bg-[var(--surface-muted)] px-6 py-14 sm:px-11 sm:py-20">
           <span className="text-[11px] tracking-[0.22em] text-[var(--brand-accent)] uppercase">
             {bh("editorialEyebrow")}
           </span>
-          <h2 className="mt-3 text-3xl font-light tracking-tight sm:text-4xl">{bh("editorialTitle")}</h2>
+          <h2 className="mt-4 font-display text-4xl leading-[1.02] font-light tracking-tight sm:text-6xl">{bh("editorialTitle")}</h2>
           <p className="mt-4 max-w-[46ch] text-[15px] leading-relaxed text-neutral-600">
             {bh("editorialBody")}
           </p>
           <Link
             href={`/${shop.slug}/shop`}
-            className="mt-6 inline-flex w-fit min-h-11 items-center border-b border-neutral-900 px-1 text-xs tracking-widest uppercase hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
+            className="btn-pill mt-8 w-fit border border-neutral-900 text-neutral-900 hover:bg-neutral-900 hover:text-white"
           >
             {bh("editorialCta")}
           </Link>

@@ -21,7 +21,7 @@
   "brands": {
     "balmain": {
       "name": "Balmain Hair Couture",
-      "tagline": "Extension per capelli di lusso e strumenti per lo styling"
+      "tagline": "Hair care couture, accessori e strumenti per lo styling"
     },
     "eloure": {
       "name": "Eloure",
@@ -53,13 +53,27 @@
     "addedToCart": "Aggiunto al carrello",
     "outOfStock": "Esaurito",
     "relatedTitle": "Potrebbe piacerti anche",
-    "sizes": ["Piccola", "Media", "Grande"],
-    "placeholderDescription": "Testo descrittivo segnaposto — da sostituire con il testo reale del prodotto una volta collegata la fonte dati.",
+    "sizes": [
+      "Piccola",
+      "Media",
+      "Grande"
+    ],
+    "placeholderDescription": "Realizzato con cura e selezionato dal nostro team per risultati che si vedono e si sentono. Contattaci in qualsiasi momento se desideri aiuto nella scelta.",
     "specs": {
-      "shipping": { "label": "Spedizione", "value": "Gratuita oltre € 75" },
-      "returns": { "label": "Resi", "value": "30 giorni" },
-      "origin": { "label": "Origine", "value": "Prodotto in Europa" }
-    }
+      "shipping": {
+        "label": "Spedizione",
+        "value": "Gratuita, su ogni ordine"
+      },
+      "returns": {
+        "label": "Resi",
+        "value": "30 giorni"
+      },
+      "origin": {
+        "label": "Origine",
+        "value": "Prodotto in Europa"
+      }
+    },
+    "viewProduct": "Vedi prodotto"
   },
   "cart": {
     "title": "Carrello",
@@ -70,7 +84,7 @@
     "total": "Totale",
     "checkout": "Procedi al pagamento",
     "continueShopping": "Continua lo shopping",
-    "note": "Spedizione e tasse calcolate al checkout.",
+    "note": "Spedizione gratuita su ogni ordine. Tutti i prezzi includono l'IVA.",
     "emptyTitle": "Il tuo carrello è vuoto",
     "emptyBody": "Ancora niente qui — sfoglia la collezione per iniziare.",
     "remove": "Rimuovi",
@@ -79,7 +93,8 @@
     "couponApplied": "Codice {code} applicato",
     "discount": "Sconto",
     "decreaseQty": "Diminuisci quantità",
-    "increaseQty": "Aumenta quantità"
+    "increaseQty": "Aumenta quantità",
+    "summaryTitle": "Riepilogo ordine"
   },
   "checkout": {
     "title": "Checkout",
@@ -94,13 +109,14 @@
     "postalCode": "Codice postale",
     "country": "Paese",
     "shippingMethod": "Metodo di spedizione",
-    "shippingFee": "Spedizione (pagata alla consegna)",
+    "shippingFee": "Spedizione",
     "placeOrder": "Effettua l'ordine",
     "placingOrder": "Ordine in corso…",
     "summaryTitle": "Riepilogo ordine",
     "successTitle": "Grazie per il tuo ordine",
-    "successBody": "Il tuo ordine {orderId} è stato effettuato. Ti contatteremo a {email} con i dettagli di conferma.",
-    "backToShop": "Torna al negozio"
+    "successBody": "Il tuo ordine {orderId} è confermato. Una conferma è in arrivo a {email} e ti contatteremo a breve per organizzare la consegna.",
+    "backToShop": "Torna al negozio",
+    "secureNote": "Checkout sicuro · Spedizione gratuita"
   },
   "account": {
     "greeting": "Account",
@@ -128,7 +144,11 @@
     "resultsTitle": "Risultati ({count})",
     "emptyTitle": "Nessun risultato",
     "emptyBody": "Prova un termine più breve o sfoglia il menu sopra.",
-    "recentPlaceholder": ["Extension 55cm", "Ricarica", "Set scoperta"]
+    "recentPlaceholder": [
+      "Profumo per capelli",
+      "Maschera",
+      "Cofanetto regalo"
+    ]
   },
   "balmainHome": {
     "popularTitle": "Di tendenza ora",
@@ -139,9 +159,15 @@
     "editorialBody": "Dagli atelier parigini al backstage della fashion week — l'artigianato, i codici e la couture dietro ogni pezzo.",
     "editorialCta": "Scopri l'eredità",
     "collections": {
-      "hairCare": { "body": "Formule nutrienti di fiducia backstage e a casa." },
-      "hairAccessories": { "body": "Pezzi iconici, realizzati a mano per un lusso quotidiano." },
-      "stylingTools": { "body": "Strumenti di livello professionale per una finitura couture." }
+      "hairCare": {
+        "body": "Formule nutrienti di fiducia backstage e a casa."
+      },
+      "hairAccessories": {
+        "body": "Pezzi iconici, realizzati a mano per un lusso quotidiano."
+      },
+      "stylingTools": {
+        "body": "Strumenti di livello professionale per una finitura couture."
+      }
     }
   },
   "footer": {
@@ -210,8 +236,8 @@
     "phoneRequired": "Il numero di telefono è obbligatorio",
     "addressRequired": "L'indirizzo è obbligatorio",
     "cityRequired": "La città è obbligatoria",
-    "shippingMethodRequired": "Seleziona un metodo di spedizione",
-    "shippingMethodInvalid": "Seleziona un metodo di spedizione valido",
+    "shippingMethodRequired": "Si è verificato un problema con i dati di consegna. Riprova.",
+    "shippingMethodInvalid": "Si è verificato un problema con i dati di consegna. Riprova.",
     "cartEmpty": "Il tuo carrello è vuoto",
     "brandInvalid": "Marchio non valido",
     "nameRequired": "Il nome è obbligatorio",
@@ -226,7 +252,7 @@
       "hero": {
         "eyebrow": "Autunno / Inverno 26",
         "title": "Couture per i capelli",
-        "body": "Extension annodate a mano e strumenti di finitura sviluppati con l'atelier.",
+        "body": "Cura professionale, accessori iconici e strumenti di finitura, sviluppati con l'atelier di Parigi.",
         "cta": "Scopri la collezione",
         "secondary": "Vedi il lookbook"
       }
@@ -269,5 +295,27 @@
     "Sensorial Hair Care": "Cura sensoriale dei capelli",
     "Sensorial Beauty": "Bellezza sensoriale",
     "Sensorial Lifestyle": "Stile di vita sensoriale"
+  },
+  "promise": {
+    "announcement": "Spedizione gratuita su ogni ordine",
+    "title": "La promessa Hair Couture",
+    "items": {
+      "shipping": {
+        "title": "Spedizione gratuita",
+        "body": "Su ogni ordine, senza minimo"
+      },
+      "returns": {
+        "title": "Resi in 30 giorni",
+        "body": "Ci hai ripensato? Reso semplice"
+      },
+      "authentic": {
+        "title": "100% originali",
+        "body": "Direttamente dai brand"
+      },
+      "cod": {
+        "title": "Pagamento alla consegna",
+        "body": "Paghi quando arriva l'ordine"
+      }
+    }
   }
 }

@@ -108,8 +108,13 @@ function toShopProduct(product: {
   stock: number;
 }): Product {
   const categories = parseProductCategories(product.category);
+  // Many imported rows have a "description" that is just the product name
+  // again — treat those as missing so the page falls back to real copy.
+  const description = product.description?.trim() || null;
+  const repeatsName = description?.toLowerCase() === product.name.trim().toLowerCase();
   return {
     ...product,
+    description: repeatsName ? null : description,
     category: primaryCategory(product.category),
     categories,
   };

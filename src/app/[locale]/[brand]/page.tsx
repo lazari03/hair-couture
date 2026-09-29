@@ -5,6 +5,7 @@ import { getShop } from "@/lib/data/shop";
 import { Hero } from "@/components/shop/Hero";
 import { ProductGrid } from "@/components/shop/ProductGrid";
 import { BalmainHome } from "@/components/shop/BalmainHome";
+import { PromiseStrip } from "@/components/shop/PromiseStrip";
 
 export default async function BrandShopHome({
   params,
@@ -26,19 +27,20 @@ export default async function BrandShopHome({
   return (
     <>
       <Hero brand={shop.slug} variant={shop.heroVariant} content={shop.hero} />
-      <section className="px-6 py-14 sm:px-11 sm:py-24">
+      <PromiseStrip />
+      <section className="px-6 py-16 sm:px-11 sm:py-24">
         <div className="mb-9 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <span className="text-[11px] tracking-[0.22em] text-[var(--brand-accent)] uppercase">
+            <span className="flex items-center gap-3 text-[11px] tracking-[0.28em] text-[var(--brand-accent)] uppercase before:h-px before:w-8 before:bg-current">
               {t("shop.featured")}
             </span>
-            <h2 className="mt-2.5 text-2xl font-light tracking-tight sm:text-3xl">
+            <h2 className="mt-3 max-w-[22ch] font-display text-3xl leading-tight font-light tracking-tight sm:text-5xl">
               {t(`brands.${shop.slug}.tagline`)}
             </h2>
           </div>
           <Link
             href={`/${shop.slug}/shop`}
-            className="border-b border-neutral-300 pb-1 text-xs tracking-widest whitespace-nowrap uppercase hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
+            className="btn-pill border border-neutral-900/15 whitespace-nowrap hover:border-neutral-900"
           >
             {t("shop.viewAll")}
           </Link>

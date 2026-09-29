@@ -5,7 +5,7 @@
     "category": "Hair Care",
     "price": 45,
     "badge": null,
-    "description": "Moisturizing Shampoo Pershkrim i shkurter: Një shampo thellësisht ushqyes për të pastruar flokët natyralë dhe të lyer. Ofron hidratim optimal dhe rikthen shkëlqimin dhe elasticitetin natyral pa i rënduar flokët. Rezultati është flokë i butë, me strukturë dhe i shkrifët.",
+    "description": "Një shampo thellësisht ushqyes për të pastruar flokët natyralë dhe të lyer. Ofron hidratim optimal dhe rikthen shkëlqimin dhe elasticitetin natyral pa i rënduar flokët. Rezultati është flokë i butë, me strukturë dhe i shkrifët.",
     "imageUrl": "/assets/products/balmain/moisturizing-shampoo.jpg"
   },
   {
@@ -41,7 +41,7 @@
     "category": "Hair Care",
     "price": 45,
     "badge": null,
-    "description": "Revitalizing Shampoo",
+    "description": null,
     "imageUrl": "/assets/products/balmain/revitalizing-shampoo.jpg"
   },
   {
@@ -59,7 +59,7 @@
     "category": "Hair Care",
     "price": 57,
     "badge": null,
-    "description": "Revitalizing Mask",
+    "description": null,
     "imageUrl": "/assets/products/balmain/revitalizing-mask.jpg"
   },
   {
@@ -136,7 +136,7 @@
   },
   {
     "brand": "balmain",
-    "name": "Homme Hair Parfume",
+    "name": "Homme Hair Perfume",
     "category": "Hair Care",
     "price": 150,
     "badge": null,
@@ -329,7 +329,7 @@
     "category": "Styling Tools",
     "price": 66,
     "badge": null,
-    "description": "14k Gold Plated Tail Comb",
+    "description": null,
     "imageUrl": "/assets/products/balmain/14k-gold-plated-tail-comb.jpg"
   },
   {
@@ -338,7 +338,7 @@
     "category": "Styling Tools",
     "price": 81,
     "badge": null,
-    "description": "14k Gold Plated Cutting Comb",
+    "description": null,
     "imageUrl": "/assets/products/balmain/14k-gold-plated-cutting-comb.jpg"
   },
   {
@@ -347,7 +347,7 @@
     "category": "Styling Tools",
     "price": 76,
     "badge": null,
-    "description": "14k Gold Plated Styling Comb",
+    "description": null,
     "imageUrl": "/assets/products/balmain/14k-gold-plated-styling-comb.jpg"
   },
   {
@@ -356,7 +356,7 @@
     "category": "Styling Tools",
     "price": 72,
     "badge": null,
-    "description": "Detangling SPA Brush",
+    "description": null,
     "imageUrl": "/assets/products/balmain/detangling-spa-brush.jpg"
   },
   {
@@ -365,7 +365,7 @@
     "category": "Styling Tools",
     "price": 96,
     "badge": null,
-    "description": "Luxury SPA Brush",
+    "description": null,
     "imageUrl": "/assets/products/balmain/luxury-spa-brush.jpg"
   },
   {
@@ -374,52 +374,52 @@
     "category": "Styling Tools",
     "price": 89,
     "badge": null,
-    "description": "All Purpose SPA Brush",
+    "description": null,
     "imageUrl": "/assets/products/balmain/all-purpose-spa-brush.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Profesional Ceramic Round Brush 43mm xl",
+    "name": "Professional Ceramic Round Brush 43mm xl",
     "category": "Styling Tools",
     "price": 57,
     "badge": null,
-    "description": "Profesional Ceramic Round Brush 43mm xl",
+    "description": null,
     "imageUrl": "/assets/products/balmain/profesional-ceramic-round-brush-43mm-xl.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Profesional Ceramic Round Brush 53mm",
+    "name": "Professional Ceramic Round Brush 53mm",
     "category": "Styling Tools",
     "price": 49,
     "badge": null,
-    "description": "Profesional Ceramic Round Brush 53mm",
+    "description": null,
     "imageUrl": "/assets/products/balmain/profesional-ceramic-round-brush-53mm.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Profesional Ceramic Round Brush 43mm",
+    "name": "Professional Ceramic Round Brush 43mm",
     "category": "Styling Tools",
     "price": 46,
     "badge": null,
-    "description": "Profesional Ceramic Round Brush 43mm",
+    "description": null,
     "imageUrl": "/assets/products/balmain/profesional-ceramic-round-brush-43mm.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Profesional Ceramic Round Brush 33mm",
+    "name": "Professional Ceramic Round Brush 33mm",
     "category": "Styling Tools",
     "price": 44,
     "badge": null,
-    "description": "Profesional Ceramic Round Brush 33mm",
+    "description": null,
     "imageUrl": "/assets/products/balmain/profesional-ceramic-round-brush-33mm.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Profesional Ceramic Round Brush 25mm",
+    "name": "Professional Ceramic Round Brush 25mm",
     "category": "Styling Tools",
     "price": 40,
     "badge": null,
-    "description": "Profesional Ceramic Round Brush 25mm",
+    "description": null,
     "imageUrl": "/assets/products/balmain/profesional-ceramic-round-brush-25mm.jpg"
   },
   {
@@ -428,7 +428,7 @@
     "category": "Styling Tools",
     "price": 264,
     "badge": null,
-    "description": "Golden Spa Brush",
+    "description": null,
     "imageUrl": "/assets/products/balmain/golden-spa-brush.jpg"
   },
   {
@@ -437,7 +437,7 @@
     "category": "Styling Tools",
     "price": 288,
     "badge": null,
-    "description": "Mini Golden Spa Brush",
+    "description": null,
     "imageUrl": "/assets/products/balmain/mini-golden-spa-brush.jpg"
   },
   {
@@ -446,7 +446,7 @@
     "category": "Styling Tools",
     "price": 240,
     "badge": null,
-    "description": "Silver Spa Brush",
+    "description": null,
     "imageUrl": "/assets/products/balmain/silver-spa-brush.jpg"
   },
   {
@@ -455,52 +455,52 @@
     "category": "Styling Tools",
     "price": 240,
     "badge": null,
-    "description": "Mini Silver Spa Brush",
+    "description": null,
     "imageUrl": "/assets/products/balmain/mini-silver-spa-brush.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Profesional Blowdryer",
+    "name": "Professional Blowdryer",
     "category": "Styling Tools",
     "price": 285,
     "badge": null,
-    "description": "Profesional Blowdryer",
+    "description": null,
     "imageUrl": "/assets/products/balmain/profesional-blowdryer.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Profesional Straightener",
+    "name": "Professional Straightener",
     "category": "Styling Tools",
     "price": 258,
     "badge": null,
-    "description": "Profesional Straightener",
+    "description": null,
     "imageUrl": "/assets/products/balmain/profesional-straightener.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Profesional Ceramic Curling Wand 32mm",
+    "name": "Professional Ceramic Curling Wand 32mm",
     "category": "Styling Tools",
     "price": 258,
     "badge": null,
-    "description": "Profesional Ceramic Curling Wand 32mm",
+    "description": null,
     "imageUrl": "/assets/products/balmain/profesional-ceramic-curling-wand-32mm.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Profesional Ceramic Curling Wand 25mm",
+    "name": "Professional Ceramic Curling Wand 25mm",
     "category": "Styling Tools",
     "price": 258,
     "badge": null,
-    "description": "Profesional Ceramic Curling Wand 25mm",
+    "description": null,
     "imageUrl": "/assets/products/balmain/profesional-ceramic-curling-wand-25mm.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Profesional Ceramic Conical Curling Wand",
+    "name": "Professional Ceramic Conical Curling Wand",
     "category": "Styling Tools",
     "price": 258,
     "badge": null,
-    "description": "Profesional Ceramic Conical Curling Wand",
+    "description": null,
     "imageUrl": "/assets/products/balmain/profesional-ceramic-conical-curling-wand.jpg"
   },
   {
@@ -509,7 +509,7 @@
     "category": "Hair Accessories",
     "price": 90,
     "badge": "New",
-    "description": "Pince a Cheveux Small White",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-small-white.jpg"
   },
   {
@@ -518,7 +518,7 @@
     "category": "Hair Accessories",
     "price": 90,
     "badge": "New",
-    "description": "Pince a Cheveux Small Black",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-small-black.jpg"
   },
   {
@@ -527,7 +527,7 @@
     "category": "Hair Accessories",
     "price": 90,
     "badge": "New",
-    "description": "Pince a Cheveux Small Tortoiseshell",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-small-tortoiseshell.jpg"
   },
   {
@@ -536,7 +536,7 @@
     "category": "Hair Accessories",
     "price": 130,
     "badge": "New",
-    "description": "Pince a Cheveux Medium White",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-medium-white.jpg"
   },
   {
@@ -545,7 +545,7 @@
     "category": "Hair Accessories",
     "price": 130,
     "badge": "New",
-    "description": "Pince a Cheveux Medium Black",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-medium-black.jpg"
   },
   {
@@ -554,7 +554,7 @@
     "category": "Hair Accessories",
     "price": 130,
     "badge": "New",
-    "description": "Pince a Cheveux Medium Tortoiseshell",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-medium-tortoiseshell.jpg"
   },
   {
@@ -563,7 +563,7 @@
     "category": "Hair Accessories",
     "price": 140,
     "badge": "New",
-    "description": "Pince a Cheveux Large White",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-large-white.jpg"
   },
   {
@@ -572,7 +572,7 @@
     "category": "Hair Accessories",
     "price": 140,
     "badge": "New",
-    "description": "Pince a Cheveux Large Black",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-large-black.jpg"
   },
   {
@@ -581,7 +581,7 @@
     "category": "Hair Accessories",
     "price": 140,
     "badge": "New",
-    "description": "Pince a Cheveux Large Tortoiseshell",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-large-tortoiseshell.jpg"
   },
   {
@@ -590,7 +590,7 @@
     "category": "Hair Accessories",
     "price": 70,
     "badge": null,
-    "description": "Elastique Pour Cheveux White",
+    "description": null,
     "imageUrl": "/assets/products/balmain/elastique-pour-cheveux-white.jpg"
   },
   {
@@ -599,7 +599,7 @@
     "category": "Hair Accessories",
     "price": 70,
     "badge": null,
-    "description": "Elastique Pour Cheveux Black",
+    "description": null,
     "imageUrl": "/assets/products/balmain/elastique-pour-cheveux-black.jpg"
   },
   {
@@ -608,7 +608,7 @@
     "category": "Hair Accessories",
     "price": 70,
     "badge": null,
-    "description": "Elastique Pour Cheveux Tortoiseshell",
+    "description": null,
     "imageUrl": "/assets/products/balmain/elastique-pour-cheveux-tortoiseshell.jpg"
   },
   {
@@ -617,7 +617,7 @@
     "category": "Hair Accessories",
     "price": 75,
     "badge": null,
-    "description": "Barrette Pour Cheveux Medium White",
+    "description": null,
     "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-medium-white.jpg"
   },
   {
@@ -626,7 +626,7 @@
     "category": "Hair Accessories",
     "price": 75,
     "badge": null,
-    "description": "Barrette Pour Cheveux Medium Black",
+    "description": null,
     "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-medium-black.jpg"
   },
   {
@@ -635,7 +635,7 @@
     "category": "Hair Accessories",
     "price": 75,
     "badge": null,
-    "description": "Barrette Pour Cheveux Medium Tortoiseshell",
+    "description": null,
     "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-medium-tortoiseshell.jpg"
   },
   {
@@ -644,7 +644,7 @@
     "category": "Hair Accessories",
     "price": 85,
     "badge": null,
-    "description": "Barrette Pour Cheveux Large White",
+    "description": null,
     "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-large-white.jpg"
   },
   {
@@ -653,7 +653,7 @@
     "category": "Hair Accessories",
     "price": 85,
     "badge": null,
-    "description": "Barrette Pour Cheveux Large Black",
+    "description": null,
     "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-large-black.jpg"
   },
   {
@@ -662,7 +662,7 @@
     "category": "Hair Accessories",
     "price": 85,
     "badge": null,
-    "description": "Barrette Pour Cheveux Large Tortoiseshell",
+    "description": null,
     "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-large-tortoiseshell.jpg"
   },
   {
@@ -703,11 +703,11 @@
   },
   {
     "brand": "balmain",
-    "name": "Acvitating Scalp Treatment",
+    "name": "Activating Scalp Treatment",
     "category": "Hair Care",
     "price": 90,
     "badge": null,
-    "description": "Acvitating Scalp Treatment",
+    "description": null,
     "imageUrl": "/assets/products/balmain/acvitating-scalp-treatment.jpg"
   },
   {
@@ -716,7 +716,7 @@
     "category": "Gifts",
     "price": 234,
     "badge": null,
-    "description": "Bodyfying Homme Set",
+    "description": null,
     "imageUrl": "/assets/products/balmain/bodyfying-homme-set.jpg"
   },
   {
@@ -734,7 +734,7 @@
     "category": "Styling Tools",
     "price": 45,
     "badge": null,
-    "description": "Extension Brush",
+    "description": null,
     "imageUrl": "/assets/products/balmain/extension-brush.jpg"
   },
   {
@@ -743,7 +743,7 @@
     "category": "Styling Tools",
     "price": 48,
     "badge": null,
-    "description": "Mini All Purpose Brush",
+    "description": null,
     "imageUrl": "/assets/products/balmain/mini-all-purpose-brush.jpg"
   },
   {
@@ -752,7 +752,7 @@
     "category": "Hair Accessories",
     "price": 90,
     "badge": "New",
-    "description": "Pince à Cheveux Extra Small Black/White",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-extra-small-black-white.jpg"
   },
   {
@@ -761,7 +761,7 @@
     "category": "Hair Accessories",
     "price": 130,
     "badge": "New",
-    "description": "Pince à Cheveux Medium Black/White",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-medium-black-white.jpg"
   },
   {
@@ -770,7 +770,7 @@
     "category": "Hair Accessories",
     "price": 140,
     "badge": "New",
-    "description": "Pince à Cheveux Large Black/White",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-large-black-white.jpg"
   },
   {
@@ -779,7 +779,7 @@
     "category": "Hair Accessories",
     "price": 200,
     "badge": "Limited",
-    "description": "Limited Edition Riviera Headband Gold Small",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-riviera-headband-gold-small.png"
   },
   {
@@ -788,12 +788,12 @@
     "category": "Hair Accessories",
     "price": 90,
     "badge": "Limited",
-    "description": "Limited Edition Backstage Clip Pour Cheveux FW23",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-backstage-clip-pour-cheveux-fw23.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Hair Parfume Ginger 15ml",
+    "name": "Hair Perfume Ginger 15ml",
     "category": "Hair Care",
     "price": 32,
     "badge": "New",
@@ -802,7 +802,7 @@
   },
   {
     "brand": "balmain",
-    "name": "Hair Parfume Cardamon 15ml",
+    "name": "Hair Perfume Cardamom 15ml",
     "category": "Hair Care",
     "price": 32,
     "badge": "New",
@@ -811,7 +811,7 @@
   },
   {
     "brand": "balmain",
-    "name": "Hair Parfume Vetiver 15ml",
+    "name": "Hair Perfume Vetiver 15ml",
     "category": "Hair Care",
     "price": 32,
     "badge": "New",
@@ -824,7 +824,7 @@
     "category": "Hair Care",
     "price": 150,
     "badge": "New",
-    "description": "Revitalizing Care Set",
+    "description": null,
     "imageUrl": "/assets/products/balmain/revitalizing-care-set.jpg"
   },
   {
@@ -833,16 +833,16 @@
     "category": "Hair Care",
     "price": 100,
     "badge": "New",
-    "description": "Muse de Printemps Styling Set",
+    "description": null,
     "imageUrl": "/assets/products/balmain/muse-de-printemps-styling-set.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Printems Leaf Barrette",
+    "name": "Printemps Leaf Barrette",
     "category": "Hair Accessories",
     "price": 240,
     "badge": "Limited",
-    "description": "Printems Leaf Barrette",
+    "description": null,
     "imageUrl": "/assets/products/balmain/printems-leaf-barrette.webp"
   },
   {
@@ -851,7 +851,7 @@
     "category": "Hair Care",
     "price": 220,
     "badge": "New",
-    "description": "Toiletry Bag Black Gold",
+    "description": null,
     "imageUrl": "/assets/products/balmain/toiletry-bag-black-gold.avif"
   },
   {
@@ -860,7 +860,7 @@
     "category": "Hair Care",
     "price": 50,
     "badge": "New",
-    "description": "Sculpting Wax 100 ml",
+    "description": null,
     "imageUrl": "/assets/products/balmain/sculpting-wax-100-ml.jpg"
   },
   {
@@ -869,7 +869,7 @@
     "category": "Hair Care",
     "price": 110,
     "badge": "New",
-    "description": "Rafia Cosmetic Bag",
+    "description": null,
     "imageUrl": "/assets/products/balmain/rafia-cosmetic-bag.jpg"
   },
   {
@@ -878,7 +878,7 @@
     "category": "Styling Tools",
     "price": 33,
     "badge": "New",
-    "description": "Boar Hair Backcomb Brush",
+    "description": null,
     "imageUrl": "/assets/products/balmain/boar-hair-backcomb-brush.jpg"
   },
   {
@@ -887,16 +887,16 @@
     "category": "Hair Care",
     "price": 120,
     "badge": "New",
-    "description": "Volume Set Versailles FW24",
+    "description": null,
     "imageUrl": "/assets/products/balmain/volume-set-versailles-fw24.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Hair Parfume Cardamon 100ml",
+    "name": "Hair Perfume Cardamom 100ml",
     "category": "Hair Care",
     "price": 150,
     "badge": "New",
-    "description": "Hair Parfume Cardamon 100ml",
+    "description": null,
     "imageUrl": "/assets/products/balmain/hair-parfume-cardamon-100ml.jpg"
   },
   {
@@ -905,7 +905,7 @@
     "category": "Hair Care",
     "price": 54,
     "badge": null,
-    "description": "Ash Toner",
+    "description": null,
     "imageUrl": "/assets/products/balmain/ash-toner.jpg"
   },
   {
@@ -914,7 +914,7 @@
     "category": "Hair Accessories",
     "price": 90,
     "badge": "New",
-    "description": "Pince a Cheveux XS Tortoise",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-xs-tortoise.jpg"
   },
   {
@@ -923,7 +923,7 @@
     "category": "Hair Accessories",
     "price": 90,
     "badge": "New",
-    "description": "Pince a Cheveux XS Nude",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-xs-nude.jpg"
   },
   {
@@ -932,7 +932,7 @@
     "category": "Hair Accessories",
     "price": 90,
     "badge": "New",
-    "description": "Pince a Cheveux XS Pearl",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-xs-pearl.jpg"
   },
   {
@@ -941,7 +941,7 @@
     "category": "Hair Accessories",
     "price": 130,
     "badge": "New",
-    "description": "Pince a Cheveux Medium Pearl",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-medium-pearl.jpg"
   },
   {
@@ -950,7 +950,7 @@
     "category": "Hair Accessories",
     "price": 130,
     "badge": "New",
-    "description": "Pince a Cheveux Medium White Black",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-medium-white-black.jpg"
   },
   {
@@ -959,7 +959,7 @@
     "category": "Hair Accessories",
     "price": 140,
     "badge": "New",
-    "description": "Pince a Cheveux Large White Black",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-large-white-black.jpg"
   },
   {
@@ -968,7 +968,7 @@
     "category": "Hair Accessories",
     "price": 180,
     "badge": "New",
-    "description": "Pince a Cheveux Imperiale White/Black",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-imperiale-white-black.jpg"
   },
   {
@@ -977,7 +977,7 @@
     "category": "Hair Accessories",
     "price": 180,
     "badge": "New",
-    "description": "Pince a Cheveux Imperiale Black/White",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-imperiale-black-white.jpg"
   },
   {
@@ -986,7 +986,7 @@
     "category": "Hair Accessories",
     "price": 180,
     "badge": "New",
-    "description": "Pince a Cheveux Imperiale Tortoise",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-imperiale-tortoise.jpg"
   },
   {
@@ -995,7 +995,7 @@
     "category": "Hair Accessories",
     "price": 550,
     "badge": "New",
-    "description": "White Puffed Leather Headband FW24",
+    "description": null,
     "imageUrl": "/assets/products/balmain/white-puffed-leather-headband-fw24.jpg"
   },
   {
@@ -1004,7 +1004,7 @@
     "category": "Hair Accessories",
     "price": 200,
     "badge": "Limited",
-    "description": "Acetate Headband Black/White",
+    "description": null,
     "imageUrl": "/assets/products/balmain/acetate-headband-black-white.jpg"
   },
   {
@@ -1013,7 +1013,7 @@
     "category": "Hair Accessories",
     "price": 200,
     "badge": "Limited",
-    "description": "Acetate Headband White/Black",
+    "description": null,
     "imageUrl": "/assets/products/balmain/acetate-headband-white-black.jpg"
   },
   {
@@ -1022,12 +1022,12 @@
     "category": "Hair Accessories",
     "price": 200,
     "badge": "Limited",
-    "description": "Acetate Headband Tortoise",
+    "description": null,
     "imageUrl": "/assets/products/balmain/acetate-headband-tortoise.jpg"
   },
   {
     "brand": "balmain",
-    "name": "Hair Parfume Cardamon 100 ml",
+    "name": "Hair Perfume Cardamom 100 ml",
     "category": "Hair Care",
     "price": 150,
     "badge": "New",
@@ -1040,7 +1040,7 @@
     "category": "Hair Accessories",
     "price": 90,
     "badge": "New",
-    "description": "Pince a Cheveux XS Cosmic Sapphire",
+    "description": null,
     "imageUrl": "/assets/products/balmain/pince-a-cheveux-xs-cosmic-sapphire.webp"
   },
   {
@@ -1049,7 +1049,7 @@
     "category": "Hair Accessories",
     "price": 75,
     "badge": "New",
-    "description": "Barrette Pour Cheveux Medium Cosmic Sapphire",
+    "description": null,
     "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-medium-cosmic-sapphire.jpg"
   },
   {
@@ -1058,7 +1058,7 @@
     "category": "Hair Care",
     "price": 150,
     "badge": "New",
-    "description": "Moisturizing Care Set",
+    "description": null,
     "imageUrl": "/assets/products/balmain/moisturizing-care-set.jpg"
   },
   {
@@ -1067,7 +1067,7 @@
     "category": "Gifts",
     "price": 170,
     "badge": "Limited",
-    "description": "Cosmetic Bag Cosmic Sapphire",
+    "description": null,
     "imageUrl": "/assets/products/balmain/cosmetic-bag-cosmic-sapphire.webp"
   },
   {
@@ -1076,7 +1076,7 @@
     "category": "Hair Accessories",
     "price": 72,
     "badge": "Limited",
-    "description": "Limited Edition Pinces à Cheveux Extra Small Midnight Black",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-pinces-a-cheveux-extra-small-midnight-black.jpg"
   },
   {
@@ -1085,7 +1085,7 @@
     "category": "Hair Accessories",
     "price": 111,
     "badge": "Limited",
-    "description": "Limited Edition Pinces à Cheveux Medium Midnight Black",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-pinces-a-cheveux-medium-midnight-black-c4-26.jpg"
   },
   {
@@ -1094,7 +1094,7 @@
     "category": "Styling Tools",
     "price": 95,
     "badge": "Limited",
-    "description": "Limited Edition legacy Spa Brush",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-legacy-spa-brush-c4-26.jpg"
   },
   {
@@ -1103,7 +1103,7 @@
     "category": "Hair Accessories",
     "price": 440,
     "badge": "Limited",
-    "description": "Limited Edition Midnight Black Barrette",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-midnight-black-barrette-c4-26.jpg"
   },
   {
@@ -1112,7 +1112,7 @@
     "category": "Hair Accessories",
     "price": 290,
     "badge": "Limited",
-    "description": "Limited Edition Midnight Black Clip",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-midnight-black-clip-c4-26.jpg"
   },
   {
@@ -1121,7 +1121,7 @@
     "category": "Hair Accessories",
     "price": 650,
     "badge": "Limited",
-    "description": "Limited Edition Midnight Black Headband",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-midnight-black-headband-c4-26.jpg"
   },
   {
@@ -1130,7 +1130,7 @@
     "category": "Hair Accessories",
     "price": 260,
     "badge": "Limited",
-    "description": "Limited Edition Midnight Black Slides Pins",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-midnight-black-slides-c4-26.jpg"
   },
   {
@@ -1139,7 +1139,7 @@
     "category": "Hair Accessories",
     "price": 250,
     "badge": "Limited",
-    "description": "Limited Edition Acetate Headband Large FW24",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-acetate-headband-large-fw24.jpg"
   },
   {
@@ -1148,7 +1148,7 @@
     "category": "Hair Accessories",
     "price": 550,
     "badge": "Limited",
-    "description": "Limited Edition White Leather Puffed Headband",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-white-leather-puffed-headband-fw24.jpg"
   },
   {
@@ -1157,7 +1157,7 @@
     "category": "Hair Accessories",
     "price": 223,
     "badge": null,
-    "description": "Gold Plated Hair Slide Logo",
+    "description": null,
     "imageUrl": "/assets/products/balmain/gold-plated-hair-slide-logo.jpg"
   },
   {
@@ -1166,7 +1166,7 @@
     "category": "Hair Accessories",
     "price": 280,
     "badge": "Limited",
-    "description": "Limited Edition Pont des Arts Hair Clip Large FW22",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-pont-des-arts-hair-clip-large-fw22.jpg"
   },
   {
@@ -1175,7 +1175,7 @@
     "category": "Hair Accessories",
     "price": 250,
     "badge": "Limited",
-    "description": "Limited Edition Headband FW22",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-headband-fw22.jpg"
   },
   {
@@ -1184,7 +1184,7 @@
     "category": "Hair Accessories",
     "price": 199,
     "badge": null,
-    "description": "Riviera Headband Cognac Large",
+    "description": null,
     "imageUrl": "/assets/products/balmain/riviera-headband-cognac-large.jpg"
   },
   {
@@ -1193,7 +1193,7 @@
     "category": "Hair Accessories",
     "price": 252,
     "badge": null,
-    "description": "Leather Headband Large Silver",
+    "description": null,
     "imageUrl": "/assets/products/balmain/leather-headband-large-silver.jpg"
   },
   {
@@ -1202,7 +1202,7 @@
     "category": "Hair Accessories",
     "price": 113.75,
     "badge": null,
-    "description": "Barrette Pour Cheveux Medium Silver/Gold",
+    "description": null,
     "imageUrl": "/assets/products/balmain/barrette-pour-cheveux-medium-silvergold.jpg"
   },
   {
@@ -1211,7 +1211,7 @@
     "category": "Styling Tools",
     "price": 159.85,
     "badge": "Limited",
-    "description": "Limited Edition Cordless Straightener",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-cordless-straightener.jpg"
   },
   {
@@ -1220,7 +1220,7 @@
     "category": "Hair Accessories",
     "price": 275,
     "badge": "Limited",
-    "description": "Limited Edition Pearl Hair Clip Large FW24",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-pearl-hair-clip-large-fw24.jpg"
   },
   {
@@ -1229,7 +1229,7 @@
     "category": "Hair Accessories",
     "price": 95.24,
     "badge": "Limited",
-    "description": "Limited Edition Printemps Leaf Slide",
+    "description": null,
     "imageUrl": "/assets/products/balmain/limited-edition-printemps-leaf-slide.jpg"
   },
   {
@@ -1238,7 +1238,7 @@
     "category": "Care Collection",
     "price": 51,
     "badge": null,
-    "description": "Colour Protecting Shampoo - 250 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/colour-protecting-shampoo-250-ml.webp"
   },
   {
@@ -1247,7 +1247,7 @@
     "category": "Care Collection",
     "price": 48,
     "badge": null,
-    "description": "Moisturizing Shampoo - 250 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/moisturizing-shampoo-250-ml.webp"
   },
   {
@@ -1256,7 +1256,7 @@
     "category": "Care Collection",
     "price": 48,
     "badge": null,
-    "description": "Volumizing Shampoo - 250 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/volumizing-shampoo-250-ml.webp"
   },
   {
@@ -1265,7 +1265,7 @@
     "category": "Care Collection",
     "price": 48,
     "badge": null,
-    "description": "Silver Shampoo - 250 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/silver-shampoo-250-ml.webp"
   },
   {
@@ -1274,7 +1274,7 @@
     "category": "Care Collection",
     "price": 54,
     "badge": null,
-    "description": "Colour Protecting Conditioner - 250 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/colour-protecting-conditioner-250-ml.webp"
   },
   {
@@ -1283,7 +1283,7 @@
     "category": "Care Collection",
     "price": 50,
     "badge": null,
-    "description": "Moisturizing Conditioner - 250 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/moisturizing-conditioner-250-ml.webp"
   },
   {
@@ -1292,7 +1292,7 @@
     "category": "Care Collection",
     "price": 50,
     "badge": null,
-    "description": "Volumizing Conditioner - 250 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/volumizing-conditioner-250-ml.webp"
   },
   {
@@ -1301,7 +1301,7 @@
     "category": "Care Collection",
     "price": 65,
     "badge": null,
-    "description": "Colour Protecting Mask - 190 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/colour-protecting-mask-190-ml.webp"
   },
   {
@@ -1310,7 +1310,7 @@
     "category": "Care Collection",
     "price": 61,
     "badge": null,
-    "description": "Moisturizing Mask - 190 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/moisturizing-mask-190-ml.webp"
   },
   {
@@ -1319,7 +1319,7 @@
     "category": "Care Collection",
     "price": 69,
     "badge": null,
-    "description": "Silver Mask - 190 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/silver-mask-190-ml.webp"
   },
   {
@@ -1328,7 +1328,7 @@
     "category": "Treatments & Sets",
     "price": 108,
     "badge": null,
-    "description": "Intense Repair Serum - 30 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/intense-repair-serum-30-ml.webp"
   },
   {
@@ -1337,7 +1337,7 @@
     "category": "Treatments & Sets",
     "price": 69,
     "badge": null,
-    "description": "Intense Bond-Repair Treatment - 3x20 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/intense-bond-repair-treatment-3x20-ml.webp"
   },
   {
@@ -1346,7 +1346,7 @@
     "category": "Styling Collection",
     "price": 49,
     "badge": null,
-    "description": "Texturizing Volume Spray - 200 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/texturizing-volume-spray-200-ml.webp"
   },
   {
@@ -1355,7 +1355,7 @@
     "category": "Styling Collection",
     "price": 48,
     "badge": null,
-    "description": "Dry Shampoo - 300 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/dry-shampoo-300-ml.webp"
   },
   {
@@ -1364,7 +1364,7 @@
     "category": "Styling Collection",
     "price": 47,
     "badge": null,
-    "description": "Session Spray Strong - 300 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/session-spray-strong-300-ml.webp"
   },
   {
@@ -1373,7 +1373,7 @@
     "category": "Styling Collection",
     "price": 47,
     "badge": null,
-    "description": "Session Spray Medium - 300 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/session-spray-medium-300-ml.webp"
   },
   {
@@ -1382,7 +1382,7 @@
     "category": "Styling Collection",
     "price": 47,
     "badge": null,
-    "description": "Volumizing Mousse Strong - 300 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/volumizing-mousse-strong-300-ml.webp"
   },
   {
@@ -1391,7 +1391,7 @@
     "category": "Treatments & Sets",
     "price": 58,
     "badge": null,
-    "description": "Nourishing Argan Elixir - 100 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/nourishing-argan-elixir-100-ml.webp"
   },
   {
@@ -1400,7 +1400,7 @@
     "category": "Styling Collection",
     "price": 55,
     "badge": null,
-    "description": "Soft Gloss Mist - 200 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/soft-gloss-mist-200-ml.webp"
   },
   {
@@ -1409,7 +1409,7 @@
     "category": "Styling Collection",
     "price": 49,
     "badge": null,
-    "description": "Texturizing Salt Mist - 200 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/texturizing-salt-mist-200-ml.webp"
   },
   {
@@ -1418,7 +1418,7 @@
     "category": "Styling Collection",
     "price": 45,
     "badge": null,
-    "description": "Leave-in Conditioning Mist - 200 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/leave-in-conditioning-mist-200-ml.webp"
   },
   {
@@ -1427,7 +1427,7 @@
     "category": "Styling Collection",
     "price": 43,
     "badge": null,
-    "description": "Heat Protection Mist - 200 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/heat-protection-mist-200-ml.webp"
   },
   {
@@ -1436,7 +1436,7 @@
     "category": "Styling Collection",
     "price": 45,
     "badge": null,
-    "description": "Curl Cream - 150 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/curl-cream-150-ml.webp"
   },
   {
@@ -1445,7 +1445,7 @@
     "category": "Styling Collection",
     "price": 44,
     "badge": null,
-    "description": "Moisturizing Styling Cream - 150 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/moisturizing-styling-cream-150-ml.webp"
   },
   {
@@ -1454,7 +1454,7 @@
     "category": "Styling Collection",
     "price": 48,
     "badge": null,
-    "description": "Styling Gel Strong - 150 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/styling-gel-strong-150-ml.webp"
   },
   {
@@ -1463,7 +1463,7 @@
     "category": "Styling Collection",
     "price": 48,
     "badge": null,
-    "description": "High Gloss Pomade - 90 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/high-gloss-pomade-90-ml.webp"
   },
   {
@@ -1472,7 +1472,7 @@
     "category": "Styling Collection",
     "price": 48,
     "badge": null,
-    "description": "Matt Styling Paste - 90 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/matt-styling-paste-90-ml.webp"
   },
   {
@@ -1481,7 +1481,7 @@
     "category": "Care Collection",
     "price": 69,
     "badge": null,
-    "description": "Hair Perfume Elora - 50 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/hair-perfume-elora-50-ml.webp"
   },
   {
@@ -1490,7 +1490,7 @@
     "category": "Care Collection",
     "price": 69,
     "badge": null,
-    "description": "Hair Perfume Grace - 50 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/hair-perfume-grace-50-ml.webp"
   },
   {
@@ -1499,7 +1499,7 @@
     "category": "Care Collection",
     "price": 69,
     "badge": null,
-    "description": "Hair Perfume Reflect - 50 ml",
+    "description": null,
     "imageUrl": "/assets/products/eloure/hair-perfume-reflect-50-ml.webp"
   },
   {
@@ -1571,7 +1571,7 @@
     "category": "Treatments & Sets",
     "price": 54.5,
     "badge": null,
-    "description": "Discovery Set",
+    "description": null,
     "imageUrl": "/assets/products/eloure/discovery-set.webp"
   },
   {
@@ -1580,7 +1580,7 @@
     "category": "Treatments & Sets",
     "price": 280,
     "badge": "Featured",
-    "description": "Experience Set",
+    "description": null,
     "imageUrl": null
   },
   {
@@ -1589,7 +1589,7 @@
     "category": "Treatments & Sets",
     "price": 120,
     "badge": "Featured",
-    "description": "The Radiant Care Collection",
+    "description": null,
     "imageUrl": null
   },
   {
@@ -1598,7 +1598,7 @@
     "category": "Treatments & Sets",
     "price": 124,
     "badge": "Featured",
-    "description": "The Volume & Glow Collection",
+    "description": null,
     "imageUrl": null
   },
   {
@@ -1607,7 +1607,7 @@
     "category": "Styling Collection",
     "price": 105,
     "badge": null,
-    "description": "Signature Brush",
+    "description": null,
     "imageUrl": "/assets/products/eloure/signature-brush.jpg"
   },
   {

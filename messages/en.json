@@ -21,7 +21,7 @@
   "brands": {
     "balmain": {
       "name": "Balmain Hair Couture",
-      "tagline": "Luxury hair extensions & styling tools"
+      "tagline": "Couture hair care, accessories & styling tools"
     },
     "eloure": {
       "name": "Eloure",
@@ -53,13 +53,27 @@
     "addedToCart": "Added to cart",
     "outOfStock": "Sold out",
     "relatedTitle": "You may also like",
-    "sizes": ["Small", "Medium", "Large"],
-    "placeholderDescription": "Placeholder description copy — swap for real per-product copy once a data source is wired.",
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large"
+    ],
+    "placeholderDescription": "Crafted with care and selected by our team for results you can see and feel. Reach out any time if you would like help choosing.",
     "specs": {
-      "shipping": { "label": "Shipping", "value": "Free over € 75" },
-      "returns": { "label": "Returns", "value": "30 days" },
-      "origin": { "label": "Origin", "value": "Made in Europe" }
-    }
+      "shipping": {
+        "label": "Shipping",
+        "value": "Free, on every order"
+      },
+      "returns": {
+        "label": "Returns",
+        "value": "30 days"
+      },
+      "origin": {
+        "label": "Origin",
+        "value": "Made in Europe"
+      }
+    },
+    "viewProduct": "View product"
   },
   "cart": {
     "title": "Cart",
@@ -70,7 +84,7 @@
     "total": "Total",
     "checkout": "Proceed to checkout",
     "continueShopping": "Continue shopping",
-    "note": "Shipping and taxes calculated at checkout.",
+    "note": "Free shipping on every order. All prices include VAT.",
     "emptyTitle": "Your cart is empty",
     "emptyBody": "Nothing here yet — browse the collection to get started.",
     "remove": "Remove",
@@ -79,7 +93,8 @@
     "couponApplied": "Code {code} applied",
     "discount": "Discount",
     "decreaseQty": "Decrease quantity",
-    "increaseQty": "Increase quantity"
+    "increaseQty": "Increase quantity",
+    "summaryTitle": "Order summary"
   },
   "checkout": {
     "title": "Checkout",
@@ -94,13 +109,14 @@
     "postalCode": "Postal code",
     "country": "Country",
     "shippingMethod": "Shipping method",
-    "shippingFee": "Shipping (paid on delivery)",
+    "shippingFee": "Shipping",
     "placeOrder": "Place order",
     "placingOrder": "Placing order…",
     "summaryTitle": "Order summary",
     "successTitle": "Thank you for your order",
-    "successBody": "Your order {orderId} has been placed. We'll reach out to {email} with confirmation details.",
-    "backToShop": "Back to shop"
+    "successBody": "Your order {orderId} is confirmed. A confirmation is on its way to {email}, and we will be in touch shortly to arrange delivery.",
+    "backToShop": "Back to shop",
+    "secureNote": "Secure checkout · Free shipping"
   },
   "account": {
     "greeting": "Account",
@@ -128,7 +144,11 @@
     "resultsTitle": "Results ({count})",
     "emptyTitle": "No results",
     "emptyBody": "Try a shorter term or browse the menu above.",
-    "recentPlaceholder": ["Extensions 55cm", "Refill", "Discovery set"]
+    "recentPlaceholder": [
+      "Hair perfume",
+      "Hair mask",
+      "Gift set"
+    ]
   },
   "balmainHome": {
     "popularTitle": "Popular right now",
@@ -139,9 +159,15 @@
     "editorialBody": "From Parisian ateliers to backstage at fashion week — the craft, the codes, and the couture behind every piece.",
     "editorialCta": "Discover the heritage",
     "collections": {
-      "hairCare": { "body": "Nourishing formulas trusted backstage and at home." },
-      "hairAccessories": { "body": "Iconic pieces, handcrafted for everyday luxury." },
-      "stylingTools": { "body": "Professional-grade tools for a couture finish." }
+      "hairCare": {
+        "body": "Nourishing formulas trusted backstage and at home."
+      },
+      "hairAccessories": {
+        "body": "Iconic pieces, handcrafted for everyday luxury."
+      },
+      "stylingTools": {
+        "body": "Professional-grade tools for a couture finish."
+      }
     }
   },
   "footer": {
@@ -210,8 +236,8 @@
     "phoneRequired": "Phone number is required",
     "addressRequired": "Address is required",
     "cityRequired": "City is required",
-    "shippingMethodRequired": "Select a shipping method",
-    "shippingMethodInvalid": "Select a valid shipping method",
+    "shippingMethodRequired": "Something went wrong with delivery details. Please try again.",
+    "shippingMethodInvalid": "Something went wrong with delivery details. Please try again.",
     "cartEmpty": "Your cart is empty",
     "brandInvalid": "Invalid brand",
     "nameRequired": "Name is required",
@@ -226,7 +252,7 @@
       "hero": {
         "eyebrow": "Autumn / Winter 26",
         "title": "Couture for hair",
-        "body": "Hand-tied extensions and finishing tools developed with the atelier.",
+        "body": "Salon-grade care, iconic accessories and finishing tools, developed with the Paris atelier.",
         "cta": "Shop the collection",
         "secondary": "View lookbook"
       }
@@ -269,5 +295,27 @@
     "Sensorial Hair Care": "Sensorial Hair Care",
     "Sensorial Beauty": "Sensorial Beauty",
     "Sensorial Lifestyle": "Sensorial Lifestyle"
+  },
+  "promise": {
+    "announcement": "Free shipping on every order",
+    "title": "The Hair Couture promise",
+    "items": {
+      "shipping": {
+        "title": "Free shipping",
+        "body": "On every order, no minimum"
+      },
+      "returns": {
+        "title": "30-day returns",
+        "body": "Change of heart? Easy returns"
+      },
+      "authentic": {
+        "title": "100% authentic",
+        "body": "Sourced directly from the brands"
+      },
+      "cod": {
+        "title": "Cash on delivery",
+        "body": "Pay when your order arrives"
+      }
+    }
   }
 }

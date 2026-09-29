@@ -8,12 +8,9 @@ import { useCart } from "@/lib/cart/cart-context";
 import { productImage } from "@/lib/data/category-image";
 import { formatMoney } from "@/lib/money";
 import { createOrder } from "@/lib/actions/orders";
-import { getActiveShippingClasses } from "@/lib/actions/shipping";
 import { trackBeginCheckout, trackPurchase } from "@/lib/analytics/events";
 import type { BrandSlug } from "@/lib/brands";
 import Image from "next/image";
-
-type ShippingClass = { id: string; name: string; fee: number };
 
 type FieldName =
   | "firstName"
@@ -65,16 +62,7 @@ export default function CheckoutPage() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [orderId, setOrderId] = useState<string | null>(null);
-  const [shippingClasses, setShippingClasses] = useState<ShippingClass[]>([]);
-  const [shippingClassId, setShippingClassId] = useState("");
   const beganCheckoutTracked = useRef(false);
-
-  useEffect(() => {
-    getActiveShippingClasses().then((classes) => {
-      setShippingClasses(classes);
-      setShippingClassId((current) => current || classes[0]?.id || "");
-    });
-  }, []);
 
   useEffect(() => {
     if (lines.length > 0 && !beganCheckoutTracked.current) {
@@ -94,7 +82,6 @@ export default function CheckoutPage() {
       : Math.min(coupon.value, subtotal)
     : 0;
   const total = Math.max(0, subtotal - discount);
-  const shippingFeeAll = shippingClasses.find((sc) => sc.id === shippingClassId)?.fee ?? 0;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -105,7 +92,6 @@ export default function CheckoutPage() {
       brand,
       ...form,
       couponCode: coupon?.code,
-      shippingClassId,
       lines: lines.map((l) => ({
         productId: l.productId,
         name: l.name,
@@ -133,14 +119,14 @@ export default function CheckoutPage() {
   if (orderId) {
     return (
       <main className="mx-auto flex min-h-[60vh] max-w-lg flex-col items-center justify-center px-6 text-center">
-        <div className="w-full rounded-[2rem] border border-neutral-200 bg-white px-6 py-10 shadow-[0_20px_60px_rgba(0,0,0,0.06)] sm:px-10">
-          <h1 className="text-3xl font-light tracking-tight">{t("successTitle")}</h1>
+        <div className="w-full rounded-[1.75rem] border border-[var(--hairline)] bg-white px-6 py-10 shadow-[var(--shadow-soft)] sm:px-10">
+          <h1 className="font-display text-4xl font-light tracking-tight">{t("successTitle")}</h1>
           <p className="mt-4 text-sm leading-relaxed text-neutral-600">
           {t("successBody", { orderId, email: form.email })}
           </p>
           <Link
             href={`/${brand}`}
-            className="mt-8 inline-flex min-h-11 items-center justify-center border border-neutral-900 px-7 text-xs tracking-widest uppercase transition-colors hover:border-[var(--brand-accent)] hover:bg-[var(--brand-accent)] hover:text-white"
+            className="btn-pill mt-8 border border-neutral-900 hover:border-[var(--brand-accent)] hover:bg-[var(--brand-accent)] hover:text-[var(--brand-accent-foreground)]"
           >
             {t("backToShop")}
           </Link>
@@ -152,12 +138,12 @@ export default function CheckoutPage() {
   if (lines.length === 0) {
     return (
       <main className="mx-auto flex min-h-[60vh] max-w-lg flex-col items-center justify-center px-6 text-center">
-        <div className="w-full rounded-[2rem] border border-neutral-200 bg-white px-6 py-10 shadow-[0_20px_60px_rgba(0,0,0,0.06)] sm:px-10">
-          <h1 className="text-2xl font-light">{tCart("emptyTitle")}</h1>
+        <div className="w-full rounded-[1.75rem] border border-[var(--hairline)] bg-white px-6 py-10 shadow-[var(--shadow-soft)] sm:px-10">
+          <h1 className="font-display text-3xl font-light">{tCart("emptyTitle")}</h1>
           <p className="mt-3 mb-6 text-sm text-neutral-500">{tCart("emptyBody")}</p>
           <Link
             href={`/${brand}`}
-            className="inline-flex min-h-11 items-center justify-center border border-neutral-900 px-6 text-xs tracking-widest uppercase transition-colors hover:border-[var(--brand-accent)] hover:bg-[var(--brand-accent)] hover:text-white"
+            className="btn-pill border border-neutral-900 hover:border-[var(--brand-accent)] hover:bg-[var(--brand-accent)] hover:text-[var(--brand-accent-foreground)]"
           >
             {tCart("continueShopping")}
           </Link>
@@ -173,13 +159,13 @@ export default function CheckoutPage() {
           <span className="text-[11px] tracking-[0.22em] text-[var(--brand-accent)] uppercase">
             {t("summaryTitle")}
           </span>
-          <h1 className="text-3xl font-light tracking-tight sm:text-4xl">{t("title")}</h1>
+          <h1 className="font-display text-5xl font-light tracking-tight sm:text-6xl">{t("title")}</h1>
         </div>
 
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_380px] xl:grid-cols-[minmax(0,1fr)_420px]">
           <form
             onSubmit={handleSubmit}
-            className="rounded-[2rem] border border-neutral-200 bg-white p-5 shadow-[0_20px_60px_rgba(0,0,0,0.06)] sm:p-7"
+            className="rounded-[1.75rem] border border-[var(--hairline)] bg-white p-5 shadow-[var(--shadow-soft)] sm:p-7"
           >
             <div className="grid grid-cols-1 gap-6 sm:gap-7">
               <section className="grid gap-4">
@@ -195,7 +181,7 @@ export default function CheckoutPage() {
                       placeholder={t("email")}
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="min-h-11 border border-neutral-300 bg-white px-3 text-sm outline-none transition-colors placeholder:text-neutral-400 focus:border-neutral-900"
+                      className="field-input"
                     />
                   </Field>
                   <Field label={t("phone")}>
@@ -206,7 +192,7 @@ export default function CheckoutPage() {
                       placeholder={t("phone")}
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className="min-h-11 border border-neutral-300 bg-white px-3 text-sm outline-none transition-colors placeholder:text-neutral-400 focus:border-neutral-900"
+                      className="field-input"
                     />
                   </Field>
                 </div>
@@ -224,7 +210,7 @@ export default function CheckoutPage() {
                       placeholder={t("firstName")}
                       value={form.firstName}
                       onChange={(e) => setForm({ ...form, firstName: e.target.value })}
-                      className="min-h-11 border border-neutral-300 bg-white px-3 text-sm outline-none transition-colors placeholder:text-neutral-400 focus:border-neutral-900"
+                      className="field-input"
                     />
                   </Field>
                   <Field label={t("lastName")}>
@@ -234,7 +220,7 @@ export default function CheckoutPage() {
                       placeholder={t("lastName")}
                       value={form.lastName}
                       onChange={(e) => setForm({ ...form, lastName: e.target.value })}
-                      className="min-h-11 border border-neutral-300 bg-white px-3 text-sm outline-none transition-colors placeholder:text-neutral-400 focus:border-neutral-900"
+                      className="field-input"
                     />
                   </Field>
                   <Field label={t("address")} fullWidth>
@@ -244,7 +230,7 @@ export default function CheckoutPage() {
                       placeholder={t("address")}
                       value={form.address}
                       onChange={(e) => setForm({ ...form, address: e.target.value })}
-                      className="min-h-11 border border-neutral-300 bg-white px-3 text-sm outline-none transition-colors placeholder:text-neutral-400 focus:border-neutral-900"
+                      className="field-input"
                     />
                   </Field>
                   <Field label={t("city")}>
@@ -254,7 +240,7 @@ export default function CheckoutPage() {
                       placeholder={t("city")}
                       value={form.city}
                       onChange={(e) => setForm({ ...form, city: e.target.value })}
-                      className="min-h-11 border border-neutral-300 bg-white px-3 text-sm outline-none transition-colors placeholder:text-neutral-400 focus:border-neutral-900"
+                      className="field-input"
                     />
                   </Field>
                   <Field label={t("postalCode")} required={false}>
@@ -263,63 +249,35 @@ export default function CheckoutPage() {
                       placeholder={t("postalCode")}
                       value={form.postalCode}
                       onChange={(e) => setForm({ ...form, postalCode: e.target.value })}
-                      className="min-h-11 border border-neutral-300 bg-white px-3 text-sm outline-none transition-colors placeholder:text-neutral-400 focus:border-neutral-900"
+                      className="field-input"
                     />
                   </Field>
                 </div>
               </section>
-
-              {shippingClasses.length > 0 && (
-                <section className="grid gap-4">
-                  <h2 className="text-[11px] tracking-[0.18em] text-neutral-500 uppercase">
-                    {t("shippingMethod")}
-                  </h2>
-                  <div className="grid gap-2">
-                    {shippingClasses.map((sc) => (
-                      <label
-                        key={sc.id}
-                        className="flex min-h-11 items-center justify-between gap-3 border border-neutral-300 px-3 text-sm has-[:checked]:border-neutral-900"
-                      >
-                        <span className="flex items-center gap-2">
-                          <input
-                            type="radio"
-                            name="shippingClassId"
-                            value={sc.id}
-                            checked={shippingClassId === sc.id}
-                            onChange={() => setShippingClassId(sc.id)}
-                          />
-                          {sc.name}
-                        </span>
-                        <span className="text-neutral-500">{sc.fee.toLocaleString("en-US")} ALL</span>
-                      </label>
-                    ))}
-                  </div>
-                </section>
-              )}
 
               {error && <p className="text-sm text-red-600">{error}</p>}
 
               <button
                 type="submit"
                 disabled={submitting}
-                className="inline-flex min-h-[52px] cursor-pointer items-center justify-center bg-[var(--brand-accent)] px-5 text-xs tracking-widest text-white uppercase transition-opacity hover:opacity-90 disabled:opacity-50"
+                className="btn-pill min-h-14 w-full cursor-pointer bg-[var(--brand-accent)] text-[var(--brand-accent-foreground)] shadow-[var(--shadow-soft)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] disabled:cursor-wait disabled:opacity-50"
               >
                 {submitting ? t("placingOrder") : t("placeOrder")}
               </button>
             </div>
           </form>
 
-          <aside className="sticky top-6 flex flex-col gap-4 rounded-[2rem] border border-neutral-200 bg-[#faf9f7] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.05)] sm:p-7">
+          <aside className="flex flex-col gap-4 self-start rounded-[1.75rem] border border-[var(--hairline)] bg-[var(--surface-muted)] p-5 sm:p-7 lg:sticky lg:top-32">
             <h2 className="text-[11px] tracking-[0.18em] text-neutral-500 uppercase">
               {t("summaryTitle")}
             </h2>
           {lines.map((line) => (
               <div key={line.id} className="flex items-center gap-3 text-sm">
-              <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl bg-white">
+              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-white">
                 <Image src={productImage(line)} alt={line.name} fill sizes="56px" className="object-contain p-1" />
               </div>
               <div className="flex flex-1 flex-col">
-                <span className="font-medium">{line.name}</span>
+                <span className="font-display text-base leading-snug">{line.name}</span>
                 <span className="text-xs text-neutral-500">
                   {line.variant} × {line.qty}
                 </span>
@@ -327,7 +285,7 @@ export default function CheckoutPage() {
               <span>{formatMoney(line.price * line.qty, locale)}</span>
             </div>
           ))}
-            <div className="mt-2 flex justify-between border-t border-neutral-200 pt-3.5 text-sm">
+            <div className="mt-2 flex justify-between border-t border-[var(--hairline)] pt-4 text-sm">
               <span className="text-neutral-600">{tCart("subtotal")}</span>
               <span>{formatMoney(subtotal, locale)}</span>
             </div>
@@ -339,16 +297,17 @@ export default function CheckoutPage() {
                 <span>-{formatMoney(discount, locale)}</span>
               </div>
             )}
-            <div className="flex justify-between border-t border-neutral-200 pt-3.5 text-lg">
-              <span>{tCart("total")}</span>
-              <span>{formatMoney(total, locale)}</span>
+            <div className="flex items-center justify-between text-sm">
+              <span className="text-neutral-600">{t("shippingFee")}</span>
+              <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium tracking-wide text-emerald-700">
+                {tCart("shippingFree")}
+              </span>
             </div>
-            {shippingFeeAll > 0 && (
-              <div className="flex justify-between text-sm text-neutral-500">
-                <span>{t("shippingFee")}</span>
-                <span>{shippingFeeAll.toLocaleString("en-US")} ALL</span>
-              </div>
-            )}
+            <div className="flex items-baseline justify-between border-t border-[var(--hairline)] pt-4">
+              <span className="text-sm tracking-wide">{tCart("total")}</span>
+              <span className="font-display text-3xl tabular-nums">{formatMoney(total, locale)}</span>
+            </div>
+            <p className="text-center text-[11px] tracking-[0.16em] text-neutral-500 uppercase">{t("secureNote")}</p>
           </aside>
         </div>
       </div>

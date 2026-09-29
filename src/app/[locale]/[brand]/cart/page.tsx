@@ -56,47 +56,48 @@ export default function CartPage() {
   }
 
   return (
-    <main className="px-6 pb-24 sm:px-11">
-      <h1 className="m-0 pt-11 pb-2 text-4xl font-light tracking-tight sm:text-5xl">
+    <main className="px-4 pb-24 sm:px-6 lg:px-11">
+      <div className="mx-auto max-w-6xl">
+      <h1 className="m-0 pt-12 pb-2 font-display text-5xl font-light tracking-tight sm:text-6xl">
         {t("title")}
       </h1>
-      <p className="mb-7 text-[13px] text-neutral-500">{t("itemCount", { count: totalQty })}</p>
+      <p className="mb-8 text-[13px] tracking-wide text-neutral-500">{t("itemCount", { count: totalQty })}</p>
 
-      <div className="grid grid-cols-1 items-start gap-8 sm:gap-14 md:grid-cols-[1fr_360px]">
-        <div className="border-t border-neutral-200">
+      <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-[1fr_380px] lg:gap-14">
+        <div className="border-t border-[var(--hairline)]">
           {lines.map((line) => (
             <div
               key={line.id}
-              className="grid grid-cols-[96px_1fr_auto] items-start gap-5 border-b border-neutral-200 py-6"
+              className="grid grid-cols-[96px_1fr_auto] items-start gap-5 border-b border-[var(--hairline)] py-6 sm:grid-cols-[112px_1fr_auto]"
             >
-              <div className="relative aspect-[3/4] overflow-hidden bg-neutral-50">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--surface-muted)]">
                 <Image
                   src={productImage(line)}
                   alt={line.name}
                   fill
                   sizes="96px"
-                  className="object-contain p-2"
+                  className="object-contain p-2 mix-blend-multiply"
                 />
               </div>
               <div className="flex flex-col gap-1.5">
-                <span className="text-[10px] tracking-widest text-neutral-500 uppercase">
+                <span className="text-[10px] tracking-[0.2em] text-neutral-400 uppercase">
                   {line.category}
                 </span>
-                <span className="text-[15px] font-medium tracking-tight">{line.name}</span>
+                <span className="font-display text-xl leading-snug">{line.name}</span>
                 <span className="text-[13px] text-neutral-500">{line.variant}</span>
                 <div className="mt-2.5 flex items-center gap-4">
-                  <div className="flex items-center border border-neutral-300">
+                  <div className="flex items-center rounded-full border border-neutral-900/15">
                     <button
                       onClick={() => decLine(line.id)}
-                      className="h-9 w-9 border-none bg-none font-inherit text-[15px]"
+                      className="h-9 w-9 cursor-pointer rounded-full border-none bg-none font-inherit text-[15px] transition-colors hover:bg-neutral-100"
                       aria-label={t("decreaseQty")}
                     >
                       &minus;
                     </button>
-                    <span className="min-w-7 text-center text-[13px]">{line.qty}</span>
+                    <span className="min-w-7 text-center text-[13px] tabular-nums">{line.qty}</span>
                     <button
                       onClick={() => handleInc(line.id)}
-                      className="h-9 w-9 border-none bg-none font-inherit text-[15px]"
+                      className="h-9 w-9 cursor-pointer rounded-full border-none bg-none font-inherit text-[15px] transition-colors hover:bg-neutral-100"
                       aria-label={t("increaseQty")}
                     >
                       +
@@ -104,7 +105,7 @@ export default function CartPage() {
                   </div>
                   <button
                     onClick={() => removeLine(line.id)}
-                    className="border-none bg-none py-2 font-inherit text-xs tracking-wide text-neutral-500 uppercase hover:text-[var(--brand-accent)]"
+                    className="cursor-pointer border-none bg-none py-2 font-inherit text-[11px] tracking-[0.16em] text-neutral-500 uppercase underline-offset-4 hover:text-[var(--brand-accent)] hover:underline"
                   >
                     {t("remove")}
                   </button>
@@ -113,7 +114,7 @@ export default function CartPage() {
                   <p className="text-xs text-red-600">{lineErrors[line.id]}</p>
                 )}
               </div>
-              <span className="text-[15px] whitespace-nowrap">
+              <span className="text-[15px] whitespace-nowrap tabular-nums">
                 {formatMoney(line.price * line.qty, locale)}
               </span>
             </div>
@@ -121,11 +122,11 @@ export default function CartPage() {
 
           {lines.length === 0 && (
             <div className="py-16 text-center">
-              <h2 className="m-0 text-xl font-light">{t("emptyTitle")}</h2>
+              <h2 className="m-0 font-display text-3xl font-light">{t("emptyTitle")}</h2>
               <p className="mt-3 mb-6 text-sm text-neutral-500">{t("emptyBody")}</p>
               <Link
-                href="/"
-                className="inline-flex min-h-11 items-center border border-neutral-900 px-6 text-xs tracking-widest uppercase hover:border-[var(--brand-accent)] hover:bg-[var(--brand-accent)] hover:text-white"
+                href={`/${brand}/shop`}
+                className="btn-pill border border-neutral-900 hover:border-[var(--brand-accent)] hover:bg-[var(--brand-accent)] hover:text-[var(--brand-accent-foreground)]"
               >
                 {t("continueShopping")}
               </Link>
@@ -133,13 +134,13 @@ export default function CartPage() {
           )}
         </div>
 
-        <aside className="flex flex-col gap-3.5 bg-[#faf9f7] p-7">
+        <aside className="flex flex-col gap-4 rounded-[1.75rem] border border-[var(--hairline)] bg-[var(--surface-muted)] p-6 sm:p-8 md:sticky md:top-32">
           <h2 className="m-0 mb-1.5 text-[11px] tracking-[0.18em] text-neutral-500 uppercase">
-            {t("subtotal")}
+            {t("summaryTitle")}
           </h2>
 
           {coupon ? (
-            <div className="flex items-center justify-between border border-neutral-300 bg-white px-3 py-2 text-sm">
+            <div className="flex items-center justify-between rounded-full border border-neutral-900/10 bg-white px-4 py-2.5 text-sm">
               <span>
                 {t("couponApplied", { code: coupon.code })}
               </span>
@@ -158,13 +159,13 @@ export default function CartPage() {
                   value={couponInput}
                   onChange={(e) => setCouponInput(e.target.value)}
                   placeholder={t("couponPlaceholder")}
-                  className="min-h-11 flex-1 border border-neutral-300 px-3 text-sm outline-none focus:border-neutral-900"
+                  className="field-input flex-1 rounded-full"
                 />
                 <button
                   type="button"
                   onClick={applyCoupon}
                   disabled={applying || !couponInput.trim()}
-                  className="min-h-11 shrink-0 border border-neutral-900 px-4 text-xs tracking-widest uppercase hover:bg-neutral-900 hover:text-white disabled:opacity-40"
+                  className="btn-pill shrink-0 cursor-pointer border border-neutral-900 px-5 hover:bg-neutral-900 hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   {t("couponApply")}
                 </button>
@@ -183,25 +184,28 @@ export default function CartPage() {
               <span>-{formatMoney(discount, locale)}</span>
             </div>
           )}
-          <div className="flex justify-between text-sm">
+          <div className="flex items-center justify-between text-sm">
             <span className="text-neutral-600">{t("shipping")}</span>
-            <span>{t("shippingFree")}</span>
+            <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium tracking-wide text-emerald-700">
+              {t("shippingFree")}
+            </span>
           </div>
-          <div className="mt-1.5 flex justify-between border-t border-neutral-200 pt-3.5 text-lg">
-            <span>{t("total")}</span>
-            <span>{formatMoney(total, locale)}</span>
+          <div className="mt-1.5 flex items-baseline justify-between border-t border-[var(--hairline)] pt-4">
+            <span className="text-sm tracking-wide">{t("total")}</span>
+            <span className="font-display text-3xl tabular-nums">{formatMoney(total, locale)}</span>
           </div>
           <Link
             href={`/${brand}/checkout`}
             onClick={() => trackCheckoutButtonClick(brand as BrandSlug)}
-            className={`mt-3.5 flex min-h-[52px] items-center justify-center bg-[var(--brand-accent)] font-inherit text-xs tracking-widest text-white uppercase hover:opacity-90 ${
+            className={`btn-pill mt-2 min-h-14 w-full bg-[var(--brand-accent)] text-[var(--brand-accent-foreground)] shadow-[var(--shadow-soft)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] ${
               lines.length === 0 ? "pointer-events-none opacity-40" : ""
             }`}
           >
             {t("checkout")}
           </Link>
-          <p className="mt-1 text-xs leading-relaxed text-neutral-500">{t("note")}</p>
+          <p className="mt-1 text-center text-xs leading-relaxed text-neutral-500">{t("note")}</p>
         </aside>
+      </div>
       </div>
     </main>
   );

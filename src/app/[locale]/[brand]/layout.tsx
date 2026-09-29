@@ -8,6 +8,7 @@ import { BrandMobileMenu } from "@/components/shop/BrandMobileMenu";
 import { MenuLinkTracker } from "@/components/shop/MenuLinkTracker";
 import { LanguageSwitcher } from "@/components/shop/LanguageSwitcher";
 import { Footer } from "@/components/shop/Footer";
+import { AnnouncementBar } from "@/components/shop/AnnouncementBar";
 
 function SearchIcon() {
   return (
@@ -50,7 +51,7 @@ function IconActionLink({
     <Link
       href={href}
       aria-label={label}
-      className="relative inline-flex h-10 w-10 items-center justify-center text-neutral-700 transition-colors hover:text-[var(--brand-accent)]"
+      className="relative inline-flex h-10 w-10 items-center justify-center rounded-full text-neutral-700 transition-colors duration-300 hover:bg-neutral-100 hover:text-[var(--brand-accent)]"
     >
       {children}
       {badge ? <span className="absolute -right-1 -top-1">{badge}</span> : null}
@@ -121,9 +122,10 @@ export default async function BrandLayout({
       }
       className="flex flex-1 flex-col"
     >
-      <header className="sticky top-0 z-30 border-b border-neutral-200 bg-white/95 backdrop-blur">
+      <AnnouncementBar />
+      <header className="sticky top-0 z-30 border-b border-[var(--hairline)] bg-white/80 backdrop-blur-xl backdrop-saturate-150">
         <div className="relative flex items-center justify-between px-4 py-4 sm:px-6 lg:hidden">
-          <Link href="/" className="text-[13px] whitespace-nowrap text-neutral-500 hover:underline">
+          <Link href="/" className="text-[12px] tracking-wide whitespace-nowrap text-neutral-500 transition-colors hover:text-neutral-900">
             &larr; {t("nav.backToBrands")}
           </Link>
           {/* eslint-disable-next-line @next/next/no-img-element -- static local SVG, no next/image benefit */}
@@ -150,7 +152,7 @@ export default async function BrandLayout({
           </div>
         </div>
         <div className="hidden items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:flex lg:gap-4">
-          <Link href="/" className="text-[13px] whitespace-nowrap text-neutral-500 hover:underline">
+          <Link href="/" className="text-[12px] tracking-wide whitespace-nowrap text-neutral-500 transition-colors hover:text-neutral-900">
             &larr; {t("nav.backToBrands")}
           </Link>
           {/* eslint-disable-next-line @next/next/no-img-element -- static local SVG, no next/image benefit */}
@@ -169,7 +171,7 @@ export default async function BrandLayout({
             </IconActionLink>
           </nav>
         </div>
-        <nav className="hidden flex-wrap justify-center gap-6 px-6 pb-3.5 text-xs tracking-[0.14em] text-neutral-600 uppercase lg:flex lg:gap-8">
+        <nav className="hidden flex-wrap justify-center gap-6 px-6 pb-4 text-[11px] tracking-[0.2em] text-neutral-600 uppercase lg:flex lg:gap-9">
           {activeShop.menu.map((item) => (
             <MenuLinkTracker
               key={item}
@@ -180,8 +182,8 @@ export default async function BrandLayout({
               source="desktop"
               className={
                 item === "Sale"
-                  ? "border-b border-transparent pb-1 font-medium text-[var(--brand-sale)]"
-                  : "border-b border-transparent pb-1 hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
+                  ? "relative pb-1 font-medium text-[var(--brand-sale)]"
+                  : "relative pb-1 transition-colors duration-300 after:absolute after:inset-x-0 after:-bottom-px after:h-px after:origin-left after:scale-x-0 after:bg-[var(--brand-accent)] after:transition-transform after:duration-500 after:ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-[var(--brand-accent)] hover:after:scale-x-100"
               }
             />
           ))}
