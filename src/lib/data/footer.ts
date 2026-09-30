@@ -20,7 +20,7 @@ export interface FooterLink {
   href: string;
 }
 
-export type ServiceLinkKey = "contact" | "shippingReturns" | "privacy" | "terms" | "cookies";
+export type ServiceLinkKey = "contact" | "faq" | "privacy" | "terms" | "cookies";
 
 export interface FooterServiceLink {
   key: ServiceLinkKey;
@@ -49,7 +49,7 @@ function shopLinksFor(slug: BrandSlug, categories: string[]): FooterLink[] {
 function serviceLinksFor(slug: BrandSlug): FooterServiceLink[] {
   return [
     { key: "contact", href: `/${slug}/contact` },
-    { key: "shippingReturns", href: `/${slug}/terms#shipping` },
+    { key: "faq", href: `/${slug}/faq` },
     { key: "privacy", href: `/${slug}/privacy` },
     { key: "terms", href: `/${slug}/terms` },
     { key: "cookies", href: `/${slug}/cookies` },

@@ -57,8 +57,6 @@
     "sizes": ["E vogël", "Mesatare", "E madhe"],
     "placeholderDescription": "Përshkrim vendmbajtës — do të zëvendësohet me përshkrim real për çdo produkt kur të lidhet burimi i të dhënave.",
     "specs": {
-      "shipping": { "label": "Dërgesa", "value": "Falas mbi € 75" },
-      "returns": { "label": "Kthimet", "value": "30 ditë" },
       "origin": { "label": "Origjina", "value": "Prodhuar në Evropë" }
     }
   },
@@ -153,7 +151,7 @@
     "newsletterSuccess": "Faleminderit — jeni në listë.",
     "links": {
       "contact": "Kontakti",
-      "shippingReturns": "Dërgesa & Kthimet",
+      "faq": "Pyetje të shpeshta",
       "privacy": "Politika e Privatësisë",
       "terms": "Kushtet e Shërbimit",
       "cookies": "Cookie-t",
@@ -283,6 +281,190 @@
           "Pudrore dhe e ngrohtë"
         ]
       }
+    }
+  },
+  "faq": {
+    "title": "Pyetje të shpeshta",
+    "intro": "Përgjigje për produktet {brand}, përbërësit dhe mënyrën e përdorimit.",
+    "orderNote": "Pyetje për porositë ose pagesën? Shiko",
+    "orderLink": "Kushtet e shërbimit",
+    "stillTitle": "Ke ende një pyetje?",
+    "stillCta": "Na kontakto",
+    "brands": {
+      "balmain": [
+        {
+          "title": "Produktet",
+          "items": [
+            {
+              "q": "Çfarë është qimja e derrit të egër?",
+              "a": "Qimja e derrit të egër përdoret si fije për furçat që pastrojnë dhe shpleksin flokët. Struktura e saj unike i përcjell vajrat natyralë të flokëve nga lëkura e kokës deri te majat. Duke veshur çdo fije me një sasi shumë të vogël sebumi, furça riparon flokët e thatë dhe u jep shkëlqim pa produkte stilimi — sebumi vepron si një serum natyral kundër kaçurrelave të padëshiruara."
+            },
+            {
+              "q": "A kanë të gjitha produktet Care & Styling mbrojtje nga nxehtësia?",
+              "a": "Po. Të gjitha produktet e stilimit Balmain Hair përmbajnë mbrojtje nga nxehtësia, që i mban flokët të shëndetshëm gjatë përdorimit të veglave të stilimit."
+            },
+            {
+              "q": "Çfarë është Balmain Signature Fragrance?",
+              "a": "Një aromë e butë që përdoret në pothuajse të gjitha produktet Care & Styling, përveç linjës Balmain Homme. Notat e sipërme: anis yll, tarragon, dru pishe, lule pjeshke, mjedër, gardenia. Notat e zemrës: lule portokalli, karafil, jasemin, trëndafil, ylang-ylang, kajsi, jargavan. Notat bazë: qelibar, vanilje, sandalwood, dru kedri, musk i bardhë, balsamik. Produktet Balmain Homme kanë aromën e tyre orientale dhe drusore: bergamot, grejpfrut dhe mandarinë mbi olibanum, piper të zi dhe livando, me bazë patchouli, vetiver, qelibar dhe sandalwood."
+            },
+            {
+              "q": "A janë produktet Care & Styling vegjetariane apo vegane?",
+              "a": "Të gjitha produktet Care & Styling janë vegjetariane, jo vegane: përbërës kryesorë janë Proteina e Mëndafshit dhe Kashmiri. Asnjë kafshë nuk dëmtohet — flutura e mëndafshit del nga fshikëza para përpunimit, dhe leshi i kashmirit mblidhet në pranverë, kur dhitë e ndërrojnë natyrshëm qimen e dimrit."
+            }
+          ]
+        },
+        {
+          "title": "Përbërësit",
+          "items": [
+            {
+              "q": "Çfarë do të thotë pa sulfate?",
+              "a": "Sulfatet krijojnë shkumën karakteristike të shampove; në sasi të mëdha mund të irritojnë lëkurën e ndjeshme, duke shkaktuar skuqje, tharje ose kruajtje. Shumica e produkteve Balmain Hair janë pa sulfate, dhe sulfatet e përdorura në disa produkte nuk janë të dëmshme për njerëzit apo mjedisin. Formulat pa sulfate ruajnë vajrat natyralë të flokëve dhe lëkurës së kokës, duke i lënë flokët të hidratuar."
+            },
+            {
+              "q": "Çfarë është Proteina e Mëndafshit dhe çfarë u bën flokëve?",
+              "a": "Proteina e Mëndafshit (aminoacidet e mëndafshit, ose sericina) është një proteinë natyrale e tretshme në ujë, e nxjerrë nga mëndafshi i papërpunuar, e pasur me serinë për mbajtje të shkëlqyer të lagështisë. Ajo mban lagështinë, krijon një shtresë mbrojtëse dhe jep rrëshqitjen dhe butësinë më të madhe nga të gjitha proteinat — rindërton zonat e dëmtuara dhe forcon flokët për një rezultat të butë, elastik dhe me shkëlqim."
+            },
+            {
+              "q": "Çfarë është Argan Elixir dhe çfarë u bën flokëve?",
+              "a": "Argan Elixir është vaji nga bërthamat e pemës së arganit (Argania spinosa), jashtëzakonisht i pasur me vitaminë E, minerale dhe acide yndyrore. Depërton thellë në fijen e flokut për ta hidratuar natyrshëm dhe për të përmirësuar elasticitetin, jep shkëlqim dhe riparon e mbron flokët e dëmtuar, të thatë dhe të dobët — duke zgjatur jetën e ngjyrës pa i rënduar flokët."
+            }
+          ]
+        }
+      ],
+      "eloure": [
+        {
+          "title": "Bota e Éloure",
+          "items": [
+            {
+              "q": "Çfarë është Éloure?",
+              "a": "Kujdes profesional luksoz për flokët që bashkon performancën e kujdesit të lëkurës, mjeshtërinë e parfumerisë dhe autoritetin e sallonit në një ritual të vetëm kujdesi. Çdo formulë nis nga shkenca — përqendrime të larta përbërësish aktivë të zgjedhur për rezultate të dukshme dhe të qëndrueshme — dhe përfundon me një aromë ekskluzive nga parfumierja e vlerësuar Cécile Zarokian."
+            },
+            {
+              "q": "Çfarë e bën Éloure të veçantë?",
+              "a": "Tri cilësi. Performancë si në kujdesin e lëkurës: aktivë në përqendrime të sakta dhe të larta, të balancuar në pH profesional. Mjeshtëri e parfumerisë: një aromë ekskluzive nga Cécile Zarokian në çdo formulë. Autoritet sallonesh: dekada përvojë profesionale pas çdo produkti."
+            },
+            {
+              "q": "A është Éloure një markë profesionale sallonesh?",
+              "a": "Po. Éloure është krijuar për sallonet dhe profesionistët që punojnë në to, e më pas është sjellë edhe në shtëpi, që rezultatet e sallonit të vazhdojnë mes takimeve."
+            },
+            {
+              "q": "Si e trajton Éloure luksin e përgjegjshëm?",
+              "a": "Formulat Éloure janë vegane, pa sulfate dhe EDTA, të balancuara në pH profesional, dhe paketimi prodhohet me 35% material të ricikluar pas konsumit."
+            }
+          ]
+        },
+        {
+          "title": "Kujdes si për lëkurën, për flokët",
+          "items": [
+            {
+              "q": "Pse Éloure e trajton lëkurën e kokës si lëkurë?",
+              "a": "Sepse lëkura e kokës është lëkurë. Çdo formulë zhvillohet me disiplinën e kujdesit të lëkurës me performancë të lartë, ku çdo përbërës zgjidhet për funksionin, efikasitetin dhe përputhshmërinë me lëkurën e kokës. Flokë më të shëndetshëm dhe më të ndritshëm nisin nga një lëkurë koke e ekuilibruar dhe e kujdesur."
+            },
+            {
+              "q": "A është Éloure e përshtatshme për lëkurë koke të ndjeshme?",
+              "a": "Linja Moisturizing është formuluar duke menduar për rehatinë e lëkurës së kokës: ekstrakti i Lulëkuqes (4%) qetëson lëkurën e ndjeshme, që kruhet ose pas ngjyrosjes, ndërsa Pentavitin rikthen barrierën e lëkurës dhe hidraton deri në 72 orë. Për lëkurë reaktive rekomandohet një test paraprak."
+            },
+            {
+              "q": "Cilat koleksione përqendrohen më shumë te lëkura e kokës?",
+              "a": "Linja Moisturizing prin për rehatinë e lëkurës së kokës me ekstrakt Lulëkuqeje dhe Pentavitin. Linja Volumizing e forcon lëkurën e kokës nga brenda me Niacinamide dhe Peptide Bizeleje, për flokë që duken më të plotë."
+            }
+          ]
+        },
+        {
+          "title": "Përdorimi i produkteve",
+          "items": [
+            {
+              "q": "Si ndërtohet një rutinë e plotë Éloure?",
+              "a": "Pastro, trajto, përfundo. Fillo me shampon për nevojën e flokëve të tu, vazhdo me balsamin përkatës dhe shto maskën një ose dy herë në javë. Përfundo me një produkt stilimi ose trajtimi dhe freskoji me Hair Perfume mes larjeve."
+            },
+            {
+              "q": "A mund të kombinohen produkte nga koleksione të ndryshme?",
+              "a": "Po. Linjat Éloure janë formuluar për t'u kombinuar, kështu që mund të trajtosh disa nevoja njëherësh. Për efektin më të plotë për një nevojë të vetme, shampoja, balsami dhe maska e së njëjtës linjë funksionojnë më mirë së bashku."
+            },
+            {
+              "q": "Sa shpesh duhet përdorur maska?",
+              "a": "Një ose dy herë në javë, pas larjes, në vend të balsamit ose së bashku me të."
+            },
+            {
+              "q": "Kur duken rezultatet?",
+              "a": "Shumë aktivë veprojnë menjëherë: linja Volumizing i bën fijet deri në 14% më të trasha në çast, dhe hidratimi i Pentavitin zgjat deri në 72 orë pas shpëlarjes. Rezultatet thellohen me përdorim të rregullt."
+            },
+            {
+              "q": "Si përdoret Intense Bond-Repair Treatment?",
+              "a": "Aplikoje një herë në javë për pesë javë radhazi. Ai e rindërton forcën e flokut lidhje pas lidhjeje, nga brenda strukturës së tij."
+            },
+            {
+              "q": "A mbrojnë produktet Éloure nga stilimi me nxehtësi?",
+              "a": "Po. Heat Protection Mist i mbron flokët deri në 220 °C para stilimit, duke i përgatitur dhe kushtëzuar për rezultate më të lëmuara dhe më të qëndrueshme."
+            }
+          ]
+        }
+      ],
+      "eau-de-1974": [
+        {
+          "title": "Rreth EAUde1974",
+          "items": [
+            {
+              "q": "Çfarë është EAUde1974?",
+              "a": "Më shumë se një markë, një stil jetese: t'i kthesh rutinat e përditshme në përvoja shqisore plot gëzim. Nga kujdesi për flokët dhe trupin deri te produktet lifestyle që festojnë shqisat, EAUde1974 i shton pak magji çdo dite."
+            },
+            {
+              "q": "Çfarë e bën EAUde1974 ndryshe?",
+              "a": "Çdo produkt është menduar si përvojë — nga aromat që ngrenë humorin te dizajni që tërheq vëmendjen — i krijuar për të përfshirë të gjitha shqisat dhe për ta bërë çdo çast pak më të këndshëm."
+            },
+            {
+              "q": "Nga vjen frymëzimi?",
+              "a": "Nga uji, burimi i çdo jete. “Eau”, ujë në frëngjisht, përmbledh gjallërinë dhe pastërtinë në zemër të markës, dhe “de” bashkon vajrat aromatikë me ujin në një harmoni për shqisat. Që nga viti 1974, përvoja në kozmetikën e flokëve ka formësuar një vizion mirëqenieje luksoz, përfshirës dhe holistik."
+            },
+            {
+              "q": "A është EAUde1974 e angazhuar për qëndrueshmërinë?",
+              "a": "Po. Marka u jep përparësi praktikave të qëndrueshme, nga përbërësit me burim etik te paketimi miqësor me mjedisin — sepse luksi i vërtetë është të jesh i mirë me veten dhe me tokën."
+            }
+          ]
+        },
+        {
+          "title": "Linja Define",
+          "items": [
+            {
+              "q": "A përmban linja Define sulfate ose parabene?",
+              "a": "Jo. Linja Define është pa sulfate dhe parabene dhe plotësisht e miratuar sipas Curly Girl Method, duke i mbajtur kaçurrelat të shëndetshme, të forta dhe të gjalla pa kimikate të ashpra."
+            },
+            {
+              "q": "A është linja Define vetëm për kaçurrela të dendura?",
+              "a": "Jo. Është krijuar për të gjitha llojet e kaçurrelave dhe teksturave, nga valët e buta te kaçurrelat më të dendura."
+            },
+            {
+              "q": "A ndihmon kundër fryrjes së flokëve në mot të lagësht?",
+              "a": "Po. Përzierja e vajrave dhe gjalpërave krijon një shtresë të lehtë mbrojtëse që mban lagështinë dhe e zvogëlon fryrjen, edhe në lagështi."
+            },
+            {
+              "q": "A mund ta përdor me produkte të tjera stilimi?",
+              "a": "Sigurisht. Kombinohet mirë me leave-in, kremra, xhel ose vajra të tjerë pa lënë mbetje."
+            },
+            {
+              "q": "A mund ta përdorin edhe burrat linjën Define?",
+              "a": "Po. Është krijuar për këdo me flokë kaçurrela ose me teksturë që dëshiron përcaktim të hidratuar dhe pa fryrje."
+            }
+          ]
+        },
+        {
+          "title": "Parfumi i flokëve dhe Hydrate & Shape",
+          "items": [
+            {
+              "q": "A përmban parfumi i flokëve alkool? A i dëmton flokët?",
+              "a": "Parfumet e flokëve përmbajnë një sasi të vogël alkooli, që i ndihmon të thahen shpejt dhe e forcon aromën. Përdoret sipas standardeve të rrepta kozmetike evropiane, avullon shpejt dhe nuk duhet t'i thajë flokët."
+            },
+            {
+              "q": "Pse produktet Hydrate & Shape janë vegane dhe pa silikone?",
+              "a": "Nuk përmbajnë përbërës me origjinë shtazore dhe janë pa silikone për të shmangur mbetjet dhe për t'i mbajtur flokët natyralë dhe të shëndetshëm."
+            },
+            {
+              "q": "A mund ta përdor Hydrate & Shape me lëkurë koke ose lëkurë të ndjeshme?",
+              "a": "Po, formula është krijuar të jetë e butë dhe ushqyese. Nëse ke ndjeshmëri të veçanta, është gjithmonë mirë të bësh fillimisht një test paraprak."
+            }
+          ]
+        }
+      ]
     }
   },
   "shopMeta": {

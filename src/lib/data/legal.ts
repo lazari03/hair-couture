@@ -74,10 +74,6 @@ function buildTerms(brandName: string): LegalDoc {
         body: "All prices are shown in EUR and include applicable taxes unless stated otherwise. We reserve the right to refuse or cancel an order, including where a product is listed at an incorrect price or is out of stock after purchase.",
       },
       {
-        heading: "Shipping and returns",
-        body: "Shipping is free on orders over €75. Returns are accepted within 30 days of delivery for unused items in original packaging, in line with Albanian consumer protection law (Law No. 9902, dated 17 April 2008, \"On Consumer Protection\", as amended). To start a return, contact us using the details on our Contact page.",
-      },
-      {
         heading: "Governing law",
         body: `These Terms are governed by the laws of the Republic of Albania. Any dispute arising from your use of the site or an order shall be subject to the exclusive jurisdiction of the competent Albanian courts, without prejudice to any mandatory consumer-protection rights you may have.`,
       },

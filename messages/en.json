@@ -57,8 +57,6 @@
     "sizes": ["Small", "Medium", "Large"],
     "placeholderDescription": "Placeholder description copy — swap for real per-product copy once a data source is wired.",
     "specs": {
-      "shipping": { "label": "Shipping", "value": "Free over € 75" },
-      "returns": { "label": "Returns", "value": "30 days" },
       "origin": { "label": "Origin", "value": "Made in Europe" }
     }
   },
@@ -153,7 +151,7 @@
     "newsletterSuccess": "Thanks — you're on the list.",
     "links": {
       "contact": "Contact",
-      "shippingReturns": "Shipping & Returns",
+      "faq": "FAQ",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
       "cookies": "Cookies",
@@ -283,6 +281,190 @@
           "Powdery and warm"
         ]
       }
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "intro": "Answers about {brand} products, ingredients and how to use them.",
+    "orderNote": "Questions about ordering or payment? See our",
+    "orderLink": "Terms of Service",
+    "stillTitle": "Still have a question?",
+    "stillCta": "Contact us",
+    "brands": {
+      "balmain": [
+        {
+          "title": "Products",
+          "items": [
+            {
+              "q": "What is boar hair?",
+              "a": "Boar hair is used as bristles for brushes that clean and detangle the hair. Its unique structure carries the hair's natural oils from the scalp to the ends. By coating each strand with a very small amount of sebum, the brush repairs dry hair and adds lustrous shine without styling products — sebum works like a natural anti-frizz serum."
+            },
+            {
+              "q": "Do all Care & Styling products contain heat protection?",
+              "a": "Yes. All Balmain Hair styling products contain heat protection, which keeps the hair healthy while using styling tools."
+            },
+            {
+              "q": "What is the Balmain Signature Fragrance?",
+              "a": "A subtle fragrance used in almost all Care & Styling products, except the Balmain Homme line. Top notes: star anise, tarragon, pinewood, peach blossom, raspberry, gardenia. Heart notes: orange blossom, cloves, jasmine, rose, ylang-ylang, apricot, lilac. Base notes: amber, vanilla, sandalwood, cedarwood, white musk, balsamic. Balmain Homme products carry their own oriental, woody fragrance of bergamot, grapefruit and tangerine over olibanum, black pepper and lavender, on a base of patchouli, vetiver, amber and sandalwood."
+            },
+            {
+              "q": "Are the Care & Styling products vegetarian or vegan?",
+              "a": "All Care & Styling products are vegetarian rather than vegan: key ingredients include Silk Protein and Cashmere. No animals are harmed — the silk moth emerges from the cocoon before the silk is processed, and cashmere wool is collected in spring, when goats naturally shed their winter coat."
+            }
+          ]
+        },
+        {
+          "title": "Ingredients",
+          "items": [
+            {
+              "q": "What does sulfate-free mean?",
+              "a": "Sulfates create the foaming action associated with shampoos; used in abundance they can irritate sensitive skin, causing redness, dryness or itching. Most Balmain Hair products are sulfate-free, and the sulfates used in some products are not harmful to people or the environment. Sulfate-free formulas keep the natural oils on the hair and scalp, leaving hair moisturised."
+            },
+            {
+              "q": "What is Silk Protein and what does it do for the hair?",
+              "a": "Silk Protein (silk amino acids, or sericin) is a natural, water-soluble protein extracted from raw silk, rich in serine for excellent moisture retention. It binds moisture, forms a protective barrier and gives the most glide and silkiness of all proteins — reconstructing damaged areas and reinforcing the hair for a soft, supple, shiny result."
+            },
+            {
+              "q": "What is Argan Elixir and what does it do for the hair?",
+              "a": "Argan Elixir is oil from the kernels of the argan tree (Argania spinosa), exceptionally rich in vitamin E, minerals and fatty acids. It penetrates deep into the hair shaft to hydrate naturally and improve elasticity, creates lustrous shine, and repairs and protects damaged, dry and weak hair — extending the life of colour-treated hair without weighing it down."
+            }
+          ]
+        }
+      ],
+      "eloure": [
+        {
+          "title": "The world of Éloure",
+          "items": [
+            {
+              "q": "What is Éloure?",
+              "a": "Professional luxury haircare that brings skincare-level performance, fine fragrance craftsmanship and salon authority together in a single ritual of care. Each formula starts with science — high concentrations of actives selected for visible, lasting results — and is finished with an exclusive fragrance by award-winning perfumer Cécile Zarokian."
+            },
+            {
+              "q": "What sets Éloure apart?",
+              "a": "Three qualities. Skincare-level performance: actives in precise, high concentrations, balanced at professional pH. Fine fragrance craftsmanship: an exclusive scent by Cécile Zarokian in every formula. Salon authority: decades of professional expertise behind every product."
+            },
+            {
+              "q": "Is Éloure a professional salon brand?",
+              "a": "Yes. Éloure is developed for salons and the professionals who work in them, then extended to the home so salon-quality results continue between appointments."
+            },
+            {
+              "q": "How does Éloure approach responsible luxury?",
+              "a": "Éloure formulas are vegan and free from sulfates and EDTA, balanced at professional pH, and packaging is produced with 35% post-consumer recycled material."
+            }
+          ]
+        },
+        {
+          "title": "Skincare for your hair",
+          "items": [
+            {
+              "q": "Why does Éloure treat the scalp like skin?",
+              "a": "Because the scalp is skin. Every formula is developed with the discipline of high-performance skincare, with each ingredient chosen for function, efficacy and scalp compatibility. Healthier, more radiant hair begins with a balanced, well-cared-for scalp."
+            },
+            {
+              "q": "Is Éloure suitable for a sensitive scalp?",
+              "a": "The Moisturizing line is formulated with scalp comfort in mind: Red Poppy Extract (4%) calms sensitive, itchy and post-colour scalps, while Pentavitin restores the scalp barrier and hydrates for up to 72 hours. A patch test is recommended for skin prone to reactivity."
+            },
+            {
+              "q": "Which collections focus most on the scalp?",
+              "a": "The Moisturizing line leads on scalp comfort with Red Poppy Extract and Pentavitin. The Volumizing line strengthens the scalp from within with Niacinamide and Pea Peptides, for fuller-looking hair."
+            }
+          ]
+        },
+        {
+          "title": "Using the products",
+          "items": [
+            {
+              "q": "How do I build a complete Éloure routine?",
+              "a": "Cleanse, treat, finish. Start with the shampoo for your hair concern, follow with the matching conditioner, and add the mask once or twice a week. Finish with a styling or treatment product, and refresh with Hair Perfume between washes."
+            },
+            {
+              "q": "Can products from different collections be combined?",
+              "a": "Yes. Éloure lines are formulated to layer, so you can address more than one concern at once. For the fullest effect on a single concern, the shampoo, conditioner and mask of one line perform best together."
+            },
+            {
+              "q": "How often should I use the mask?",
+              "a": "Once or twice a week, after cleansing, in place of or alongside the conditioner."
+            },
+            {
+              "q": "When will I see results?",
+              "a": "Many actives work on contact: the Volumizing line gives up to 14% thicker strands immediately, and Pentavitin hydration lasts up to 72 hours after rinsing. Results deepen with consistent use."
+            },
+            {
+              "q": "How do I use the Intense Bond-Repair Treatment?",
+              "a": "Apply it once a week for five consecutive weeks. It rebuilds the hair's strength bond by bond, from within the hair structure."
+            },
+            {
+              "q": "Do Éloure products protect against heat styling?",
+              "a": "Yes. The Heat Protection Mist shields hair up to 220 °C before styling, priming and conditioning for smoother, longer-lasting results."
+            }
+          ]
+        }
+      ],
+      "eau-de-1974": [
+        {
+          "title": "About EAUde1974",
+          "items": [
+            {
+              "q": "What is EAUde1974 all about?",
+              "a": "More than a brand, a lifestyle: turning daily routines into joyful, sensorial experiences. From haircare and body care to lifestyle products that celebrate the senses, EAUde1974 adds a touch of magic to every day."
+            },
+            {
+              "q": "What makes EAUde1974 different?",
+              "a": "Every product is designed as an experience — from mood-boosting fragrances to eye-catching design — crafted to engage all your senses and make each moment a little more delightful."
+            },
+            {
+              "q": "Where does the inspiration come from?",
+              "a": "From water, the source of all life. “Eau”, French for water, captures the vitality and purity at the heart of the brand, and “de” blends fragrant oils and water into a harmony for the senses. Since 1974, expertise in hair cosmetics has shaped a vision of wellness that is luxurious, immersive and holistic."
+            },
+            {
+              "q": "Is EAUde1974 committed to sustainability?",
+              "a": "Yes. The brand prioritises sustainable practices, from ethically sourced ingredients to eco-friendly packaging — because true luxury is being good to yourself and to the earth."
+            }
+          ]
+        },
+        {
+          "title": "The Define line",
+          "items": [
+            {
+              "q": "Does the Define line contain sulfates or parabens?",
+              "a": "No. The Define line is sulfate- and paraben-free and fully Curly Girl Method approved, keeping curls healthy, strong and vibrant without harsh chemicals."
+            },
+            {
+              "q": "Is the Define line only for tight curls?",
+              "a": "No. It is designed for all curl patterns and textures, from soft waves to tight coils."
+            },
+            {
+              "q": "Will it help with frizz in humid weather?",
+              "a": "Yes. Its blend of oils and butters forms a light protective layer that locks in moisture and minimises frizz, even in humidity."
+            },
+            {
+              "q": "Can I use it with other styling products?",
+              "a": "Definitely. It layers well with other leave-ins, creams, gels or oils without leaving build-up."
+            },
+            {
+              "q": "Can men use the Define line?",
+              "a": "Yes. It is designed for anyone with curly or textured hair who wants hydrated, frizz-free definition."
+            }
+          ]
+        },
+        {
+          "title": "Hair perfume & Hydrate & Shape",
+          "items": [
+            {
+              "q": "Does the hair perfume contain alcohol? Is it bad for my hair?",
+              "a": "The hair perfumes contain a small amount of alcohol, which helps them dry quickly and lifts the fragrance. It is used within strict European cosmetic standards, evaporates quickly and should not dry out your hair."
+            },
+            {
+              "q": "Why are the Hydrate & Shape products vegan and silicone-free?",
+              "a": "They contain no animal-derived ingredients, and are silicone-free to prevent build-up and keep hair natural and healthy."
+            },
+            {
+              "q": "Can I use Hydrate & Shape with a sensitive scalp or skin?",
+              "a": "Yes, the formula is designed to be gentle and nourishing. If you have specific sensitivities, a patch test first is always a good idea."
+            }
+          ]
+        }
+      ]
     }
   },
   "shopMeta": {

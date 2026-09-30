@@ -157,8 +157,6 @@ export async function getProductDetail() {
     sizes: t.raw("sizes") as string[],
     description: t("placeholderDescription"),
     specs: [
-      [t("specs.shipping.label"), t("specs.shipping.value")],
-      [t("specs.returns.label"), t("specs.returns.value")],
       [t("specs.origin.label"), t("specs.origin.value")],
     ] as [string, string][],
   };

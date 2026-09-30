@@ -57,8 +57,6 @@
     "sizes": ["Piccola", "Media", "Grande"],
     "placeholderDescription": "Testo descrittivo segnaposto — da sostituire con il testo reale del prodotto una volta collegata la fonte dati.",
     "specs": {
-      "shipping": { "label": "Spedizione", "value": "Gratuita oltre € 75" },
-      "returns": { "label": "Resi", "value": "30 giorni" },
       "origin": { "label": "Origine", "value": "Prodotto in Europa" }
     }
   },
@@ -153,7 +151,7 @@
     "newsletterSuccess": "Grazie — sei nella lista.",
     "links": {
       "contact": "Contatto",
-      "shippingReturns": "Spedizioni & Resi",
+      "faq": "Domande frequenti",
       "privacy": "Informativa sulla privacy",
       "terms": "Termini di servizio",
       "cookies": "Cookie",
@@ -283,6 +281,190 @@
           "Cipriata e calda"
         ]
       }
+    }
+  },
+  "faq": {
+    "title": "Domande frequenti",
+    "intro": "Risposte sui prodotti {brand}, sugli ingredienti e su come usarli.",
+    "orderNote": "Domande su ordini o pagamento? Consulta i nostri",
+    "orderLink": "Termini di servizio",
+    "stillTitle": "Hai ancora una domanda?",
+    "stillCta": "Contattaci",
+    "brands": {
+      "balmain": [
+        {
+          "title": "Prodotti",
+          "items": [
+            {
+              "q": "Cos'è il pelo di cinghiale?",
+              "a": "Il pelo di cinghiale viene usato per le setole delle spazzole che puliscono e districano i capelli. La sua struttura unica trasporta gli oli naturali dal cuoio capelluto fino alle punte. Rivestendo ogni ciocca con una minima quantità di sebo, la spazzola ripara i capelli secchi e dona una lucentezza brillante senza prodotti di styling: il sebo agisce come un siero anti-crespo naturale."
+            },
+            {
+              "q": "Tutti i prodotti Care & Styling contengono una protezione dal calore?",
+              "a": "Sì. Tutti i prodotti di styling Balmain Hair contengono una protezione dal calore, che mantiene i capelli sani durante l'uso degli strumenti di styling."
+            },
+            {
+              "q": "Cos'è la Balmain Signature Fragrance?",
+              "a": "Una fragranza delicata presente in quasi tutti i prodotti Care & Styling, tranne la linea Balmain Homme. Note di testa: anice stellato, dragoncello, legno di pino, fiore di pesco, lampone, gardenia. Note di cuore: fiore d'arancio, chiodi di garofano, gelsomino, rosa, ylang-ylang, albicocca, lillà. Note di fondo: ambra, vaniglia, sandalo, legno di cedro, muschio bianco, balsamico. I prodotti Balmain Homme hanno una propria fragranza orientale e legnosa: bergamotto, pompelmo e mandarino su olibano, pepe nero e lavanda, con un fondo di patchouli, vetiver, ambra e sandalo."
+            },
+            {
+              "q": "I prodotti Care & Styling sono vegetariani o vegani?",
+              "a": "Tutti i prodotti Care & Styling sono vegetariani, non vegani: tra gli ingredienti chiave ci sono la Proteina della Seta e il Cashmere. Nessun animale subisce danni: la falena della seta esce dal bozzolo prima della lavorazione, e la lana cashmere viene raccolta in primavera, quando le capre perdono naturalmente il manto invernale."
+            }
+          ]
+        },
+        {
+          "title": "Ingredienti",
+          "items": [
+            {
+              "q": "Cosa significa senza solfati?",
+              "a": "I solfati creano la schiuma tipica degli shampoo; in grandi quantità possono irritare la pelle sensibile, causando rossore, secchezza o prurito. La maggior parte dei prodotti Balmain Hair è senza solfati, e quelli usati in alcuni prodotti non sono dannosi per le persone né per l'ambiente. Le formule senza solfati preservano gli oli naturali di capelli e cuoio capelluto, lasciando i capelli idratati."
+            },
+            {
+              "q": "Cos'è la Proteina della Seta e cosa fa per i capelli?",
+              "a": "La Proteina della Seta (aminoacidi della seta, o sericina) è una proteina naturale idrosolubile estratta dalla seta grezza, ricca di serina per un'eccellente ritenzione dell'idratazione. Trattiene l'umidità, crea una barriera protettiva e dona la massima scorrevolezza e setosità tra tutte le proteine: ricostruisce le zone danneggiate e rinforza i capelli per un risultato morbido, elastico e luminoso."
+            },
+            {
+              "q": "Cos'è l'Argan Elixir e cosa fa per i capelli?",
+              "a": "L'Argan Elixir è l'olio dei noccioli dell'albero di argan (Argania spinosa), eccezionalmente ricco di vitamina E, minerali e acidi grassi. Penetra in profondità nel fusto per idratare in modo naturale e migliorare l'elasticità, dona una lucentezza brillante e ripara e protegge i capelli danneggiati, secchi e deboli, prolungando la durata del colore senza appesantire."
+            }
+          ]
+        }
+      ],
+      "eloure": [
+        {
+          "title": "Il mondo di Éloure",
+          "items": [
+            {
+              "q": "Cos'è Éloure?",
+              "a": "Haircare professionale di lusso che unisce prestazioni da skincare, arte dell'alta profumeria e autorità da salone in un unico rituale di cura. Ogni formula nasce dalla scienza, con alte concentrazioni di principi attivi scelti per risultati visibili e duraturi, ed è completata da una fragranza esclusiva della pluripremiata profumiera Cécile Zarokian."
+            },
+            {
+              "q": "Cosa rende unica Éloure?",
+              "a": "Tre qualità. Prestazioni da skincare: attivi in concentrazioni precise ed elevate, bilanciati a pH professionale. Arte dell'alta profumeria: una fragranza esclusiva di Cécile Zarokian in ogni formula. Autorità da salone: decenni di esperienza professionale dietro ogni prodotto."
+            },
+            {
+              "q": "Éloure è un marchio professionale da salone?",
+              "a": "Sì. Éloure è sviluppata per i saloni e per i professionisti che vi lavorano, poi estesa alla casa, così che i risultati da salone continuino tra un appuntamento e l'altro."
+            },
+            {
+              "q": "Come interpreta Éloure il lusso responsabile?",
+              "a": "Le formule Éloure sono vegane, senza solfati ed EDTA, bilanciate a pH professionale, e il packaging è prodotto con il 35% di materiale riciclato post-consumo."
+            }
+          ]
+        },
+        {
+          "title": "Skincare per i capelli",
+          "items": [
+            {
+              "q": "Perché Éloure tratta il cuoio capelluto come la pelle?",
+              "a": "Perché il cuoio capelluto è pelle. Ogni formula è sviluppata con il rigore dello skincare ad alte prestazioni, scegliendo ogni ingrediente per funzione, efficacia e compatibilità con il cuoio capelluto. Capelli più sani e luminosi nascono da un cuoio capelluto equilibrato e curato."
+            },
+            {
+              "q": "Éloure è adatta a un cuoio capelluto sensibile?",
+              "a": "La linea Moisturizing è formulata pensando al comfort del cuoio capelluto: l'estratto di Papavero Rosso (4%) calma il cuoio capelluto sensibile, pruriginoso o dopo la colorazione, mentre il Pentavitin ripristina la barriera cutanea e idrata fino a 72 ore. Per la pelle reattiva si consiglia un patch test."
+            },
+            {
+              "q": "Quali collezioni sono più dedicate al cuoio capelluto?",
+              "a": "La linea Moisturizing guida il comfort del cuoio capelluto con estratto di Papavero Rosso e Pentavitin. La linea Volumizing lo rinforza dall'interno con Niacinamide e Peptidi di Pisello, per capelli dall'aspetto più pieno."
+            }
+          ]
+        },
+        {
+          "title": "Come usare i prodotti",
+          "items": [
+            {
+              "q": "Come si costruisce una routine Éloure completa?",
+              "a": "Detergere, trattare, rifinire. Inizia con lo shampoo adatto alla tua esigenza, prosegui con il balsamo abbinato e aggiungi la maschera una o due volte a settimana. Completa con un prodotto di styling o trattamento e rinfresca con l'Hair Perfume tra un lavaggio e l'altro."
+            },
+            {
+              "q": "Si possono combinare prodotti di collezioni diverse?",
+              "a": "Sì. Le linee Éloure sono formulate per essere stratificate, così puoi trattare più esigenze insieme. Per il massimo effetto su un'unica esigenza, shampoo, balsamo e maschera della stessa linea funzionano meglio insieme."
+            },
+            {
+              "q": "Ogni quanto usare la maschera?",
+              "a": "Una o due volte a settimana, dopo la detersione, al posto del balsamo o insieme ad esso."
+            },
+            {
+              "q": "Quando si vedono i risultati?",
+              "a": "Molti attivi agiscono al contatto: la linea Volumizing rende le ciocche fino al 14% più spesse all'istante, e l'idratazione del Pentavitin dura fino a 72 ore dopo il risciacquo. I risultati migliorano con l'uso costante."
+            },
+            {
+              "q": "Come si usa l'Intense Bond-Repair Treatment?",
+              "a": "Applicalo una volta a settimana per cinque settimane consecutive. Ricostruisce la forza del capello legame dopo legame, dall'interno della sua struttura."
+            },
+            {
+              "q": "I prodotti Éloure proteggono dallo styling a caldo?",
+              "a": "Sì. L'Heat Protection Mist protegge i capelli fino a 220 °C prima dello styling, preparandoli e condizionandoli per risultati più lisci e duraturi."
+            }
+          ]
+        }
+      ],
+      "eau-de-1974": [
+        {
+          "title": "Su EAUde1974",
+          "items": [
+            {
+              "q": "Cos'è EAUde1974?",
+              "a": "Più di un marchio, uno stile di vita: trasformare le routine quotidiane in esperienze sensoriali gioiose. Dall'haircare al body care fino ai prodotti lifestyle che celebrano i sensi, EAUde1974 aggiunge un tocco di magia a ogni giorno."
+            },
+            {
+              "q": "Cosa rende diversa EAUde1974?",
+              "a": "Ogni prodotto è pensato come un'esperienza, dalle fragranze che migliorano l'umore al design che cattura lo sguardo, creato per coinvolgere tutti i sensi e rendere ogni momento un po' più piacevole."
+            },
+            {
+              "q": "Da dove nasce l'ispirazione?",
+              "a": "Dall'acqua, fonte di ogni vita. “Eau”, acqua in francese, racchiude la vitalità e la purezza al cuore del marchio, e “de” unisce oli profumati e acqua in un'armonia per i sensi. Dal 1974, l'esperienza nella cosmetica per capelli ha dato forma a una visione del benessere lussuosa, avvolgente e olistica."
+            },
+            {
+              "q": "EAUde1974 è impegnata nella sostenibilità?",
+              "a": "Sì. Il marchio privilegia pratiche sostenibili, dagli ingredienti di provenienza etica al packaging ecologico, perché il vero lusso è prendersi cura di sé e del pianeta."
+            }
+          ]
+        },
+        {
+          "title": "La linea Define",
+          "items": [
+            {
+              "q": "La linea Define contiene solfati o parabeni?",
+              "a": "No. La linea Define è senza solfati e parabeni e pienamente approvata dal Curly Girl Method: mantiene i ricci sani, forti e vibranti senza sostanze aggressive."
+            },
+            {
+              "q": "La linea Define è solo per ricci stretti?",
+              "a": "No. È pensata per tutti i tipi di riccio e texture, dalle onde morbide ai ricci più stretti."
+            },
+            {
+              "q": "Aiuta contro il crespo con l'umidità?",
+              "a": "Sì. La miscela di oli e burri crea un leggero strato protettivo che trattiene l'idratazione e riduce il crespo, anche con l'umidità."
+            },
+            {
+              "q": "Posso usarla con altri prodotti di styling?",
+              "a": "Certamente. Si abbina bene ad altri leave-in, creme, gel od oli senza lasciare residui."
+            },
+            {
+              "q": "Anche gli uomini possono usare la linea Define?",
+              "a": "Sì. È pensata per chiunque abbia capelli ricci o mossi e desideri una definizione idratata e senza crespo."
+            }
+          ]
+        },
+        {
+          "title": "Hair perfume e Hydrate & Shape",
+          "items": [
+            {
+              "q": "L'hair perfume contiene alcol? Fa male ai capelli?",
+              "a": "Gli hair perfume contengono una piccola quantità di alcol, che li fa asciugare rapidamente ed esalta la fragranza. È usato nel rispetto di rigorosi standard cosmetici europei, evapora in fretta e non dovrebbe seccare i capelli."
+            },
+            {
+              "q": "Perché i prodotti Hydrate & Shape sono vegani e senza siliconi?",
+              "a": "Non contengono ingredienti di origine animale e sono senza siliconi per evitare residui e mantenere i capelli naturali e sani."
+            },
+            {
+              "q": "Posso usare Hydrate & Shape con cuoio capelluto o pelle sensibili?",
+              "a": "Sì, la formula è pensata per essere delicata e nutriente. In caso di sensibilità specifiche, è sempre consigliabile fare prima un patch test."
+            }
+          ]
+        }
+      ]
     }
   },
   "shopMeta": {
