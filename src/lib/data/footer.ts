@@ -67,7 +67,7 @@ const footerMeta: Record<BrandSlug, FooterContent> = {
   eloure: {
     slug: "eloure",
     contactEmail: CONTACT_EMAIL,
-    shopLinks: shopLinksFor("eloure", ["Care Collection", "Styling Collection", "Treatments & Sets"]),
+    shopLinks: shopLinksFor("eloure", ["Hair Perfume", "Care Collection", "Styling Collection", "Treatments & Sets"]),
     shopAllHref: "/eloure/shop",
     serviceLinks: serviceLinksFor("eloure"),
   },

@@ -6,7 +6,7 @@ import { trackCategoryClick } from "@/lib/analytics/events";
 
 interface ShopFiltersProps {
   brandSlug: string;
-  counts: Record<string, number>;
+  categories: { name: string; label: string; count: number }[];
   category?: string;
   sort?: string;
   saleColor: string;
@@ -22,7 +22,7 @@ interface ShopFiltersProps {
 
 // Two selects in one row instead of the full stacked link lists — the
 // desktop sidebar lists stay as-is (md:hidden here), this is mobile-only.
-export function ShopFilters({ brandSlug, counts, category, sort, saleColor, labels }: ShopFiltersProps) {
+export function ShopFilters({ brandSlug, categories, category, sort, saleColor, labels }: ShopFiltersProps) {
   const router = useRouter();
 
   function navigate(nextCategory: string, nextSort: string) {
@@ -47,9 +47,9 @@ export function ShopFilters({ brandSlug, counts, category, sort, saleColor, labe
         className="min-h-10 rounded border border-neutral-300 bg-white px-2.5 text-[13px] text-neutral-700 outline-none focus:border-neutral-900"
       >
         <option value="">{labels.allCategories}</option>
-        {Object.entries(counts).map(([name, count]) => (
+        {categories.map(({ name, label, count }) => (
           <option key={name} value={name} style={name === "Sale" ? { color: saleColor, fontWeight: 600 } : undefined}>
-            {name} ({count})
+            {label} ({count})
           </option>
         ))}
       </select>

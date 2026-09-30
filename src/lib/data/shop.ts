@@ -60,23 +60,21 @@ export interface ShopContent extends Omit<ShopMeta, "hero"> {
 const shopMeta: Record<BrandSlug, ShopMeta> = {
   balmain: {
     slug: "balmain",
-    // Mirrors balmainhair.com's real nav (fetched 2026-09-01): Bestsellers/New/
-    // Outlet are curated cross-category views (no dedicated product category
-    // of their own, same as the live site) — Hair Care/Hair Accessories/
-    // Styling Tools/Gifts are the actual filterable categories (from the real
-    // balmainhair.al WooCommerce export), driven entirely by whatever
-    // category values exist on Product rows in the DB.
-    menu: ["Bestsellers", "New", "Hair Care", "Hair Accessories", "Styling Tools", "Gifts", "Sale", "Outlet"],
+    // Mirrors balmainhair.com's nav (re-checked 2026-09-30). Every item is a
+    // real product category, assigned from the official collections by the
+    // 20260930220000_align_official_categories migration; Sale is ours
+    // (admin-managed discounts).
+    menu: ["Bestsellers", "New", "Hair Care", "Hair Accessories", "Styling Tools", "Gifts", "Archives", "Outlet", "Sale"],
     heroVariant: "full",
     hero: { image: "/assets/hero/balmain.jpg" },
   },
   eloure: {
     slug: "eloure",
-    // Mirrors maisoneloure.com's real nav (fetched 2026-09-01): New/
-    // Bestsellers/Shop by Hairtype are curated cross-category views on the
-    // live site (no dedicated product bucket) — Care Collection/Styling
-    // Collection/Treatments & Sets are the actual filterable categories.
-    menu: ["New", "Bestsellers", "Care Collection", "Styling Collection", "Shop by Hairtype", "Treatments & Sets", "Sale"],
+    // Mirrors maisoneloure.com's nav (re-checked 2026-09-30); categories come
+    // from the official collections (align_official_categories migration).
+    // Shop by Hairtype is a dropdown there — its hair types (Dry Hair, Fine
+    // Hair, ...) are real categories, listed in the shop page's filter.
+    menu: ["New", "Hair Perfume", "Bestsellers", "Care Collection", "Styling Collection", "Treatments & Sets", "Shop by Hairtype", "Sale"],
     heroVariant: "split",
     hero: { image: "/assets/hero/eloure.jpg" },
   },

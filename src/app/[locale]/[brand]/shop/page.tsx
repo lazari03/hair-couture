@@ -29,6 +29,17 @@ export default async function ShopListing({
     }
     return acc;
   }, {});
+  // Menu order first (mirrors the brand's own nav), then any other category
+  // (e.g. Éloure's hair types) in first-seen order. Labels are translated;
+  // the raw value stays the filter key.
+  const label = (name: string) => (t.has(`categories.${name}`) ? t(`categories.${name}`) : name);
+  const rank = (name: string) => {
+    const i = shop.menu.indexOf(name);
+    return i === -1 ? shop.menu.length : i;
+  };
+  const categories = Object.entries(counts)
+    .map(([name, count]) => ({ name, label: label(name), count }))
+    .sort((a, b) => rank(a.name) - rank(b.name));
 
   let products = category
     ? shop.products.filter((p) => p.categories.includes(category))
@@ -37,7 +48,7 @@ export default async function ShopListing({
   if (sort === "price-asc") products = [...products].sort((a, b) => a.price - b.price);
   if (sort === "price-desc") products = [...products].sort((a, b) => b.price - a.price);
 
-  const listTitle = category ?? shop.menu[0];
+  const listTitle = category ? label(category) : t("footer.links.shopAll");
 
   return (
     <main className="px-6 pb-24 sm:px-11">
@@ -54,7 +65,7 @@ export default async function ShopListing({
 
       <ShopFilters
         brandSlug={shop.slug}
-        counts={counts}
+        categories={categories}
         category={category}
         sort={sort}
         saleColor={brand.colors.sale}
@@ -75,7 +86,7 @@ export default async function ShopListing({
               {t("shop.category")}
             </h3>
             <div className="flex flex-col gap-2.5">
-              {Object.entries(counts).map(([name, count]) => (
+              {categories.map(({ name, label: categoryLabel, count }) => (
                 <CategoryLinkTracker
                   key={name}
                   href={`/${shop.slug}/shop?category=${encodeURIComponent(name)}`}
@@ -90,7 +101,7 @@ export default async function ShopListing({
                         : "text-neutral-700"
                   }`}
                 >
-                  {name}
+                  {categoryLabel}
                   <span className="ml-auto text-xs text-neutral-400">{count}</span>
                 </CategoryLinkTracker>
               ))}

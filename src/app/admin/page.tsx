@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { brands } from "@/lib/brands";
+import { parseProductCategories } from "@/lib/product-categories";
 
 export default async function AdminDashboard() {
   const [productCounts, categoryCounts, orderStats] = await Promise.all([
@@ -13,8 +14,15 @@ export default async function AdminDashboard() {
   const ordersByBrand = Object.fromEntries(orderStats.map((o) => [o.brand, o._count._all]));
   const revenueByBrand = Object.fromEntries(orderStats.map((o) => [o.brand, o._sum.total ?? 0]));
   const categoriesByBrand: Record<string, { category: string; count: number }[]> = {};
+  // category holds one name or a JSON array of names — count each name once
+  // per product, so multi-category products show up under every category.
   for (const c of categoryCounts) {
-    (categoriesByBrand[c.brand] ??= []).push({ category: c.category, count: c._count._all });
+    const list = (categoriesByBrand[c.brand] ??= []);
+    for (const category of parseProductCategories(c.category)) {
+      const entry = list.find((e) => e.category === category);
+      if (entry) entry.count += c._count._all;
+      else list.push({ category, count: c._count._all });
+    }
   }
   for (const list of Object.values(categoriesByBrand)) {
     list.sort((a, b) => b.count - a.count);

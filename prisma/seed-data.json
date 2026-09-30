@@ -11,7 +11,7 @@
   {
     "brand": "balmain",
     "name": "Moisturizing Conditioner",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Bestsellers\"]",
     "price": 48,
     "badge": null,
     "description": "Kondicioner ushqyes për flokë natyralë ose të lyer. Qetëson, mbron, shkriftëzon dhe rigjallëron flokët.",
@@ -83,7 +83,7 @@
   {
     "brand": "balmain",
     "name": "Couleurs Couture Mask",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"New\"]",
     "price": 72,
     "badge": null,
     "description": "Trajtim luxury spa për flokët e lyer, të dëmtuar dhe të mbi-përpunuar.",
@@ -110,7 +110,7 @@
   {
     "brand": "balmain",
     "name": "Overnight Repair Serum",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Bestsellers\"]",
     "price": 115,
     "badge": null,
     "description": "Serumi Riparues i natës i Balmain Hair Couture përmirëson cilësinë e flokut dhe i zbut ato.",
@@ -119,7 +119,7 @@
   {
     "brand": "balmain",
     "name": "5 Weeks Enriching Hair Treatment",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Bestsellers\"]",
     "price": 115,
     "badge": null,
     "description": "Ky locion i butë, i lehtë dhe i gjithanshëm ndihmon në rigjallërimin dhe ristrukturimin e flokëve.",
@@ -137,7 +137,7 @@
   {
     "brand": "balmain",
     "name": "Homme Hair Parfume",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Bestsellers\"]",
     "price": 150,
     "badge": null,
     "description": "Një parfum flokësh me aroma të pasura, intensive, orientale, drunore.",
@@ -155,7 +155,7 @@
   {
     "brand": "balmain",
     "name": "Balmain Homme Gift Set",
-    "category": "Gifts",
+    "category": "[\"Gifts\",\"Hair Care\"]",
     "price": 234,
     "badge": null,
     "description": "Një koleksion i produkteve të kujdesit të krijuar ekskluzivisht për meshkuj.",
@@ -164,7 +164,7 @@
   {
     "brand": "balmain",
     "name": "Argan Moisturizing Elixir",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Bestsellers\"]",
     "price": 54,
     "badge": null,
     "description": "Vaji i perqendruar organik i arganit i mbushur me një përzierje unike vajrash dhe mineralesh.",
@@ -209,7 +209,7 @@
   {
     "brand": "balmain",
     "name": "Texturizing Volume Spray",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Bestsellers\"]",
     "price": 50,
     "badge": null,
     "description": "Një spray i gjithanshëm që i jep flokëve volum në rrënjë.",
@@ -335,7 +335,7 @@
   {
     "brand": "balmain",
     "name": "14k Gold Plated Cutting Comb",
-    "category": "Styling Tools",
+    "category": "[\"Styling Tools\",\"Bestsellers\"]",
     "price": 81,
     "badge": null,
     "description": "14k Gold Plated Cutting Comb",
@@ -371,7 +371,7 @@
   {
     "brand": "balmain",
     "name": "All Purpose SPA Brush",
-    "category": "Styling Tools",
+    "category": "[\"Styling Tools\",\"Bestsellers\"]",
     "price": 89,
     "badge": null,
     "description": "All Purpose SPA Brush",
@@ -632,7 +632,7 @@
   {
     "brand": "balmain",
     "name": "Barrette Pour Cheveux Medium Tortoiseshell",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"Bestsellers\"]",
     "price": 75,
     "badge": null,
     "description": "Barrette Pour Cheveux Medium Tortoiseshell",
@@ -713,7 +713,7 @@
   {
     "brand": "balmain",
     "name": "Bodyfying Homme Set",
-    "category": "Gifts",
+    "category": "[\"Gifts\",\"Hair Care\"]",
     "price": 234,
     "badge": null,
     "description": "Bodyfying Homme Set",
@@ -749,7 +749,7 @@
   {
     "brand": "balmain",
     "name": "Pince à Cheveux Extra Small Black/White",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 90,
     "badge": "New",
     "description": "Pince à Cheveux Extra Small Black/White",
@@ -758,7 +758,7 @@
   {
     "brand": "balmain",
     "name": "Pince à Cheveux Medium Black/White",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 130,
     "badge": "New",
     "description": "Pince à Cheveux Medium Black/White",
@@ -767,7 +767,7 @@
   {
     "brand": "balmain",
     "name": "Pince à Cheveux Large Black/White",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 140,
     "badge": "New",
     "description": "Pince à Cheveux Large Black/White",
@@ -812,7 +812,7 @@
   {
     "brand": "balmain",
     "name": "Hair Parfume Vetiver 15ml",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Gifts\"]",
     "price": 32,
     "badge": "New",
     "description": "Parfumi i flokëve Vetiver 1974 është një mjegull aromatike energjike.",
@@ -821,7 +821,7 @@
   {
     "brand": "balmain",
     "name": "Revitalizing Care Set",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Gifts\"]",
     "price": 150,
     "badge": "New",
     "description": "Revitalizing Care Set",
@@ -830,7 +830,7 @@
   {
     "brand": "balmain",
     "name": "Muse de Printemps Styling Set",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Gifts\"]",
     "price": 100,
     "badge": "New",
     "description": "Muse de Printemps Styling Set",
@@ -848,7 +848,7 @@
   {
     "brand": "balmain",
     "name": "Toiletry Bag Black Gold",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Gifts\"]",
     "price": 220,
     "badge": "New",
     "description": "Toiletry Bag Black Gold",
@@ -857,7 +857,7 @@
   {
     "brand": "balmain",
     "name": "Sculpting Wax 100 ml",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"New\"]",
     "price": 50,
     "badge": "New",
     "description": "Sculpting Wax 100 ml",
@@ -866,7 +866,7 @@
   {
     "brand": "balmain",
     "name": "Rafia Cosmetic Bag",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Gifts\"]",
     "price": 110,
     "badge": "New",
     "description": "Rafia Cosmetic Bag",
@@ -884,7 +884,7 @@
   {
     "brand": "balmain",
     "name": "Volume Set Versailles FW24",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Gifts\"]",
     "price": 120,
     "badge": "New",
     "description": "Volume Set Versailles FW24",
@@ -947,7 +947,7 @@
   {
     "brand": "balmain",
     "name": "Pince a Cheveux Medium White Black",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 130,
     "badge": "New",
     "description": "Pince a Cheveux Medium White Black",
@@ -956,7 +956,7 @@
   {
     "brand": "balmain",
     "name": "Pince a Cheveux Large White Black",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 140,
     "badge": "New",
     "description": "Pince a Cheveux Large White Black",
@@ -965,7 +965,7 @@
   {
     "brand": "balmain",
     "name": "Pince a Cheveux Imperiale White/Black",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 180,
     "badge": "New",
     "description": "Pince a Cheveux Imperiale White/Black",
@@ -974,7 +974,7 @@
   {
     "brand": "balmain",
     "name": "Pince a Cheveux Imperiale Black/White",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 180,
     "badge": "New",
     "description": "Pince a Cheveux Imperiale Black/White",
@@ -983,7 +983,7 @@
   {
     "brand": "balmain",
     "name": "Pince a Cheveux Imperiale Tortoise",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 180,
     "badge": "New",
     "description": "Pince a Cheveux Imperiale Tortoise",
@@ -1001,7 +1001,7 @@
   {
     "brand": "balmain",
     "name": "Acetate Headband Black/White",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 200,
     "badge": "Limited",
     "description": "Acetate Headband Black/White",
@@ -1010,7 +1010,7 @@
   {
     "brand": "balmain",
     "name": "Acetate Headband White/Black",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 200,
     "badge": "Limited",
     "description": "Acetate Headband White/Black",
@@ -1019,7 +1019,7 @@
   {
     "brand": "balmain",
     "name": "Acetate Headband Tortoise",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 200,
     "badge": "Limited",
     "description": "Acetate Headband Tortoise",
@@ -1055,7 +1055,7 @@
   {
     "brand": "balmain",
     "name": "Moisturizing Care Set",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Gifts\"]",
     "price": 150,
     "badge": "New",
     "description": "Moisturizing Care Set",
@@ -1064,7 +1064,7 @@
   {
     "brand": "balmain",
     "name": "Cosmetic Bag Cosmic Sapphire",
-    "category": "Gifts",
+    "category": "[\"Gifts\",\"Hair Care\"]",
     "price": 170,
     "badge": "Limited",
     "description": "Cosmetic Bag Cosmic Sapphire",
@@ -1073,7 +1073,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Pinces à Cheveux Extra Small Midnight Black",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 72,
     "badge": "Limited",
     "description": "Limited Edition Pinces à Cheveux Extra Small Midnight Black",
@@ -1082,7 +1082,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Pinces à Cheveux Medium Midnight Black",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 111,
     "badge": "Limited",
     "description": "Limited Edition Pinces à Cheveux Medium Midnight Black",
@@ -1091,7 +1091,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition legacy Spa Brush",
-    "category": "Styling Tools",
+    "category": "[\"Styling Tools\",\"New\"]",
     "price": 95,
     "badge": "Limited",
     "description": "Limited Edition legacy Spa Brush",
@@ -1100,7 +1100,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Midnight Black Barrette",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 440,
     "badge": "Limited",
     "description": "Limited Edition Midnight Black Barrette",
@@ -1109,7 +1109,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Midnight Black Clip",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 290,
     "badge": "Limited",
     "description": "Limited Edition Midnight Black Clip",
@@ -1118,7 +1118,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Midnight Black Headband",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 650,
     "badge": "Limited",
     "description": "Limited Edition Midnight Black Headband",
@@ -1127,7 +1127,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Midnight Black Slides Pins",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"New\"]",
     "price": 260,
     "badge": "Limited",
     "description": "Limited Edition Midnight Black Slides Pins",
@@ -1136,7 +1136,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Acetate Headband Large FW24",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"Archives\",\"Outlet\"]",
     "price": 250,
     "badge": "Limited",
     "description": "Limited Edition Acetate Headband Large FW24",
@@ -1145,7 +1145,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition White Leather Puffed Headband",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"Archives\",\"Outlet\"]",
     "price": 550,
     "badge": "Limited",
     "description": "Limited Edition White Leather Puffed Headband",
@@ -1154,7 +1154,7 @@
   {
     "brand": "balmain",
     "name": "Gold Plated Hair Slide Logo",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"Outlet\"]",
     "price": 223,
     "badge": null,
     "description": "Gold Plated Hair Slide Logo",
@@ -1163,7 +1163,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Pont des Arts Hair Clip Large FW22",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"Outlet\"]",
     "price": 280,
     "badge": "Limited",
     "description": "Limited Edition Pont des Arts Hair Clip Large FW22",
@@ -1172,7 +1172,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Headband FW22",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"Outlet\"]",
     "price": 250,
     "badge": "Limited",
     "description": "Limited Edition Headband FW22",
@@ -1181,7 +1181,7 @@
   {
     "brand": "balmain",
     "name": "Riviera Headband Cognac Large",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"Outlet\"]",
     "price": 199,
     "badge": null,
     "description": "Riviera Headband Cognac Large",
@@ -1190,7 +1190,7 @@
   {
     "brand": "balmain",
     "name": "Leather Headband Large Silver",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"Archives\",\"Outlet\"]",
     "price": 252,
     "badge": null,
     "description": "Leather Headband Large Silver",
@@ -1199,7 +1199,7 @@
   {
     "brand": "balmain",
     "name": "Barrette Pour Cheveux Medium Silver/Gold",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"Outlet\",\"New\"]",
     "price": 113.75,
     "badge": null,
     "description": "Barrette Pour Cheveux Medium Silver/Gold",
@@ -1217,7 +1217,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Pearl Hair Clip Large FW24",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"Archives\",\"Outlet\"]",
     "price": 275,
     "badge": "Limited",
     "description": "Limited Edition Pearl Hair Clip Large FW24",
@@ -1226,7 +1226,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Printemps Leaf Slide",
-    "category": "Hair Accessories",
+    "category": "[\"Hair Accessories\",\"Outlet\",\"New\"]",
     "price": 95.24,
     "badge": "Limited",
     "description": "Limited Edition Printemps Leaf Slide",
@@ -1235,7 +1235,7 @@
   {
     "brand": "eloure",
     "name": "Colour Protecting Shampoo - 250 ml",
-    "category": "Care Collection",
+    "category": "[\"Care Collection\",\"Silver & Blonde\",\"Color-Treated/Damaged Hair\"]",
     "price": 51,
     "badge": null,
     "description": "Colour Protecting Shampoo - 250 ml",
@@ -1244,7 +1244,7 @@
   {
     "brand": "eloure",
     "name": "Moisturizing Shampoo - 250 ml",
-    "category": "Care Collection",
+    "category": "[\"Care Collection\",\"Dry Hair\",\"Curly Hair\"]",
     "price": 48,
     "badge": null,
     "description": "Moisturizing Shampoo - 250 ml",
@@ -1253,7 +1253,7 @@
   {
     "brand": "eloure",
     "name": "Volumizing Shampoo - 250 ml",
-    "category": "Care Collection",
+    "category": "[\"Care Collection\",\"Fine Hair\",\"Bestsellers\",\"New\"]",
     "price": 48,
     "badge": null,
     "description": "Volumizing Shampoo - 250 ml",
@@ -1262,7 +1262,7 @@
   {
     "brand": "eloure",
     "name": "Silver Shampoo - 250 ml",
-    "category": "Care Collection",
+    "category": "[\"Care Collection\",\"Silver & Blonde\",\"New\"]",
     "price": 48,
     "badge": null,
     "description": "Silver Shampoo - 250 ml",
@@ -1271,7 +1271,7 @@
   {
     "brand": "eloure",
     "name": "Colour Protecting Conditioner - 250 ml",
-    "category": "Care Collection",
+    "category": "[\"Care Collection\",\"Silver & Blonde\",\"Color-Treated/Damaged Hair\"]",
     "price": 54,
     "badge": null,
     "description": "Colour Protecting Conditioner - 250 ml",
@@ -1280,7 +1280,7 @@
   {
     "brand": "eloure",
     "name": "Moisturizing Conditioner - 250 ml",
-    "category": "Care Collection",
+    "category": "[\"Care Collection\",\"Dry Hair\",\"Curly Hair\"]",
     "price": 50,
     "badge": null,
     "description": "Moisturizing Conditioner - 250 ml",
@@ -1289,7 +1289,7 @@
   {
     "brand": "eloure",
     "name": "Volumizing Conditioner - 250 ml",
-    "category": "Care Collection",
+    "category": "[\"Care Collection\",\"Fine Hair\",\"Bestsellers\",\"New\"]",
     "price": 50,
     "badge": null,
     "description": "Volumizing Conditioner - 250 ml",
@@ -1298,7 +1298,7 @@
   {
     "brand": "eloure",
     "name": "Colour Protecting Mask - 190 ml",
-    "category": "Care Collection",
+    "category": "[\"Care Collection\",\"Silver & Blonde\",\"Color-Treated/Damaged Hair\"]",
     "price": 65,
     "badge": null,
     "description": "Colour Protecting Mask - 190 ml",
@@ -1307,7 +1307,7 @@
   {
     "brand": "eloure",
     "name": "Moisturizing Mask - 190 ml",
-    "category": "Care Collection",
+    "category": "[\"Care Collection\",\"Dry Hair\",\"Curly Hair\"]",
     "price": 61,
     "badge": null,
     "description": "Moisturizing Mask - 190 ml",
@@ -1316,7 +1316,7 @@
   {
     "brand": "eloure",
     "name": "Silver Mask - 190 ml",
-    "category": "Care Collection",
+    "category": "[\"Care Collection\",\"Silver & Blonde\",\"Bestsellers\"]",
     "price": 69,
     "badge": null,
     "description": "Silver Mask - 190 ml",
@@ -1325,7 +1325,7 @@
   {
     "brand": "eloure",
     "name": "Intense Repair Serum - 30 ml",
-    "category": "Treatments & Sets",
+    "category": "[\"Care Collection\",\"Color-Treated/Damaged Hair\",\"Bestsellers\"]",
     "price": 108,
     "badge": null,
     "description": "Intense Repair Serum - 30 ml",
@@ -1334,7 +1334,7 @@
   {
     "brand": "eloure",
     "name": "Intense Bond-Repair Treatment - 3x20 ml",
-    "category": "Treatments & Sets",
+    "category": "[\"Treatments & Sets\",\"Care Collection\",\"Color-Treated/Damaged Hair\"]",
     "price": 69,
     "badge": null,
     "description": "Intense Bond-Repair Treatment - 3x20 ml",
@@ -1343,7 +1343,7 @@
   {
     "brand": "eloure",
     "name": "Texturizing Volume Spray - 200 ml",
-    "category": "Styling Collection",
+    "category": "[\"Styling Collection\",\"Bestsellers\"]",
     "price": 49,
     "badge": null,
     "description": "Texturizing Volume Spray - 200 ml",
@@ -1352,7 +1352,7 @@
   {
     "brand": "eloure",
     "name": "Dry Shampoo - 300 ml",
-    "category": "Styling Collection",
+    "category": "[\"Styling Collection\",\"Care Collection\",\"Fine Hair\"]",
     "price": 48,
     "badge": null,
     "description": "Dry Shampoo - 300 ml",
@@ -1361,7 +1361,7 @@
   {
     "brand": "eloure",
     "name": "Session Spray Strong - 300 ml",
-    "category": "Styling Collection",
+    "category": "[\"Styling Collection\",\"Bestsellers\"]",
     "price": 47,
     "badge": null,
     "description": "Session Spray Strong - 300 ml",
@@ -1370,7 +1370,7 @@
   {
     "brand": "eloure",
     "name": "Session Spray Medium - 300 ml",
-    "category": "Styling Collection",
+    "category": "[\"Styling Collection\",\"Bestsellers\"]",
     "price": 47,
     "badge": null,
     "description": "Session Spray Medium - 300 ml",
@@ -1379,7 +1379,7 @@
   {
     "brand": "eloure",
     "name": "Volumizing Mousse Strong - 300 ml",
-    "category": "Styling Collection",
+    "category": "[\"Styling Collection\",\"Fine Hair\"]",
     "price": 47,
     "badge": null,
     "description": "Volumizing Mousse Strong - 300 ml",
@@ -1388,7 +1388,7 @@
   {
     "brand": "eloure",
     "name": "Nourishing Argan Elixir - 100 ml",
-    "category": "Treatments & Sets",
+    "category": "[\"Styling Collection\",\"Dry Hair\",\"Curly Hair\",\"Bestsellers\"]",
     "price": 58,
     "badge": null,
     "description": "Nourishing Argan Elixir - 100 ml",
@@ -1397,7 +1397,7 @@
   {
     "brand": "eloure",
     "name": "Soft Gloss Mist - 200 ml",
-    "category": "Styling Collection",
+    "category": "[\"Styling Collection\",\"New\"]",
     "price": 55,
     "badge": null,
     "description": "Soft Gloss Mist - 200 ml",
@@ -1406,7 +1406,7 @@
   {
     "brand": "eloure",
     "name": "Texturizing Salt Mist - 200 ml",
-    "category": "Styling Collection",
+    "category": "[\"Styling Collection\",\"Fine Hair\",\"New\"]",
     "price": 49,
     "badge": null,
     "description": "Texturizing Salt Mist - 200 ml",
@@ -1415,7 +1415,7 @@
   {
     "brand": "eloure",
     "name": "Leave-in Conditioning Mist - 200 ml",
-    "category": "Styling Collection",
+    "category": "[\"Styling Collection\",\"Care Collection\",\"Dry Hair\",\"Fine Hair\",\"Curly Hair\"]",
     "price": 45,
     "badge": null,
     "description": "Leave-in Conditioning Mist - 200 ml",
@@ -1424,7 +1424,7 @@
   {
     "brand": "eloure",
     "name": "Heat Protection Mist - 200 ml",
-    "category": "Styling Collection",
+    "category": "[\"Styling Collection\",\"Care Collection\",\"New\"]",
     "price": 43,
     "badge": null,
     "description": "Heat Protection Mist - 200 ml",
@@ -1433,7 +1433,7 @@
   {
     "brand": "eloure",
     "name": "Curl Cream - 150 ml",
-    "category": "Styling Collection",
+    "category": "[\"Styling Collection\",\"Curly Hair\"]",
     "price": 45,
     "badge": null,
     "description": "Curl Cream - 150 ml",
@@ -1442,7 +1442,7 @@
   {
     "brand": "eloure",
     "name": "Moisturizing Styling Cream - 150 ml",
-    "category": "Styling Collection",
+    "category": "[\"Styling Collection\",\"Dry Hair\",\"Curly Hair\",\"Bestsellers\"]",
     "price": 44,
     "badge": null,
     "description": "Moisturizing Styling Cream - 150 ml",
@@ -1451,7 +1451,7 @@
   {
     "brand": "eloure",
     "name": "Styling Gel Strong - 150 ml",
-    "category": "Styling Collection",
+    "category": "[\"Styling Collection\",\"Bestsellers\",\"New\"]",
     "price": 48,
     "badge": null,
     "description": "Styling Gel Strong - 150 ml",
@@ -1478,7 +1478,7 @@
   {
     "brand": "eloure",
     "name": "Hair Perfume Elora - 50 ml",
-    "category": "Care Collection",
+    "category": "[\"Hair Perfume\",\"Styling Collection\",\"Bestsellers\"]",
     "price": 69,
     "badge": null,
     "description": "Hair Perfume Elora - 50 ml",
@@ -1487,7 +1487,7 @@
   {
     "brand": "eloure",
     "name": "Hair Perfume Grace - 50 ml",
-    "category": "Care Collection",
+    "category": "[\"Hair Perfume\",\"Styling Collection\",\"New\"]",
     "price": 69,
     "badge": null,
     "description": "Hair Perfume Grace - 50 ml",
@@ -1496,7 +1496,7 @@
   {
     "brand": "eloure",
     "name": "Hair Perfume Reflect - 50 ml",
-    "category": "Care Collection",
+    "category": "[\"Hair Perfume\",\"Styling Collection\",\"New\"]",
     "price": 69,
     "badge": null,
     "description": "Hair Perfume Reflect - 50 ml",
@@ -1505,7 +1505,7 @@
   {
     "brand": "eloure",
     "name": "Hair Perfume Elora (Travel Size) - 15 ml",
-    "category": "Care Collection",
+    "category": "[\"Hair Perfume\",\"Styling Collection\"]",
     "price": 24.5,
     "badge": null,
     "description": "Hair Perfume Elora - 15 ml Travel Size",
@@ -1514,7 +1514,7 @@
   {
     "brand": "eloure",
     "name": "Hair Perfume Grace (Travel Size) - 15 ml",
-    "category": "Care Collection",
+    "category": "[\"Hair Perfume\",\"Styling Collection\"]",
     "price": 24.5,
     "badge": null,
     "description": "Hair Perfume Grace - 15 ml Travel Size",
@@ -1523,7 +1523,7 @@
   {
     "brand": "eloure",
     "name": "Hair Perfume Reflect (Travel Size) - 15 ml",
-    "category": "Care Collection",
+    "category": "[\"Hair Perfume\",\"Styling Collection\"]",
     "price": 24.5,
     "badge": null,
     "description": "Hair Perfume Reflect - 15 ml Travel Size",
@@ -1532,7 +1532,7 @@
   {
     "brand": "eloure",
     "name": "Texturizing Volume Spray (Travel Size) - 75 ml",
-    "category": "Styling Collection",
+    "category": "[\"Styling Collection\",\"Fine Hair\"]",
     "price": 17,
     "badge": null,
     "description": "Texturizing Volume Spray - 75 ml Travel Size",
@@ -1541,7 +1541,7 @@
   {
     "brand": "eloure",
     "name": "Moisturizing Shampoo (Travel Size) - 50 ml",
-    "category": "Care Collection",
+    "category": "[\"Care Collection\",\"Dry Hair\",\"Curly Hair\"]",
     "price": 13,
     "badge": null,
     "description": "Moisturizing Shampoo - 50 ml Travel Size",
@@ -1550,7 +1550,7 @@
   {
     "brand": "eloure",
     "name": "Moisturizing Conditioner (Travel Size) - 50 ml",
-    "category": "Care Collection",
+    "category": "[\"Care Collection\",\"Dry Hair\",\"Curly Hair\"]",
     "price": 13.5,
     "badge": null,
     "description": "Moisturizing Conditioner - 50 ml Travel Size",
@@ -1559,7 +1559,7 @@
   {
     "brand": "eloure",
     "name": "Moisturizing Mask (Travel Size) - 50 ml",
-    "category": "Care Collection",
+    "category": "[\"Care Collection\",\"Dry Hair\",\"Curly Hair\"]",
     "price": 16.5,
     "badge": null,
     "description": "Moisturizing Mask - 50 ml Travel Size",
@@ -1568,7 +1568,7 @@
   {
     "brand": "eloure",
     "name": "Discovery Set",
-    "category": "Treatments & Sets",
+    "category": "[\"Treatments & Sets\",\"Care Collection\",\"New\"]",
     "price": 54.5,
     "badge": null,
     "description": "Discovery Set",
@@ -1586,7 +1586,7 @@
   {
     "brand": "eloure",
     "name": "The Radiant Care Collection",
-    "category": "Treatments & Sets",
+    "category": "[\"Treatments & Sets\",\"Care Collection\",\"New\"]",
     "price": 120,
     "badge": "Featured",
     "description": "The Radiant Care Collection",
@@ -1595,7 +1595,7 @@
   {
     "brand": "eloure",
     "name": "The Volume & Glow Collection",
-    "category": "Treatments & Sets",
+    "category": "[\"Treatments & Sets\",\"Styling Collection\",\"New\"]",
     "price": 124,
     "badge": "Featured",
     "description": "The Volume & Glow Collection",
@@ -1604,7 +1604,7 @@
   {
     "brand": "eloure",
     "name": "Signature Brush",
-    "category": "Styling Collection",
+    "category": "[\"Styling Collection\",\"New\"]",
     "price": 105,
     "badge": null,
     "description": "Signature Brush",
@@ -1613,7 +1613,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Capri Hair Perfume 50ml",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Capri\"]",
     "price": 55,
     "badge": null,
     "description": "Fresh, fruity and woody scent.",
@@ -1622,7 +1622,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Santorini Hair Perfume 50ml",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Santorini\"]",
     "price": 55,
     "badge": null,
     "description": "Spicy, powdery and warm scent.",
@@ -1631,7 +1631,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Hamptons Hair Perfume 50ml",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Hamptons\"]",
     "price": 55,
     "badge": null,
     "description": "Spicy, warm and woody scent.",
@@ -1640,7 +1640,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Capri Hair Perfume 15ml",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Capri\"]",
     "price": 15,
     "badge": null,
     "description": "Fresh, fruity and woody scent.",
@@ -1649,7 +1649,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Santorini Hair Perfume 15ml",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Santorini\"]",
     "price": 15,
     "badge": null,
     "description": "Spicy, powdery and warm scent.",
@@ -1658,7 +1658,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Capri Hyaluronic Plump Hydrating Shampoo 250ml",
-    "category": "Sensorial Hair Care",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Capri\"]",
     "price": 30,
     "badge": null,
     "description": "Suitable for all hair types, especially dry or dull hair.",
@@ -1667,7 +1667,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Capri Hyaluronic Plump Hydrating Shampoo 750ml",
-    "category": "Sensorial Hair Care",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Capri\"]",
     "price": 70,
     "badge": null,
     "description": "Suitable for all hair types, especially dry or dull hair.",
@@ -1676,7 +1676,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Capri Hyaluronic Renew Hydrating Mask 200ml",
-    "category": "Sensorial Hair Care",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Capri\"]",
     "price": 30,
     "badge": null,
     "description": "Perfect for dry, damaged or frizzy hair.",
@@ -1685,7 +1685,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Capri Hyaluronic Renew Hydrating Mask 750ml",
-    "category": "Sensorial Hair Care",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Capri\"]",
     "price": 70,
     "badge": null,
     "description": "Perfect for dry, damaged or frizzy hair.",
@@ -1730,7 +1730,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Volume & Lift Shampoo 250ml - EAU de Hamptons",
-    "category": "Sensorial Hair Care",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Hamptons\"]",
     "price": 30,
     "badge": null,
     "description": "Lifts roots, adds airy volume & cleanses without weight",
@@ -1739,7 +1739,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Volume & Lift Shampoo 750ml - EAU de Hamptons",
-    "category": "Sensorial Hair Care",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Hamptons\"]",
     "price": 70,
     "badge": null,
     "description": "Lifts roots, adds airy volume & cleanses without weight",
@@ -1748,7 +1748,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Volume & Lift Conditioner 750ml - EAU de Hamptons",
-    "category": "Sensorial Hair Care",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Hamptons\"]",
     "price": 70,
     "badge": null,
     "description": "Detangles, softens & maintains airy lift",
@@ -1757,7 +1757,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Hyaluronic Body wash - EAU de Capri 250ml",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Beauty\",\"EAU de Capri\"]",
     "price": 25,
     "badge": null,
     "description": "Cleanses gently, hydrates with hyaluronic acid & refreshes the senses",
@@ -1766,7 +1766,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Hyaluronic Body wash - EAU de Santorini 250ml",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Beauty\",\"EAU de Santorini\"]",
     "price": 25,
     "badge": null,
     "description": "Cleanses, hydrates with hyaluronic acid & leaves skin luminously soft",
@@ -1775,7 +1775,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Hyaluronic Body wash - EAU de Hamptons 250ml",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Beauty\",\"EAU de Hamptons\"]",
     "price": 25,
     "badge": null,
     "description": "Cleanses gently, locks in moisture & leaves skin softly scented",
@@ -1784,7 +1784,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Hydrate & Protect Hand Cream - EAU de Santorini 50ml",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Beauty\",\"EAU de Santorini\"]",
     "price": 15,
     "badge": null,
     "description": "Hydrates, soothes dryness & absorbs without stickiness",
@@ -1793,7 +1793,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Hydrate & Protect Hand Cream - EAU de Hamptons 50ml",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Beauty\",\"EAU de Hamptons\"]",
     "price": 15,
     "badge": null,
     "description": "hydrates, soothes dryness & absorbs without stickiness",
@@ -1802,7 +1802,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Capri Hydrate & Protect Hand Cream 50ml",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Beauty\",\"EAU de Capri\"]",
     "price": 15,
     "badge": null,
     "description": "Nourishing care for your hands.",
@@ -1811,7 +1811,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Capri Hyaluronic Glow ​Body Lotion 200ml",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Beauty\",\"EAU de Capri\"]",
     "price": 29,
     "badge": null,
     "description": "Hydrates, boosts elasticity and softens skin.",
@@ -1820,7 +1820,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Santorini Hyaluronic Glow Body Lotion 200ml",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Beauty\",\"EAU de Santorini\"]",
     "price": 29,
     "badge": null,
     "description": "Hydrates, boosts elasticity and softens skin.",
@@ -1829,7 +1829,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Hamptons Hyaluronic Glow Body Lotion 200ml",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Beauty\",\"EAU de Hamptons\"]",
     "price": 29,
     "badge": null,
     "description": "Hydrates, boosts elasticity and softens skin.",
@@ -1838,7 +1838,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Glow & Shimmer Hair and Body Spray",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Beauty\",\"Sensorial Hair Care\"]",
     "price": 20,
     "badge": null,
     "description": "Illuminates, enhances natural glow & adds a soft bronzed shimmer",
@@ -1847,7 +1847,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Capri Salt & Grip Volumizing Spray 200ml",
-    "category": "Sensorial Hair Care",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Capri\"]",
     "price": 25,
     "badge": null,
     "description": "Creates body, grip, and salty dimension.",
@@ -1856,7 +1856,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Capri Hydrate & Shield Leave-in Conditioner 125ml",
-    "category": "Sensorial Hair Care",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Capri\"]",
     "price": 25,
     "badge": null,
     "description": "Keeps hair soft, shiny, and protected.",
@@ -1865,7 +1865,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Fiber & Style - EAU de Capri 100ml",
-    "category": "Sensorial Hair Care",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Capri\"]",
     "price": 25,
     "badge": null,
     "description": null,
@@ -1892,7 +1892,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Define & Smooth Spray – EAU de Santorini 200ml",
-    "category": "Sensorial Hair Care",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Santorini\"]",
     "price": 25,
     "badge": null,
     "description": "smooths, controls frizz & adds weightless shine",
@@ -1901,7 +1901,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Lift & Texture Volumizing Spray 200ml - EAU de Hamptons",
-    "category": "Sensorial Hair Care",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Hamptons\"]",
     "price": 25,
     "badge": null,
     "description": null,
@@ -1910,7 +1910,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Lift & Thicken Volumizing Lotion 150ml - EAU de Hamptons",
-    "category": "Sensorial Hair Care",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Hamptons\"]",
     "price": 21,
     "badge": null,
     "description": null,
@@ -1919,7 +1919,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Santorini Hair Perfume Giftset",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Hair Care\",\"EAU de Santorini\"]",
     "price": 65,
     "badge": null,
     "description": "Full-size + handy 15ml for on-the-go.",
@@ -1928,7 +1928,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Capri Scent & Smooth Giftset",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Beauty\",\"Sensorial Hair Care\",\"EAU de Capri\"]",
     "price": 60,
     "badge": null,
     "description": "Perfumes, hydrates & protects.",
@@ -1937,7 +1937,7 @@
   {
     "brand": "eau-de-1974",
     "name": "EAU de Capri Hydrate & Renew Giftset",
-    "category": "Sensorial Beauty",
+    "category": "[\"Sensorial Beauty\",\"Sensorial Hair Care\",\"EAU de Capri\"]",
     "price": 60,
     "badge": null,
     "description": "Hydrates, protects & restores.",
@@ -1946,7 +1946,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Scented Candle - EAU de Capri 200gr",
-    "category": "Sensorial Lifestyle",
+    "category": "[\"Sensorial Lifestyle\",\"EAU de Capri\"]",
     "price": 40,
     "badge": null,
     "description": null,
@@ -1955,7 +1955,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Room Spray - EAU de Capri 200ml",
-    "category": "Sensorial Lifestyle",
+    "category": "[\"Sensorial Lifestyle\",\"EAU de Capri\"]",
     "price": 50,
     "badge": null,
     "description": null,
@@ -1964,7 +1964,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Room Spray - EAU de Santorini 200ml",
-    "category": "Sensorial Lifestyle",
+    "category": "[\"Sensorial Lifestyle\",\"EAU de Santorini\"]",
     "price": 50,
     "badge": null,
     "description": null,
@@ -1973,7 +1973,7 @@
   {
     "brand": "eau-de-1974",
     "name": "Room Spray - EAU de Hamptons 200ml",
-    "category": "Sensorial Lifestyle",
+    "category": "[\"Sensorial Lifestyle\",\"EAU de Hamptons\"]",
     "price": 50,
     "badge": null,
     "description": null,

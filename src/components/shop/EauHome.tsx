@@ -13,16 +13,14 @@ const pill = "inline-flex min-h-10 items-center justify-center rounded-full px-5
 // the inline logo → product grid → one block per scent (photo banner with a
 // portrait inset, then product photo + story + notes), each in the scent's
 // own colour. Editorial photos are Eau de 1974's own, downloaded to
-// public/assets/eau-de-1974/. "Explore the scent" searches the catalogue for
-// the scent name, so it follows whatever products exist.
+// public/assets/eau-de-1974/.
 export async function EauHome({ shop }: { shop: ShopContent }) {
   const t = await getTranslations("eauHome");
   const tCategories = await getTranslations("categories");
   const tBrands = await getTranslations("brands");
   const logo = getBrand(shop.slug)?.logo;
 
-  // `category` is the canonical menu value: translated for display, and the
-  // search term (scent products carry it in their names, same as the menu).
+  // `category` is the canonical Product.category value (translated label, filter key).
   const scents = [
     { key: "capri", category: "EAU de Capri", color: "#f15a25", sideFocus: "object-[72%_20%]" },
     { key: "hamptons", category: "EAU de Hamptons", color: "#007367", sideFocus: "object-center" },
@@ -90,7 +88,7 @@ export async function EauHome({ shop }: { shop: ShopContent }) {
 
       {scents.map((s) => {
         const name = tCategories(s.category);
-        const href = `/${shop.slug}/search?q=${encodeURIComponent(s.category)}`;
+        const href = `/${shop.slug}/shop?category=${encodeURIComponent(s.category)}`;
         return (
           <div key={s.key}>
             <section className="relative flex min-h-[520px] items-center overflow-hidden md:h-[796px]">
