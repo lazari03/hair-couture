@@ -7,10 +7,18 @@ import { trackSearch } from "@/lib/analytics/events";
 import type { BrandSlug } from "@/lib/brands";
 import type { Product } from "@/lib/data/shop";
 
-export function SearchClient({ brand, products }: { brand: BrandSlug; products: Product[] }) {
+export function SearchClient({
+  brand,
+  products,
+  initialQuery = "",
+}: {
+  brand: BrandSlug;
+  products: Product[];
+  initialQuery?: string;
+}) {
   const t = useTranslations("search");
   const recentPlaceholder = t.raw("recentPlaceholder") as string[];
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery);
 
   const q = query.trim().toLowerCase();
   const results = q

@@ -44,7 +44,7 @@ export default async function AccountPage({
           required
           defaultValue={email}
           placeholder={t("emailPlaceholder")}
-          className="min-h-11 flex-1 border border-neutral-300 px-3 text-sm outline-none focus:border-neutral-900"
+          className="min-h-11 min-w-0 flex-1 border border-neutral-300 px-3 text-sm outline-none focus:border-neutral-900"
         />
         <button
           type="submit"

@@ -251,6 +251,40 @@
     "worldBody": "Éloure was created to redefine professional luxury haircare. Rooted in salon credibility and shaped by Parisian refinement, the brand brings together performance and experience in a clear, confident way.",
     "worldCta": "Discover the collection"
   },
+  "eauHome": {
+    "awakenTitle": "Awaken all your senses",
+    "awakenBody": "EAUde1974 awakens the creative mind using all sensorial aspects, delivering luxury products with fragrance, colour and design.",
+    "statementStart": "Step into the world of",
+    "statementEnd": "where fine fragrances transform your daily beauty routine.",
+    "shopTitle": "Shop the collection",
+    "explore": "Explore the scent",
+    "scents": {
+      "capri": {
+        "tagline": "Citrus-scented breezes",
+        "body": "Close your eyes and feel the vibrant energy of Capri around you. A fresh and fruity scent: a daily escape to the citrus-kissed breezes, golden sands and shimmering azure waters of the Mediterranean island.",
+        "notes": [
+          "EAU-so-fresh",
+          "Citrusy with a dash of woody"
+        ]
+      },
+      "hamptons": {
+        "tagline": "Coastal opulence & redefined leisure",
+        "body": "Discover the charm of the Hamptons with a spicy, warm and woody scent. Picture yourself strolling through grand estates, where ocean breezes mingle with blooming hydrangeas.",
+        "notes": [
+          "Spicy warmth",
+          "Smoky woodiness"
+        ]
+      },
+      "santorini": {
+        "tagline": "Memories of warm summer nights",
+        "body": "Immerse yourself in the magic of Santorini with a spicy, powdery and warm scent. Cobblestone streets, blue-domed churches, island romance with a hint of daydream.",
+        "notes": [
+          "Spicy and bold",
+          "Powdery and warm"
+        ]
+      }
+    }
+  },
   "shopMeta": {
     "balmain": {
       "hero": {
@@ -273,9 +307,9 @@
     "eau-de-1974": {
       "hero": {
         "eyebrow": "Since 1974",
-        "title": "A year, bottled",
+        "title": "You can… feel it",
         "body": "Six compositions drawn from the house archive, blended in small batches.",
-        "cta": "Shop fragrance",
+        "cta": "Discover the collection",
         "secondary": "Read the archive"
       }
     }

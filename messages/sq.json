@@ -251,6 +251,40 @@
     "worldBody": "Éloure u krijua për të ripërcaktuar kujdesin profesional luksoz për flokët. E rrënjosur në besueshmërinë e sallonit dhe e formësuar nga eleganca pariziene, bashkon performancën dhe përvojën në mënyrë të qartë dhe të sigurt.",
     "worldCta": "Zbulo koleksionin"
   },
+  "eauHome": {
+    "awakenTitle": "Zgjo të gjitha shqisat",
+    "awakenBody": "EAUde1974 zgjon mendjen krijuese përmes të gjitha aspekteve shqisore, me produkte luksoze që bashkojnë aromën, ngjyrën dhe dizajnin.",
+    "statementStart": "Hyr në botën e",
+    "statementEnd": "ku parfumet e rafinuara transformojnë rutinën tënde të përditshme të bukurisë.",
+    "shopTitle": "Bli koleksionin",
+    "explore": "Zbulo aromën",
+    "scents": {
+      "capri": {
+        "tagline": "Fllade me aromë agrumesh",
+        "body": "Mbyll sytë dhe ndje energjinë e gjallë të Capri-t rreth teje. Një aromë e freskët dhe frutore: një arratisje e përditshme drejt flladeve të agrumeve, rërës së artë dhe ujërave të kaltra të ishullit mesdhetar.",
+        "notes": [
+          "Tepër e freskët",
+          "Agrume me një prekje druri"
+        ]
+      },
+      "hamptons": {
+        "tagline": "Luks bregdetar dhe relaks i ripërcaktuar",
+        "body": "Zbulo hijeshinë e Hamptons me një aromë pikante, të ngrohtë dhe drusore. Imagjino një shëtitje mes vilave madhështore, ku flladi i oqeanit përzihet me hortensiet në lulëzim.",
+        "notes": [
+          "Ngrohtësi pikante",
+          "Dru i tymosur"
+        ]
+      },
+      "santorini": {
+        "tagline": "Kujtime netësh të ngrohta vere",
+        "body": "Zhytu në magjinë e Santorinit me një aromë pikante, pudrore dhe të ngrohtë. Rrugë me kalldrëm, kisha me kube blu, romancë ishulli me një prekje ëndrre.",
+        "notes": [
+          "Pikante dhe e guximshme",
+          "Pudrore dhe e ngrohtë"
+        ]
+      }
+    }
+  },
   "shopMeta": {
     "balmain": {
       "hero": {
@@ -273,9 +307,9 @@
     "eau-de-1974": {
       "hero": {
         "eyebrow": "Që nga 1974",
-        "title": "Një vit, i shishuar",
+        "title": "Mund ta… ndjesh",
         "body": "Gjashtë kompozime të nxjerra nga arkivi i shtëpisë, të përziera në sasi të vogla.",
-        "cta": "Bli parfum",
+        "cta": "Zbulo koleksionin",
         "secondary": "Lexo arkivin"
       }
     }

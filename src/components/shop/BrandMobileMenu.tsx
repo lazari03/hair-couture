@@ -135,8 +135,8 @@ export function BrandMobileMenu({
               />
 
               <aside
-                className={`absolute inset-0 flex h-full w-full flex-col bg-white shadow-[0_30px_80px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-out ${
-                  open ? "translate-x-0" : "translate-x-full"
+                className={`absolute inset-0 flex h-full w-full flex-col bg-white shadow-[0_30px_80px_rgba(0,0,0,0.2)] transition-[transform,visibility] duration-300 ease-out ${
+                  open ? "visible translate-x-0" : "invisible translate-x-full"
                 }`}
               >
                 <div className="sticky top-0 z-10 flex shrink-0 items-center justify-between border-b border-neutral-100 bg-white px-5 py-4 sm:px-6">

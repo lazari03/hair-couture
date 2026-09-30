@@ -97,10 +97,18 @@ export default async function BrandLayout({
   const filterableCategories = new Set(activeShop.products.flatMap((p) => p.categories));
   filterableCategories.add("Sale");
 
+  // Curated items that product names carry as a whole phrase (Eau de 1974's
+  // "EAU de Capri" scents) open a search for it, so they show just that
+  // scent's products; anything else falls back to the full shop.
+  function namesProducts(item: string): boolean {
+    const pattern = new RegExp(`\\b${item.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
+    return activeShop.products.some((p) => pattern.test(p.name));
+  }
+
   function menuHref(item: string): string {
-    return filterableCategories.has(item)
-      ? `/${activeBrand.slug}/shop?category=${encodeURIComponent(item)}`
-      : `/${activeBrand.slug}/shop`;
+    if (filterableCategories.has(item)) return `/${activeBrand.slug}/shop?category=${encodeURIComponent(item)}`;
+    if (namesProducts(item)) return `/${activeBrand.slug}/search?q=${encodeURIComponent(item)}`;
+    return `/${activeBrand.slug}/shop`;
   }
 
   const mobileMenuLinks = activeShop.menu.map((item) => ({

@@ -20,7 +20,7 @@ export async function Footer({ brand }: { brand: Brand }) {
 
   return (
     <footer className="bg-[var(--footer-bg,#0a0a0a)] px-6 py-16 text-neutral-300 sm:px-11">
-      <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
+      <div className="grid grid-cols-2 gap-10 lg:grid-cols-4">
         <div>
           <h3 className="mb-4 text-xs tracking-widest text-white uppercase">{t("shopTitle")}</h3>
           <ul className="flex flex-col gap-2.5 text-sm">
@@ -66,7 +66,7 @@ export async function Footer({ brand }: { brand: Brand }) {
           <h3 className="mb-4 text-xs tracking-widest text-white uppercase">{tBrands(`${brand.slug}.name`)}</h3>
           <p className="text-sm text-neutral-400">{tBrands(`${brand.slug}.tagline`)}</p>
         </div>
-        <div className="col-span-2 sm:col-span-1">
+        <div className="col-span-2 lg:col-span-1">
           <h3 className="mb-4 text-xs tracking-widest text-white uppercase">{t(`newsletter.${brand.slug}.title`)}</h3>
           <p className="mb-4 text-sm text-neutral-400">{t(`newsletter.${brand.slug}.body`)}</p>
           <NewsletterForm

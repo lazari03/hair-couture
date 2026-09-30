@@ -61,6 +61,36 @@ body {
   .brand-shop[data-brand="eloure"] .product-card__info { flex-direction: column; gap: 0.25rem; }
 }
 
+/* Eau de 1974 shop skin, mirroring eaude1974.com (checked 2026-09-30):
+   Manrope body in warm grey, Averia Serif headings in brand orange, rounded
+   image tiles, orange pill buttons. Headings sit in @layer base so utility
+   classes (e.g. white text on photo banners) still win. */
+.brand-shop[data-brand="eau-de-1974"] {
+  color: #6f6f6f;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+@layer base {
+  .brand-shop[data-brand="eau-de-1974"] :is(h1, h2) {
+    font-family: var(--font-averia), Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--brand-accent);
+  }
+}
+.brand-shop[data-brand="eau-de-1974"] .product-card__media { border-radius: 1rem; background: #f8f8f8; }
+.brand-shop[data-brand="eau-de-1974"] .product-card { height: 100%; }
+.brand-shop[data-brand="eau-de-1974"] .product-card__category { color: var(--brand-accent); }
+.brand-shop[data-brand="eau-de-1974"] .product-card__name { font-weight: 500; }
+.brand-shop[data-brand="eau-de-1974"] .product-card__cta {
+  display: flex;
+  margin-top: auto; /* buttons line up across a row whatever the name length */
+  border-radius: 9999px;
+  font-family: var(--font-averia), Georgia, serif;
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 @keyframes pan {
   0% { transform: scale(1.08) translate3d(-1.5%, 0, 0); }
   50% { transform: scale(1.14) translate3d(1.5%, -1%, 0); }

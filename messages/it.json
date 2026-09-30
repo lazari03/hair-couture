@@ -251,6 +251,40 @@
     "worldBody": "Éloure è nata per ridefinire l'haircare professionale di lusso. Radicata nella credibilità del salone e plasmata dall'eleganza parigina, unisce prestazioni ed esperienza in modo chiaro e deciso.",
     "worldCta": "Scopri la collezione"
   },
+  "eauHome": {
+    "awakenTitle": "Risveglia tutti i sensi",
+    "awakenBody": "EAUde1974 risveglia la mente creativa attraverso tutti gli aspetti sensoriali, con prodotti di lusso che uniscono fragranza, colore e design.",
+    "statementStart": "Entra nel mondo di",
+    "statementEnd": "dove l'alta profumeria trasforma la tua routine di bellezza quotidiana.",
+    "shopTitle": "Acquista la collezione",
+    "explore": "Scopri la fragranza",
+    "scents": {
+      "capri": {
+        "tagline": "Brezze agrumate",
+        "body": "Chiudi gli occhi e senti l'energia vibrante di Capri intorno a te. Una fragranza fresca e fruttata: una fuga quotidiana tra brezze agrumate, sabbia dorata e le acque azzurre scintillanti dell'isola mediterranea.",
+        "notes": [
+          "Freschissima",
+          "Agrumata con un tocco legnoso"
+        ]
+      },
+      "hamptons": {
+        "tagline": "Opulenza costiera e relax ridefinito",
+        "body": "Scopri il fascino degli Hamptons con una fragranza speziata, calda e legnosa. Immagina di passeggiare tra grandi tenute, dove la brezza dell'oceano si mescola alle ortensie in fiore.",
+        "notes": [
+          "Calore speziato",
+          "Legnoso e affumicato"
+        ]
+      },
+      "santorini": {
+        "tagline": "Ricordi di calde notti d'estate",
+        "body": "Immergiti nella magia di Santorini con una fragranza speziata, cipriata e calda. Strade acciottolate, chiese dalle cupole blu, romanticismo isolano con un pizzico di sogno.",
+        "notes": [
+          "Speziata e decisa",
+          "Cipriata e calda"
+        ]
+      }
+    }
+  },
   "shopMeta": {
     "balmain": {
       "hero": {
@@ -273,9 +307,9 @@
     "eau-de-1974": {
       "hero": {
         "eyebrow": "Dal 1974",
-        "title": "Un anno, in bottiglia",
+        "title": "Puoi… sentirlo",
         "body": "Sei composizioni tratte dall'archivio della maison, miscelate in piccoli lotti.",
-        "cta": "Scopri il profumo",
+        "cta": "Scopri la collezione",
         "secondary": "Leggi l'archivio"
       }
     }
