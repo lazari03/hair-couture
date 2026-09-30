@@ -19,7 +19,7 @@ export async function Footer({ brand }: { brand: Brand }) {
   if (!content) return null;
 
   return (
-    <footer className="bg-neutral-950 px-6 py-16 text-neutral-300 sm:px-11">
+    <footer className="bg-[var(--footer-bg,#0a0a0a)] px-6 py-16 text-neutral-300 sm:px-11">
       <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
         <div>
           <h3 className="mb-4 text-xs tracking-widest text-white uppercase">{t("shopTitle")}</h3>

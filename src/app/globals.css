@@ -13,6 +13,54 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
+/* Éloure shop skin, mirroring maisoneloure.com (checked 2026-09-30):
+   everything in Éloure blue, serif body, Archivo Expanded display type,
+   square tiles with name/price above the image and a full-width blue button,
+   blue footer. Scoped to .brand-shop (the brand layout root) so the landing
+   page's Éloure panel, which also carries data-brand, is untouched. Plain CSS
+   (not @layer) so it wins over Tailwind utilities on shared components. */
+.brand-shop[data-brand="eloure"] {
+  --ink: #000ea7;
+  --footer-bg: #000ea7;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+}
+.brand-shop[data-brand="eloure"] .font-display {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-stretch: 125%;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.brand-shop[data-brand="eloure"] :is(.text-neutral-900, .text-neutral-800, .text-neutral-700, .text-neutral-600, .text-neutral-500):not(footer *) {
+  color: var(--ink);
+}
+.brand-shop[data-brand="eloure"] footer :is(.text-neutral-300, .text-neutral-400, .text-neutral-500) {
+  color: rgb(255 255 255 / 0.8);
+}
+.brand-shop[data-brand="eloure"] :is(h1, h2) {
+  overflow-wrap: anywhere;
+}
+.brand-shop[data-brand="eloure"] .product-card { height: 100%; gap: 0.75rem; }
+/* margin-top:auto pins image + button to the card bottom, so tiles line up
+   across a row whatever the name length. */
+.brand-shop[data-brand="eloure"] .product-card__media { aspect-ratio: 1; background: #f7f7f7; margin-top: auto; }
+.brand-shop[data-brand="eloure"] .product-card__media img { padding: 10% 12%; }
+.brand-shop[data-brand="eloure"] .product-card__info {
+  order: -1;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.brand-shop[data-brand="eloure"] .product-card__category { display: none; }
+.brand-shop[data-brand="eloure"] .product-card__name { font-size: 1rem; font-weight: 400; line-height: 1.25; text-wrap: balance; }
+.brand-shop[data-brand="eloure"] .product-card__price { font-size: 0.875rem; white-space: nowrap; }
+.brand-shop[data-brand="eloure"] .product-card__cta { display: flex; }
+@media (max-width: 767px) {
+  .brand-shop[data-brand="eloure"] .product-card__info { flex-direction: column; gap: 0.25rem; }
+}
+
 @keyframes pan {
   0% { transform: scale(1.08) translate3d(-1.5%, 0, 0); }
   50% { transform: scale(1.14) translate3d(1.5%, -1%, 0); }

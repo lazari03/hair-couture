@@ -51,6 +51,7 @@
     "size": "Taglia",
     "addToCart": "Aggiungi al carrello",
     "addedToCart": "Aggiunto al carrello",
+    "viewProduct": "Vedi prodotto",
     "outOfStock": "Esaurito",
     "relatedTitle": "Potrebbe piacerti anche",
     "sizes": ["Piccola", "Media", "Grande"],
@@ -221,6 +222,35 @@
     "onlyLeftInStock": "Ne restano solo {count} in magazzino",
     "itemNotFound": "Articolo non trovato"
   },
+  "eloureHome": {
+    "collectionsTitle": "Le collezioni",
+    "collectionsBody": "Ognuna formulata con concentrazioni da skincare e completata da un'alta profumeria.",
+    "explore": "Scopri",
+    "rangeTitle": "La gamma signature",
+    "rangeBody": "Prestazioni da skincare",
+    "scentEyebrow": "La fragranza signature di Éloure",
+    "scentTitle": "Elora",
+    "scentBody": "Composta da Cécile Zarokian, presente in tutta la collezione Éloure. Cardamomo e bergamotto luminosi si aprono su un cuore floreale-gourmand di chai latte e frangipane, per poi posarsi su una scia calda di sandalo, vaniglia e muschio morbido.",
+    "scentCta": "Scopri Elora",
+    "pillarsTitle": "Cosa definisce Éloure",
+    "pillars": {
+      "skincare": {
+        "title": "Prestazioni da skincare",
+        "body": "La disciplina dello skincare di lusso portata nella cura dei capelli, con alte concentrazioni di principi attivi per risultati visibili e duraturi."
+      },
+      "fragrance": {
+        "title": "Arte dell'alta profumeria",
+        "body": "Una fragranza signature composta dalla pluripremiata profumiera Cécile Zarokian, presente in ogni prodotto Éloure."
+      },
+      "salon": {
+        "title": "Autorità da salone",
+        "body": "Cinque decenni di esperienza nel backstage dietro ogni formula, perfezionata per il rituale della cura quotidiana."
+      }
+    },
+    "worldTitle": "Il mondo di Éloure",
+    "worldBody": "Éloure è nata per ridefinire l'haircare professionale di lusso. Radicata nella credibilità del salone e plasmata dall'eleganza parigina, unisce prestazioni ed esperienza in modo chiaro e deciso.",
+    "worldCta": "Scopri la collezione"
+  },
   "shopMeta": {
     "balmain": {
       "hero": {
@@ -234,9 +264,9 @@
     "eloure": {
       "hero": {
         "eyebrow": "Il rituale quotidiano",
-        "title": "Cura che ti segue",
-        "body": "Formule ricaricabili per capelli che lavi, indossi e vivi ogni giorno.",
-        "cta": "Scopri la cura quotidiana",
+        "title": "Ridefinire l'haircare di lusso con prestazioni da esperti.",
+        "body": "Haircare di lusso guidata dalla scienza skincare, dall'alta profumeria e dall'esperienza del salone",
+        "cta": "Scopri la gamma",
         "secondary": "Trova il tuo rituale"
       }
     },

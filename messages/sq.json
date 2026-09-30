@@ -51,6 +51,7 @@
     "size": "Madhësia",
     "addToCart": "Shto në shportë",
     "addedToCart": "Shtuar në shportë",
+    "viewProduct": "Shiko produktin",
     "outOfStock": "I shitur",
     "relatedTitle": "Mund t'ju pëlqejnë gjithashtu",
     "sizes": ["E vogël", "Mesatare", "E madhe"],
@@ -221,6 +222,35 @@
     "onlyLeftInStock": "Vetëm {count} të mbetura në stok",
     "itemNotFound": "Artikulli nuk u gjet"
   },
+  "eloureHome": {
+    "collectionsTitle": "Koleksionet",
+    "collectionsBody": "Secili i formuluar me përqendrime si në kujdesin e lëkurës dhe i përfunduar me parfum të rafinuar.",
+    "explore": "Eksploro",
+    "rangeTitle": "Gama signature",
+    "rangeBody": "Performancë si në kujdesin e lëkurës",
+    "scentEyebrow": "Aroma signature e Éloure",
+    "scentTitle": "Elora",
+    "scentBody": "E krijuar nga Cécile Zarokian dhe e pranishme në të gjithë koleksionin Éloure. Kardamom dhe bergamot të freskët hapen drejt një zemre lulore-gourmand me chai latte dhe frangipani, duke përfunduar në një gjurmë të ngrohtë sandalwood-i, vanilje dhe myshku të butë.",
+    "scentCta": "Zbulo Elora",
+    "pillarsTitle": "Çfarë e përcakton Éloure",
+    "pillars": {
+      "skincare": {
+        "title": "Performancë si në kujdesin e lëkurës",
+        "body": "Disiplina e kujdesit luksoz të lëkurës e sjellë te flokët, me përqendrime të larta përbërësish aktivë për rezultate të dukshme dhe të qëndrueshme."
+      },
+      "fragrance": {
+        "title": "Mjeshtëri e parfumerisë",
+        "body": "Një aromë signature e krijuar nga parfumierja e vlerësuar Cécile Zarokian, e pranishme në çdo produkt Éloure."
+      },
+      "salon": {
+        "title": "Autoritet sallonesh",
+        "body": "Pesë dekada përvojë pas skenave në çdo formulë, e rafinuar për ritualin e kujdesit të përditshëm."
+      }
+    },
+    "worldTitle": "Bota e Éloure",
+    "worldBody": "Éloure u krijua për të ripërcaktuar kujdesin profesional luksoz për flokët. E rrënjosur në besueshmërinë e sallonit dhe e formësuar nga eleganca pariziene, bashkon performancën dhe përvojën në mënyrë të qartë dhe të sigurt.",
+    "worldCta": "Zbulo koleksionin"
+  },
   "shopMeta": {
     "balmain": {
       "hero": {
@@ -234,9 +264,9 @@
     "eloure": {
       "hero": {
         "eyebrow": "Rutina e përditshme",
-        "title": "Kujdes që të ndjek",
-        "body": "Formula të rimbushshme për flokët që lani, mbani dhe jetoni çdo ditë.",
-        "cta": "Bli kujdesin e përditshëm",
+        "title": "Duke ripërcaktuar kujdesin luksoz të flokëve me performancë eksperte.",
+        "body": "Kujdes luksoz për flokët, i fuqizuar nga shkenca e kujdesit të lëkurës, parfumeria e rafinuar dhe ekspertiza e sallonit",
+        "cta": "Eksploro gamën",
         "secondary": "Gjej ritualin tënd"
       }
     },

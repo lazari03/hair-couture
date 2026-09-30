@@ -5,6 +5,7 @@ import { getShop } from "@/lib/data/shop";
 import { Hero } from "@/components/shop/Hero";
 import { ProductGrid } from "@/components/shop/ProductGrid";
 import { BalmainHome } from "@/components/shop/BalmainHome";
+import { EloureHome } from "@/components/shop/EloureHome";
 
 export default async function BrandShopHome({
   params,
@@ -17,9 +18,10 @@ export default async function BrandShopHome({
 
   // Balmain gets its real homepage layout (skills/branding.md: brand
   // identity can differ per brand, this is a layout choice not a hardcoded
-  // exception — Eloure/Eau de 1974 can get the same treatment the same way
-  // once there's a reference layout for them).
+  // exception — Eau de 1974 can get the same treatment the same way once
+  // there's a reference layout for it). Éloure mirrors maisoneloure.com.
   if (shop.slug === "balmain") return <BalmainHome shop={shop} />;
+  if (shop.slug === "eloure") return <EloureHome shop={shop} />;
 
   const t = await getTranslations();
 
