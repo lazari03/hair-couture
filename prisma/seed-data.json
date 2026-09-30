@@ -1590,7 +1590,7 @@
     "price": 120,
     "badge": "Featured",
     "description": "The Radiant Care Collection",
-    "imageUrl": null
+    "imageUrl": "/assets/products/eloure/the-radiant-care-collection.jpg"
   },
   {
     "brand": "eloure",
@@ -1599,7 +1599,7 @@
     "price": 124,
     "badge": "Featured",
     "description": "The Volume & Glow Collection",
-    "imageUrl": null
+    "imageUrl": "/assets/products/eloure/the-volume-glow-collection.jpg"
   },
   {
     "brand": "eloure",

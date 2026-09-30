@@ -21,15 +21,15 @@
   "brands": {
     "balmain": {
       "name": "Balmain Hair Couture",
-      "tagline": "Luxury hair extensions & styling tools"
+      "tagline": "Where hair fashion and luxury come together"
     },
     "eloure": {
       "name": "Eloure",
-      "tagline": "Everyday hair, elevated"
+      "tagline": "Luxury haircare powered by skincare science, fine fragrance and salon expertise"
     },
     "eau-de-1974": {
       "name": "Eau de 1974",
-      "tagline": "Fragrance with a story"
+      "tagline": "A new sensorial experience that captivates all the senses"
     }
   },
   "shop": {
@@ -465,6 +465,102 @@
           ]
         }
       ]
+    }
+  },
+  "brandPages": {
+    "eloure": {
+      "about-us": {
+        "nav": "About us",
+        "story": {
+          "title": "Our story",
+          "lead": "Éloure was born from the desire to redefine what beauty can feel like. Rooted in professional mastery and shaped by Parisian refinement, the brand transforms haircare into a luxurious ritual — one that blends performance, emotion and individuality.",
+          "body": [
+            "Each Éloure creation begins with science: high concentrations of active ingredients that deliver visible, lasting results.",
+            "And each creation ends with emotion: a fine fragrance composed by award-winning perfumer Cécile Zarokian, turning touch, texture and movement into moments of pure indulgence.",
+            "Éloure is inspired by its muses — the women and men whose individuality, confidence and quiet power shape the world around them. Their diversity becomes Éloure's language; their elegance, Éloure's essence. Through performance, scent and salon authority, Éloure invites every muse to experience luxury that feels intimate, refined and deeply personal."
+          ]
+        }
+      },
+      "product-philosophy": {
+        "nav": "Product philosophy",
+        "intro": {
+          "title": "Product philosophy",
+          "subtitle": "Skin logic applied to hair",
+          "body": [
+            "Éloure develops haircare formulas with the same precision, expertise and attention to detail found in high-performance skincare.",
+            "Every ingredient is selected for function, efficacy and compatibility with the scalp. Active ingredients are used in precise, high concentrations and balanced at professional pH levels for optimal performance and tolerability. The focus starts at the root, strengthening the scalp environment while reinforcing the hair fibre from within."
+          ],
+          "note": "The result: visible transformation, healthier structure, and performance that improves over time."
+        },
+        "defines": {
+          "title": "What defines Éloure",
+          "items": [
+            {
+              "title": "01 — Skincare-level performance",
+              "body": "The discipline of luxury skincare brought into haircare, with high concentrations of active ingredients delivering visible, lasting results."
+            },
+            {
+              "title": "02 — Fine fragrance craftsmanship",
+              "body": "A signature scent composed by award-winning perfumer Cécile Zarokian, infused into every Éloure product."
+            },
+            {
+              "title": "03 — Salon authority",
+              "body": "Five decades of backstage mastery shaping every formulation, refined for the ritual of daily care."
+            }
+          ]
+        }
+      },
+      "the-world-of-eloure": {
+        "nav": "The world of Éloure",
+        "intro": {
+          "title": "The world of Éloure",
+          "body": [
+            "Éloure was created to redefine professional luxury haircare.",
+            "Built on decades of expertise and shaped by Parisian refinement, the brand brings together performance and experience in a clear, confident way. Luxury at Éloure is grounded in credibility and results.",
+            "Each creation begins with science and is completed with a refined sensorial touch — transforming haircare into a ritual both in the salon and at home. Inspired by individuals who value confidence, quality and quiet elegance, Éloure stands for performance you trust and luxury you feel."
+          ]
+        },
+        "pillars": {
+          "title": "The three pillars",
+          "items": [
+            {
+              "title": "Skincare-level performance",
+              "body": "Advanced formulations with high concentrations of active ingredients deliver visible, lasting results — bringing the science, precision and credibility of luxury skincare into haircare. Éloure transforms professional performance into a refined, sensory experience that redefines results in the salon and beyond."
+            },
+            {
+              "title": "Fine fragrance craftsmanship",
+              "body": "Each Éloure product is infused with an exclusive scent designed by award-winning perfumer Cécile Zarokian. These artisanal compositions turn care into ritual, combining elegance and emotion in a way that builds lasting connection and desire — a true signature of Éloure's luxury experience."
+            },
+            {
+              "title": "Salon authority",
+              "body": "Rooted in professional expertise and salon credibility, Éloure sets a new standard for excellence in modern luxury haircare. Created for stylists who demand performance and refinement, Éloure embodies leadership through mastery — where true authority meets artistry."
+            }
+          ]
+        },
+        "authority": {
+          "title": "Born from professional authority",
+          "body": [
+            "Éloure is built on over five decades of professional haircare expertise. Created by the founders of Balmain Hair, the brand represents a natural evolution — not driven by fashion trends, but by salon knowledge and technical mastery.",
+            "Professional credibility is the foundation, never an afterthought. Every decision, from formulation to education, is guided by the standards of the salon. Éloure elevates that authority into a new expression of luxury: expert-led, performance-driven and designed to last."
+          ]
+        },
+        "top": {
+          "title": "Our top products"
+        }
+      },
+      "ingredients": {
+        "nav": "Ingredients",
+        "vegan": {
+          "text": "Éloure is 100% vegan. All products are sulfate-free, and care formulas are silicone-free, delivering high-performance results with uncompromising refinement."
+        },
+        "sustainability": {
+          "title": "For Éloure, sustainability is not a statement. It is a long-term commitment to creating beauty that is both responsible and refined.",
+          "body": [
+            "Crafted in Europe, our production reflects both heritage and responsibility. Solar panels, thermal heat systems and water-saving technologies ensure that 80% of our energy consumption comes from sustainable sources.",
+            "Our packaging incorporates 35% PCR plastic and carefully selected recyclable materials, balancing environmental responsibility with Éloure's standards of design and quality."
+          ]
+        }
+      }
     }
   },
   "shopMeta": {

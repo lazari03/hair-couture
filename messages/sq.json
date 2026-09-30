@@ -21,15 +21,15 @@
   "brands": {
     "balmain": {
       "name": "Balmain Hair Couture",
-      "tagline": "Zgjatime flokësh luksoze dhe vegla stilizimi"
+      "tagline": "Aty ku moda e flokëve dhe luksi bashkohen"
     },
     "eloure": {
       "name": "Eloure",
-      "tagline": "Flokë të përditshëm, të ngritur"
+      "tagline": "Kujdes luksoz për flokët, i fuqizuar nga shkenca e kujdesit të lëkurës, parfumeria e rafinuar dhe ekspertiza e sallonit"
     },
     "eau-de-1974": {
       "name": "Eau de 1974",
-      "tagline": "Parfum me histori"
+      "tagline": "Një përvojë e re shqisore që magjeps të gjitha shqisat"
     }
   },
   "shop": {
@@ -465,6 +465,102 @@
           ]
         }
       ]
+    }
+  },
+  "brandPages": {
+    "eloure": {
+      "about-us": {
+        "nav": "Rreth nesh",
+        "story": {
+          "title": "Historia jonë",
+          "lead": "Éloure lindi nga dëshira për të ripërcaktuar se si mund të ndihet bukuria. E rrënjosur në mjeshtërinë profesionale dhe e formësuar nga eleganca pariziene, marka e kthen kujdesin për flokët në një ritual luksoz — që bashkon performancën, emocionin dhe individualitetin.",
+          "body": [
+            "Çdo krijim Éloure nis nga shkenca: përqendrime të larta përbërësish aktivë që japin rezultate të dukshme dhe të qëndrueshme.",
+            "Dhe çdo krijim mbyllet me emocion: një aromë e rafinuar e krijuar nga parfumierja e vlerësuar Cécile Zarokian, që e kthen prekjen, teksturën dhe lëvizjen në çaste kënaqësie të pastër.",
+            "Éloure frymëzohet nga muzat e saj — gratë dhe burrat, individualiteti, siguria dhe forca e qetë e të cilëve formësojnë botën përreth. Diversiteti i tyre bëhet gjuha e Éloure; eleganca e tyre, thelbi i saj. Përmes performancës, aromës dhe autoritetit të sallonit, Éloure fton çdo muzë të përjetojë një luks intim, të rafinuar dhe thellësisht personal."
+          ]
+        }
+      },
+      "product-philosophy": {
+        "nav": "Filozofia e produktit",
+        "intro": {
+          "title": "Filozofia e produktit",
+          "subtitle": "Logjika e lëkurës e zbatuar te flokët",
+          "body": [
+            "Éloure zhvillon formula për flokët me të njëjtin precizion, ekspertizë dhe vëmendje ndaj detajeve si në kujdesin e lëkurës me performancë të lartë.",
+            "Çdo përbërës zgjidhet për funksionin, efikasitetin dhe përputhshmërinë me lëkurën e kokës. Përbërësit aktivë përdoren në përqendrime të sakta dhe të larta dhe balancohen në pH profesional për performancë dhe tolerancë optimale. Fokusi nis nga rrënja: forcimi i mjedisit të lëkurës së kokës dhe përforcimi i fijes së flokut nga brenda."
+          ],
+          "note": "Rezultati: transformim i dukshëm, strukturë më e shëndetshme dhe performancë që përmirësohet me kohën."
+        },
+        "defines": {
+          "title": "Çfarë e përcakton Éloure",
+          "items": [
+            {
+              "title": "01 — Performancë si në kujdesin e lëkurës",
+              "body": "Disiplina e kujdesit luksoz të lëkurës e sjellë te flokët, me përqendrime të larta përbërësish aktivë për rezultate të dukshme dhe të qëndrueshme."
+            },
+            {
+              "title": "02 — Mjeshtëri e parfumerisë",
+              "body": "Një aromë signature e krijuar nga parfumierja e vlerësuar Cécile Zarokian, e pranishme në çdo produkt Éloure."
+            },
+            {
+              "title": "03 — Autoritet sallonesh",
+              "body": "Pesë dekada përvojë pas skenave në çdo formulë, e rafinuar për ritualin e kujdesit të përditshëm."
+            }
+          ]
+        }
+      },
+      "the-world-of-eloure": {
+        "nav": "Bota e Éloure",
+        "intro": {
+          "title": "Bota e Éloure",
+          "body": [
+            "Éloure u krijua për të ripërcaktuar kujdesin profesional luksoz për flokët.",
+            "E ndërtuar mbi dekada ekspertize dhe e formësuar nga eleganca pariziene, marka bashkon performancën dhe përvojën në mënyrë të qartë dhe të sigurt. Luksi te Éloure mbështetet te besueshmëria dhe rezultatet.",
+            "Çdo krijim nis nga shkenca dhe plotësohet me një prekje të rafinuar shqisore — duke e kthyer kujdesin për flokët në ritual, në sallon dhe në shtëpi. E frymëzuar nga njerëz që vlerësojnë sigurinë, cilësinë dhe elegancën e qetë, Éloure do të thotë performancë që i beson dhe luks që e ndjen."
+          ]
+        },
+        "pillars": {
+          "title": "Tre shtyllat",
+          "items": [
+            {
+              "title": "Performancë si në kujdesin e lëkurës",
+              "body": "Formula të avancuara me përqendrime të larta përbërësish aktivë japin rezultate të dukshme dhe të qëndrueshme — duke sjellë te flokët shkencën, precizionin dhe besueshmërinë e kujdesit luksoz të lëkurës. Éloure e kthen performancën profesionale në një përvojë të rafinuar shqisore që ripërcakton rezultatet, në sallon dhe përtej tij."
+            },
+            {
+              "title": "Mjeshtëri e parfumerisë",
+              "body": "Çdo produkt Éloure pasurohet me një aromë ekskluzive të krijuar nga parfumierja e vlerësuar Cécile Zarokian. Këto kompozime artizanale e kthejnë kujdesin në ritual, duke bashkuar elegancën dhe emocionin për të krijuar lidhje dhe dëshirë të qëndrueshme — nënshkrimi i vërtetë i përvojës luksoze Éloure."
+            },
+            {
+              "title": "Autoritet sallonesh",
+              "body": "E rrënjosur në ekspertizën profesionale dhe besueshmërinë e sallonit, Éloure vendos një standard të ri përsosmërie në kujdesin modern luksoz për flokët. E krijuar për stilistë që kërkojnë performancë dhe rafinim, Éloure mishëron udhëheqjen përmes mjeshtërisë — ku autoriteti i vërtetë takon artin."
+            }
+          ]
+        },
+        "authority": {
+          "title": "E lindur nga autoriteti profesional",
+          "body": [
+            "Éloure mbështetet në mbi pesë dekada ekspertize profesionale në kujdesin e flokëve. E krijuar nga themeluesit e Balmain Hair, marka përfaqëson një evolucion natyral — jo të nxitur nga modat, por nga njohuritë e sallonit dhe mjeshtëria teknike.",
+            "Besueshmëria profesionale është themeli, kurrë një mendim i dytë. Çdo vendim, nga formulimi te trajnimi, udhëhiqet nga standardet e sallonit. Éloure e ngre këtë autoritet në një shprehje të re luksi: e udhëhequr nga ekspertët, e orientuar nga performanca dhe e krijuar për të zgjatur."
+          ]
+        },
+        "top": {
+          "title": "Produktet tona kryesore"
+        }
+      },
+      "ingredients": {
+        "nav": "Përbërësit",
+        "vegan": {
+          "text": "Éloure është 100% vegane. Të gjitha produktet janë pa sulfate dhe formulat e kujdesit janë pa silikone, duke dhënë rezultate me performancë të lartë me rafinim pa kompromis."
+        },
+        "sustainability": {
+          "title": "Për Éloure, qëndrueshmëria nuk është një deklaratë. Është një angazhim afatgjatë për të krijuar bukuri që është njëkohësisht e përgjegjshme dhe e rafinuar.",
+          "body": [
+            "E prodhuar në Evropë, prodhimi ynë pasqyron trashëgiminë dhe përgjegjësinë. Panelet diellore, sistemet e ngrohjes termike dhe teknologjitë e kursimit të ujit bëjnë që 80% e konsumit tonë të energjisë të vijë nga burime të qëndrueshme.",
+            "Paketimi ynë përmban 35% plastikë PCR dhe materiale të riciklueshme të zgjedhura me kujdes, duke balancuar përgjegjësinë mjedisore me standardet e dizajnit dhe cilësisë së Éloure."
+          ]
+        }
+      }
     }
   },
   "shopMeta": {

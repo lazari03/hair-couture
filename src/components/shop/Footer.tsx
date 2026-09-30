@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Brand } from "@/lib/brands";
 import { getFooter } from "@/lib/data/footer";
+import { brandPageSlugs } from "@/lib/data/brand-pages";
 import { NewsletterForm } from "./NewsletterForm";
 import { ContactLinkTracker } from "./ContactLinkTracker";
 import { CategoryLinkTracker } from "./CategoryLinkTracker";
@@ -16,6 +17,8 @@ export async function Footer({ brand }: { brand: Brand }) {
   const t = await getTranslations("footer");
   const tBrands = await getTranslations("brands");
   const content = getFooter(brand.slug);
+  const pages = brandPageSlugs(brand.slug); // brand content pages (About us, ...), if any
+  const tPages = await getTranslations(`brandPages.${brand.slug}`);
   if (!content) return null;
 
   return (
@@ -65,6 +68,17 @@ export async function Footer({ brand }: { brand: Brand }) {
         <div>
           <h3 className="mb-4 text-xs tracking-widest text-white uppercase">{tBrands(`${brand.slug}.name`)}</h3>
           <p className="text-sm text-neutral-400">{tBrands(`${brand.slug}.tagline`)}</p>
+          {pages.length > 0 && (
+            <ul className="mt-5 flex flex-col gap-2.5 text-sm">
+              {pages.map((page) => (
+                <li key={page}>
+                  <Link href={`/${brand.slug}/pages/${page}`} className="hover:text-white">
+                    {tPages(`${page}.nav`)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
         <div className="col-span-2 lg:col-span-1">
           <h3 className="mb-4 text-xs tracking-widest text-white uppercase">{t(`newsletter.${brand.slug}.title`)}</h3>
