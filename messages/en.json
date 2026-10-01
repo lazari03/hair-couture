@@ -53,10 +53,7 @@
     "viewProduct": "View product",
     "outOfStock": "Sold out",
     "relatedTitle": "You may also like",
-    "placeholderDescription": "Placeholder description copy — swap for real per-product copy once a data source is wired.",
-    "specs": {
-      "origin": { "label": "Origin", "value": "Made in Europe" }
-    }
+    "placeholderDescription": "Placeholder description copy — swap for real per-product copy once a data source is wired."
   },
   "cart": {
     "title": "Cart",
@@ -598,7 +595,6 @@
     "Styling Tools": "Styling Tools",
     "Gifts": "Gifts",
     "Sale": "Sale",
-    "Outlet": "Outlet",
     "Care Collection": "Care Collection",
     "Styling Collection": "Styling Collection",
     "Shop by Hairtype": "Shop by Hairtype",

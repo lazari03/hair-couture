@@ -64,7 +64,7 @@ const shopMeta: Record<BrandSlug, ShopMeta> = {
     // real product category, assigned from the official collections by the
     // 20260930220000_align_official_categories migration; Sale is ours
     // (admin-managed discounts).
-    menu: ["Bestsellers", "New", "Hair Care", "Hair Accessories", "Styling Tools", "Gifts", "Archives", "Outlet", "Sale"],
+    menu: ["Bestsellers", "New", "Hair Care", "Hair Accessories", "Styling Tools", "Gifts", "Archives", "Sale"],
     heroVariant: "full",
     hero: { image: "/assets/hero/balmain.jpg" },
   },
@@ -144,16 +144,12 @@ export async function getProduct(slug: string, productId: string): Promise<Produ
 // with no Prisma import, so client components (cart, ProductCard) can import
 // it without pulling this module's DB dependency into the browser bundle.
 
-// Generic product detail copy — still shared across every product (specs,
-// fallback description for any product without its own). Real per-product
-// copy comes from Product.description. Labels/copy come from
-// messages/<locale>.json ("product" namespace) so they translate.
+// Fallback description for any product without its own — real per-product
+// copy comes from Product.description. Copy lives in messages/<locale>.json
+// ("product" namespace) so it translates.
 export async function getProductDetail() {
   const t = await getTranslations("product");
   return {
     description: t("placeholderDescription"),
-    specs: [
-      [t("specs.origin.label"), t("specs.origin.value")],
-    ] as [string, string][],
   };
 }

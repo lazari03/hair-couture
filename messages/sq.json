@@ -53,10 +53,7 @@
     "viewProduct": "Shiko produktin",
     "outOfStock": "I shitur",
     "relatedTitle": "Mund t'ju pëlqejnë gjithashtu",
-    "placeholderDescription": "Përshkrim vendmbajtës — do të zëvendësohet me përshkrim real për çdo produkt kur të lidhet burimi i të dhënave.",
-    "specs": {
-      "origin": { "label": "Origjina", "value": "Prodhuar në Evropë" }
-    }
+    "placeholderDescription": "Përshkrim vendmbajtës — do të zëvendësohet me përshkrim real për çdo produkt kur të lidhet burimi i të dhënave."
   },
   "cart": {
     "title": "Shporta",
@@ -598,7 +595,6 @@
     "Styling Tools": "Vegla stilizimi",
     "Gifts": "Dhurata",
     "Sale": "Zbritje",
-    "Outlet": "Outlet",
     "Care Collection": "Koleksioni i kujdesit",
     "Styling Collection": "Koleksioni i stilizimit",
     "Shop by Hairtype": "Bli sipas llojit të flokut",

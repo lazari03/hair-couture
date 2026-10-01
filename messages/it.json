@@ -53,10 +53,7 @@
     "viewProduct": "Vedi prodotto",
     "outOfStock": "Esaurito",
     "relatedTitle": "Potrebbe piacerti anche",
-    "placeholderDescription": "Testo descrittivo segnaposto — da sostituire con il testo reale del prodotto una volta collegata la fonte dati.",
-    "specs": {
-      "origin": { "label": "Origine", "value": "Prodotto in Europa" }
-    }
+    "placeholderDescription": "Testo descrittivo segnaposto — da sostituire con il testo reale del prodotto una volta collegata la fonte dati."
   },
   "cart": {
     "title": "Carrello",
@@ -598,7 +595,6 @@
     "Styling Tools": "Strumenti per lo styling",
     "Gifts": "Regali",
     "Sale": "Saldi",
-    "Outlet": "Outlet",
     "Care Collection": "Collezione cura",
     "Styling Collection": "Collezione styling",
     "Shop by Hairtype": "Acquista per tipo di capello",

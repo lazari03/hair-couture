@@ -55,20 +55,9 @@ export default async function ProductDetail({
 
           <AddToCartForm brand={shop.slug} product={product} />
 
-          <p className="mt-7 max-w-[52ch] text-sm leading-relaxed text-neutral-600">
+          <p className="mt-7 max-w-[60ch] text-sm leading-relaxed whitespace-pre-line text-neutral-600">
             {product.description || productDetail.description}
           </p>
-          <div className="mt-8 border-t border-neutral-200">
-            {productDetail.specs.map(([k, v]) => (
-              <div
-                key={k}
-                className="flex justify-between gap-4 border-b border-neutral-200 py-3.5 text-sm"
-              >
-                <span className="text-neutral-500">{k}</span>
-                <span>{v}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
