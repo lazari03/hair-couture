@@ -83,7 +83,7 @@ export default function CartPage() {
                   {line.category}
                 </span>
                 <span className="text-[15px] font-medium tracking-tight">{line.name}</span>
-                <span className="text-[13px] text-neutral-500">{line.variant}</span>
+                {line.variant && <span className="text-[13px] text-neutral-500">{line.variant}</span>}
                 <div className="mt-2.5 flex items-center gap-4">
                   <div className="flex items-center border border-neutral-300">
                     <button

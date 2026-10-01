@@ -60,7 +60,7 @@ function renderOrderItemsRows(items: OrderForEmail["items"]): string {
   return items
     .map(
       (i) =>
-        `<tr><td>${i.name} (${i.variant}) × ${i.qty}</td><td style="text-align:right">€${(i.price * i.qty).toFixed(2)}</td></tr>`,
+        `<tr><td>${i.name}${i.variant ? ` (${i.variant})` : ""} × ${i.qty}</td><td style="text-align:right">€${(i.price * i.qty).toFixed(2)}</td></tr>`,
     )
     .join("");
 }

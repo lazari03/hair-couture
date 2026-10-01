@@ -144,15 +144,13 @@ export async function getProduct(slug: string, productId: string): Promise<Produ
 // with no Prisma import, so client components (cart, ProductCard) can import
 // it without pulling this module's DB dependency into the browser bundle.
 
-// Generic product detail copy — still shared across every product (size
-// options, shipping/returns specs, fallback description for any product
-// without its own). Real per-product copy now comes from Product.description.
-// Labels/copy come from messages/<locale>.json ("product" namespace) so they
-// translate; only the size options and spec ordering are structural here.
+// Generic product detail copy — still shared across every product (specs,
+// fallback description for any product without its own). Real per-product
+// copy comes from Product.description. Labels/copy come from
+// messages/<locale>.json ("product" namespace) so they translate.
 export async function getProductDetail() {
   const t = await getTranslations("product");
   return {
-    sizes: t.raw("sizes") as string[],
     description: t("placeholderDescription"),
     specs: [
       [t("specs.origin.label"), t("specs.origin.value")],

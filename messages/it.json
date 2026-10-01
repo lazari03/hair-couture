@@ -21,15 +21,15 @@
   "brands": {
     "balmain": {
       "name": "Balmain Hair Couture",
-      "tagline": "Dove moda capelli e lusso si incontrano"
+      "tagline": "Couture parigina per i tuoi capelli"
     },
     "eloure": {
       "name": "Eloure",
-      "tagline": "Haircare di lusso guidata dalla scienza skincare, dall'alta profumeria e dall'esperienza del salone"
+      "tagline": "Haircare elevato dalla scienza skincare"
     },
     "eau-de-1974": {
       "name": "Eau de 1974",
-      "tagline": "Una nuova esperienza sensoriale che cattura tutti i sensi"
+      "tagline": "Cura sensoriale ispirata alle fughe estive"
     }
   },
   "shop": {
@@ -48,13 +48,11 @@
     "suggestionsTitle": "Potrebbe piacerti anche"
   },
   "product": {
-    "size": "Taglia",
     "addToCart": "Aggiungi al carrello",
     "addedToCart": "Aggiunto al carrello",
     "viewProduct": "Vedi prodotto",
     "outOfStock": "Esaurito",
     "relatedTitle": "Potrebbe piacerti anche",
-    "sizes": ["Piccola", "Media", "Grande"],
     "placeholderDescription": "Testo descrittivo segnaposto — da sostituire con il testo reale del prodotto una volta collegata la fonte dati.",
     "specs": {
       "origin": { "label": "Origine", "value": "Prodotto in Europa" }

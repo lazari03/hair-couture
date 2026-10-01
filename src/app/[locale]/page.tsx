@@ -67,7 +67,7 @@ export default async function LandingPage() {
               <img
                 src={brand.logo}
                 alt=""
-                className="h-8 w-auto brightness-0 invert sm:h-10"
+                className={`${brand.logoSize.panel} w-auto brightness-0 invert`}
               />
               <p className="text-sm opacity-80 sm:text-base">
                 {t(`brands.${brand.slug}.tagline`)}

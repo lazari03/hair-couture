@@ -53,7 +53,7 @@ export default async function ProductDetail({
           </h1>
           <span className="mt-3.5 text-lg">{formatMoney(product.price, locale)}</span>
 
-          <AddToCartForm brand={shop.slug} product={product} sizes={productDetail.sizes} />
+          <AddToCartForm brand={shop.slug} product={product} />
 
           <p className="mt-7 max-w-[52ch] text-sm leading-relaxed text-neutral-600">
             {product.description || productDetail.description}

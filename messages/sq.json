@@ -21,15 +21,15 @@
   "brands": {
     "balmain": {
       "name": "Balmain Hair Couture",
-      "tagline": "Aty ku moda e flokëve dhe luksi bashkohen"
+      "tagline": "Couture pariziane për flokët tuaj"
     },
     "eloure": {
       "name": "Eloure",
-      "tagline": "Kujdes luksoz për flokët, i fuqizuar nga shkenca e kujdesit të lëkurës, parfumeria e rafinuar dhe ekspertiza e sallonit"
+      "tagline": "Kujdes për flokët, i ngritur nga shkenca e lëkurës"
     },
     "eau-de-1974": {
       "name": "Eau de 1974",
-      "tagline": "Një përvojë e re shqisore që magjeps të gjitha shqisat"
+      "tagline": "Kujdes shqisor i frymëzuar nga arratisjet e verës"
     }
   },
   "shop": {
@@ -48,13 +48,11 @@
     "suggestionsTitle": "Mund t'ju pëlqejnë gjithashtu"
   },
   "product": {
-    "size": "Madhësia",
     "addToCart": "Shto në shportë",
     "addedToCart": "Shtuar në shportë",
     "viewProduct": "Shiko produktin",
     "outOfStock": "I shitur",
     "relatedTitle": "Mund t'ju pëlqejnë gjithashtu",
-    "sizes": ["E vogël", "Mesatare", "E madhe"],
     "placeholderDescription": "Përshkrim vendmbajtës — do të zëvendësohet me përshkrim real për çdo produkt kur të lidhet burimi i të dhënave.",
     "specs": {
       "origin": { "label": "Origjina", "value": "Prodhuar në Evropë" }

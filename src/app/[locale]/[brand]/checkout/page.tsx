@@ -321,7 +321,7 @@ export default function CheckoutPage() {
               <div className="flex flex-1 flex-col">
                 <span className="font-medium">{line.name}</span>
                 <span className="text-xs text-neutral-500">
-                  {line.variant} × {line.qty}
+                  {line.variant && `${line.variant} `}× {line.qty}
                 </span>
               </div>
               <span>{formatMoney(line.price * line.qty, locale)}</span>

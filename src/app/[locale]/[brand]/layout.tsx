@@ -130,7 +130,7 @@ export default async function BrandLayout({
           <img
             src={activeBrand.logo}
             alt={t(`brands.${activeBrand.slug as BrandSlug}.name`)}
-            className="absolute left-1/2 h-6 w-auto -translate-x-1/2 sm:h-7"
+            className={`absolute left-1/2 ${activeBrand.logoSize.headerMobile} w-auto -translate-x-1/2`}
           />
           <div className="flex items-center gap-1.5">
             <LanguageSwitcher />
@@ -157,7 +157,7 @@ export default async function BrandLayout({
           <img
             src={activeBrand.logo}
             alt={t(`brands.${activeBrand.slug as BrandSlug}.name`)}
-            className="h-7 w-auto"
+            className={`${activeBrand.logoSize.header} w-auto`}
           />
           <nav className="flex items-center gap-3.5 text-[13px]">
             <LanguageSwitcher />

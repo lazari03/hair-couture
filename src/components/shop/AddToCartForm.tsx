@@ -10,16 +10,13 @@ import type { Product } from "@/lib/data/shop";
 export function AddToCartForm({
   brand,
   product,
-  sizes,
 }: {
   brand: BrandSlug;
   product: Product;
-  sizes: string[];
 }) {
   const t = useTranslations("product");
   const tErrors = useTranslations("errors");
   const { addLine } = useCart();
-  const [sizeIndex, setSizeIndex] = useState(0);
   const [added, setAdded] = useState(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -27,25 +24,6 @@ export function AddToCartForm({
 
   return (
     <>
-      <div className="mt-8">
-        <span className="text-xs tracking-widest text-neutral-500 uppercase">{t("size")}</span>
-        <div className="mt-3 flex gap-2.5">
-          {sizes.map((size, i) => (
-            <button
-              key={size}
-              type="button"
-              onClick={() => setSizeIndex(i)}
-              className={`min-h-11 border px-5 font-inherit text-xs tracking-wide ${
-                i === sizeIndex
-                  ? "border-neutral-900 bg-neutral-900 text-white"
-                  : "border-neutral-300 bg-white text-neutral-900"
-              }`}
-            >
-              {size}
-            </button>
-          ))}
-        </div>
-      </div>
       <button
         type="button"
         disabled={outOfStock || pending}
@@ -55,7 +33,9 @@ export function AddToCartForm({
           const result = await addLine({
             brand,
             productId: product.id,
-            variant: sizes[sizeIndex],
+            // Products have no size options — kept on the line shape (and
+            // OrderItem) as empty so existing carts/orders still fit.
+            variant: "",
             qty: 1,
             name: product.name,
             category: product.category,

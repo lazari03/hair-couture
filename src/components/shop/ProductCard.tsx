@@ -9,7 +9,7 @@ import { productImage } from "@/lib/data/category-image";
 // Brand-agnostic; the product-card__* classes are hooks for per-brand skins in
 // globals.css (Éloure moves name/price above a square tile and shows the
 // full-width button, like maisoneloure.com). The button is a label inside the
-// card link, not a quick-add: products have sizes, picked on the product page.
+// card link, not a quick-add: add-to-cart lives on the product page.
 export function ProductCard({ brand, product }: { brand: BrandSlug; product: Product }) {
   const locale = useLocale();
   const t = useTranslations("product");

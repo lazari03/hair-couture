@@ -10,6 +10,12 @@ export interface Brand {
   colors: { accent: string; accentForeground: string; sale: string };
   /** /public path to the brand's own SVG wordmark (public/assets/logos/*.svg). */
   logo: string;
+  /**
+   * Tailwind height classes per logo placement. Balmain's mark is a stacked
+   * ~2:1 lockup while the others are ~5:1 wordmarks, so at a shared height
+   * it reads far smaller — each brand sizes its own to match visual weight.
+   */
+  logoSize: { panel: string; header: string; headerMobile: string };
 }
 
 // name/tagline are NOT here — they're user-facing copy and live in
@@ -22,9 +28,9 @@ export interface Brand {
 // Balmain's accent is black so Sale gets a dedicated red; Eloure/1974 just
 // reuse their own accent since it already reads as their theme color.
 export const brands: Brand[] = [
-  { slug: "balmain", colors: { accent: "#111111", accentForeground: "#ffffff", sale: "#d0021b" }, logo: "/assets/logos/balmain.svg" },
-  { slug: "eloure", colors: { accent: "#000ea7", accentForeground: "#ffffff", sale: "#000ea7" }, logo: "/assets/logos/eloure.svg" },
-  { slug: "eau-de-1974", colors: { accent: "#f15a25", accentForeground: "#ffffff", sale: "#f15a25" }, logo: "/assets/logos/eau-de-1974.svg" },
+  { slug: "balmain", colors: { accent: "#111111", accentForeground: "#ffffff", sale: "#d0021b" }, logo: "/assets/logos/balmain.svg", logoSize: { panel: "h-16 sm:h-20", header: "h-12", headerMobile: "h-9 sm:h-11" } },
+  { slug: "eloure", colors: { accent: "#000ea7", accentForeground: "#ffffff", sale: "#000ea7" }, logo: "/assets/logos/eloure.svg", logoSize: { panel: "h-8 sm:h-10", header: "h-7", headerMobile: "h-6 sm:h-7" } },
+  { slug: "eau-de-1974", colors: { accent: "#f15a25", accentForeground: "#ffffff", sale: "#f15a25" }, logo: "/assets/logos/eau-de-1974.svg", logoSize: { panel: "h-8 sm:h-10", header: "h-7", headerMobile: "h-6 sm:h-7" } },
 ];
 
 export function getBrand(slug: string): Brand | undefined {

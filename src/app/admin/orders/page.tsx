@@ -58,7 +58,7 @@ export default async function AdminOrdersPage({
                 {o.items.map((item) => (
                   <div key={item.id} className="flex justify-between">
                     <span>
-                      {item.name} <span className="text-neutral-500">({item.variant}) × {item.qty}</span>
+                      {item.name} <span className="text-neutral-500">{item.variant && `(${item.variant}) `}× {item.qty}</span>
                     </span>
                     <span>€ {(item.price * item.qty).toLocaleString("en-US")}</span>
                   </div>
