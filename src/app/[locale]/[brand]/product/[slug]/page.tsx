@@ -6,6 +6,7 @@ import { productImage } from "@/lib/data/category-image";
 import { ProductGrid } from "@/components/shop/ProductGrid";
 import { AddToCartForm } from "@/components/shop/AddToCartForm";
 import { ProductViewBeacon } from "@/components/shop/ProductViewBeacon";
+import { ProductDescription } from "@/components/shop/ProductDescription";
 import { formatMoney } from "@/lib/money";
 
 export default async function ProductDetail({
@@ -55,9 +56,7 @@ export default async function ProductDetail({
 
           <AddToCartForm brand={shop.slug} product={product} />
 
-          <p className="mt-7 max-w-[60ch] text-sm leading-relaxed whitespace-pre-line text-neutral-600">
-            {product.description || productDetail.description}
-          </p>
+          <ProductDescription text={product.description || productDetail.description} />
         </div>
       </div>
 
