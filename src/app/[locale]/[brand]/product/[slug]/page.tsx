@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { getShop, getProduct, getProductDetail } from "@/lib/data/shop";
@@ -6,6 +5,7 @@ import { productImage } from "@/lib/data/category-image";
 import { ProductGrid } from "@/components/shop/ProductGrid";
 import { AddToCartForm } from "@/components/shop/AddToCartForm";
 import { ProductViewBeacon } from "@/components/shop/ProductViewBeacon";
+import { ProductImage } from "@/components/shop/ProductImage";
 import { ProductDescription } from "@/components/shop/ProductDescription";
 import { formatMoney } from "@/lib/money";
 
@@ -35,10 +35,9 @@ export default async function ProductDetail({
       </div>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
         <div className="relative aspect-[4/5] overflow-hidden bg-neutral-50">
-          <Image
+          <ProductImage
             src={productImage(product)}
             alt={product.name}
-            fill
             priority
             sizes="(min-width: 900px) 50vw, 100vw"
             className="object-contain p-10"

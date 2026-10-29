@@ -1,10 +1,10 @@
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { formatMoney } from "@/lib/money";
 import type { BrandSlug } from "@/lib/brands";
 import type { Product } from "@/lib/data/shop";
 import { productImage } from "@/lib/data/category-image";
+import { ProductImage } from "./ProductImage";
 
 // Brand-agnostic; the product-card__* classes are hooks for per-brand skins in
 // globals.css (Éloure moves name/price above a square tile and shows the
@@ -17,10 +17,9 @@ export function ProductCard({ brand, product }: { brand: BrandSlug; product: Pro
   return (
     <Link href={`/${brand}/product/${product.id}`} className="product-card group flex flex-col gap-3.5">
       <div className="product-card__media relative aspect-[3/4] overflow-hidden bg-neutral-50">
-        <Image
+        <ProductImage
           src={productImage(product)}
           alt={product.name}
-          fill
           sizes="(min-width: 900px) 25vw, 50vw"
           className={`object-contain p-4 transition-transform duration-300 group-hover:scale-105 ${outOfStock ? "opacity-50 grayscale" : ""}`}
         />
