@@ -35,6 +35,8 @@ function revalidateStorefront(brand: string) {
   revalidatePath("/[locale]/[brand]/shop", "page");
   revalidatePath("/[locale]/[brand]/search", "page");
   revalidatePath(`/en/${brand}`);
+  // Admin layout shows the product count in the sidebar.
+  revalidatePath("/admin", "layout");
 }
 
 export async function createProduct(_prevState: unknown, formData: FormData) {

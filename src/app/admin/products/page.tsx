@@ -17,11 +17,16 @@ export default async function AdminProductsPage({
   });
 
   const accent = activeBrand?.colors.accent ?? "#171717";
+  const countsByBrand = await prisma.product.groupBy({ by: ["brand"], _count: { _all: true } });
+  const brandCount = (slug: string) => countsByBrand.find((c) => c.brand === slug)?._count._all ?? 0;
+  const totalCount = countsByBrand.reduce((sum, c) => sum + c._count._all, 0);
 
   return (
     <div>
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-        <h1 className="text-xl font-semibold tracking-tight">Products</h1>
+        <h1 className="text-xl font-semibold tracking-tight">
+          Products <span className="font-normal text-neutral-500 tabular-nums">({products.length})</span>
+        </h1>
         <Link
           href={activeBrandSlug ? `/admin/products/new?brand=${activeBrandSlug}` : "/admin/products/new"}
           style={{ backgroundColor: accent }}
@@ -36,7 +41,7 @@ export default async function AdminProductsPage({
           href="/admin/products"
           className={`rounded px-3 py-1.5 ${!activeBrand ? "bg-neutral-900 text-white" : "border border-neutral-300 text-neutral-600 hover:border-neutral-900"}`}
         >
-          All brands
+          All brands <span className="tabular-nums opacity-70">{totalCount}</span>
         </Link>
         {brands.map((b) => (
           <Link
@@ -47,7 +52,7 @@ export default async function AdminProductsPage({
               activeBrand?.slug === b.slug ? "" : "border border-neutral-300 text-neutral-600 hover:border-neutral-900"
             }`}
           >
-            {b.slug}
+            {b.slug} <span className="tabular-nums opacity-70">{brandCount(b.slug)}</span>
           </Link>
         ))}
       </div>

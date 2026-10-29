@@ -61,7 +61,14 @@ const links = [
   { href: "/admin/shipping", label: "Shipping", Icon: ShippingIcon },
 ];
 
-export function AdminSidebar({ signOutForm }: { signOutForm: React.ReactNode }) {
+export function AdminSidebar({
+  signOutForm,
+  counts = {},
+}: {
+  signOutForm: React.ReactNode;
+  /** Badge shown next to a link, keyed by href (e.g. total products). */
+  counts?: Record<string, number>;
+}) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -98,6 +105,15 @@ export function AdminSidebar({ signOutForm }: { signOutForm: React.ReactNode }) 
               >
                 <Icon />
                 {label}
+                {counts[href] !== undefined && (
+                  <span
+                    className={`ml-auto rounded-full px-2 py-0.5 text-xs tabular-nums ${
+                      active ? "bg-white/20 text-white" : "bg-neutral-100 text-neutral-600"
+                    }`}
+                  >
+                    {counts[href]}
+                  </span>
+                )}
               </Link>
             );
           })}

@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { auth, signOut } from "@/lib/auth";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
+import { prisma } from "@/lib/prisma";
 import "../globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -14,6 +15,7 @@ export const metadata = { title: "Hair Couture Admin" };
 // itself, same as [locale]/layout.tsx does for the storefront.
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const session = await auth();
+  const productCount = session ? await prisma.product.count() : 0;
 
   async function logout() {
     "use server";
@@ -35,6 +37,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
                 no longer stretches it. Collapsed behind a hamburger on
                 mobile (AdminSidebar's own state), always open on desktop. */}
             <AdminSidebar
+              counts={{ "/admin/products": productCount }}
               signOutForm={
                 <form action={logout}>
                   <button
