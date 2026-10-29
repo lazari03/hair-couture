@@ -1,9 +1,7 @@
-// Cookie consent gate for GA4 — nothing analytics-related loads or fires
-// until the visitor explicitly grants consent via CookieConsentBanner.tsx.
-// AnalyticsProvider only renders the gtag.js <Script> tags when consent is
-// "granted", so window.gtag never exists otherwise — every call in
-// gtag.ts's pageview()/track() already no-ops when window.gtag is missing,
-// which makes this the single choke point without touching every call site.
+// Cookie consent for GA4 (Google Consent Mode v2). The tag always loads
+// with analytics storage denied (cookieless pings only); this module stores
+// the visitor's choice from CookieConsentBanner.tsx and broadcasts it, and
+// AnalyticsProvider turns it into gtag('consent', 'update', ...).
 const STORAGE_KEY = "hc_cookie_consent";
 export const CONSENT_EVENT = "hc-cookie-consent-change";
 

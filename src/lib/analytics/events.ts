@@ -3,7 +3,7 @@
 // feed GA4's built-in ecommerce reports (e.g. "most sold product") without
 // a bespoke sales-ranking feature.
 
-import { track } from "./gtag";
+import { contentGroup, track } from "./gtag";
 import type { BrandSlug } from "@/lib/brands";
 
 export interface TrackableItem {
@@ -14,10 +14,11 @@ export interface TrackableItem {
   qty?: number;
 }
 
-function toGaItems(items: TrackableItem[]) {
+function toGaItems(items: TrackableItem[], brand?: BrandSlug) {
   return items.map((i) => ({
     item_id: i.productId,
     item_name: i.name,
+    item_brand: brand ? contentGroup(brand) : undefined,
     item_category: i.category,
     price: i.price,
     quantity: i.qty ?? 1,
@@ -29,7 +30,7 @@ export function trackBrandSelect(brand: BrandSlug) {
 }
 
 export function trackViewItem(item: TrackableItem, brand: BrandSlug) {
-  track("view_item", { currency: "ALL", value: item.price, brand, items: toGaItems([item]) });
+  track("view_item", { currency: "ALL", value: item.price, brand, items: toGaItems([item], brand) });
 }
 
 export function trackAddToCart(item: TrackableItem, brand: BrandSlug) {
@@ -37,7 +38,7 @@ export function trackAddToCart(item: TrackableItem, brand: BrandSlug) {
     currency: "ALL",
     value: item.price * (item.qty ?? 1),
     brand,
-    items: toGaItems([item]),
+    items: toGaItems([item], brand),
   });
 }
 
@@ -47,11 +48,11 @@ export function trackCheckoutButtonClick(brand: BrandSlug) {
 
 export function trackBeginCheckout(items: TrackableItem[], brand: BrandSlug) {
   const value = items.reduce((sum, i) => sum + i.price * (i.qty ?? 1), 0);
-  track("begin_checkout", { currency: "ALL", value, brand, items: toGaItems(items) });
+  track("begin_checkout", { currency: "ALL", value, brand, items: toGaItems(items, brand) });
 }
 
 export function trackPurchase(orderId: string, items: TrackableItem[], value: number, brand: BrandSlug) {
-  track("purchase", { transaction_id: orderId, currency: "ALL", value, brand, items: toGaItems(items) });
+  track("purchase", { transaction_id: orderId, currency: "ALL", value, brand, items: toGaItems(items, brand) });
 }
 
 export function trackSearch(term: string, brand: BrandSlug) {
