@@ -41,6 +41,7 @@ export default async function LandingPage() {
                   loop
                   muted
                   playsInline
+                  preload="auto"
                 />
                 <Image
                   src={shop.hero.image}

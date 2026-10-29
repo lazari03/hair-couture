@@ -32,7 +32,7 @@ export interface HeroContent {
   cta: string;
   secondary: string; // "" when the brand's hero has no second button
   image: string; // /public path — poster frame for the video variant, the shown image otherwise
-  video?: string; // /public path to an .mp4 — only the "video" heroVariant renders it
+  video?: string; // /public path to an .mp4 — the landing panel loops it; in the shop only the "video" heroVariant renders it
   href?: string; // where the hero CTA goes (brand-relative path); defaults to the shop
 }
 
@@ -86,7 +86,7 @@ const shopMeta: Record<BrandSlug, ShopMeta> = {
     // Same campaign as balmainhair.com's homepage: "Locks of Legacy", whose
     // CTA opens our Locks of Legacy collection page (lib/data/brand-pages.ts),
     // which lists the products in that category.
-    hero: { image: "/assets/hero/balmain.jpg", href: "/pages/locks-of-legacy" },
+    hero: { image: "/assets/hero/balmain.jpg", video: "/assets/hero/balmain.mp4", href: "/pages/locks-of-legacy" },
   },
   eloure: {
     slug: "eloure",
