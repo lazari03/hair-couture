@@ -92,18 +92,12 @@ async function seedOrders() {
   console.log("Seeded 6 demo orders (2 per brand).");
 }
 
-// No real stock counts exist yet (nothing to scrape — brand sites don't
-// publish inventory). Badge "Limited" products start low, everything else
-// gets a plausible default; correct via /admin/products once real numbers
-// exist.
-const productsWithStock = seedData.map((p) => ({
-  ...p,
-  stock: p.badge === "Limited" ? 6 : 30,
-}));
+// Everything starts in stock (Product.inStock defaults to true); toggle
+// individual products off in /admin/products.
 
 async function main() {
   await prisma.product.deleteMany();
-  await prisma.product.createMany({ data: productsWithStock });
+  await prisma.product.createMany({ data: seedData });
   console.log(`Seeded ${seedData.length} products (real data from balmainhair.com, maisoneloure.com, eaude1974.com).`);
 
   await prisma.coupon.deleteMany();

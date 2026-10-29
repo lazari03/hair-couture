@@ -149,20 +149,19 @@ export function ProductForm({
         />
       </label>
 
-      <label className="flex flex-col gap-1.5 text-sm">
-        Stock
+<label className="flex min-h-11 cursor-pointer items-center gap-3 rounded border border-neutral-300 px-3 text-sm">
         <input
-          name="stock"
-          type="number"
-          step="1"
-          min="0"
-          required
-          defaultValue={defaultValues?.stock ?? 0}
-          className="min-h-11 border border-neutral-300 px-3 text-sm outline-none focus:border-neutral-900"
+          type="checkbox"
+          name="inStock"
+          defaultChecked={defaultValues?.inStock ?? true}
+          className="h-4 w-4 accent-neutral-900"
         />
-        <span className="text-xs text-neutral-500">
-          Units in stock. Decrements automatically as real orders come in; hits 0 → shows as sold out on the
-          storefront.
+        <span>
+          In stock
+          <span className="block text-xs text-neutral-500">
+            Untick to mark it out of stock: it shows an &quot;Out of stock&quot; label in the shop and can&apos;t be
+            added to the cart.
+          </span>
         </span>
       </label>
 

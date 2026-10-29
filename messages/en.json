@@ -51,7 +51,7 @@
     "addToCart": "Add to cart",
     "addedToCart": "Added to cart",
     "viewProduct": "View product",
-    "outOfStock": "Sold out",
+    "outOfStock": "Out of stock",
     "relatedTitle": "You may also like",
     "placeholderDescription": "Placeholder description copy — swap for real per-product copy once a data source is wired."
   },
@@ -211,8 +211,7 @@
     "nameRequired": "Name is required",
     "messageRequired": "Message is required",
     "productNotFound": "Product not found",
-    "soldOut": "Sold out",
-    "onlyLeftInStock": "Only {count} left in stock",
+    "soldOut": "Out of stock",
     "itemNotFound": "Item not found"
   },
   "eloureHome": {

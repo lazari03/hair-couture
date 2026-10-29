@@ -48,6 +48,11 @@ export default async function ProductDetail({
           <span className="text-[10px] tracking-[0.2em] text-[var(--brand-accent)] uppercase">
             {product.category}
           </span>
+          {!product.inStock && (
+            <span className="mt-3 self-start bg-neutral-900 px-2 py-1 text-[10px] tracking-widest text-white uppercase">
+              {t("outOfStock")}
+            </span>
+          )}
           <h1 className="mt-3 text-3xl leading-tight font-light tracking-tight sm:text-4xl">
             {product.name}
           </h1>

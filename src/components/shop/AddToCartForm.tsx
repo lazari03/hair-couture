@@ -20,7 +20,7 @@ export function AddToCartForm({
   const [added, setAdded] = useState(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const outOfStock = product.stock <= 0;
+  const outOfStock = !product.inStock;
 
   return (
     <>

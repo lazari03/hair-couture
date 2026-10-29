@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { deleteProduct } from "@/lib/actions/products";
+import { deleteProduct, setProductInStock } from "@/lib/actions/products";
 import { productImage } from "@/lib/data/category-image";
 import type { ProductModel } from "@/generated/prisma/models";
 import { parseProductCategories } from "@/lib/product-categories";
@@ -41,9 +41,31 @@ export function ProductsTable({ products }: { products: ProductModel[] }) {
               </td>
               <td className="px-4 py-3">{formatMoney(p.price)}</td>
               <td className="px-4 py-3">
-                <span className={p.stock <= 0 ? "font-medium text-red-600" : p.stock <= 10 ? "font-medium text-amber-600" : ""}>
-                  {p.stock <= 0 ? "Sold out" : p.stock}
-                </span>
+                {/* On/off switch: submits the opposite state. */}
+                <form action={setProductInStock.bind(null, p.id, !p.inStock)}>
+                  <button
+                    type="submit"
+                    role="switch"
+                    aria-checked={p.inStock}
+                    aria-label={p.inStock ? `${p.name}: in stock (click to mark out of stock)` : `${p.name}: out of stock (click to mark in stock)`}
+                    className="flex cursor-pointer items-center gap-2 whitespace-nowrap"
+                  >
+                    <span
+                      className={`relative inline-flex h-5 w-9 shrink-0 rounded-full transition-colors ${
+                        p.inStock ? "bg-emerald-600" : "bg-neutral-300"
+                      }`}
+                    >
+                      <span
+                        className={`absolute top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform ${
+                          p.inStock ? "translate-x-4" : "translate-x-0.5"
+                        }`}
+                      />
+                    </span>
+                    <span className={`text-xs ${p.inStock ? "text-emerald-700" : "font-medium text-red-600"}`}>
+                      {p.inStock ? "In stock" : "Out of stock"}
+                    </span>
+                  </button>
+                </form>
               </td>
               <td className="px-4 py-3 text-neutral-500">{p.badge ?? "—"}</td>
               <td className="px-4 py-3 text-right whitespace-nowrap">

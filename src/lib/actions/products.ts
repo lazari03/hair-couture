@@ -15,7 +15,7 @@ const productSchema = z.object({
   name: z.string().trim().min(1, "Name is required"),
   categories: z.array(z.string().trim().min(1)).min(1, "Select at least one category"),
   price: z.coerce.number().positive("Price must be greater than 0"),
-  stock: z.coerce.number().int("Stock must be a whole number").nonnegative("Stock can't be negative"),
+  inStock: z.boolean(),
   badge: z.string().trim().optional(),
   description: z.string().trim().optional(),
   imageUrl: z.string().trim().optional(),
@@ -43,6 +43,7 @@ export async function createProduct(_prevState: unknown, formData: FormData) {
   await requireAdmin();
   const parsed = productSchema.safeParse({
     ...Object.fromEntries(formData),
+    inStock: formData.get("inStock") === "on",
     categories: formData
       .getAll("categories")
       .map((c) => String(c).trim())
@@ -68,6 +69,7 @@ export async function updateProduct(id: string, _prevState: unknown, formData: F
   await requireAdmin();
   const parsed = productSchema.safeParse({
     ...Object.fromEntries(formData),
+    inStock: formData.get("inStock") === "on",
     categories: formData
       .getAll("categories")
       .map((c) => String(c).trim())
@@ -88,6 +90,14 @@ export async function updateProduct(id: string, _prevState: unknown, formData: F
   });
   revalidateStorefront(parsed.data.brand);
   redirect("/admin/products");
+}
+
+// One-click in/out of stock from the products table (no redirect — stays
+// on the current list/filter).
+export async function setProductInStock(id: string, inStock: boolean) {
+  await requireAdmin();
+  const product = await prisma.product.update({ where: { id }, data: { inStock } });
+  revalidateStorefront(product.brand);
 }
 
 export async function deleteProduct(id: string) {

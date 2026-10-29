@@ -77,13 +77,14 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
   // (and could still hold pre-ALL prices), so it's never trusted for money.
   const products = await prisma.product.findMany({
     where: { id: { in: data.lines.map((l) => l.productId) }, brand: data.brand },
-    select: { id: true, name: true, price: true },
+    select: { id: true, name: true, price: true, inStock: true },
   });
   const productById = new Map(products.map((p) => [p.id, p]));
   if (data.lines.some((l) => !productById.has(l.productId))) return { ok: false, error: "itemNotFound" };
+  if (products.some((p) => !p.inStock)) return { ok: false, error: "soldOut" };
   const lines = data.lines.map((l) => {
     const product = productById.get(l.productId)!;
-    return { ...l, name: product.name, price: product.price };
+    return { productId: l.productId, variant: l.variant, qty: l.qty, name: product.name, price: product.price };
   });
 
   const subtotal = lines.reduce((sum, l) => sum + l.price * l.qty, 0);
@@ -134,20 +135,6 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
       },
     },
   });
-
-  // Decrement stock for each ordered product, clamped at 0. Reads then
-  // writes rather than a single atomic decrement so it never goes negative.
-  // ponytail ceiling: no row locking, so two checkouts racing on the last
-  // unit of something can both succeed — fine at this scale; a real
-  // high-traffic store would want a DB-level constraint/transaction here.
-  for (const line of lines) {
-    const product = await prisma.product.findUnique({ where: { id: line.productId } });
-    if (!product) continue;
-    await prisma.product.update({
-      where: { id: line.productId },
-      data: { stock: Math.max(0, product.stock - line.qty) },
-    });
-  }
 
   // Order confirmation email — brand-customized, sent to whatever the guest
   // typed at checkout. Never throws (see lib/email.ts's own guards), so a

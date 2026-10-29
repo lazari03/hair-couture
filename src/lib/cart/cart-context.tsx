@@ -5,11 +5,9 @@
 // refresh doesn't lose the cart; swap for a server-backed cart behind the
 // same hook shape once checkout needs one.
 //
-// Stock holds: every add/increase goes through reserveStock() (lib/actions/
-// stock.ts) first — a 15-minute soft lock so two shoppers can't both
-// "successfully" add the last unit of something. A failed reservation means
-// the mutation is rejected (caller sees { ok: false, error }); the local
-// cart state never gets ahead of what's actually reserved.
+// Stock: adding a product (or another unit of it) first checks it's still
+// in stock (lib/actions/stock.ts) — an out-of-stock product is rejected
+// with { ok: false, error }.
 
 import {
   createContext,
@@ -20,7 +18,7 @@ import {
   type ReactNode,
 } from "react";
 import type { BrandSlug } from "@/lib/brands";
-import { reserveStock, releaseCartReservations } from "@/lib/actions/stock";
+import { checkInStock } from "@/lib/actions/stock";
 
 // crypto.randomUUID() only exists in a "secure context" (HTTPS, or
 // localhost) — plain HTTP on an IP/domain throws. These ids are just
@@ -81,10 +79,6 @@ const COUPON_STORAGE_KEY = "hc-cart-coupon-v2";
 const LEGACY_STORAGE_KEYS = ["hc-cart", "hc-cart-coupon"];
 const CART_ID_KEY = "hc-cart-id";
 
-function totalQtyForProduct(lines: CartLine[], productId: string) {
-  return lines.reduce((sum, l) => (l.productId === productId ? sum + l.qty : sum), 0);
-}
-
 export function CartProvider({ children }: { children: ReactNode }) {
   const [lines, setLines] = useState<CartLine[]>([]);
   const [coupon, setCouponState] = useState<AppliedCoupon | null>(null);
@@ -139,9 +133,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
       coupon,
 
       addLine: async (line) => {
-        const newTotal = totalQtyForProduct(lines, line.productId) + line.qty;
-        const result = await reserveStock({ cartId, productId: line.productId, qty: newTotal });
-        if (!result.ok) return { ok: false, error: result.error, count: result.count };
+        const result = await checkInStock(line.productId);
+        if (!result.ok) return { ok: false, error: result.error };
         setLines((prev) => [
           ...prev,
           { ...line, id: `${line.productId}-${line.variant}-${Date.now()}` },
@@ -152,42 +145,23 @@ export function CartProvider({ children }: { children: ReactNode }) {
       incLine: async (id) => {
         const line = lines.find((l) => l.id === id);
         if (!line) return { ok: false, error: "itemNotFound" };
-        const newTotal = totalQtyForProduct(lines, line.productId) + 1;
-        const result = await reserveStock({ cartId, productId: line.productId, qty: newTotal });
-        if (!result.ok) return { ok: false, error: result.error, count: result.count };
+        const result = await checkInStock(line.productId);
+        if (!result.ok) return { ok: false, error: result.error };
         setLines((prev) => prev.map((l) => (l.id === id ? { ...l, qty: l.qty + 1 } : l)));
         return { ok: true };
       },
 
       decLine: (id) => {
-        setLines((prev) => {
-          const next = prev.map((l) => (l.id === id ? { ...l, qty: Math.max(1, l.qty - 1) } : l));
-          const line = next.find((l) => l.id === id);
-          // best-effort — releasing capacity should never block the UI
-          if (line) void reserveStock({ cartId, productId: line.productId, qty: totalQtyForProduct(next, line.productId) });
-          return next;
-        });
+        setLines((prev) => prev.map((l) => (l.id === id ? { ...l, qty: Math.max(1, l.qty - 1) } : l)));
       },
 
       removeLine: (id) => {
-        setLines((prev) => {
-          const removed = prev.find((l) => l.id === id);
-          const next = prev.filter((l) => l.id !== id);
-          if (removed) {
-            void reserveStock({
-              cartId,
-              productId: removed.productId,
-              qty: totalQtyForProduct(next, removed.productId),
-            });
-          }
-          return next;
-        });
+        setLines((prev) => prev.filter((l) => l.id !== id));
       },
 
       setCoupon: setCouponState,
 
       clearCart: () => {
-        void releaseCartReservations(cartId);
         setLines([]);
         setCouponState(null);
       },

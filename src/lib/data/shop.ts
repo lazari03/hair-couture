@@ -22,7 +22,7 @@ export interface Product {
   badge?: string | null;
   description?: string | null;
   imageUrl?: string | null; // falls back to categoryImage() when unset
-  stock: number; // 0 = out of stock, storefront disables add-to-cart
+  inStock: boolean; // false = "Out of stock" label, add-to-cart disabled
 }
 
 export interface HeroContent {
@@ -103,7 +103,7 @@ function toShopProduct(product: {
   badge: string | null;
   description: string | null;
   imageUrl: string | null;
-  stock: number;
+  inStock: boolean;
 }): Product {
   const categories = parseProductCategories(product.category);
   return {

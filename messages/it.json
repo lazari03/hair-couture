@@ -51,7 +51,7 @@
     "addToCart": "Aggiungi al carrello",
     "addedToCart": "Aggiunto al carrello",
     "viewProduct": "Vedi prodotto",
-    "outOfStock": "Esaurito",
+    "outOfStock": "Non disponibile",
     "relatedTitle": "Potrebbe piacerti anche",
     "placeholderDescription": "Testo descrittivo segnaposto — da sostituire con il testo reale del prodotto una volta collegata la fonte dati."
   },
@@ -211,8 +211,7 @@
     "nameRequired": "Il nome è obbligatorio",
     "messageRequired": "Il messaggio è obbligatorio",
     "productNotFound": "Prodotto non trovato",
-    "soldOut": "Esaurito",
-    "onlyLeftInStock": "Ne restano solo {count} in magazzino",
+    "soldOut": "Non disponibile",
     "itemNotFound": "Articolo non trovato"
   },
   "eloureHome": {

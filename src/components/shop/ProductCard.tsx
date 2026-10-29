@@ -12,7 +12,7 @@ import { productImage } from "@/lib/data/category-image";
 // card link, not a quick-add: add-to-cart lives on the product page.
 export function ProductCard({ brand, product }: { brand: BrandSlug; product: Product }) {
   const t = useTranslations("product");
-  const outOfStock = product.stock <= 0;
+  const outOfStock = !product.inStock;
 
   return (
     <Link href={`/${brand}/product/${product.id}`} className="product-card group flex flex-col gap-3.5">
