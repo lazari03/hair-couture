@@ -26,13 +26,14 @@ export interface Product {
 }
 
 export interface HeroContent {
-  eyebrow: string;
+  eyebrow: string; // "" when the brand's hero has none
   title: string;
-  body: string;
+  body: string; // may contain *emphasis* and line breaks
   cta: string;
-  secondary: string;
+  secondary: string; // "" when the brand's hero has no second button
   image: string; // /public path — poster frame for the video variant, the shown image otherwise
   video?: string; // /public path to an .mp4 — only the "video" heroVariant renders it
+  href?: string; // where the hero CTA goes (brand-relative path); defaults to the shop
 }
 
 // Just the non-text hero assets — the copy (eyebrow/title/body/cta/secondary)
@@ -41,6 +42,7 @@ export interface HeroContent {
 interface HeroAssets {
   image: string;
   video?: string;
+  href?: string;
 }
 
 export type HeroVariant = "full" | "split" | "video";
@@ -48,6 +50,9 @@ export type HeroVariant = "full" | "split" | "video";
 interface ShopMeta {
   slug: BrandSlug;
   menu: string[];
+  /** Curated product order (by name) for a category, as on the brand's own
+   * collection page; used when the shopper hasn't picked a price sort. */
+  categoryOrder?: Record<string, string[]>;
   hero: HeroAssets;
   heroVariant: HeroVariant;
 }
@@ -66,7 +71,43 @@ const shopMeta: Record<BrandSlug, ShopMeta> = {
     // (admin-managed discounts).
     menu: ["Bestsellers", "New", "Hair Care", "Hair Accessories", "Styling Tools", "Gifts", "Archives", "Sale"],
     heroVariant: "full",
-    hero: { image: "/assets/hero/balmain.jpg" },
+    categoryOrder: {
+      // balmainhair.com/collections/locks-of-legacy order (2026-10-29).
+      "Locks of Legacy": [
+        "Limited Edition Pinces à Cheveux Extra Small Midnight Black",
+        "Limited Edition Pinces à Cheveux Medium Midnight Black",
+        "Limited Edition legacy Spa Brush",
+        "Limited Edition Midnight Black Barrette",
+        "Limited Edition Midnight Black Clip",
+        "Limited Edition Midnight Black Headband",
+        "Limited Edition Midnight Black Slides Pins",
+        "Leave-In Conditioner",
+        "Texturizing Salt Spray",
+        "Matt Paste",
+        "Moisturizing Styling Cream",
+        "Styling Gel Maximum Hold",
+        "Volume Conditioner",
+        "Sun Protection Spray",
+        "Illuminating Mask Silver Pearl 200ml",
+        "Texturizing Volume Spray",
+        "Couleurs Couture Conditioner",
+        "Silk Perfume 200ml",
+        "Thermal Protection Spray",
+        "Session Spray Strong",
+        "Ash Toner",
+        "Argan Moisturizing Elixir",
+        "Dry Shampoo",
+        "Revitalizing Shampoo",
+        "Moisturizing Conditioner",
+        "5 Weeks Enriching Hair Treatment",
+        "Overnight Repair Serum",
+        "Moisturizing Shampoo",
+      ],
+    },
+    // Same campaign as balmainhair.com's homepage: "Locks of Legacy", whose
+    // CTA opens that collection (a product category, see the
+    // 20261029150000_locks_of_legacy migration).
+    hero: { image: "/assets/hero/balmain.jpg", href: `/shop?category=${encodeURIComponent("Locks of Legacy")}` },
   },
   eloure: {
     slug: "eloure",
@@ -123,11 +164,11 @@ export async function getShop(slug: string): Promise<ShopContent | undefined> {
   return {
     ...meta,
     hero: {
-      eyebrow: t("eyebrow"),
+      eyebrow: t.has("eyebrow") ? t("eyebrow") : "",
       title: t("title"),
       body: t("body"),
       cta: t("cta"),
-      secondary: t("secondary"),
+      secondary: t.has("secondary") ? t("secondary") : "",
       ...meta.hero,
     },
     products: products.map(toShopProduct),

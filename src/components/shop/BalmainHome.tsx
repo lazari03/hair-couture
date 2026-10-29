@@ -102,7 +102,7 @@ export async function BalmainHome({ shop }: { shop: ShopContent }) {
             {bh("editorialBody")}
           </p>
           <Link
-            href={`/${shop.slug}/shop`}
+            href={`/${shop.slug}/pages/heritage`}
             className="mt-6 inline-flex w-fit min-h-11 items-center border-b border-neutral-900 px-1 text-xs tracking-widest uppercase hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
           >
             {bh("editorialCta")}

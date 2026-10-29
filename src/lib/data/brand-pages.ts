@@ -1,18 +1,19 @@
 // Brand content pages (/[brand]/pages/[page]) — mirrors the brand's own
 // /pages/* on its official site. Layout lives here as a short list of blocks;
 // all copy lives in messages/<locale>.json under brandPages.<brand>.<page>.<key>.
-// Only Éloure has pages today; other brands 404.
+// Éloure and Balmain have pages; Eau de 1974 404s.
 
 import type { BrandSlug } from "@/lib/brands";
 
 export type PageBlock =
   | { type: "split"; key: string; image: string; tone?: "accent"; compactTitle?: boolean } // image + title/subtitle/lead/body/note
   | { type: "statement"; key: string } // one large centered sentence
-  | { type: "pillars"; key: string; images: string[] } // title + 3 illustrated items
+  | { type: "pillars"; key: string; images: string[] } // title (+ optional lead) + one illustrated item per image
   | { type: "stack"; key: string } // title + centered title/body items
   | { type: "text"; key: string } // centered title + body
   | { type: "imagePair"; images: [string, string] }
-  | { type: "products"; key: string; category: string; limit: number }; // title + products from a category
+  | { type: "products"; key: string; category: string; limit: number } // title + products from a category
+  | { type: "products"; key: string; names: string[] }; // title + these products, in this order
 
 const eloure: Record<string, PageBlock[]> = {
   "about-us": [{ type: "split", key: "story", image: "/assets/eloure/about-muse.jpg" }],
@@ -37,7 +38,30 @@ const eloure: Record<string, PageBlock[]> = {
   ],
 };
 
-const brandPages: Partial<Record<BrandSlug, Record<string, PageBlock[]>>> = { eloure };
+// balmainhair.com/pages/heritage (fetched 2026-10-29).
+const balmain: Record<string, PageBlock[]> = {
+  heritage: [
+    { type: "split", key: "intro", image: "/assets/balmain/heritage-intro.png" },
+    {
+      type: "pillars",
+      key: "craftsmanship",
+      images: [
+        "/assets/balmain/heritage-heritage.png",
+        "/assets/balmain/heritage-excellence.jpg",
+        "/assets/balmain/heritage-innovation.jpg",
+        "/assets/balmain/heritage-products.jpg",
+      ],
+    },
+    {
+      type: "products",
+      key: "top",
+      names: ["Texturizing Volume Spray", "Moisturizing Conditioner", "Argan Moisturizing Elixir", "All Purpose SPA Brush"],
+    },
+    { type: "text", key: "experience" },
+  ],
+};
+
+const brandPages: Partial<Record<BrandSlug, Record<string, PageBlock[]>>> = { eloure, balmain };
 
 export function getBrandPage(brand: string, page: string): PageBlock[] | undefined {
   return brandPages[brand as BrandSlug]?.[page];

@@ -61,11 +61,18 @@ export default async function BrandContentPage({ params }: { params: Promise<{ b
             return (
               <section key={i} className="px-4 py-16 sm:px-6 md:py-24">
                 <h2 className="mb-10 text-center text-2xl uppercase sm:text-4xl">{t(`${block.key}.title`)}</h2>
-                <div className="grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-5">
+                {t.has(`${block.key}.lead`) && (
+                  <p className="mx-auto -mt-4 mb-10 max-w-2xl text-center text-sm leading-relaxed">{t(`${block.key}.lead`)}</p>
+                )}
+                <div
+                  className={`grid grid-cols-1 gap-10 sm:gap-5 ${
+                    items.length === 4 ? "sm:grid-cols-2 lg:grid-cols-4" : "sm:grid-cols-3"
+                  }`}
+                >
                   {items.map((item, j) => (
                     <div key={item.title}>
                       <div className="relative mb-5 aspect-[3/4] overflow-hidden">
-                        <Image src={block.images[j]} alt="" fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover" />
+                        <Image src={block.images[j]} alt="" fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
                       </div>
                       <h3 className="text-xl uppercase sm:text-2xl">{item.title}</h3>
                       <p className="mt-2 text-sm leading-relaxed">{item.body}</p>
@@ -113,7 +120,10 @@ export default async function BrandContentPage({ params }: { params: Promise<{ b
               </section>
             );
           case "products": {
-            const products = shop.products.filter((p) => p.categories.includes(block.category)).slice(0, block.limit);
+            const products =
+              "names" in block
+                ? block.names.flatMap((name) => shop.products.find((p) => p.name === name) ?? [])
+                : shop.products.filter((p) => p.categories.includes(block.category)).slice(0, block.limit);
             if (products.length === 0) return null;
             return (
               <section key={i} className="px-4 py-16 sm:px-6 md:py-24">

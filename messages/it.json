@@ -462,6 +462,51 @@
     }
   },
   "brandPages": {
+    "balmain": {
+      "heritage": {
+        "nav": "Heritage",
+        "intro": {
+          "title": "Il mondo di Hair Couture",
+          "body": [
+            "Da oltre 50 anni Hair Couture, azienda indipendente, è partner devoto e fedele della Maison Balmain. Dick Guliker ha stretto con Monsieur Pierre Balmain una collaborazione durata più di mezzo secolo, durante la quale Hair Couture è rimasta salda anche nei periodi più difficili attraversati dalla Maison."
+          ]
+        },
+        "craftsmanship": {
+          "title": "Artigianalità",
+          "lead": "Da oltre 50 anni Hair Couture ha affermato la propria legittimità nel mondo del lusso grazie a una cura meticolosa del dettaglio, alla perfezione e all'innovazione continua.",
+          "items": [
+            {
+              "title": "Heritage",
+              "body": "Hair Couture rispetta la sua ricca e orgogliosa eredità, continuando a ricercare e creare nuove tecniche di applicazione per garantire prodotti della massima qualità."
+            },
+            {
+              "title": "Eccellenza",
+              "body": "Ogni collezione è composta da una linea ridotta ma completa di prodotti best seller. I team di design, produzione e vendita alzano continuamente l'asticella dell'eccellenza."
+            },
+            {
+              "title": "Innovazione",
+              "body": "La visione a lungo termine di Hair Couture si fonda su heritage, creatività e innovazione. Questa visione guida il successo del marchio e ne assicura un futuro promettente."
+            },
+            {
+              "title": "Prodotti e servizi d'eccellenza",
+              "body": "Scopri i prodotti più amati di Hair Couture. Dalla cura allo styling, ogni prodotto unisce performance professionale, un'esperienza di lusso e una bellezza senza tempo."
+            }
+          ]
+        },
+        "top": {
+          "title": "I nostri prodotti più amati"
+        },
+        "experience": {
+          "title": "Oltre 50 anni di esperienza professionale",
+          "body": [
+            "Da oltre 50 anni Hair Couture, azienda indipendente, è partner devoto e fedele della Maison Balmain. Dick Guliker ha stretto con Monsieur Pierre Balmain una collaborazione durata più di mezzo secolo, durante la quale Hair Couture è rimasta salda anche nei periodi più difficili attraversati dalla Maison. Le collezioni si ispirano ai segreti del backstage e offrono tutto ciò di cui una donna ha bisogno per creare il perfetto look da passerella. In questi 50 anni Hair Couture ha affermato la propria legittimità nel mondo del lusso. Curiamo meticolosamente ogni dettaglio, inseguiamo la perfezione e ricerchiamo costantemente nuove tecniche di applicazione per garantire prodotti della migliore qualità, sempre nel rispetto della nostra ricca e orgogliosa eredità.",
+            "Ogni collezione è composta da una linea ridotta ma completa di soli prodotti best seller. I nostri team di design, produzione e vendita alzano continuamente l'asticella dell'eccellenza. La visione a lungo termine, fondata su heritage, creatività e innovazione, guida il successo di Hair Couture e ne assicura un futuro promettente.",
+            "Prodotti e servizi d'eccellenza — Hair Couture si impegna costantemente a reperire, selezionare e lavorare i capelli migliori al mondo. Questa ricerca dell'eccellenza permette all'azienda di offrire un'esclusiva garanzia di 6 mesi su tutti i prodotti in capelli umani. La ricerca dell'eccellenza va però oltre la qualità dei prodotti: comprende la scelta dei partner, il design e la posizione dei negozi partner, la presentazione dei prodotti e la capacità dei partner di immergere i propri clienti nel mondo di Hair Couture.",
+            "Nei media — Hair Couture è apprezzata dai più grandi session stylist, influencer e celebrità di tutto il mondo. I prodotti compaiono nelle pagine beauty delle pubblicazioni cartacee e digitali più influenti, dove la qualità e la fragranza signature sono riconosciute come puro lusso da redattori e professionisti del settore."
+          ]
+        }
+      }
+    },
     "eloure": {
       "about-us": {
         "nav": "Chi siamo",
@@ -560,11 +605,9 @@
   "shopMeta": {
     "balmain": {
       "hero": {
-        "eyebrow": "Autunno / Inverno 26",
-        "title": "Couture per i capelli",
-        "body": "Extension annodate a mano e strumenti di finitura sviluppati con l'atelier.",
-        "cta": "Scopri la collezione",
-        "secondary": "Vedi il lookbook"
+        "title": "Locks of Legacy",
+        "body": "Un'eredità iconica. *Creata per essere custodita.*\nScopri la nostra edizione limitata di accessori per capelli realizzati a mano.",
+        "cta": "Scopri l'eredità"
       }
     },
     "eloure": {
@@ -587,6 +630,7 @@
     }
   },
   "categories": {
+    "Locks of Legacy": "Locks of Legacy",
     "Bestsellers": "Più venduti",
     "New": "Novità",
     "Hair Care": "Cura dei capelli",

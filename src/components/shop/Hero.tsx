@@ -105,38 +105,50 @@ export function Hero({
     );
   }
 
-  // full
+  // full — balmainhair.com's campaign hero: copy on the left over the image,
+  // serif uppercase title, one CTA.
   return (
-    <section className="relative h-[min(78vh,680px)] overflow-hidden bg-neutral-200">
+    <section className="relative h-[min(78vh,680px)] overflow-hidden bg-neutral-950">
       <Image src={content.image} alt="" fill priority sizes="100vw" className="object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-black/5 to-black/55" />
-      <div className="relative flex h-full flex-col items-center justify-end px-6 pb-16 text-center text-white">
-        <span className="text-[11px] tracking-[0.22em] opacity-85 uppercase">{content.eyebrow}</span>
-        <h1 className="mt-4 text-5xl leading-none font-light tracking-tight sm:text-7xl">
-          {content.title}
-        </h1>
-        <p className="mt-4 max-w-[46ch] text-[15px] leading-relaxed opacity-90">{content.body}</p>
-        <div className="mt-7 flex flex-wrap justify-center gap-3">
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-transparent md:via-black/10" />
+      <div className="relative flex h-full flex-col items-center justify-center px-6 text-center text-white md:w-1/2">
+        {content.eyebrow && (
+          <span className="mb-4 text-[11px] tracking-[0.22em] opacity-85 uppercase">{content.eyebrow}</span>
+        )}
+        <h1 className="font-serif text-4xl leading-tight tracking-wide uppercase sm:text-5xl">{content.title}</h1>
+        <p className="mt-6 max-w-[46ch] text-[15px] leading-relaxed whitespace-pre-line opacity-95">
+          <RichText text={content.body} />
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
           <BannerLinkTracker
-            href={`/${brand}/shop`}
+            href={`/${brand}${content.href ?? "/shop"}`}
             bannerId="hero_full"
             label={content.cta}
             brand={brand}
-            className="inline-flex min-h-11 items-center bg-white px-7 text-xs tracking-widest text-neutral-900 uppercase hover:bg-[var(--brand-accent)] hover:text-white"
+            className="inline-flex min-h-12 items-center bg-black px-7 text-xs tracking-widest text-white uppercase hover:bg-white hover:text-black"
           >
             {content.cta}
           </BannerLinkTracker>
-          <BannerLinkTracker
-            href={`/${brand}/shop`}
-            bannerId="hero_full"
-            label={content.secondary}
-            brand={brand}
-            className="inline-flex min-h-11 items-center border border-white/60 px-7 text-xs tracking-widest text-white uppercase hover:bg-white/15"
-          >
-            {content.secondary}
-          </BannerLinkTracker>
+          {content.secondary && (
+            <BannerLinkTracker
+              href={`/${brand}/shop`}
+              bannerId="hero_full"
+              label={content.secondary}
+              brand={brand}
+              className="inline-flex min-h-12 items-center border border-white/60 px-7 text-xs tracking-widest text-white uppercase hover:bg-white/15"
+            >
+              {content.secondary}
+            </BannerLinkTracker>
+          )}
         </div>
       </div>
     </section>
+  );
+}
+
+// Copy from messages can mark a phrase as *emphasis* (rendered italic).
+function RichText({ text }: { text: string }) {
+  return text.split(/(\*[^*]+\*)/g).map((part, i) =>
+    part.startsWith("*") && part.endsWith("*") ? <em key={i}>{part.slice(1, -1)}</em> : part,
   );
 }

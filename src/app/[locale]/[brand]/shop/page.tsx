@@ -45,6 +45,15 @@ export default async function ShopListing({
     ? shop.products.filter((p) => p.categories.includes(category))
     : shop.products;
 
+  const curated = category ? shop.categoryOrder?.[category] : undefined;
+  if (curated && !sort) {
+    // Listed products first, in the brand's own order; anything else after.
+    const curatedRank = (name: string) => {
+      const i = curated.indexOf(name);
+      return i === -1 ? curated.length : i;
+    };
+    products = [...products].sort((a, b) => curatedRank(a.name) - curatedRank(b.name));
+  }
   if (sort === "price-asc") products = [...products].sort((a, b) => a.price - b.price);
   if (sort === "price-desc") products = [...products].sort((a, b) => b.price - a.price);
 

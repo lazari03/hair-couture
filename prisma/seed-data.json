@@ -2,7 +2,7 @@
   {
     "brand": "balmain",
     "name": "Moisturizing Shampoo",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 4500,
     "badge": null,
     "description": "Intense nourishing shampoo that provides hydration and revitalization for pure and healthy hair. Gently cleanses scalp and hair while adding moisture. Contains UV-Filters to shield the hair against UV radiation and enhances colour retention.\n\nThe water-based formula easily spreads the shampoo through the hair and does not weigh the hair down after rinsing. The active ingredient, Provitamin B5 helps to balance hair moisture levels, supports hair elasticity and flexibility. It helps to calm irritated and sensitive scalp, softens the hair and creates brilliant shine. The extra boost of B vitamins thickens the hair and stimulates hair growth.",
@@ -11,7 +11,7 @@
   {
     "brand": "balmain",
     "name": "Moisturizing Conditioner",
-    "category": "[\"Hair Care\",\"Bestsellers\"]",
+    "category": "[\"Hair Care\",\"Bestsellers\",\"Locks of Legacy\"]",
     "price": 4800,
     "badge": null,
     "description": "Highly nourishing conditioner for natural or colour-treated hair. Soothes, protects, detangles and revitalizes the hair. UV-Filters protect the hair against UV radiation and improve colour retention. Gives shine and manageability.\n\n• Nutrition for healthy looking hair\n• Creates shiny, soft and smooth hair\n• Eliminates frizz\n\n## Details\nLightweight conditioner enriched with pure organic Argan oil to smoothen the hair. Argania Spinosa Kernel Oil, better known as Argan Oil, originates from Morocco and comes from argan tree fruits. It absorbs easily, adds shine and protects damaged hair. The creamy formula nourishes the hair strands and leaves a lightweight touch. Results in soft manageable hair to ensure effortless detangling while brushing to avoid breakage of the hair. Infused with Pro-Vitamin B5 to improve moisture retention and hair elasticity, it softens the hair and creates brilliant shine. Gives the hair the ultimate vitamin boost, which thickens the hair and stimulates hair growth.\n\n## Ingredients\nAqua,Cetearyl Alcohol, Behentrimonium Chloride, Glycerin, Isopromethyl Silsesquioxane Copolymer, Stearamidopropyl Dimethylamine, Argania Spinosa Kernel Oil, Silk Amino Acids, Panthenol, Polyquaternium-53, Dimethylpabamidopropyl Lauryldimonium Tosylate, Ethylhexyl Methoxycinnamate, Polyquaternium-10, Trideceth-5, Parfum, Hydroxyethylcellulose, Phenoxyethanol, Ethylglycerin, Lactic Acid.",
@@ -29,7 +29,7 @@
   {
     "brand": "balmain",
     "name": "Volume Conditioner",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 5100,
     "badge": null,
     "description": "A gentle, lightweight conditioner. Moisturizes and adds volume to thin, fine hair. Nourishes and repairs from within for deep strength. Creates bouncy, shiny, and fuller-looking hair.\n\n• Daily conditioner\n• Adds volume without adding weight\n• Enhances hair texture\n\n## Details\nA body-building moisturizer that lifts thin, fine hair. Enhances natural shine and leaves the hair detangled and frizz-free. Replenishes structure from root to tip, restoring texture and body. Formulated with Silk Protein and Argan Oil to support optimal moisture retention in each hair cell, resulting in stronger, healthier-looking hair. Protects from UV rays to prevent damage and maintain a vibrant appearance.\n\n## Ingredients\nAqua, Cetearyl Alcohol, Glyceryl Stearate, Stearamidopropyl Dimethylamine, Argania Spinosa Kernel Oil, Silk Amino Acids, Panthenol, Dimethylpabamidopropyl Lauryldimonium Tosylate, Propylene Glycol Stearate, Sodium Cocoyl Amino Acids, Potassium Dimethicone PEG-7 Panthenyl Phosphate, Behenoyl PG-Trimonium Chloride, Quaternium-80, Amodimethicone, C11-15 Pareth-7, Laureth-9, Glycerin, Trideceth-12, Ethylhexyl Methoxycinnamate, Ceteareth-20, Phenoxyethanol, Ethylhexylglycerin, Polyquaternium-37, Propylene Glycol Dicaprylate/Dicaprate, PPG-1 Trideceth-6, Parfum, Citric Acid.",
@@ -38,7 +38,7 @@
   {
     "brand": "balmain",
     "name": "Revitalizing Shampoo",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 4500,
     "badge": null,
     "description": "An intense replenishing treatment that strengthens and rebuilds the hair from within. The enhanced formula includes a fine selection of vitamins E, F and P and Cashmere Protein. The combination of these vitamins result in smooth and soft hair. Vitamin E boosts the hair and revitalizes the strands. Vitamin F cherishes the scalp; it acts as a conditioner for the skin. Vitamin P works as a repairing agent to restore dry and damaged hair. Cashmere proteins gives a luxuriously soft feeling and makes hair stronger since cashmere proteins support the natural protein in the hair. Cashmere is fine in texture yet strong and lightweight; it leaves the hair bouncy and manageable.\n\nIngredients\n\nAqua/Water, Sodium Coceth Sulfate, Cocamidopropyl, Betaine, Peg-200 Hydrogenated Glyceryl Palmate, Peg/Ppg-14/4 Dimethicone, Plyquaternium-7, Distearyl Ether, Dicaprylyl Ether, Sodium Laureth Sulfate, Guar Hydroxypropyltrimonium Chloride, Plyquaternium-10, Xanthan Gum, Peg-7 Glyceryl Cocoate, Peg-4 Distearyl Ether, Lactobacillus/Wasabia Japonica Root Ferment Extract, Lactobacillus/Phoenix Dactylifera Fruit Ferment Extract, Hamamelis Virginiana Leaf Extract/Witch Hazel Leaf Extract, Rice Amino Acids, Hydrolyzed Wool, Glycerin, Sorbitol, Lecithin, Retinyl Palmitate, Panthenol, Silanetriol Melaninate, Polyperfluoroethoxymethoxy Difluoroethyl Peg Phosphate, Superoxide Dismutase, Tocopheryl Acetate, Glyceryl Linoleate, Glyceryl Linoleate Diatomaceous Earth, Sodium Chloride, Citric Acid, Sodium Benzoate, Ethylhexylglycerin, Phenoxyethanol, Parfum/Fragrance.",
@@ -74,7 +74,7 @@
   {
     "brand": "balmain",
     "name": "Couleurs Couture Conditioner",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 5400,
     "badge": null,
     "description": "Intense moisturizing conditioner for coloured, damaged and over-processed hair. Nourishes, detangles and strengthens the hair deeply from within. Enriched with a unique blend of Argan Elixir, Silk and Cashmere protein for soft and shiny hair.\n\n• Deeply nourishes\n• Promotes colour longevity\n• Smooth and manageable strands\n\n## Details\nThe Couleurs Couture Conditioner of Balmain Hair is perfect for colour-treated, damaged or over processed hair. The carefully selected ingredients Argan Elixir, Silk- and Cashmere protein are enhanced with Quinoa Seed- and Cocos Oil. They repair and strengthen the hair deeply from within. The advanced formula moisturizes the hair and leaves the hair smooth and without frizz. Cashmere Protein (Hydrolyzed Keratin) is a hair-identical protein. It strengthens the cohesion of hair and improves the ease of combing through the hair while avoiding breakage.\n\n## Ingredients\nAqua, Cetyl Alcohol, Glycerin, Behentrimonium Chloride, Betaine, Ethylhexyl Palmitate, Hydrolyzed Keratin, Silk Amino Acids, Argania Spinosa Kernel Oil, Helianthus Annuus Seed Oil, Macadamia Ternifolia Seed Oil, Cocos Nucifera Oil, Glycine Soja Oil, Gardenia Tahitensis Flower Extract, Rosmarinus Officinalis Leaf Extract, Chenopodium Quinoa Seed Extract, Tocopherol, Aloe Barbadensis Leaf Juice, Sodium Hyaluronate, Tocopheryl Acetate, Panthenol, Silicone Quaternium-16, Isopropyl Alcohol, Undeceth-11, Butyloctanol, Undeceth-5, Iodopropynyl Butylcarbamate, Polyquaternium-53, Dipropylene Glycol, Polysilicone-19, Ethylhexyl Methoxycinnamate, Hydroxyethylcellulose, Phenoxyethanol, Ethylhexylglycerin, Lactic Acid, Benzoic Acid, Sodium Benzoate, Parfum, Pantolactone, Allantoin, Citric Acid, Sorbic Acid.",
@@ -110,7 +110,7 @@
   {
     "brand": "balmain",
     "name": "Overnight Repair Serum",
-    "category": "[\"Hair Care\",\"Bestsellers\"]",
+    "category": "[\"Hair Care\",\"Bestsellers\",\"Locks of Legacy\"]",
     "price": 11500,
     "badge": null,
     "description": "An iconic, rich hair serum for an intensive overnight repair treatment. The unique concentrated formula repairs and strengthens the hair. Enriched with natural oils and extracts, the serum reduces visible signs of damaged hair. Protects the hair against frizz and split ends.\n\n• Multiple possible hair routines\n• Enriched with natural oils and extracts\n• Reduces visible signs of dull or damaged hair\n\n## Details\nThe Overnight Repair Serum of Balmain Hair improves manageability and smoothens the hair. The blend of natural oils and extracts penetrates deeply into the hair to boost and restore the hair from within. Use as a treatment for ultimate results. Contains Argania Spinosa Kernel Oil, which adds shine, softness and protects damaged hair. It renews treated, coloured and dry hair. Contains thermal and UV protection to protect the hair and hair colour. Vitamins are well known essentials that also mandatory in hair care. The Balmain Overnight Repair Serum contains vitamin B (Salvia Hispanica Seed Oil – also known as Chia Seed Oil) and Vitamin E (Tocopherol). The blend of Helianthus Annuus Seed Oil, Cocos Nucifera Oil, Chenopodium Quinoa Seed Extrac and Gardenia Tahitensis Flower Extract is added to smoothen, repair and condition the hair. For quick absorption of the oils and a non-greasy feeling after using the product, Macadamia Ternifolia Seed Oil is added to the formula. Antioxidants (Glycine Soja Oil and Rosmarinus Officinalis Leaf Extract) help to fight against premature aging of hair. It prevents from hair loss and provide hair growth.\n\n## Ingredients\nArgania Spinosa Kernel Oil, Helianthus Annuus Seed Oil, Salvia Hispanica Seed Oil (Chia Seed Oil), Macadamia Ternifolia Seed Oil, Glycine Soja Oil, Cocos Nucifera Oil, Chenopodium Quinoa Seed Extract, Gardenia Tahitensis Flower Extract, Rosmarinus Officinalis Leaf Extract, Tocopherol.",
@@ -119,7 +119,7 @@
   {
     "brand": "balmain",
     "name": "5 Weeks Enriching Hair Treatment",
-    "category": "[\"Hair Care\",\"Bestsellers\"]",
+    "category": "[\"Hair Care\",\"Bestsellers\",\"Locks of Legacy\"]",
     "price": 11500,
     "badge": null,
     "description": "This soft, lightweight, versatile lotion helps to revitalize and restore hair to its most youthful, radiant appearance. Seals hair cuticles, gives body and elasticity while reconstructing the hair fiber. The Balmain 5 Week Enriching Hair Treatment is designed as complete service. All 5 tubes (5x20ml) are designed for a single use application.\n\n• Silk Protein for optimal hydration\n• Regeneration and revitalization within 5 weeks\n• Reconstructs the hair fiber\n\n## Details\nThe haircare treatment for regeneration and revitalization within 5 weeks. The two active ingredients in the Balmain formula: Silk Protein and Succinic Acid seal the hair cuticles, give body and elasticity while reconstructing the hair fiber for healthy hair with a luminous shine. Silk Protein is an active ingredient that ensures optimal hydration within the hair. Scientifically Silk Protein and the hair’s natural proteins are almost identical. Silk Protein contains 17 of the 19 amino acids of natural hair. The ingredient reconstructs damaged protein chains within the hair in the most natural way. Resulting in soft, strengthened and revitalized hair. To reinforce the power of Silk, the formula is enriched with Succinic Acid. Succinic Acid is a natural ingredient derived from Amber stones that penetrates deeply into the hair. It helps to deliver the Silk Protein and creates a protective layer around each individual protein chain.The combination of these two effective and active ingredients creates a long lasting reconstruction of the hair.\n\n## Ingredients\nAqua/Water, Betaine, Cetearyl Alcohol, Amodimethicone/ Morpholinomethyl Silsesquioxane Copolymer, Succinic Acid, Behentrimonium Chloride, ehenamidopropyl Dimethylamine, Hydrolyzed Silk, Argania Spinosa Kernel Oil, Glycolic Acid, Guar Hydroxypropyltrimonium Chloride, Stearamidopropyl Dimethylamine, Glycerin, Trideceth-5, Lactic Acid, Isopropyl Alcohol, Phenoxyethanol, Ethylhexylglycerin, Propylene Glycol, Parfum/Fragrance, Linalool, Limonene.",
@@ -164,7 +164,7 @@
   {
     "brand": "balmain",
     "name": "Argan Moisturizing Elixir",
-    "category": "[\"Hair Care\",\"Bestsellers\"]",
+    "category": "[\"Hair Care\",\"Bestsellers\",\"Locks of Legacy\"]",
     "price": 5400,
     "badge": null,
     "description": "Rejuvenating pure organic argan oil infused with a unique blend of oils and minerals. Hydrates, moisturizes and softens the hair. The hair oil increases the hair’s elasticity and natural shine. Revives dry, damaged hair, split ends and reduces frizz.\n\n• Provides a luminous shine\n• Hydrates\n• Soothes damaged hair\n\n## Details\nArgan oil, obtained from the kernels of the Moroccan Argan tree, is a natural anti-ageing ingredient that repairs and protects damaged hair from environmental extremes and creates lustrous-looking shine. The Balmain Argan Elixir's is extremely rich in vitamins (particularly Vitamin E) and is unrivalled by any product in providing its unique blend of natural oils, minerals and fatty acids. The argan oil fights frizz and adds a brilliant shine. Enriched with the signature blend of Silk Protein and Argan Elixir and infused with the iconic Balmain signature fragrance.\n\n## Ingredients\nCyclopentasiloxane, Dimethiconol, Argania Spinoza Kernel Oil, Trimethylsiloxyphenyl Dimethicone, Silk Amino Acids, Ethylhexyl Methoxycinnamate, Perfume.",
@@ -173,7 +173,7 @@
   {
     "brand": "balmain",
     "name": "Leave-In Conditioner",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 4400,
     "badge": null,
     "description": "Lightweight, leave-in conditioner. Detangles, nourishes hair and scalp and smoothens hair cuticles. Gives body, shine and conditioning throughout the day. With protective UV-filters to protect against UV-rays.\n\n• Close the hair cuticles\n• UV protection for lasting colour\n• Nourishing effect\n\n## Details\nInfused with Argan Elixir and Silk Protein to restore the hair. The Leave in Conditioning Spray of Balmain Hair helps to eliminate tangled hair, frizz and dry ends. The nurturing leave-in spray is designed for hair that is in need for some extra care without losing volume. Leaves the hair repaired and conditioned throughout the day. Repairs the hair cuticles and protects against breakage. This mist is infused with Balmain Hair's Signature Fragrance to leave the hair with a refreshing fragrance.\n\n## Ingredients\nAqua, Glycerin, Argania Spinosa Kernel Extract, Silk Amino Acids, Panthenol, Niacinamide, Tocopheryl Acetate, Sodium Cocoyl Amino Acids, Potassium Dimethicone PEG-7 Panthenyl Phosphate, Amodimethicone, C11-15 Pareth-7, C12-16 Pareth-9, Trideceth-12, Butylene Glycol, PEG-40 Hydrogenated Castor Oil, Polysorbate 20, Ethylhexyl Methoxycinnamate, Cetrimonium Chloride, Phenoxyethanol, Ethylhexylglycerin, Parfum, Citric Acid.",
@@ -182,7 +182,7 @@
   {
     "brand": "balmain",
     "name": "Thermal Protection Spray",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 4300,
     "badge": null,
     "description": "The lightweight, ultra-fine spray creates a thermal shield that protects the hair from the heat of a hair dryer, flat iron or curling iron. The formula provides a brilliant finish. Prevents moisture loss and increases shine.\n\n• Heat protection up to 220 ° C | 428 ° F\n• Prevents frizz and split ends\n• Non-aggravating formula\n\n## Details\nThe Thermal Protection Spray protects the hair against the heat of styling tools (up to 220 ° C | 428 ° F). Helps strengthening the hair and fights against breakage for both natural and dyed hair. The Pro Vitamin B5 and Silk Protein enriched formula nourishes, repairs and strengthens the hair. The Thermal Protection Spray has an anti-tangle and hair softening effect that ensures styling tools to glide easily through the hair, resulting in soft hair with a beautiful shine.\n\n## Ingredients\nAqua, Alcohol Denat., PEG-12 Dimethicone, Butylene Glycol, Sodium Laneth-40 Maleate/Styrene Sulfonate Copolymer, Hydrolyzed Vegetable Protein PG-propyl Silanetriol, Silk Amino Acids, Argania Spinosa Kernel Extract, VP/VA Copolymer, Polysorbate 20, PEG-40 Hydrogenated Castor Oil, Ethylhexyl Methoxycinnamate, Benzophenone-4, Panthenol, Parfum, Phenoxyethanol, Potassium Sorbate, Benzoic Acid, EDTA, Sodium Hydroxide, CI 16255.",
@@ -191,7 +191,7 @@
   {
     "brand": "balmain",
     "name": "Sun Protection Spray",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 4600,
     "badge": null,
     "description": "The formula enriched with protective UVA and UVB filters helps to nourish and condition sun, sea or chlorine exposed hair. Prevents hair colour fading and keratin damage. For soft and strong hair with a luminous shine.\n\n• Double acting formula; protects and nourishes intensely\n• Provides colour retention\n• Detangles and adds shine\n\n## Details\nThe UVA rays cause the colour to fade and the UVB rays are responsible for hair protein loss which causes damage. The Balmain Sun Protection Spray formula is enriched with protective UVA and UVB filters which helps to nourish hair exposed to sun, sea or chlorine. In addition, the moisturizing formula works as a leave in spray which will leave the hair feeling soft and shiny during and after a sunny day at the beach.\n\n## Ingredients\nAqua, Glycerin, Silk Amino Acids, Argania Spinosa Kernel Extract, Ethylhexyl Methoxycinnamate, Benzophenone-4, Tocopheryl Acetate, Panthenol, Niacinamide, Sodium Cocoyl Amino Acids, Potassium Dimethicone PEG-7 Panthenyl Phosphate, Cetrimonium Chloride, PEG-40 Hydrogenated Castor Oil, Polysorbate 20, Amodimethicone, -C11-15 -Pareth-7, C12-16 Pareth-9, -Trideceth-12, -Butylene Glycol, Phenoxyethanol, Ethyl-hexyl--glycerin, Parfum, Citric Acid, CI 42090, CI 47005, CI 61570.",
@@ -200,7 +200,7 @@
   {
     "brand": "balmain",
     "name": "Texturizing Salt Spray",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 4800,
     "badge": null,
     "description": "Sea salt based styling spray. Adds definition, texture and body. Gives the hair a flexible hold and control. Enriched with Silk Protein and Argan Oil to ensure the moisture balance. Humidity resistant.\n\n• Provides structure and grip\n• Create textured beach waves\n• Preserves the moisture balance\n\n## Details\nCreate a fresh summer look with the Balmain Texturizing Salt Spray. The formula is blended with Sea Salt to add body and a matt finish. The Sea Salt results in more definition and creates texture. The Texturizing Salt Spray reduces frizz and is humidity resistant. It gives the hair the moisture balance it needs. Protect damaged, dry and weak hair against external influences.\n\n## Ingredients\nAqua, Alcohol Denat., Sorbitol, Polyacrylate-22, Sodium Chloride (Sea Salt), Silk Amino Acids, Panthenol, Glycerin, Ethylhexyl Methoxycinnamate, Parfum, CI 13015, CI 16255.",
@@ -209,7 +209,7 @@
   {
     "brand": "balmain",
     "name": "Texturizing Volume Spray",
-    "category": "[\"Hair Care\",\"Bestsellers\"]",
+    "category": "[\"Hair Care\",\"Bestsellers\",\"Locks of Legacy\"]",
     "price": 5000,
     "badge": null,
     "description": "A versatile spray that gives the hair a lift from the roots for extra volume. The product provides long-lasting volume and texture in the hair in no time. Instantly revitalizes the hair. Suitable for everyday use.\n\n• Direct volume at the roots\n• Strong fixation\n• Long lasting effect\n\n## Details\nA versatile spray that gives the hair a lift from the roots for extra volume. The product provides long-lasting volume and texture in the hair in no time. Instantly revitalizes the hair. Suitable for everyday use. The ingredients Silk Protein and Argan Oil stimulate the moisture balance and ensure optimal moisture retention in the hair cell. They protect damaged, dry and weak hair against external influences. The Care Line is enriched with the signature Balmain fragrance.\n\n## Ingredients\nButane, Alcohol Denat., Isobutane, Propane, VP/VA Copolymer, Aluminum Starch Octenylsuccinate, Silica, Solanum Tuberosum (Potato)Starch, Cocotrimonium Methosulfate, Aqua, Tocopherol, Benzophenone-4, Parfum.",
@@ -236,7 +236,7 @@
   {
     "brand": "balmain",
     "name": "Moisturizing Styling Cream",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 4400,
     "badge": null,
     "description": "Perfect base for any hairstyle. Provides body, tames frizz and moisturizes the hair. Gives a perfect hold while styling, curling or blow drying the hair. Adds volume, shine and a reworkable hold.\n\n• Daily moisturizer for your hair\n• Reduces frizziness\n• Reduces blow-dry time\n\n## Details\nThe Moisturizing Styling Cream is a soft and light cream that protects the hair from damage and provides a perfect base before using a styling (hot)tool. Full of protein and Argan Elixir. It leaves the hair smoother and nourished. Leaves the hair easy to comb, soft and shiny. The formula is defined as a pre-treatment before styling it with a curling wand, straightener, or blow dryer. The nourishing cream tames frizz and protects the hair from further damage. Lightly infused with the brand’s signature fragrance scent, it leaves a great smell to the hair.\n\n## Ingredients\nAqua, Propylene Glycol, Cetyl Alcohol, Ethylhexyl Palmitate, Glyceryl Stearate, Ceteareth-20, Argania Spinosa Kernel Oil, Silk Amino Acids, Panthenol, Tocopheryl Acetate, Hydrolyzed Vegetable Protein PG-propyl Silanetriol, Cetrimonium Chloride, Polyquaternium-7, Ethylhexyl Methoxycinnamate, Dimethicone, Polyquaternium-37, Propylene Glycol Dicaprylate/Dicaprate, PPG-1 Trideceth-6, Parfum, Phenoxyethanol, Ethylhexylglycerin, Potassium Sorbate, Disodium EDTA",
@@ -254,7 +254,7 @@
   {
     "brand": "balmain",
     "name": "Styling Gel Maximum Hold",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 4400,
     "badge": null,
     "description": "A lightweight, versatile styling gel with maximum, long-lasting hold for wet or dry hairstyles. Washes out easily due to the water-based formula. The perfect formulation for powerful catwalk inspired looks.\n\n• Long-lasting hold\n• Wet or dry hair looks\n• Non-flexible\n\n## Details\nThe clear and non-sticky formula of the Balmain Styling Gel Maximum Hold is perfect for hairstyles that desire a long-lasting hold. Shapes easily in wet and dry hair. Enhances shine and hydrates each hair strand. Ideal for short to medium hairstyles but also excellent to tame fly-aways when creating a ponytail. The lightweight styling gel has a neat and durable finish. Argan Elixir and Silk Protein restore dry and damaged hair.\n\n## Ingredients\nAqua, Alcohol Denat, VP/VA Copolymer, Polyquaternium-69, Propanediol, PVP, PEG-40 Hydrogenated Castor Oil, Argania Spinosa Kernel Oil, Silk Amino Acids, Panthenol, Polysorbate 20, Parfum, Pantolactone, Phenoxyethanol, Ethylhexylglycerin, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Benzophenone-4, Benzoic Acid, Tetrasodium EDTA, Aminomethyl Propanol, Citric Acid.",
@@ -281,7 +281,7 @@
   {
     "brand": "balmain",
     "name": "Dry Shampoo",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 4600,
     "badge": null,
     "description": "Instantly refreshing dry cleansing spray. The Dry Shampoo absorbs oils and excess sebum while lifting the roots and adding volume. Extends the blowout life and creates matt textured, full-bodied hair.\n\n• Refreshes the hair\n• Absorbs oils and cleans the scalp\n• Enriched with the signature Balmain Hair fragrance\n\n## Details\nThe Dry Shampoo of Balmain Hair is especially designed to instantly refresh greasy, oily hair. This multipurpose product, enriched with the signature blend of Argan Elixir and Silk Protein, cleanses the hair while working as a volume booster. The cleansing spray absorbs dirt while leaving the hair with a \"just washed\" feeling. The lightweight formula lifts the hair from the root to create the ultimate backcomb result. The Signature Fragrance infused formula wipes out unwanted odors and leaves the hair with a subtle refreshing scent.\n\n## Ingredients\nButane, Isobutane, Alcohol Denat, Propane, Solanum Tuberosum (potato) Starch, Aluminium Starch octenylsuccinate, Aqua, cocotrimonium Methosulfate, Hydrated Silica, Benzophenone-4, Perfume.",
@@ -299,7 +299,7 @@
   {
     "brand": "balmain",
     "name": "Session Spray Strong",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 4800,
     "badge": null,
     "description": "Stronghold hairspray perfect for controlling, fixating and finishing. Gives shine and body without leaving the hair crunchy or stiff. Humidity resistant\n\n• Long-lasting styling spray\n• Use for keeping in shape, fixing and finishing\n• Long-term control\n\n## Details\nThe Session Spray Strong provides an extreme long lasting hold. This spray locks the hair into place and handles movement and humidity. It contains UV-damage-preventing extracts that protect the hair from the sun. The product will not leave any residue to the hair while washing out. Due to the high-performance texture, it allows hairstyles to last all day while not compressing the hair. The infused signature foundation scent of Balmain Hair Couture provides a refreshing sensation while using the spray.\n\n## Ingredients\nDimethyl Ether, Alcohol Denat., Octylacrylamide/Acrylates/ Butylaminoethyl Methacrylate Copolymer, Acrylates Copolymer, Silk Amino Acids, Aminomethyl Propanol, PEG-12 Dimethicone, Panthenol, Benzophenone-4, Parfum.",
@@ -308,7 +308,7 @@
   {
     "brand": "balmain",
     "name": "Silk Perfume 200ml",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 5400,
     "badge": null,
     "description": "Finishing shine spray infused with silk protein and pure organic Argan Oil. Provides a lightweight, long-lasting silk finish. Detangles, repairs and protects the hair against external damage.\n\n• Refreshing scent for the hair\n• Enriched with Argan and Silk Protein\n• Gives the hair a shiny finish\n\n## Details\nThe Balmain Hair Silk Perfume is a nourishing hair spray that leaves a soft and silk finish. The formula is enriched with pure Argan Oil and Silk Protein to stimulate the moisture balance and ensure optimal moisture retention to the hair. These ingredients protect damaged, dry and weak hair against external influences and gives the hair a long-lasting silky shine. The signature Balmain Hair fragrance is formulated with star anise, tarragon, pinewood, peach blossom, raspberry, orange blossom, gardenia, jasmine, cloves, rose, apricot, ylang-ylang, vanilla, lilac, sandalwood, with musk and balsamic. This fragrance will make the hair smell refreshed and will be released by the natural movement of the hair throughout the day.\n\n## Ingredients\nCyclopentasiloxane, Dimethicone, Argania Spinoza Kernel Oil, Silk Amino Acids, Simmondsia Chinensis (Jojoba) Seed Oil, Prunus Amygdalus Dulcis Oil, Ethylhexyl Methoxycinnamate, Parfum.",
@@ -317,7 +317,7 @@
   {
     "brand": "balmain",
     "name": "Matt Paste",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 4800,
     "badge": null,
     "description": "Natural matt finishing paste with reworkable hold and smooth texture. Provides texture and definition to the hair and leaves the hair with a matt finish. The non-sticky formula feels smooth and tames frizzy hair.\n\n• Remouldable hold\n• Matt finish, natural look\n• Signature Balmain fragrance\n\n## Details\nThe Matt Paste infused with Castor Oil protects the hair from outside while maintaining a sleek texture. The non-sticky styling paste holds the hair into place without getting greasy throughout the day. The strong formula holds the hair in place during the day. Due to the water-based formula the paste is easy to wash out without leaving residue on the scalp. The Argan Oil in this product restores dry and damaged hair. Suitable for all hair types.\n\n## Ingredients\nAqua, Petrolatum, Kaolin, Microcristallina Cera, Trilaureth-4 Phosphate, VP/VA Copolymer, Ceteareth-30, PEG-40 Hydrogenated Castor Oil, Glycerin, Cera Flava, Hydrogenated Coco-Glycerides, Sodium Benzoate, Argania Spinosa Kernel Oil, Silk Amino Acids, Panthenol, Polyquaternium-55, PEG-7 Glyceryl Cocoate, Caprylic/Capric Triglyceride, Parfum, Dimethicone, Polyacrylamide, C13-14 Isoparaffin, Laureth-7, Citric Acid.",
@@ -686,7 +686,7 @@
   {
     "brand": "balmain",
     "name": "Illuminating Mask Silver Pearl 200ml",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 7200,
     "badge": null,
     "description": "Brightening spa treatment with pure violet pigments for blonde and silver hair. Corrects brassiness and leaves the hair with a vibrant crystal cool blonde or grey colour. Enriched with a powerful blend of Succinic Acid, Argan Elixir, Silk- and Cashmere Protein to strengthen and protect the hair structure.\n\n• Corrects brassiness and yellow tones\n• Maintains a silver and crystal grey colour\n• Perfect to use in between colour services\n\n## Details\nBleached blonde or highlighted hair is high-maintenance and requires continual touch-ups. To counteract unwanted warm tones, deeply pigmented violet enriched products are required in between colour services. The Balmain Hair Illuminating line enriched with pure violet pigments, helps to refract unwanted warm tones and brighten the hair colour. The Illuminating Mask Silver Pearl deeply nourishes the hair while maintaining the crystal grey colour of the hair. Especially developed for ash blonde and highlighted hair. Infused with the signature blend of Argan Elixir and Silk Protein to repair the hair from within.\n\n## Ingredients\nAqua, Cetearyl Alcohol, Behentrimonium Chloride, Glycerin, PPG-3 Myristyl Ether, Betaine, Dimethicone, Propylene Glycol, Argania Spinosa Kernel Oil, PCA Dimethicone Crosspolymer, Hydrolyzed Keratin, Silk Amino Acids, Helianthus Annuus Seed Oil, Macadamia Ternifolia Seed Oil, Cocos Nucifera Oil, Glycine Soja Oil, Gardenia Tahitensis Flower Extract, Rosmarinus Officinalis Leaf Extract, Chenopodium Quinoa Seed Extract, Tocopherol, Polysilicone-19, Polyacrylamidopropyltrimonium Chloride, Dipalmitoylethyl Hydroxyethylmonium Methosulfate, Linoleamidopropyl PG-Dimonium Chloride Phosphate Dimethicone, Panthenol, Quaternium-91, Cetrimonium Methosulfate, Ethylhexyl Methoxycinnamate, Ceteareth-20, Dipropylene Glycol, Pantolactone, Basic Red 76, Basic Blue 99, Quaternium-80, Butylene Glycol, Parfum, Benzyl Alcohol, Caprylyl Glycol, Hexylene Glycol, Polysorbate 20, Isopropyl Alcohol, Benzoic Acid, Phenoxyethanol, Ethylhexylglycerin, Succinic Acid, Citric Acid, Sorbic Acid, Dehydroacetic Acid",
@@ -902,7 +902,7 @@
   {
     "brand": "balmain",
     "name": "Ash Toner",
-    "category": "Hair Care",
+    "category": "[\"Hair Care\",\"Locks of Legacy\"]",
     "price": 5400,
     "badge": null,
     "description": "A hair lightener enriched with violet hues to create permanent ash blonde tones in highlighted, blonde or color-treated hair. The leave-in formula with deep purple tone, improves clarity and tone and reduces unwanted brassy tones.\n\n• Neutralises yellow and warm tones in the hair\n• Permanent effect\n• Non-aggravating, leave-in formula\n\n## Ingredients\nAqua, Alcohol Denat., Peg-7 Glyceryl Cocoate, Glycerin, Argania Spinosa Kernel Extract, Silk Amino Acids, Panthenol, Stearamidopropyl Dimethylamine, Cetrimonium Chloride, Ethylhexyl Methoxycinnamate, Benzophenone-4, Butylene Glycol, Parfum, Lactic Acid, Phenoxyethanol, Ethylhexylglycerin, Basic Blue 99, Basic Red 51, Benzoic Acid",
@@ -1073,7 +1073,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Pinces à Cheveux Extra Small Midnight Black",
-    "category": "[\"Hair Accessories\",\"New\"]",
+    "category": "[\"Hair Accessories\",\"New\",\"Locks of Legacy\"]",
     "price": 7200,
     "badge": "Limited",
     "description": "Handcrafted cellulose acetate Pince àCheveuxExtra Small in a refined Midnight Black shade, finished with the signature 18K gold-plated “B” logo for a timeless and elegant look.\n\n• Strong, flexible and gentle on hair and scalp\n• Extra small size ideal for fine sections and detail styling\n• Lightweight and compact design\n• Limited Edition\n\n## Details\nThe Limited Edition Pinces à Cheveux Extra Small Midnight Black is handcrafted from high-quality cellulose acetate and designed in a deep midnight black shade with a subtle reflective pattern that catches the light from different angles. This layered effect adds depth and dimension to the compact design while maintaining a refined and timeless appearance.\n\nIts extra small size makes it ideal for securing fine sections of hair or creating subtle, precise styling accents. The strong yet flexible material ensures a comfortable and secure hold, while remaining gentle on the hair and scalp. Lightweight and compact, the clip is perfect for effortless styling throughout the day. Finished with the signature 18K gold-plated “B” logo, it adds a polished and sophisticated touch to any hairstyle.",
@@ -1082,7 +1082,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Pinces à Cheveux Medium Midnight Black",
-    "category": "[\"Hair Accessories\",\"New\"]",
+    "category": "[\"Hair Accessories\",\"New\",\"Locks of Legacy\"]",
     "price": 11100,
     "badge": "Limited",
     "description": "Handcrafted cellulose acetate Pince àCheveuxMedium in a refined Midnight Black shade, finished with the signature 18K gold-plated “B” logo for a timeless and elegant look.\n\n• Strong, flexible and gentle on hair and scalp\n• Medium size suitable for versatile styling\n• Limited Edition\n\n## Details\nThe Limited Edition Pinces à Cheveux Medium Midnight Black is handcrafted from high-quality cellulose acetate and designed in a deep midnight black shade with a subtle reflective pattern that catches the light from different angles. This layered effect adds depth and dimension to the clip while maintaining a refined and timeless appearance\n\nThe medium size offers versatility, making it suitable for a wide range of hairstyles, from effortless half-up looks to more structured updos. The strong yet flexible material ensures a comfortable and secure hold throughout the day, while remaining gentle on the hair and scalp. Finished with the signature 18K gold-plated “B” logo, the clip adds a polished and sophisticated accent to any hairstyle..",
@@ -1091,7 +1091,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition legacy Spa Brush",
-    "category": "[\"Styling Tools\",\"New\"]",
+    "category": "[\"Styling Tools\",\"New\",\"Locks of Legacy\"]",
     "price": 9500,
     "badge": "Limited",
     "description": "Luxury Spa Brush with 100% boar bristles designed to create a smooth, high-gloss finish. The unique bristle structure helps distribute natural oils from roots to ends for healthy-looking hair.\n\n• Limited edition\n• Ideal for all hair types, including thin / fine hair\n• Creates a high gloss professional finish\n\n## Details\nThe Limited Edition Legacy Spa Brush is crafted with 100% boar bristles to enhance the natural shine and condition of the hair. The bristle structure helps distribute the hair’s natural oils evenly from roots to ends, supporting a smooth and polished finish. Designed for daily use, the brush glides effortlessly through the hair while remaining gentle on both hair and scalp. This limited edition, in a striking transformative teal shade, brings a subtle touch of luxury to any hair care ritual.",
@@ -1100,7 +1100,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Midnight Black Barrette",
-    "category": "[\"Hair Accessories\",\"New\"]",
+    "category": "[\"Hair Accessories\",\"New\",\"Locks of Legacy\"]",
     "price": 44000,
     "badge": "Limited",
     "description": "Limited Edition Midnight Black Crown Barrette designed to add a bold and playful touch to half-up styles and modern updos.\n\n• 18K gold-plated and Lead Glass\n• Limited Edition\n• Suitable for all hair types\n\n## Details\nThe Limited Edition Midnight Black Barrette embodies timeless sophistication, featuring faceted lead glass that reflects light with a subtle, mysterious shimmer. Its deep midnight black lead glass brings refined contrast, adding a bold yet elegant statement to any hairstyle. Perfect for sleek ponytails, chic updos or to elevate everyday looks with a touch of modern luxury.",
@@ -1109,7 +1109,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Midnight Black Clip",
-    "category": "[\"Hair Accessories\",\"New\"]",
+    "category": "[\"Hair Accessories\",\"New\",\"Locks of Legacy\"]",
     "price": 29000,
     "badge": "Limited",
     "description": "18K gold-plated Limited Edition Midnight Black Clip featuring faceted lead glass stones in a feather-inspired design that reflects light from every angle.\n\n• 18K gold-plated and Lead Glass\n• Limited Edition\n• Suitable for all hair types\n\n## Details\nThe Limited Edition Midnight Black Clip is crafted with faceted lead glass stones that capture and reflect the light from every angle, creating a refined midnight black brilliance. The feather-inspired design enhances this effect, allowing the light to subtly move across the surface for a dynamic and elegant finish.\n\nIts compact yet striking silhouette offers a versatile styling accent, adding depth, shine and a touch of modern luxury to any hairstyle. Designed to be both decorative and functional, the clip provides a secure hold while elevating the overall look with understated sophistication.",
@@ -1118,7 +1118,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Midnight Black Headband",
-    "category": "[\"Hair Accessories\",\"New\"]",
+    "category": "[\"Hair Accessories\",\"New\",\"Locks of Legacy\"]",
     "price": 65000,
     "badge": "Limited",
     "description": "Handcrafted 18K gold-plated headband with polished lead glass stones, adding a sophisticated statement to any hairstyle.\n\n• 18K gold-plated and Lead Glass\n• Limited Edition\n• Suitable for all hair types\n\n## Details\nA sophisticated statement hair accessory. The small, handcrafted 18K gold-plated headband features polished lead glass stones that beautifully catch and reflect the light. Inspired by Midnight Black, it embodies modern elegance and timeless luxury. Includes a polishing cloth to keep the accessory in perfect condition.",
@@ -1127,7 +1127,7 @@
   {
     "brand": "balmain",
     "name": "Limited Edition Midnight Black Slides Pins",
-    "category": "[\"Hair Accessories\",\"New\"]",
+    "category": "[\"Hair Accessories\",\"New\",\"Locks of Legacy\"]",
     "price": 26000,
     "badge": "Limited",
     "description": "Set oftwo 18K gold-plated slide pins with faceted lead glass stones, adding a refined and versatile accent to any hairstyle.\n\n• 18K gold-plated and Lead Glass\n• Limited Edition\n• Suitable for all hair types\n\n## Details\nThe Limited Edition Midnight Black Duo Slide Pins consist of a refined set of two 18K gold-plated hair pins, each adorned with faceted lead glass stones and the signature Balmain “B” logo. Designed to catch and reflect the light, the pins add a subtle yet sophisticated accent to any hairstyle.\n\nThe duo can be worn together for a more defined look or separately for a minimal and understated finish. Lightweight and easy to style, the pins provide a secure hold while enhancing both daily and evening hairstyles with a touch of modern elegance.",
