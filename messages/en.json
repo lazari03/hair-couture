@@ -178,7 +178,7 @@
     "lastUpdated": "Last updated {date}"
   },
   "cookieConsent": {
-    "body": "We use cookies to understand how you use our site and improve your experience.",
+    "body": "We use analytics cookies to understand how our site is used. If you decline, we only measure visits anonymously, without cookies.",
     "learnMore": "Learn more",
     "accept": "Accept",
     "decline": "Decline"

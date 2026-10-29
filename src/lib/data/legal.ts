@@ -25,7 +25,7 @@ export interface LegalDoc {
   sections: { heading: string; body: string }[];
 }
 
-const LAST_UPDATED = "3 September 2026";
+const LAST_UPDATED = "30 October 2026";
 
 function buildPrivacy(brandName: string, contactEmail: string): LegalDoc {
   return {
@@ -34,11 +34,11 @@ function buildPrivacy(brandName: string, contactEmail: string): LegalDoc {
     sections: [
       {
         heading: "Who we are",
-        body: `${brandName} is operated under haircouture.al. This policy explains what personal data we collect when you shop with us, why, and what rights you have over it. It is written to align with Albanian Law No. 9887, dated 10 March 2008, "On the Protection of Personal Data" (as amended) — exact citations should be confirmed with Albanian legal counsel before commercial launch.`,
+        body: `${brandName} is operated under haircouture.al, a shop for customers in Albania only. This policy explains what personal data we collect when you shop with us, why, and what rights you have over it. It is written to align with Albanian Law No. 9887, dated 10 March 2008, "On the Protection of Personal Data" (as amended) — exact citations should be confirmed with Albanian legal counsel before commercial launch.`,
       },
       {
         heading: "What we collect",
-        body: "When you place an order, we collect your name, email address, phone number, and shipping address. When you use the contact form, we collect your name, email, and message. When you browse the site, we collect anonymized analytics data (pages visited, approximate location, device type) via Google Analytics.",
+        body: "When you place an order, we collect your name, email address, phone number, and shipping address. When you use the contact form, we collect your name, email, and message. When you browse the site, we measure how it is used with Google Analytics: pages visited, products viewed, items added to the cart, checkouts and purchases, searches, scroll depth, approximate location (city level) and device type. If you accept analytics cookies, this measurement uses cookies so that repeat visits can be recognised. If you decline or do not respond, we still measure visits, but without cookies or any identifier stored on your device, so your visits cannot be linked to each other or to you.",
       },
       {
         heading: "Marketing and newsletters",
@@ -46,7 +46,7 @@ function buildPrivacy(brandName: string, contactEmail: string): LegalDoc {
       },
       {
         heading: "Who we share it with",
-        body: "We share order and contact data with Brevo (Sendinblue), our email delivery provider, solely to send transactional and, where opted in, marketing emails. We share anonymized browsing data with Google Analytics for site analytics. We do not sell your personal data to third parties.",
+        body: "We share order and contact data with Brevo (Sendinblue), our email delivery provider, solely to send transactional and, where opted in, marketing emails. We share browsing data with Google Analytics (Google Ireland Ltd / Google LLC) for site analytics, with IP addresses not stored by Google Analytics. We do not sell your personal data to third parties.",
       },
       {
         heading: "How long we keep it",
@@ -74,6 +74,10 @@ function buildTerms(brandName: string): LegalDoc {
         body: "All prices are shown in Albanian Lek (ALL) and include applicable taxes unless stated otherwise. We reserve the right to refuse or cancel an order, including where a product is listed at an incorrect price or is out of stock after purchase.",
       },
       {
+        heading: "Albania only",
+        body: "This shop is intended only for customers in Albania. Orders are accepted for delivery to addresses in the Republic of Albania only; we do not ship abroad. Prices are in Albanian Lek (ALL) and payment is made in cash on delivery.",
+      },
+      {
         heading: "Governing law",
         body: `These Terms are governed by the laws of the Republic of Albania. Any dispute arising from your use of the site or an order shall be subject to the exclusive jurisdiction of the competent Albanian courts, without prejudice to any mandatory consumer-protection rights you may have.`,
       },
@@ -92,7 +96,7 @@ function buildCookies(brandName: string): LegalDoc {
     sections: [
       {
         heading: "What this page covers",
-        body: `This page explains what cookies and similar technologies ${brandName} uses on haircouture.al.`,
+        body: `This page explains what cookies and similar technologies ${brandName} uses on haircouture.al, a shop for customers in Albania.`,
       },
       {
         heading: "Your shopping cart",
@@ -100,11 +104,15 @@ function buildCookies(brandName: string): LegalDoc {
       },
       {
         heading: "Analytics cookies",
-        body: "With your consent, Google Analytics (GA4) sets cookies such as _ga, _ga_<container-id>, and _gid to measure site traffic and behavior — which pages are visited, which of our brands is browsed most, and how visitors move through the shop. _ga and _ga_* typically last around 2 years; _gid lasts about 24 hours. These cookies are only set after you accept the cookie banner shown on your first visit — declining, or not responding, means no analytics cookies are set.",
+        body: "If you accept, Google Analytics (GA4) sets cookies such as _ga and _ga_<container-id> to measure site traffic and behaviour — which pages are visited, which of our brands is browsed most, how visitors move through the shop, and whether a visitor has been here before. _ga and _ga_* last up to 2 years.",
+      },
+      {
+        heading: "Measurement without cookies",
+        body: "If you decline, or do not respond to the banner, no analytics cookies are set and nothing is stored on your device for analytics. We still measure how the site is used — page views, product views, cart and checkout steps, purchases, searches and scrolling — through Google's Consent Mode, which sends these events without cookies or a visitor identifier. Your visits cannot be linked to each other or to you; Google uses the combined data to estimate overall site usage.",
       },
       {
         heading: "Managing cookies",
-        body: "A cookie-consent banner is shown on your first visit — Accept enables analytics cookies, Decline keeps them off. You can change your mind at any time by clearing this site's data in your browser settings, which brings the banner back on your next visit.",
+        body: "A cookie banner is shown on your first visit and again a day after you answer. Accept enables analytics cookies; Decline keeps them off and limits measurement to the cookie-free mode described above. You can change your mind at any time by clearing this site's data in your browser settings, which brings the banner back on your next visit.",
       },
     ],
   };

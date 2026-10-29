@@ -120,7 +120,8 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
       address: data.address,
       city: data.city,
       postalCode: data.postalCode || "",
-      country: data.country || "",
+      // The shop delivers in Albania only.
+      country: "Albania",
       couponCode,
       subtotal,
       discount,
