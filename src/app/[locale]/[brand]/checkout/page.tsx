@@ -6,12 +6,12 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useCart } from "@/lib/cart/cart-context";
 import { productImage } from "@/lib/data/category-image";
+import { ProductImage } from "@/components/shop/ProductImage";
 import { formatMoney } from "@/lib/money";
 import { createOrder } from "@/lib/actions/orders";
 import { getActiveShippingClasses } from "@/lib/actions/shipping";
 import { trackBeginCheckout, trackPurchase } from "@/lib/analytics/events";
 import type { BrandSlug } from "@/lib/brands";
-import Image from "next/image";
 
 type ShippingClass = { id: string; name: string; fee: number };
 
@@ -318,7 +318,7 @@ export default function CheckoutPage() {
           {lines.map((line) => (
               <div key={line.id} className="flex items-center gap-3 text-sm">
               <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl bg-white">
-                <Image src={productImage(line)} alt={line.name} fill sizes="56px" className="object-contain p-1" />
+                <ProductImage src={productImage(line)} alt={line.name} sizes="56px" className="object-contain p-1" />
               </div>
               <div className="flex flex-1 flex-col">
                 <span className="font-medium">{line.name}</span>

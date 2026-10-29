@@ -21,7 +21,7 @@ export interface Product {
   price: number; // ALL (Albanian Lek), whole lek — format with formatMoney()
   badge?: string | null;
   description?: string | null;
-  imageUrl?: string | null; // falls back to categoryImage() when unset
+  imageUrl?: string | null; // none → grey loading skeleton (ProductImage), no placeholder photo
   inStock: boolean; // false = "Out of stock" label, add-to-cart disabled
 }
 

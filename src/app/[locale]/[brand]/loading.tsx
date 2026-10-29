@@ -1,15 +1,20 @@
-// Automatically shown by Next.js while this segment's Server Components are
-// fetching (Suspense boundary Next inserts around {children} in layout.tsx)
-// — no manual wiring needed, it fires on every brand page navigation that
-// takes a moment. Sits inside [brand]/layout.tsx's DOM, so var(--brand-accent)
-// is already in scope: the loader adopts whichever brand you're on for free.
+// Shown by Next.js while a brand page's server data loads (the Suspense
+// boundary Next puts around {children} in layout.tsx). Grey pulsing
+// skeleton of a product grid — same look as an image that's still loading
+// (components/shop/ProductImage.tsx) — instead of a spinner.
 export default function BrandLoading() {
   return (
-    <div className="flex flex-1 items-center justify-center py-32">
-      <div className="flex gap-2.5">
-        <span className="h-2.5 w-2.5 animate-bounce rounded-full bg-[var(--brand-accent)] [animation-delay:-0.3s]" />
-        <span className="h-2.5 w-2.5 animate-bounce rounded-full bg-[var(--brand-accent)] [animation-delay:-0.15s]" />
-        <span className="h-2.5 w-2.5 animate-bounce rounded-full bg-[var(--brand-accent)]" />
+    <div aria-busy="true" className="px-4 py-10 sm:px-6 lg:px-11">
+      <div className="mb-8 h-9 w-56 bg-neutral-200/70 motion-safe:animate-pulse" />
+      <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
+        {Array.from({ length: 8 }, (_, i) => (
+          <div key={i} className="flex flex-col gap-3">
+            <div className="aspect-[3/4] bg-neutral-200/70 motion-safe:animate-pulse" />
+            <div className="h-3 w-1/3 bg-neutral-200/70 motion-safe:animate-pulse" />
+            <div className="h-4 w-3/4 bg-neutral-200/70 motion-safe:animate-pulse" />
+            <div className="h-3 w-1/4 bg-neutral-200/70 motion-safe:animate-pulse" />
+          </div>
+        ))}
       </div>
     </div>
   );

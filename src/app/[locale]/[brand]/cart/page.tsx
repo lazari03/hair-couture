@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useCart } from "@/lib/cart/cart-context";
 import { productImage } from "@/lib/data/category-image";
+import { ProductImage } from "@/components/shop/ProductImage";
 import { formatMoney } from "@/lib/money";
 import { validateCoupon } from "@/lib/actions/orders";
 import { trackCheckoutButtonClick } from "@/lib/analytics/events";
@@ -69,13 +69,7 @@ export default function CartPage() {
               className="grid grid-cols-[96px_1fr_auto] items-start gap-5 border-b border-neutral-200 py-6"
             >
               <div className="relative aspect-[3/4] overflow-hidden bg-neutral-50">
-                <Image
-                  src={productImage(line)}
-                  alt={line.name}
-                  fill
-                  sizes="96px"
-                  className="object-contain p-2"
-                />
+                <ProductImage src={productImage(line)} alt={line.name} sizes="96px" className="object-contain p-2" />
               </div>
               <div className="flex flex-col gap-1.5">
                 <span className="text-[10px] tracking-widest text-neutral-500 uppercase">

@@ -26,7 +26,11 @@ export function ProductsTable({ products }: { products: ProductModel[] }) {
             <tr key={p.id} className="border-b border-neutral-100 last:border-0">
               <td className="px-4 py-3">
                 <div className="relative h-10 w-10 overflow-hidden bg-neutral-50">
-                  <Image src={productImage(p)} alt="" fill sizes="40px" className="object-contain p-1" />
+                  {productImage(p) ? (
+                    <Image src={productImage(p)!} alt="" fill sizes="40px" className="object-contain p-1" />
+                  ) : (
+                    <div className="h-full w-full bg-neutral-200" title="No image" />
+                  )}
                 </div>
               </td>
               <td className="px-4 py-3 font-medium">{p.name}</td>
