@@ -52,6 +52,8 @@ async function seedOrders() {
   await prisma.order.deleteMany();
   let customerIndex = 0;
 
+  let orderNumber = 1000;
+
   for (const brand of ["balmain", "eloure", "eau-de-1974"]) {
     const products = await prisma.product.findMany({ where: { brand }, take: 6 });
     if (products.length === 0) continue;
@@ -75,8 +77,10 @@ async function seedOrders() {
       const coupon = i === 0 ? coupons[customerIndex % coupons.length] : null;
       const discount = coupon ? Math.round(subtotal * (coupon.value / 100)) : 0;
 
+      orderNumber++;
       await prisma.order.create({
         data: {
+          number: orderNumber,
           brand,
           ...customer,
           couponCode: coupon?.code ?? null,

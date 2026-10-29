@@ -93,7 +93,7 @@
     "placingOrder": "Placing order…",
     "summaryTitle": "Order summary",
     "successTitle": "Thank you for your order",
-    "successBody": "Your order {orderId} has been placed. We'll reach out to {email} with confirmation details.",
+    "successBody": "Your order #{number} has been placed. Thank you for shopping with us.",
     "backToShop": "Back to shop"
   },
   "account": {
@@ -655,5 +655,27 @@
     "Silver & Blonde": "Silver & Blonde",
     "Curly Hair": "Curly Hair",
     "Color-Treated/Damaged Hair": "Color-Treated/Damaged Hair"
+  },
+  "email": {
+    "subject": "Your {brand} order is confirmed",
+    "title": "Thank you for your order",
+    "greeting": "Hi {name},",
+    "intro": "Thank you for shopping with {brand}. Your order has been received and is now being prepared. Here are the details.",
+    "orderNumber": "Order number",
+    "date": "Date",
+    "customerTitle": "Your details",
+    "phone": "Phone",
+    "addressTitle": "Billing & delivery address",
+    "itemsTitle": "Your order",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "discountCode": "Discount ({code})",
+    "shipping": "Shipping",
+    "shippingClass": "Shipping ({name})",
+    "free": "Free",
+    "total": "Total",
+    "payment": "Payment: cash on delivery.",
+    "thanks": "Thank you for choosing us.",
+    "questions": "Questions about your order? Write to us at"
   }
 }

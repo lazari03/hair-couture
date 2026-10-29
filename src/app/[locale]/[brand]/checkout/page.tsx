@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useCart } from "@/lib/cart/cart-context";
 import { productImage } from "@/lib/data/category-image";
@@ -49,6 +49,7 @@ export default function CheckoutPage() {
   const t = useTranslations("checkout");
   const tCart = useTranslations("cart");
   const tErrors = useTranslations("errors");
+  const locale = useLocale();
   const { brand } = useParams<{ brand: string }>();
   const { lines, coupon, clearCart } = useCart();
 
@@ -63,7 +64,7 @@ export default function CheckoutPage() {
   });
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [orderId, setOrderId] = useState<string | null>(null);
+  const [orderNumber, setOrderNumber] = useState<number | null>(null);
   const [shippingClasses, setShippingClasses] = useState<ShippingClass[]>([]);
   const [shippingClassId, setShippingClassId] = useState("");
   const beganCheckoutTracked = useRef(false);
@@ -106,6 +107,7 @@ export default function CheckoutPage() {
       ...form,
       couponCode: coupon?.code,
       shippingClassId,
+      locale,
       lines: lines.map((l) => ({
         productId: l.productId,
         name: l.name,
@@ -121,22 +123,22 @@ export default function CheckoutPage() {
       return;
     }
     trackPurchase(
-      result.orderId,
+      String(result.orderNumber),
       lines.map((l) => ({ productId: l.productId, name: l.name, category: l.category, price: l.price, qty: l.qty })),
       total,
       brand as BrandSlug,
     );
-    setOrderId(result.orderId);
+    setOrderNumber(result.orderNumber);
     clearCart();
   }
 
-  if (orderId) {
+  if (orderNumber !== null) {
     return (
       <main className="mx-auto flex min-h-[60vh] max-w-lg flex-col items-center justify-center px-6 text-center">
         <div className="w-full rounded-[2rem] border border-neutral-200 bg-white px-6 py-10 shadow-[0_20px_60px_rgba(0,0,0,0.06)] sm:px-10">
           <h1 className="text-3xl font-light tracking-tight">{t("successTitle")}</h1>
           <p className="mt-4 text-sm leading-relaxed text-neutral-600">
-          {t("successBody", { orderId, email: form.email })}
+          {t("successBody", { number: orderNumber })}
           </p>
           <Link
             href={`/${brand}`}

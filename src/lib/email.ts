@@ -10,6 +10,7 @@
 import type { BrandSlug } from "@/lib/brands";
 import { getFooter } from "@/lib/data/footer";
 import { formatMoney } from "@/lib/money";
+import { brandDisplayName, escapeHtml, renderOrderConfirmation, type OrderEmailData } from "@/lib/email-templates";
 
 const BREVO_SMTP_URL = "https://api.brevo.com/v3/smtp/email";
 const BREVO_CONTACTS_URL = "https://api.brevo.com/v3/contacts";
@@ -46,51 +47,22 @@ async function sendTransactionalEmail(opts: SendEmailOptions): Promise<void> {
   }
 }
 
-interface OrderForEmail {
-  id: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  total: number;
-  shippingClassName: string;
-  shippingFee: number; // ALL, already included in `total`
-  items: { name: string; variant: string; price: number; qty: number }[];
-}
-
-function renderOrderItemsRows(items: OrderForEmail["items"]): string {
-  return items
-    .map(
-      (i) =>
-        `<tr><td>${i.name}${i.variant ? ` (${i.variant})` : ""} × ${i.qty}</td><td style="text-align:right">${formatMoney(i.price * i.qty)}</td></tr>`,
-    )
-    .join("");
-}
-
-// Order confirmation — brand-themed by name/accent color from lib/brands.ts
-// and messages, sent to whatever the guest typed at checkout (there is no
-// logged-in customer identity to derive it from — checkout is guest-only).
-export async function sendOrderConfirmation(order: OrderForEmail, brandSlug: BrandSlug): Promise<void> {
-  const footer = getFooter(brandSlug);
-  const brandName = brandNameFor(brandSlug);
-  const itemsHtml = renderOrderItemsRows(order.items);
-
+// Order confirmation — the brand's own template (lib/email-templates.ts),
+// in the language the customer checked out in. No order number in the
+// subject; it's in the body.
+export async function sendOrderConfirmation(order: OrderEmailData, brandSlug: BrandSlug, locale: string): Promise<void> {
+  const contactEmail = getFooter(brandSlug)?.contactEmail ?? "info@haircouture.al";
+  const { subject, html } = await renderOrderConfirmation(brandSlug, order, locale, contactEmail);
   await sendTransactionalEmail({
     to: [{ email: order.email, name: `${order.firstName} ${order.lastName}` }],
-    subject: `Your ${brandName} order ${order.id} is confirmed`,
-    htmlContent: `
-      <div style="font-family:sans-serif;max-width:520px;margin:0 auto">
-        <h1 style="font-weight:300">${brandName}</h1>
-        <p>Hi ${order.firstName}, thank you for your order <strong>${order.id}</strong>.</p>
-        <table style="width:100%;border-collapse:collapse">${itemsHtml}</table>
-        <p style="text-align:right;color:#444">Shipping (${order.shippingClassName}): ${formatMoney(order.shippingFee)}</p>
-        <p style="text-align:right;font-weight:bold">Total: ${formatMoney(order.total)} — paid on delivery</p>
-        <p style="color:#666;font-size:13px">Questions? Contact us at ${footer?.contactEmail ?? "info@haircouture.al"}.</p>
-      </div>
-    `,
+    subject,
+    htmlContent: html,
   });
 }
 
-export async function sendOrderNotificationToAdmin(order: OrderForEmail, brandSlug: BrandSlug): Promise<void> {
+// Internal alert to the shop team — English, all the details needed to
+// fulfil the order.
+export async function sendOrderNotificationToAdmin(order: OrderEmailData, brandSlug: BrandSlug): Promise<void> {
   const configured =
     process.env.BREVO_ORDER_ALERT_TO ||
     process.env.BREVO_SENDER_EMAIL ||
@@ -103,25 +75,38 @@ export async function sendOrderNotificationToAdmin(order: OrderForEmail, brandSl
     .map((email) => ({ email }));
 
   if (recipients.length === 0) {
-    console.log("[email] No BREVO_ORDER_ALERT_TO/ADMIN_EMAIL configured, skipping order alert:", order.id);
+    console.log("[email] No BREVO_ORDER_ALERT_TO/ADMIN_EMAIL configured, skipping order alert:", order.number);
     return;
   }
 
-  const brandName = brandNameFor(brandSlug);
-  const itemsHtml = renderOrderItemsRows(order.items);
+  const e = escapeHtml;
+  const itemsHtml = order.items
+    .map(
+      (i) =>
+        `<tr><td>${e(i.name)}${i.variant ? ` (${e(i.variant)})` : ""} × ${i.qty}</td><td style="text-align:right">${formatMoney(i.price * i.qty)}</td></tr>`,
+    )
+    .join("");
+  const address = [order.address, `${order.postalCode} ${order.city}`.trim(), order.country]
+    .filter((l) => l.trim())
+    .map(e)
+    .join("<br>");
 
   await sendTransactionalEmail({
     to: recipients,
-    subject: "New order",
+    subject: `New order — ${brandDisplayName(brandSlug)}`,
     htmlContent: `
       <div style="font-family:sans-serif;max-width:560px;margin:0 auto">
-        <h1 style="font-weight:600;margin-bottom:8px">New order received</h1>
-        <p style="margin-top:0;color:#444">Brand: <strong>${brandName}</strong></p>
-        <p><strong>Order ID:</strong> ${order.id}</p>
-        <p><strong>Customer:</strong> ${order.firstName} ${order.lastName} (${order.email})</p>
+        <h1 style="font-weight:600;margin-bottom:8px">New order #${order.number}</h1>
+        <p style="margin-top:0;color:#444">Brand: <strong>${e(brandDisplayName(brandSlug))}</strong></p>
+        <p><strong>Customer:</strong> ${e(order.firstName)} ${e(order.lastName)}<br>
+        <strong>Email:</strong> ${e(order.email)}<br>
+        <strong>Phone:</strong> ${e(order.phone)}</p>
+        <p><strong>Billing &amp; delivery address:</strong><br>${address}</p>
         <table style="width:100%;border-collapse:collapse">${itemsHtml}</table>
-        <p style="text-align:right;color:#444">Shipping (${order.shippingClassName}): ${formatMoney(order.shippingFee)}</p>
-        <p style="text-align:right;font-weight:bold">Total: ${formatMoney(order.total)}</p>
+        <p style="text-align:right;color:#444">Subtotal: ${formatMoney(order.subtotal)}</p>
+        ${order.discount > 0 ? `<p style="text-align:right;color:#444">Discount${order.couponCode ? ` (${e(order.couponCode)})` : ""}: -${formatMoney(order.discount)}</p>` : ""}
+        <p style="text-align:right;color:#444">Shipping (${e(order.shippingClassName)}): ${formatMoney(order.shippingFee)}</p>
+        <p style="text-align:right;font-weight:bold">Total: ${formatMoney(order.total)} — cash on delivery</p>
       </div>
     `,
   });
@@ -134,9 +119,9 @@ export async function sendContactNotification(data: { brand: string; name: strin
     to: [{ email: to }],
     subject: `New contact message — ${brandNameFor(data.brand as BrandSlug)}`,
     htmlContent: `
-      <p><strong>From:</strong> ${data.name} (${data.email})</p>
-      <p><strong>Brand:</strong> ${data.brand}</p>
-      <p>${data.message.replace(/\n/g, "<br/>")}</p>
+      <p><strong>From:</strong> ${escapeHtml(data.name)} (${escapeHtml(data.email)})</p>
+      <p><strong>Brand:</strong> ${escapeHtml(data.brand)}</p>
+      <p>${escapeHtml(data.message).replace(/\n/g, "<br/>")}</p>
     `,
   });
 }

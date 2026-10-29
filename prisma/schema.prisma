@@ -39,6 +39,10 @@ model Product {
 // cart itself: survives a product being renamed/repriced/deleted later.
 model Order {
   id         String      @id @default(cuid())
+  // Customer-facing order number (#1001, #1002, …) — shown in emails, on the
+  // thank-you page, the account lookup and the admin. Assigned in
+  // createOrder as max + 1; the cuid stays the internal key.
+  number     Int         @unique
   brand      String
   firstName  String
   lastName   String
@@ -52,12 +56,10 @@ model Order {
   subtotal   Float
   discount   Float       @default(0)
   total      Float
-  // Shipping is billed in ALL (Albanian Lek), a different currency than
-  // `total` (EUR) — deliberately never summed together, just recorded
-  // alongside so the storefront/admin/email can show it as a separate
-  // cash-on-delivery line. Name/fee are snapshotted from ShippingClass at
-  // order time (same reasoning as OrderItem), so a later rename/re-price/
-  // delete of the shipping class doesn't change past orders.
+  // All amounts are ALL; total includes the shipping fee. Shipping name/fee
+  // are snapshotted from ShippingClass at order time (same reasoning as
+  // OrderItem), so a later rename/re-price/delete of the class doesn't
+  // change past orders.
   shippingClassId   String?
   shippingClassName String        @default("")
   shippingFee       Float         @default(0) // ALL

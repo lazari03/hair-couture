@@ -93,7 +93,7 @@
     "placingOrder": "Ordine in corso…",
     "summaryTitle": "Riepilogo ordine",
     "successTitle": "Grazie per il tuo ordine",
-    "successBody": "Il tuo ordine {orderId} è stato effettuato. Ti contatteremo a {email} con i dettagli di conferma.",
+    "successBody": "Il tuo ordine n. {number} è stato effettuato. Grazie per aver acquistato da noi.",
     "backToShop": "Torna al negozio"
   },
   "account": {
@@ -655,5 +655,27 @@
     "Silver & Blonde": "Grigi & biondi",
     "Curly Hair": "Capelli ricci",
     "Color-Treated/Damaged Hair": "Capelli colorati/danneggiati"
+  },
+  "email": {
+    "subject": "Il tuo ordine {brand} è confermato",
+    "title": "Grazie per il tuo ordine",
+    "greeting": "Ciao {name},",
+    "intro": "Grazie per aver acquistato da {brand}. Abbiamo ricevuto il tuo ordine e lo stiamo preparando. Ecco i dettagli.",
+    "orderNumber": "Numero d'ordine",
+    "date": "Data",
+    "customerTitle": "I tuoi dati",
+    "phone": "Telefono",
+    "addressTitle": "Indirizzo di fatturazione e consegna",
+    "itemsTitle": "Il tuo ordine",
+    "subtotal": "Subtotale",
+    "discount": "Sconto",
+    "discountCode": "Sconto ({code})",
+    "shipping": "Spedizione",
+    "shippingClass": "Spedizione ({name})",
+    "free": "Gratuita",
+    "total": "Totale",
+    "payment": "Pagamento: in contanti alla consegna.",
+    "thanks": "Grazie per averci scelto.",
+    "questions": "Domande sul tuo ordine? Scrivici a"
   }
 }

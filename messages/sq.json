@@ -93,7 +93,7 @@
     "placingOrder": "Duke bërë porosinë…",
     "summaryTitle": "Përmbledhja e porosisë",
     "successTitle": "Faleminderit për porosinë",
-    "successBody": "Porosia juaj {orderId} u vendos. Do t'ju kontaktojmë në {email} me detajet e konfirmimit.",
+    "successBody": "Porosia juaj #{number} u krye me sukses. Faleminderit që blini te ne.",
     "backToShop": "Kthehu te dyqani"
   },
   "account": {
@@ -655,5 +655,27 @@
     "Silver & Blonde": "Argjendtë & bjondë",
     "Curly Hair": "Flokë kaçurrela",
     "Color-Treated/Damaged Hair": "Flokë të lyer/të dëmtuar"
+  },
+  "email": {
+    "subject": "Porosia juaj në {brand} u konfirmua",
+    "title": "Faleminderit për porosinë",
+    "greeting": "Përshëndetje {name},",
+    "intro": "Faleminderit që blini në {brand}. Porosia juaj u mor dhe po përgatitet. Ja detajet.",
+    "orderNumber": "Numri i porosisë",
+    "date": "Data",
+    "customerTitle": "Të dhënat tuaja",
+    "phone": "Telefoni",
+    "addressTitle": "Adresa e faturimit dhe e dorëzimit",
+    "itemsTitle": "Porosia juaj",
+    "subtotal": "Nëntotali",
+    "discount": "Zbritje",
+    "discountCode": "Zbritje ({code})",
+    "shipping": "Dërgesa",
+    "shippingClass": "Dërgesa ({name})",
+    "free": "Falas",
+    "total": "Totali",
+    "payment": "Pagesa: me para në dorë në dorëzim.",
+    "thanks": "Faleminderit që na zgjodhët.",
+    "questions": "Keni pyetje për porosinë? Na shkruani në"
   }
 }

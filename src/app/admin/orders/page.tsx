@@ -38,7 +38,7 @@ export default async function AdminOrdersPage({
               <div className="mb-3 flex flex-wrap items-start justify-between gap-3 border-b border-neutral-100 pb-3">
                 <div>
                   <div className="text-sm font-medium">
-                    {o.firstName} {o.lastName} ·{" "}
+                    <span className="tabular-nums">#{o.number}</span> · {o.firstName} {o.lastName} ·{" "}
                     <span style={{ color: brand?.colors.accent }} className="font-medium">
                       {o.brand}
                     </span>

@@ -5,6 +5,8 @@ import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { sendOrderConfirmation, sendOrderNotificationToAdmin } from "@/lib/email";
 import { getBrand } from "@/lib/brands";
+import { routing } from "@/i18n/routing";
+import { Prisma } from "@/generated/prisma/client";
 
 export type CouponResult =
   | { ok: true; code: string; type: "percent" | "fixed"; value: number }
@@ -57,11 +59,16 @@ const orderSchema = z.object({
   country: z.string().trim().optional(),
   couponCode: z.string().optional(),
   shippingClassId: z.string().trim().min(1, "shippingMethodRequired"),
+  // Language the customer checked out in — the confirmation email uses it.
+  locale: z
+    .string()
+    .optional()
+    .transform((l) => (routing.locales as readonly string[]).includes(l ?? "") ? l! : routing.defaultLocale),
   lines: z.array(orderLineSchema).min(1, "cartEmpty"),
 });
 
-export type OrderInput = z.infer<typeof orderSchema>;
-export type OrderResult = { ok: true; orderId: string } | { ok: false; error: string };
+export type OrderInput = z.input<typeof orderSchema>;
+export type OrderResult = { ok: true; orderNumber: number } | { ok: false; error: string };
 
 export async function createOrder(input: OrderInput): Promise<OrderResult> {
   const parsed = orderSchema.safeParse(input);
@@ -102,8 +109,7 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
     // order — the cart page is where a bad code gets rejected up front.
   }
 
-  const order = await prisma.order.create({
-    data: {
+  const orderData = {
       brand: data.brand,
       firstName: data.firstName,
       lastName: data.lastName,
@@ -133,46 +139,36 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
           qty: l.qty,
         })),
       },
-    },
-  });
+  };
+
+  // Order numbers are max + 1 (first order #1001). Two checkouts racing for
+  // the same number hit the unique index; the loser just takes the next one.
+  let order;
+  for (let attempt = 0; ; attempt++) {
+    const last = await prisma.order.findFirst({ orderBy: { number: "desc" }, select: { number: true } });
+    try {
+      order = await prisma.order.create({ data: { ...orderData, number: (last?.number ?? 1000) + 1 } });
+      break;
+    } catch (err) {
+      const isNumberClash = err instanceof Prisma.PrismaClientKnownRequestError && err.code === "P2002";
+      if (!isNumberClash || attempt >= 4) throw err;
+    }
+  }
 
   // Order confirmation email — brand-customized, sent to whatever the guest
   // typed at checkout. Never throws (see lib/email.ts's own guards), so a
   // Brevo outage or an unset BREVO_API_KEY can never fail the checkout.
+  const emailData = { ...order, items: lines };
   await Promise.all([
-    sendOrderConfirmation(
-      {
-        id: order.id,
-        email: order.email,
-        firstName: order.firstName,
-        lastName: order.lastName,
-        total: order.total,
-        shippingClassName: order.shippingClassName,
-        shippingFee: order.shippingFee,
-        items: lines,
-      },
-      resolvedBrand.slug,
-    ),
-    sendOrderNotificationToAdmin(
-      {
-        id: order.id,
-        email: order.email,
-        firstName: order.firstName,
-        lastName: order.lastName,
-        total: order.total,
-        shippingClassName: order.shippingClassName,
-        shippingFee: order.shippingFee,
-        items: lines,
-      },
-      resolvedBrand.slug,
-    ),
+    sendOrderConfirmation(emailData, resolvedBrand.slug, data.locale),
+    sendOrderNotificationToAdmin(emailData, resolvedBrand.slug),
   ]);
 
   revalidatePath("/admin/orders");
   revalidatePath("/admin/products");
   revalidatePath("/[locale]/[brand]/product/[slug]", "page");
   revalidatePath("/[locale]/[brand]/shop", "page");
-  return { ok: true, orderId: order.id };
+  return { ok: true, orderNumber: order.number };
 }
 
 const ORDER_STATUSES = ["pending", "in_progress", "fulfilled"] as const;

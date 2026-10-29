@@ -71,7 +71,7 @@ export default async function AccountPage({
                   key={o.id}
                   className="grid grid-cols-[1.4fr_1fr_1fr_auto] items-center gap-4 border-b border-neutral-200 py-4.5 text-sm"
                 >
-                  <span className="font-medium">{o.id}</span>
+                  <span className="font-medium">#{o.number}</span>
                   <span className="text-neutral-600">
                     {new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(o.createdAt)}
                   </span>
