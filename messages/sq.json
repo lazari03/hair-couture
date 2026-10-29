@@ -463,6 +463,17 @@
   },
   "brandPages": {
     "balmain": {
+      "locks-of-legacy": {
+        "nav": "Locks of Legacy",
+        "collection": {
+          "title": "Locks of Legacy",
+          "body": [
+            "Trashëgimi ikonike. E krijuar për t'u ruajtur.",
+            "Zbuloni edicionin tonë të kufizuar të aksesorëve të flokëve të punuar me dorë: copa Midnight Black të përfunduara me gurë me faseta dhe B-në karakteristike të larë me ar 18K."
+          ],
+          "empty": "Ky koleksion po rimbushet. Kthehuni së shpejti."
+        }
+      },
       "heritage": {
         "nav": "Trashëgimia",
         "intro": {

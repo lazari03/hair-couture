@@ -463,6 +463,17 @@
   },
   "brandPages": {
     "balmain": {
+      "locks-of-legacy": {
+        "nav": "Locks of Legacy",
+        "collection": {
+          "title": "Locks of Legacy",
+          "body": [
+            "Un'eredità iconica. Creata per essere custodita.",
+            "Scopri la nostra edizione limitata di accessori per capelli realizzati a mano: pezzi Midnight Black rifiniti con pietre sfaccettate e l'iconica B placcata oro 18K."
+          ],
+          "empty": "Questa collezione è in fase di rifornimento. Torna presto."
+        }
+      },
       "heritage": {
         "nav": "Heritage",
         "intro": {

@@ -119,6 +119,42 @@ export default async function BrandContentPage({ params }: { params: Promise<{ b
                 ))}
               </section>
             );
+          case "collection": {
+            const order = shop.categoryOrder?.[block.category] ?? [];
+            const rank = (name: string) => (order.includes(name) ? order.indexOf(name) : order.length);
+            const products = shop.products
+              .filter((p) => p.categories.includes(block.category))
+              .sort((a, b) => rank(a.name) - rank(b.name));
+            return (
+              <div key={i}>
+                <section className="relative flex min-h-[420px] items-center overflow-hidden bg-neutral-950 text-white md:min-h-[520px]">
+                  <Image src={block.image} alt="" fill priority={i === 0} sizes="100vw" className="object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/25 to-transparent" />
+                  <div className="relative flex w-full flex-col items-center px-6 py-16 text-center md:w-1/2">
+                    <Title className="font-serif text-4xl leading-tight tracking-wide uppercase sm:text-5xl">
+                      {t(`${block.key}.title`)}
+                    </Title>
+                    <div className="mt-6 flex max-w-[46ch] flex-col gap-3 text-[15px] leading-relaxed opacity-95">
+                      {list(`${block.key}.body`).map((p) => (
+                        <p key={p}>{p}</p>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+                <section className="px-4 py-12 sm:px-6 md:py-16">
+                  {products.length > 0 ? (
+                    <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+                      {products.map((p) => (
+                        <ProductCard key={p.id} brand={shop.slug} product={p} />
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="py-10 text-center text-sm text-neutral-500">{t(`${block.key}.empty`)}</p>
+                  )}
+                </section>
+              </div>
+            );
+          }
           case "products": {
             const products =
               "names" in block

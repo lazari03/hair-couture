@@ -84,9 +84,9 @@ const shopMeta: Record<BrandSlug, ShopMeta> = {
       ],
     },
     // Same campaign as balmainhair.com's homepage: "Locks of Legacy", whose
-    // CTA opens that collection (a product category, see the
-    // 20261029150000_locks_of_legacy migration).
-    hero: { image: "/assets/hero/balmain.jpg", href: `/shop?category=${encodeURIComponent("Locks of Legacy")}` },
+    // CTA opens our Locks of Legacy collection page (lib/data/brand-pages.ts),
+    // which lists the products in that category.
+    hero: { image: "/assets/hero/balmain.jpg", href: "/pages/locks-of-legacy" },
   },
   eloure: {
     slug: "eloure",

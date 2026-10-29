@@ -463,6 +463,17 @@
   },
   "brandPages": {
     "balmain": {
+      "locks-of-legacy": {
+        "nav": "Locks of Legacy",
+        "collection": {
+          "title": "Locks of Legacy",
+          "body": [
+            "Iconic heritage. Made to be treasured.",
+            "Discover our limited-edition of handcrafted hair accessories: Midnight Black pieces finished with faceted stones and the signature 18K gold-plated B."
+          ],
+          "empty": "This collection is being restocked. Check back soon."
+        }
+      },
       "heritage": {
         "nav": "Heritage",
         "intro": {

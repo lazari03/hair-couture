@@ -24,35 +24,42 @@ export async function BalmainHome({ shop }: { shop: ShopContent }) {
     { key: "stylingTools", category: "Styling Tools", image: "/assets/products/balmain/collection-styling-tools.jpg" },
   ] as const;
 
+  // Homepage rows are driven by product categories, set per product in the
+  // admin: "Popular right now" = Bestsellers, "New in" = New.
+  const bestsellers = shop.products.filter((p) => p.categories.includes("Bestsellers"));
+  const newIn = shop.products.filter((p) => p.categories.includes("New"));
+
   return (
     <>
       <Hero brand={shop.slug} variant={shop.heroVariant} content={shop.hero} />
 
-      <section className="px-6 py-14 sm:px-11 sm:py-24">
-        <div className="mb-9 flex flex-wrap items-end justify-between gap-6">
-          <h2 className="text-2xl font-light tracking-tight sm:text-3xl">{bh("popularTitle")}</h2>
-          <Link
-            href={`/${shop.slug}/shop`}
-            className="border-b border-neutral-300 pb-1 text-xs tracking-widest whitespace-nowrap uppercase hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
-          >
-            {t("shop.viewAll")}
-          </Link>
-        </div>
-        <ProductGrid brand={shop.slug} products={shop.products.slice(0, 4)} />
-      </section>
-
-      {shop.products.length > 4 && (
+      {bestsellers.length > 0 && (
         <section className="px-6 py-14 sm:px-11 sm:py-24">
           <div className="mb-9 flex flex-wrap items-end justify-between gap-6">
-            <h2 className="text-2xl font-light tracking-tight sm:text-3xl">{bh("trendingTitle")}</h2>
+            <h2 className="text-2xl font-light tracking-tight sm:text-3xl">{bh("popularTitle")}</h2>
             <Link
-              href={`/${shop.slug}/shop`}
+              href={`/${shop.slug}/shop?category=Bestsellers`}
               className="border-b border-neutral-300 pb-1 text-xs tracking-widest whitespace-nowrap uppercase hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
             >
               {t("shop.viewAll")}
             </Link>
           </div>
-          <ProductGrid brand={shop.slug} products={shop.products.slice(4, 8)} />
+          <ProductGrid brand={shop.slug} products={bestsellers.slice(0, 4)} />
+        </section>
+      )}
+
+      {newIn.length > 0 && (
+        <section className="px-6 py-14 sm:px-11 sm:py-24">
+          <div className="mb-9 flex flex-wrap items-end justify-between gap-6">
+            <h2 className="text-2xl font-light tracking-tight sm:text-3xl">{bh("trendingTitle")}</h2>
+            <Link
+              href={`/${shop.slug}/shop?category=New`}
+              className="border-b border-neutral-300 pb-1 text-xs tracking-widest whitespace-nowrap uppercase hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
+            >
+              {t("shop.viewAll")}
+            </Link>
+          </div>
+          <ProductGrid brand={shop.slug} products={newIn.slice(0, 4)} />
         </section>
       )}
 

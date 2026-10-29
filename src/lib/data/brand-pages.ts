@@ -13,7 +13,8 @@ export type PageBlock =
   | { type: "text"; key: string } // centered title + body
   | { type: "imagePair"; images: [string, string] }
   | { type: "products"; key: string; category: string; limit: number } // title + products from a category
-  | { type: "products"; key: string; names: string[] }; // title + these products, in this order
+  | { type: "products"; key: string; names: string[] } // title + these products, in this order
+  | { type: "collection"; key: string; image: string; category: string }; // banner (title/body) + every product in a category
 
 const eloure: Record<string, PageBlock[]> = {
   "about-us": [{ type: "split", key: "story", image: "/assets/eloure/about-muse.jpg" }],
@@ -40,6 +41,12 @@ const eloure: Record<string, PageBlock[]> = {
 
 // balmainhair.com/pages/heritage (fetched 2026-10-29).
 const balmain: Record<string, PageBlock[]> = {
+  // balmainhair.com/collections/locks-of-legacy — the hero's "Discover the
+  // legacy" button opens it. Products are whatever carries the category
+  // (set per product in the admin), in the brand's curated order.
+  "locks-of-legacy": [
+    { type: "collection", key: "collection", image: "/assets/hero/balmain.jpg", category: "Locks of Legacy" },
+  ],
   heritage: [
     { type: "split", key: "intro", image: "/assets/balmain/heritage-intro.png" },
     {
