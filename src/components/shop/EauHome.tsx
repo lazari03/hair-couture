@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { getBrand, type BrandSlug } from "@/lib/brands";
 import type { ShopContent } from "@/lib/data/shop";
 import { BannerLinkTracker } from "./BannerLinkTracker";
+import { AutoplayVideo } from "@/components/AutoplayVideo";
 import { ProductCard } from "./ProductCard";
 
 const pill = "inline-flex min-h-10 items-center justify-center rounded-full px-5 font-[family-name:var(--font-averia)] text-lg text-white transition-opacity hover:opacity-85";
@@ -47,7 +48,12 @@ export async function EauHome({ shop }: { shop: ShopContent }) {
     <>
       <section className="relative h-[min(92vh,860px)] overflow-hidden bg-[var(--brand-accent)] md:h-[min(120vh,1100px)]">
         {shop.hero.video && (
-          <video className="absolute inset-0 h-full w-full object-cover" src={shop.hero.video} autoPlay loop muted playsInline />
+          <AutoplayVideo
+            className="absolute inset-0 h-full w-full object-cover"
+            src={shop.hero.video}
+            mobileSrc={shop.hero.mobileVideo}
+            poster={shop.hero.image}
+          />
         )}
         <div className="absolute inset-0 bg-black/15" />
         <h1 className="absolute inset-x-6 top-[30%] text-center font-[family-name:var(--font-manrope)] text-5xl font-light tracking-tight text-white md:top-[22%] md:text-6xl">

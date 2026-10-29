@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { BrandSlug } from "@/lib/brands";
 import type { HeroContent, HeroVariant } from "@/lib/data/shop";
 import { BannerLinkTracker } from "./BannerLinkTracker";
+import { AutoplayVideo } from "@/components/AutoplayVideo";
 
 // Three treatments from the design (full-bleed / split / video-style pan).
 // Each brand picks one via ShopContent.heroVariant (lib/data/shop.ts) —
@@ -60,25 +61,12 @@ export function Hero({
     return (
       <section className="relative h-[min(80vh,700px)] overflow-hidden bg-neutral-900">
         {content.video ? (
-          <>
-            {/* motion-reduce users get the poster frame, not an autoplaying video */}
-            <video
-              className="absolute inset-0 hidden h-full w-full object-cover motion-safe:block"
-              src={content.video}
-              poster={content.image}
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
-            <Image
-              src={content.image}
-              alt=""
-              fill
-              sizes="100vw"
-              className="absolute inset-0 hidden object-cover motion-reduce:block"
-            />
-          </>
+          <AutoplayVideo
+            className="absolute inset-0 h-full w-full object-cover"
+            src={content.video}
+            mobileSrc={content.mobileVideo}
+            poster={content.image}
+          />
         ) : (
           <div className="motion-safe:animate-[pan_22s_ease-in-out_infinite] absolute -inset-[6%]">
             <Image src={content.image} alt="" fill priority sizes="100vw" className="object-cover" />

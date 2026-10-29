@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { brands } from "@/lib/brands";
 import { getShop } from "@/lib/data/shop";
 import { BrandPanelLink } from "@/components/BrandPanelLink";
+import { AutoplayVideo } from "@/components/AutoplayVideo";
 import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -32,25 +33,12 @@ export default async function LandingPage() {
             className="group relative flex min-h-[33vh] flex-1 items-center justify-center overflow-hidden bg-[var(--brand-accent)] text-[var(--brand-accent-foreground)] transition-[flex-grow] duration-300 ease-out hover:flex-[1.15] motion-reduce:transition-none lg:h-screen lg:min-h-0"
           >
             {shop?.hero.video ? (
-              <>
-                <video
-                  className="absolute inset-0 hidden h-full w-full object-cover motion-safe:block"
-                  src={shop.hero.video}
-                  poster={shop.hero.image}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                />
-                <Image
-                  src={shop.hero.image}
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 34vw, 100vw"
-                  className="absolute inset-0 hidden object-cover motion-reduce:block"
-                />
-              </>
+              <AutoplayVideo
+                className="absolute inset-0 h-full w-full object-cover"
+                src={shop.hero.video}
+                mobileSrc={shop.hero.mobileVideo}
+                poster={shop.hero.image}
+              />
             ) : shop ? (
               <Image
                 src={shop.hero.image}

@@ -33,6 +33,7 @@ export interface HeroContent {
   secondary: string; // "" when the brand's hero has no second button
   image: string; // /public path — poster frame for the video variant, the shown image otherwise
   video?: string; // /public path to an .mp4 — the landing panel loops it; in the shop only the "video" heroVariant renders it
+  mobileVideo?: string; // lighter encode of `video` for phones (AutoplayVideo picks it)
   href?: string; // where the hero CTA goes (brand-relative path); defaults to the shop
 }
 
@@ -42,6 +43,7 @@ export interface HeroContent {
 interface HeroAssets {
   image: string;
   video?: string;
+  mobileVideo?: string;
   href?: string;
 }
 
@@ -107,7 +109,11 @@ const shopMeta: Record<BrandSlug, ShopMeta> = {
     // filterable categories ("Explore the products").
     menu: ["EAU de Capri", "EAU de Hamptons", "EAU de Santorini", "Sensorial Hair Care", "Sensorial Beauty", "Sensorial Lifestyle", "Sale"],
     heroVariant: "video",
-    hero: { image: "/assets/hero/eau-de-1974.jpg", video: "/assets/hero/eau-de-1974.mp4" },
+    hero: {
+      image: "/assets/hero/eau-de-1974.jpg",
+      video: "/assets/hero/eau-de-1974.mp4",
+      mobileVideo: "/assets/hero/eau-de-1974-mobile.mp4",
+    },
   },
 };
 
