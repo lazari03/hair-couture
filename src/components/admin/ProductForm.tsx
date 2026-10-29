@@ -29,6 +29,29 @@ export function ProductForm({
     return existing.length > 0 ? existing : (categoryOptions[0] ? [categoryOptions[0]] : []);
   });
 
+  const [imageUrl, setImageUrl] = useState(defaultValues?.imageUrl ?? "");
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+
+  async function handleImageFile(file: File | undefined) {
+    if (!file) return;
+    setUploading(true);
+    setUploadError(null);
+    try {
+      const body = new FormData();
+      body.append("file", file);
+      body.append("brand", brandSlug);
+      const res = await fetch("/api/admin/upload", { method: "POST", body });
+      const data = (await res.json().catch(() => ({}))) as { url?: string; error?: string };
+      if (!res.ok || !data.url) throw new Error(data.error || "Upload failed");
+      setImageUrl(data.url);
+    } catch (e) {
+      setUploadError(e instanceof Error ? e.message : "Upload failed");
+    } finally {
+      setUploading(false);
+    }
+  }
+
   function handleBrandChange(next: string) {
     setBrandSlug(next);
     const options = categoriesByBrand[next] ?? [];
@@ -164,24 +187,65 @@ export function ProductForm({
         />
       </label>
 
-      <label className="flex flex-col gap-1.5 text-sm">
-        Image URL (optional)
+      <div className="flex flex-col gap-1.5 text-sm">
+        Image
+        <div className="flex items-start gap-4">
+          <div className="flex h-28 w-28 shrink-0 items-center justify-center overflow-hidden border border-neutral-200 bg-neutral-50">
+            {imageUrl ? (
+              // eslint-disable-next-line @next/next/no-img-element -- admin preview of an arbitrary URL
+              <img src={imageUrl} alt="" className="h-full w-full object-contain" />
+            ) : (
+              <span className="px-2 text-center text-xs text-neutral-400">No image</span>
+            )}
+          </div>
+          <div className="flex flex-col gap-2">
+            <label
+              className={`inline-flex min-h-10 cursor-pointer items-center justify-center border border-neutral-900 px-4 text-sm hover:bg-neutral-900 hover:text-white ${
+                uploading ? "pointer-events-none opacity-50" : ""
+              }`}
+            >
+              {uploading ? "Uploading…" : "Upload from computer"}
+              <input
+                type="file"
+                accept="image/jpeg,image/png,image/webp,image/avif,image/gif"
+                className="sr-only"
+                onChange={(e) => {
+                  handleImageFile(e.target.files?.[0]);
+                  e.target.value = "";
+                }}
+              />
+            </label>
+            {imageUrl && (
+              <button
+                type="button"
+                onClick={() => setImageUrl("")}
+                className="cursor-pointer self-start text-xs text-neutral-500 underline hover:text-neutral-900"
+              >
+                Remove image
+              </button>
+            )}
+            <span className="text-xs text-neutral-500">JPG, PNG, WebP, AVIF or GIF, up to 10 MB.</span>
+            {uploadError && <span className="text-xs text-red-600">{uploadError}</span>}
+          </div>
+        </div>
         <input
           name="imageUrl"
-          defaultValue={defaultValues?.imageUrl ?? ""}
+          value={imageUrl}
+          onChange={(e) => setImageUrl(e.target.value)}
           placeholder="/assets/products/… or a full https:// URL"
           className="min-h-11 border border-neutral-300 px-3 text-sm outline-none focus:border-neutral-900"
         />
         <span className="text-xs text-neutral-500">
-          Falls back to a shared placeholder photo for the category if left blank.
+          Upload a file or paste a URL. Falls back to a shared placeholder photo for the category if left blank.
+          Click Save to apply.
         </span>
-      </label>
+      </div>
 
       {state?.error && <p className="text-sm text-red-600">{state.error}</p>}
 
       <button
         type="submit"
-        disabled={pending}
+        disabled={pending || uploading}
         style={{ backgroundColor: accent }}
         className="mt-2 min-h-11 cursor-pointer text-sm font-medium text-white hover:opacity-90 disabled:opacity-50"
       >

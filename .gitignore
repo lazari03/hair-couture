@@ -54,3 +54,4 @@ src/generated
 /dev.db-journal
 prisma/*.db
 prisma/*.db-journal
+/uploads

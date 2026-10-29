@@ -26,6 +26,8 @@ RUN npm run build
 
 FROM base AS runner
 ENV NODE_ENV=production
+# Admin product-image uploads go on the persistent volume (see src/lib/uploads.ts).
+ENV UPLOAD_DIR=/data/uploads
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
