@@ -55,3 +55,4 @@ src/generated
 prisma/*.db
 prisma/*.db-journal
 /uploads
+*.whl
