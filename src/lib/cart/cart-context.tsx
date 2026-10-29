@@ -74,8 +74,11 @@ interface CartContextValue {
 }
 
 const CartContext = createContext<CartContextValue | null>(null);
-const STORAGE_KEY = "hc-cart";
-const COUPON_STORAGE_KEY = "hc-cart-coupon";
+// v2: prices switched from EUR to ALL — carts saved before that hold EUR
+// price snapshots, so they're dropped instead of shown at 1/100th.
+const STORAGE_KEY = "hc-cart-v2";
+const COUPON_STORAGE_KEY = "hc-cart-coupon-v2";
+const LEGACY_STORAGE_KEYS = ["hc-cart", "hc-cart-coupon"];
 const CART_ID_KEY = "hc-cart-id";
 
 function totalQtyForProduct(lines: CartLine[], productId: string) {
@@ -96,6 +99,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   // localStorage would mismatch whenever the stored cart is non-empty.
   useEffect(() => {
     try {
+      for (const key of LEGACY_STORAGE_KEYS) localStorage.removeItem(key);
       const raw = localStorage.getItem(STORAGE_KEY);
       // eslint-disable-next-line react-hooks/set-state-in-effect
       if (raw) setLines(JSON.parse(raw));

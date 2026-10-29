@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import { formatMoney } from "@/lib/money";
 import { getBrand } from "@/lib/brands";
 import { OrderStatusSelect } from "@/components/admin/OrderStatusSelect";
 import { OrderFilters } from "@/components/admin/OrderFilters";
@@ -60,18 +61,23 @@ export default async function AdminOrdersPage({
                     <span>
                       {item.name} <span className="text-neutral-500">{item.variant && `(${item.variant}) `}× {item.qty}</span>
                     </span>
-                    <span>€ {(item.price * item.qty).toLocaleString("en-US")}</span>
+                    <span>{formatMoney(item.price * item.qty)}</span>
                   </div>
                 ))}
               </div>
               <div className="mt-3 flex flex-wrap justify-end gap-6 border-t border-neutral-100 pt-3 text-sm">
-                <span className="text-neutral-500">Subtotal: € {o.subtotal.toLocaleString("en-US")}</span>
+                <span className="text-neutral-500">Subtotal: {formatMoney(o.subtotal)}</span>
                 {o.couponCode && (
                   <span className="text-emerald-700">
-                    {o.couponCode}: -€ {o.discount.toLocaleString("en-US")}
+                    {o.couponCode}: -{formatMoney(o.discount)}
                   </span>
                 )}
-                <span className="font-medium">Total: € {o.total.toLocaleString("en-US")}</span>
+                {o.shippingFee > 0 && (
+                  <span className="text-neutral-500">
+                    {o.shippingClassName}: {formatMoney(o.shippingFee)}
+                  </span>
+                )}
+                <span className="font-medium">Total: {formatMoney(o.total)}</span>
               </div>
             </div>
           );

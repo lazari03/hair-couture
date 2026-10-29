@@ -13,8 +13,8 @@ export default async function AdminShippingPage() {
         <div>
           <h1 className="text-xl font-semibold tracking-tight">Shipping classes</h1>
           <p className="mt-1 text-sm text-neutral-500">
-            Delivery pricing tiers shown at checkout, billed in ALL (Albanian Lek) — separate from and never added
-            to the EUR product total, paid by the customer on delivery.
+            Delivery pricing tiers shown at checkout, in ALL (Albanian Lek) — added to the order total and paid by
+            the customer on delivery.
           </p>
         </div>
         <Link

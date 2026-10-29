@@ -73,14 +73,27 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
   const shippingClass = await prisma.shippingClass.findUnique({ where: { id: data.shippingClassId } });
   if (!shippingClass || !shippingClass.active) return { ok: false, error: "shippingMethodInvalid" };
 
-  const subtotal = data.lines.reduce((sum, l) => sum + l.price * l.qty, 0);
+  // Price and name come from the DB, not the client: a cart is browser state
+  // (and could still hold pre-ALL prices), so it's never trusted for money.
+  const products = await prisma.product.findMany({
+    where: { id: { in: data.lines.map((l) => l.productId) }, brand: data.brand },
+    select: { id: true, name: true, price: true },
+  });
+  const productById = new Map(products.map((p) => [p.id, p]));
+  if (data.lines.some((l) => !productById.has(l.productId))) return { ok: false, error: "itemNotFound" };
+  const lines = data.lines.map((l) => {
+    const product = productById.get(l.productId)!;
+    return { ...l, name: product.name, price: product.price };
+  });
+
+  const subtotal = lines.reduce((sum, l) => sum + l.price * l.qty, 0);
 
   let discount = 0;
   let couponCode: string | null = null;
   if (data.couponCode) {
     const result = await validateCoupon(data.couponCode);
     if (result.ok) {
-      discount = result.type === "percent" ? subtotal * (result.value / 100) : Math.min(result.value, subtotal);
+      discount = result.type === "percent" ? Math.round(subtotal * (result.value / 100)) : Math.min(result.value, subtotal);
       couponCode = result.code;
     }
     // an invalid coupon code that slipped through (e.g. expired between
@@ -104,13 +117,14 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
       couponCode,
       subtotal,
       discount,
-      total: Math.max(0, subtotal - discount),
-      // ALL, a separate currency from `total` (EUR) — recorded, never summed.
+      // All amounts are ALL; total is what the customer pays on delivery,
+      // shipping included.
+      total: Math.max(0, subtotal - discount) + shippingClass.fee,
       shippingClassId: shippingClass.id,
       shippingClassName: shippingClass.name,
       shippingFee: shippingClass.fee,
       items: {
-        create: data.lines.map((l) => ({
+        create: lines.map((l) => ({
           productId: l.productId,
           name: l.name,
           variant: l.variant,
@@ -126,7 +140,7 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
   // ponytail ceiling: no row locking, so two checkouts racing on the last
   // unit of something can both succeed — fine at this scale; a real
   // high-traffic store would want a DB-level constraint/transaction here.
-  for (const line of data.lines) {
+  for (const line of lines) {
     const product = await prisma.product.findUnique({ where: { id: line.productId } });
     if (!product) continue;
     await prisma.product.update({
@@ -148,7 +162,7 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
         total: order.total,
         shippingClassName: order.shippingClassName,
         shippingFee: order.shippingFee,
-        items: data.lines,
+        items: lines,
       },
       resolvedBrand.slug,
     ),
@@ -161,7 +175,7 @@ export async function createOrder(input: OrderInput): Promise<OrderResult> {
         total: order.total,
         shippingClassName: order.shippingClassName,
         shippingFee: order.shippingFee,
-        items: data.lines,
+        items: lines,
       },
       resolvedBrand.slug,
     ),

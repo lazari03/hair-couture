@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { deleteShippingClass } from "@/lib/actions/shipping";
 import type { ShippingClassModel } from "@/generated/prisma/models";
+import { formatMoney } from "@/lib/money";
 
 export function ShippingClassesTable({ shippingClasses }: { shippingClasses: ShippingClassModel[] }) {
   return (
@@ -19,7 +20,7 @@ export function ShippingClassesTable({ shippingClasses }: { shippingClasses: Shi
           {shippingClasses.map((s) => (
             <tr key={s.id} className="border-b border-neutral-100 last:border-0">
               <td className="px-4 py-3 font-medium">{s.name}</td>
-              <td className="px-4 py-3">{s.fee.toLocaleString("en-US")} ALL</td>
+              <td className="px-4 py-3">{formatMoney(s.fee)}</td>
               <td className="px-4 py-3">{s.sortOrder}</td>
               <td className="px-4 py-3">
                 {s.active ? (

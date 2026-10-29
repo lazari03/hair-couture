@@ -29,12 +29,12 @@ export function trackBrandSelect(brand: BrandSlug) {
 }
 
 export function trackViewItem(item: TrackableItem, brand: BrandSlug) {
-  track("view_item", { currency: "EUR", value: item.price, brand, items: toGaItems([item]) });
+  track("view_item", { currency: "ALL", value: item.price, brand, items: toGaItems([item]) });
 }
 
 export function trackAddToCart(item: TrackableItem, brand: BrandSlug) {
   track("add_to_cart", {
-    currency: "EUR",
+    currency: "ALL",
     value: item.price * (item.qty ?? 1),
     brand,
     items: toGaItems([item]),
@@ -47,11 +47,11 @@ export function trackCheckoutButtonClick(brand: BrandSlug) {
 
 export function trackBeginCheckout(items: TrackableItem[], brand: BrandSlug) {
   const value = items.reduce((sum, i) => sum + i.price * (i.qty ?? 1), 0);
-  track("begin_checkout", { currency: "EUR", value, brand, items: toGaItems(items) });
+  track("begin_checkout", { currency: "ALL", value, brand, items: toGaItems(items) });
 }
 
 export function trackPurchase(orderId: string, items: TrackableItem[], value: number, brand: BrandSlug) {
-  track("purchase", { transaction_id: orderId, currency: "EUR", value, brand, items: toGaItems(items) });
+  track("purchase", { transaction_id: orderId, currency: "ALL", value, brand, items: toGaItems(items) });
 }
 
 export function trackSearch(term: string, brand: BrandSlug) {

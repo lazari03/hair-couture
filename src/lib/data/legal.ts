@@ -71,7 +71,7 @@ function buildTerms(brandName: string): LegalDoc {
       },
       {
         heading: "Orders and payment",
-        body: "All prices are shown in EUR and include applicable taxes unless stated otherwise. We reserve the right to refuse or cancel an order, including where a product is listed at an incorrect price or is out of stock after purchase.",
+        body: "All prices are shown in Albanian Lek (ALL) and include applicable taxes unless stated otherwise. We reserve the right to refuse or cancel an order, including where a product is listed at an incorrect price or is out of stock after purchase.",
       },
       {
         heading: "Governing law",

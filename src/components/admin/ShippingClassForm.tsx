@@ -40,8 +40,8 @@ export function ShippingClassForm({
           className="min-h-11 border border-neutral-300 px-3 text-sm outline-none focus:border-neutral-900"
         />
         <span className="text-xs text-neutral-500">
-          Albanian Lek — a separate currency from product prices (EUR), paid by the customer on delivery. Never
-          converted or added into the EUR total.
+          Albanian Lek (ALL), same as product prices. Added to the order total and paid by the customer on
+          delivery.
         </span>
       </label>
 

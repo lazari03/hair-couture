@@ -78,7 +78,7 @@ export default async function AccountPage({
                   <span className={o.status === "fulfilled" ? "text-emerald-700" : "text-neutral-500"}>
                     {t(`orderStatus.${STATUS_KEY[o.status] ?? "pending"}`)}
                   </span>
-                  <span>{formatMoney(o.total, locale)}</span>
+                  <span>{formatMoney(o.total)}</span>
                 </div>
               ))}
             </div>

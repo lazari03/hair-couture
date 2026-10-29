@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useCart } from "@/lib/cart/cart-context";
 import { productImage } from "@/lib/data/category-image";
@@ -49,7 +49,6 @@ export default function CheckoutPage() {
   const t = useTranslations("checkout");
   const tCart = useTranslations("cart");
   const tErrors = useTranslations("errors");
-  const locale = useLocale();
   const { brand } = useParams<{ brand: string }>();
   const { lines, coupon, clearCart } = useCart();
 
@@ -90,11 +89,12 @@ export default function CheckoutPage() {
   const subtotal = lines.reduce((sum, l) => sum + l.price * l.qty, 0);
   const discount = coupon
     ? coupon.type === "percent"
-      ? subtotal * (coupon.value / 100)
+      ? Math.round(subtotal * (coupon.value / 100))
       : Math.min(coupon.value, subtotal)
     : 0;
-  const total = Math.max(0, subtotal - discount);
-  const shippingFeeAll = shippingClasses.find((sc) => sc.id === shippingClassId)?.fee ?? 0;
+  const shippingFee = shippingClasses.find((sc) => sc.id === shippingClassId)?.fee ?? 0;
+  // Everything is in ALL, so the shipping fee is part of the amount due.
+  const total = Math.max(0, subtotal - discount) + shippingFee;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -290,7 +290,7 @@ export default function CheckoutPage() {
                           />
                           {sc.name}
                         </span>
-                        <span className="text-neutral-500">{sc.fee.toLocaleString("en-US")} ALL</span>
+                        <span className="text-neutral-500">{formatMoney(sc.fee)}</span>
                       </label>
                     ))}
                   </div>
@@ -324,31 +324,31 @@ export default function CheckoutPage() {
                   {line.variant && `${line.variant} `}× {line.qty}
                 </span>
               </div>
-              <span>{formatMoney(line.price * line.qty, locale)}</span>
+              <span>{formatMoney(line.price * line.qty)}</span>
             </div>
           ))}
             <div className="mt-2 flex justify-between border-t border-neutral-200 pt-3.5 text-sm">
               <span className="text-neutral-600">{tCart("subtotal")}</span>
-              <span>{formatMoney(subtotal, locale)}</span>
+              <span>{formatMoney(subtotal)}</span>
             </div>
             {coupon && (
               <div className="flex justify-between text-sm text-emerald-700">
                 <span>
                   {tCart("discount")} ({coupon.code})
                 </span>
-                <span>-{formatMoney(discount, locale)}</span>
+                <span>-{formatMoney(discount)}</span>
+              </div>
+            )}
+            {shippingFee > 0 && (
+              <div className="flex justify-between text-sm">
+                <span className="text-neutral-600">{t("shippingFee")}</span>
+                <span>{formatMoney(shippingFee)}</span>
               </div>
             )}
             <div className="flex justify-between border-t border-neutral-200 pt-3.5 text-lg">
               <span>{tCart("total")}</span>
-              <span>{formatMoney(total, locale)}</span>
+              <span>{formatMoney(total)}</span>
             </div>
-            {shippingFeeAll > 0 && (
-              <div className="flex justify-between text-sm text-neutral-500">
-                <span>{t("shippingFee")}</span>
-                <span>{shippingFeeAll.toLocaleString("en-US")} ALL</span>
-              </div>
-            )}
           </aside>
         </div>
       </div>

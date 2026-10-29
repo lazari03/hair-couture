@@ -2,6 +2,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { brands } from "@/lib/brands";
 import { parseProductCategories } from "@/lib/product-categories";
+import { formatMoney } from "@/lib/money";
 
 export default async function AdminDashboard() {
   const [productCounts, categoryCounts, orderStats] = await Promise.all([
@@ -40,7 +41,7 @@ export default async function AdminDashboard() {
       <div className="mb-8 grid grid-cols-3 divide-x divide-neutral-200 rounded-lg border border-neutral-200 bg-white">
         <div className="p-5 text-center sm:text-left">
           <div className="text-3xl font-semibold tabular-nums">
-            €{Math.round(totalSales).toLocaleString("en-US")}
+            {formatMoney(totalSales)}
           </div>
           <div className="text-xs text-neutral-500">Total sales</div>
         </div>
@@ -78,7 +79,7 @@ export default async function AdminDashboard() {
                 </div>
                 <div>
                   <div className="text-2xl font-semibold tabular-nums">
-                    €{Math.round(revenueByBrand[b.slug] ?? 0).toLocaleString("en-US")}
+                    {formatMoney(revenueByBrand[b.slug] ?? 0)}
                   </div>
                   <div className="text-xs text-neutral-500">Revenue</div>
                 </div>

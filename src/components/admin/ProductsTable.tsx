@@ -4,6 +4,7 @@ import { deleteProduct } from "@/lib/actions/products";
 import { productImage } from "@/lib/data/category-image";
 import type { ProductModel } from "@/generated/prisma/models";
 import { parseProductCategories } from "@/lib/product-categories";
+import { formatMoney } from "@/lib/money";
 
 export function ProductsTable({ products }: { products: ProductModel[] }) {
   return (
@@ -38,7 +39,7 @@ export function ProductsTable({ products }: { products: ProductModel[] }) {
                   ))}
                 </div>
               </td>
-              <td className="px-4 py-3">€ {p.price.toLocaleString("en-US")}</td>
+              <td className="px-4 py-3">{formatMoney(p.price)}</td>
               <td className="px-4 py-3">
                 <span className={p.stock <= 0 ? "font-medium text-red-600" : p.stock <= 10 ? "font-medium text-amber-600" : ""}>
                   {p.stock <= 0 ? "Sold out" : p.stock}

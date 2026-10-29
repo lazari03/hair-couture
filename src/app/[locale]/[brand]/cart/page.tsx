@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useCart } from "@/lib/cart/cart-context";
 import { productImage } from "@/lib/data/category-image";
@@ -15,7 +15,6 @@ import type { BrandSlug } from "@/lib/brands";
 export default function CartPage() {
   const t = useTranslations("cart");
   const tErrors = useTranslations("errors");
-  const locale = useLocale();
   const { brand } = useParams<{ brand: string }>();
   const { lines, incLine, decLine, removeLine, coupon, setCoupon } = useCart();
   const [couponInput, setCouponInput] = useState("");
@@ -37,7 +36,7 @@ export default function CartPage() {
   const totalQty = lines.reduce((sum, l) => sum + l.qty, 0);
   const discount = coupon
     ? coupon.type === "percent"
-      ? subtotal * (coupon.value / 100)
+      ? Math.round(subtotal * (coupon.value / 100))
       : Math.min(coupon.value, subtotal)
     : 0;
   const total = Math.max(0, subtotal - discount);
@@ -114,7 +113,7 @@ export default function CartPage() {
                 )}
               </div>
               <span className="text-[15px] whitespace-nowrap">
-                {formatMoney(line.price * line.qty, locale)}
+                {formatMoney(line.price * line.qty)}
               </span>
             </div>
           ))}
@@ -175,12 +174,12 @@ export default function CartPage() {
 
           <div className="flex justify-between text-sm">
             <span className="text-neutral-600">{t("subtotal")}</span>
-            <span>{formatMoney(subtotal, locale)}</span>
+            <span>{formatMoney(subtotal)}</span>
           </div>
           {coupon && (
             <div className="flex justify-between text-sm text-emerald-700">
               <span>{t("discount")}</span>
-              <span>-{formatMoney(discount, locale)}</span>
+              <span>-{formatMoney(discount)}</span>
             </div>
           )}
           <div className="flex justify-between text-sm">
@@ -189,7 +188,7 @@ export default function CartPage() {
           </div>
           <div className="mt-1.5 flex justify-between border-t border-neutral-200 pt-3.5 text-lg">
             <span>{t("total")}</span>
-            <span>{formatMoney(total, locale)}</span>
+            <span>{formatMoney(total)}</span>
           </div>
           <Link
             href={`/${brand}/checkout`}

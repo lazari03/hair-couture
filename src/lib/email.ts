@@ -9,6 +9,7 @@
 
 import type { BrandSlug } from "@/lib/brands";
 import { getFooter } from "@/lib/data/footer";
+import { formatMoney } from "@/lib/money";
 
 const BREVO_SMTP_URL = "https://api.brevo.com/v3/smtp/email";
 const BREVO_CONTACTS_URL = "https://api.brevo.com/v3/contacts";
@@ -52,7 +53,7 @@ interface OrderForEmail {
   lastName: string;
   total: number;
   shippingClassName: string;
-  shippingFee: number; // ALL — a separate currency from `total` (EUR), rendered as its own line
+  shippingFee: number; // ALL, already included in `total`
   items: { name: string; variant: string; price: number; qty: number }[];
 }
 
@@ -60,7 +61,7 @@ function renderOrderItemsRows(items: OrderForEmail["items"]): string {
   return items
     .map(
       (i) =>
-        `<tr><td>${i.name}${i.variant ? ` (${i.variant})` : ""} × ${i.qty}</td><td style="text-align:right">€${(i.price * i.qty).toFixed(2)}</td></tr>`,
+        `<tr><td>${i.name}${i.variant ? ` (${i.variant})` : ""} × ${i.qty}</td><td style="text-align:right">${formatMoney(i.price * i.qty)}</td></tr>`,
     )
     .join("");
 }
@@ -81,8 +82,8 @@ export async function sendOrderConfirmation(order: OrderForEmail, brandSlug: Bra
         <h1 style="font-weight:300">${brandName}</h1>
         <p>Hi ${order.firstName}, thank you for your order <strong>${order.id}</strong>.</p>
         <table style="width:100%;border-collapse:collapse">${itemsHtml}</table>
-        <p style="text-align:right;font-weight:bold">Total: €${order.total.toFixed(2)}</p>
-        <p style="text-align:right;color:#444">Shipping (${order.shippingClassName}): ${order.shippingFee.toLocaleString("en-US")} ALL — paid separately on delivery</p>
+        <p style="text-align:right;color:#444">Shipping (${order.shippingClassName}): ${formatMoney(order.shippingFee)}</p>
+        <p style="text-align:right;font-weight:bold">Total: ${formatMoney(order.total)} — paid on delivery</p>
         <p style="color:#666;font-size:13px">Questions? Contact us at ${footer?.contactEmail ?? "info@haircouture.al"}.</p>
       </div>
     `,
@@ -119,8 +120,8 @@ export async function sendOrderNotificationToAdmin(order: OrderForEmail, brandSl
         <p><strong>Order ID:</strong> ${order.id}</p>
         <p><strong>Customer:</strong> ${order.firstName} ${order.lastName} (${order.email})</p>
         <table style="width:100%;border-collapse:collapse">${itemsHtml}</table>
-        <p style="text-align:right;font-weight:bold">Total: €${order.total.toFixed(2)}</p>
-        <p style="text-align:right;color:#444">Shipping (${order.shippingClassName}): ${order.shippingFee.toLocaleString("en-US")} ALL</p>
+        <p style="text-align:right;color:#444">Shipping (${order.shippingClassName}): ${formatMoney(order.shippingFee)}</p>
+        <p style="text-align:right;font-weight:bold">Total: ${formatMoney(order.total)}</p>
       </div>
     `,
   });

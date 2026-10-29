@@ -114,11 +114,11 @@ export function ProductForm({
       </label>
 
       <label className="flex flex-col gap-1.5 text-sm">
-        Price (EUR)
+        Price (ALL)
         <input
           name="price"
           type="number"
-          step="0.01"
+          step="1"
           min="0"
           required
           defaultValue={defaultValues?.price}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { formatMoney } from "@/lib/money";
 import type { BrandSlug } from "@/lib/brands";
@@ -11,7 +11,6 @@ import { productImage } from "@/lib/data/category-image";
 // full-width button, like maisoneloure.com). The button is a label inside the
 // card link, not a quick-add: add-to-cart lives on the product page.
 export function ProductCard({ brand, product }: { brand: BrandSlug; product: Product }) {
-  const locale = useLocale();
   const t = useTranslations("product");
   const outOfStock = product.stock <= 0;
 
@@ -45,7 +44,7 @@ export function ProductCard({ brand, product }: { brand: BrandSlug; product: Pro
           {product.category}
         </span>
         <span className="product-card__name text-sm font-medium tracking-tight">{product.name}</span>
-        <span className="product-card__price text-[13px] text-neutral-600">{formatMoney(product.price, locale)}</span>
+        <span className="product-card__price text-[13px] text-neutral-600">{formatMoney(product.price)}</span>
       </div>
       <span className="product-card__cta hidden min-h-11 items-center justify-center bg-[var(--brand-accent)] px-2 text-[11px] tracking-[0.14em] text-[var(--brand-accent-foreground)] uppercase transition-opacity group-hover:opacity-85">
         {t("viewProduct")}

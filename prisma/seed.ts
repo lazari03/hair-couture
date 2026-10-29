@@ -67,13 +67,13 @@ async function seedOrders() {
       const items = lines.map((p) => ({
         productId: p.id,
         name: p.name,
-        variant: "Standard",
+        variant: "",
         price: p.price,
         qty: i === 0 ? 1 : 2,
       }));
       const subtotal = items.reduce((sum, it) => sum + it.price * it.qty, 0);
       const coupon = i === 0 ? coupons[customerIndex % coupons.length] : null;
-      const discount = coupon ? subtotal * (coupon.value / 100) : 0;
+      const discount = coupon ? Math.round(subtotal * (coupon.value / 100)) : 0;
 
       await prisma.order.create({
         data: {

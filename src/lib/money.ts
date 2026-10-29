@@ -1,7 +1,11 @@
-// Currency is fixed to EUR for now (progress.md open decision: multi-currency
-// not decided). Locale still drives digit grouping/symbol placement via Intl
-// — the same primitive next-intl's useFormatter wraps — so this stays correct
-// per-locale without needing a component/hook context to call it from.
-export function formatMoney(amount: number, locale: string) {
-  return new Intl.NumberFormat(locale, { style: "currency", currency: "EUR" }).format(amount);
+// All prices are in Albanian Lek (ALL): product prices, coupons (fixed),
+// shipping fees and order totals. Lek has no minor unit in practice, so
+// amounts are rounded to whole lek and grouped with "." — "2.500 ALL" —
+// the same in every UI language, so it's done by hand rather than via
+// Intl (whose grouping/symbol placement differs per locale).
+export function formatMoney(amount: number): string {
+  const rounded = Math.round(amount);
+  const sign = rounded < 0 ? "-" : "";
+  const digits = String(Math.abs(rounded)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  return `${sign}${digits} ALL`;
 }

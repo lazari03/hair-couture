@@ -18,7 +18,7 @@ export interface Product {
   name: string;
   category: string;
   categories: string[];
-  price: number; // EUR, minor-unit-free — format with Intl at render time
+  price: number; // ALL (Albanian Lek), whole lek — format with formatMoney()
   badge?: string | null;
   description?: string | null;
   imageUrl?: string | null; // falls back to categoryImage() when unset
