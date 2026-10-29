@@ -126,12 +126,15 @@ export default async function BrandLayout({
           <Link href="/" className="text-[13px] whitespace-nowrap text-neutral-500 hover:underline">
             &larr; {t("nav.backToBrands")}
           </Link>
-          {/* eslint-disable-next-line @next/next/no-img-element -- static local SVG, no next/image benefit */}
-          <img
-            src={activeBrand.logo}
-            alt={t(`brands.${activeBrand.slug as BrandSlug}.name`)}
-            className={`absolute left-1/2 ${activeBrand.logoSize.headerMobile} w-auto -translate-x-1/2`}
-          />
+          {/* Logo → this brand's own homepage (not the 3-brand landing). */}
+          <Link href={`/${activeBrand.slug}`} className="absolute left-1/2 -translate-x-1/2">
+            {/* eslint-disable-next-line @next/next/no-img-element -- static local SVG, no next/image benefit */}
+            <img
+              src={activeBrand.logo}
+              alt={t(`brands.${activeBrand.slug as BrandSlug}.name`)}
+              className={`${activeBrand.logoSize.headerMobile} w-auto`}
+            />
+          </Link>
           <div className="flex items-center gap-1.5">
             <LanguageSwitcher />
             <IconActionLink href={`/${activeBrand.slug}/cart`} label={t("nav.cart")} badge={<CartCountBadge />}>
@@ -153,12 +156,14 @@ export default async function BrandLayout({
           <Link href="/" className="text-[13px] whitespace-nowrap text-neutral-500 hover:underline">
             &larr; {t("nav.backToBrands")}
           </Link>
-          {/* eslint-disable-next-line @next/next/no-img-element -- static local SVG, no next/image benefit */}
-          <img
-            src={activeBrand.logo}
-            alt={t(`brands.${activeBrand.slug as BrandSlug}.name`)}
-            className={`${activeBrand.logoSize.header} w-auto`}
-          />
+          <Link href={`/${activeBrand.slug}`}>
+            {/* eslint-disable-next-line @next/next/no-img-element -- static local SVG, no next/image benefit */}
+            <img
+              src={activeBrand.logo}
+              alt={t(`brands.${activeBrand.slug as BrandSlug}.name`)}
+              className={`${activeBrand.logoSize.header} w-auto`}
+            />
+          </Link>
           <nav className="flex items-center gap-3.5 text-[13px]">
             <LanguageSwitcher />
             <IconActionLink href={`/${activeBrand.slug}/search`} label={t("nav.search")}>
