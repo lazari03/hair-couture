@@ -27,13 +27,23 @@ export default async function AdminProductsPage({
         <h1 className="text-xl font-semibold tracking-tight">
           Products <span className="font-normal text-neutral-500 tabular-nums">({products.length})</span>
         </h1>
-        <Link
-          href={activeBrandSlug ? `/admin/products/new?brand=${activeBrandSlug}` : "/admin/products/new"}
-          style={{ backgroundColor: accent }}
-          className="inline-flex min-h-10 items-center px-4 text-sm font-medium text-white hover:opacity-90"
-        >
-          + Add product
-        </Link>
+        <div className="flex flex-wrap gap-2">
+          {/* Plain <a>: a route handler returning a file download, not a page. */}
+          <a
+            href={activeBrand ? `/api/admin/products/export?brand=${activeBrand.slug}` : "/api/admin/products/export"}
+            download
+            className="inline-flex min-h-10 items-center border border-neutral-300 px-4 text-sm font-medium text-neutral-700 hover:border-neutral-900"
+          >
+            Export CSV
+          </a>
+          <Link
+            href={activeBrandSlug ? `/admin/products/new?brand=${activeBrandSlug}` : "/admin/products/new"}
+            style={{ backgroundColor: accent }}
+            className="inline-flex min-h-10 items-center px-4 text-sm font-medium text-white hover:opacity-90"
+          >
+            + Add product
+          </Link>
+        </div>
       </div>
 
       <div className="mb-6 flex gap-2 text-sm">
